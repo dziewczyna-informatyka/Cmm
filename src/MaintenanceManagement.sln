@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintenanceManagement.DataA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintenanceManagement.Core", "MaintenanceManagement.Core\MaintenanceManagement.Core.csproj", "{9A3DA4E2-3753-4341-BDB3-E2C1090F3CBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintenanceManagement.UI", "MaintenanceManagement.UI\MaintenanceManagement.UI.csproj", "{1254E3DC-F325-4FF2-9D17-37F6029FEF88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9A3DA4E2-3753-4341-BDB3-E2C1090F3CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A3DA4E2-3753-4341-BDB3-E2C1090F3CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A3DA4E2-3753-4341-BDB3-E2C1090F3CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1254E3DC-F325-4FF2-9D17-37F6029FEF88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1254E3DC-F325-4FF2-9D17-37F6029FEF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1254E3DC-F325-4FF2-9D17-37F6029FEF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1254E3DC-F325-4FF2-9D17-37F6029FEF88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
