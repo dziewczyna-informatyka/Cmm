@@ -56,6 +56,11 @@
     <Compile Include="Entities\ToolType.cs" />
     <Compile Include="JobTitle.cs" />
     <Compile Include="MainContext.cs" />
+    <Compile Include="Migrations\201404191451114_InitialTables.cs" />
+    <Compile Include="Migrations\201404191451114_InitialTables.Designer.cs">
+      <DependentUpon>201404191451114_InitialTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToolEndReason.cs" />
     <Compile Include="WorkSchedule.cs" />
@@ -69,6 +74,11 @@
       <Project>{9A3DA4E2-3753-4341-BDB3-E2C1090F3CBD}</Project>
       <Name>MaintenanceManagement.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404191451114_InitialTables.resx">
+      <DependentUpon>201404191451114_InitialTables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

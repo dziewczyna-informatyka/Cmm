@@ -2,7 +2,7 @@
 
 namespace MaintenanceManagement.DataAccess.Entities
 {
-    public class EmployeeTool
+    public class EmployeeTool : BaseEntity
     {
         public DateTime StartDate { get; set; }
 
