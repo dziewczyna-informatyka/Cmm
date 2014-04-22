@@ -59,45 +59,45 @@ namespace MaintenanceManagement.UI
             UpdateToolTypes();
         }
 
-    private void toolTypesList_DoubleClick(object sender, EventArgs e)
-     {
-         var selectedToolType = (string)toolTypesList.SelectedItem;
-         var form = new EditForm { EditedText = selectedToolType };
+        private void toolTypesList_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedToolType = (string)toolTypesList.SelectedItem;
+            var form = new EditForm { EditedText = selectedToolType };
 
-         if (form.ShowDialog() == DialogResult.OK)
-         {
-             using (var context = new MainContext())
-             {
-                 var toolType = context.ToolTypes.Single(t => t.Name == selectedToolType);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                using (var context = new MainContext())
+                {
+                    var toolType = context.ToolTypes.Single(t => t.Name == selectedToolType);
 
-                 toolType.Name = form.EditedText;
+                    toolType.Name = form.EditedText;
 
-                 context.SaveChanges();
-             }
+                    context.SaveChanges();
+                }
 
-             UpdateToolTypes();
-         }
-     }
+                UpdateToolTypes();
+            }
+        }
 
-     private void editTool_Click(object sender, EventArgs e)
-     {
-         var selectedToolType = (string)toolTypesList.SelectedItem;
-         var form = new EditForm { EditedText = selectedToolType };
+        private void editTool_Click(object sender, EventArgs e)
+        {
+            var selectedToolType = (string)toolTypesList.SelectedItem;
+            var form = new EditForm { EditedText = selectedToolType };
 
-         if (form.ShowDialog() == DialogResult.OK)
-         {
-             using (var context = new MainContext())
-             {
-                 var toolType = context.ToolTypes.Single(t => t.Name == selectedToolType);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                using (var context = new MainContext())
+                {
+                    var toolType = context.ToolTypes.Single(t => t.Name == selectedToolType);
 
-                 toolType.Name = form.EditedText;
+                    toolType.Name = form.EditedText;
 
-                 context.SaveChanges();
-             }
+                    context.SaveChanges();
+                }
 
-             UpdateToolTypes();
-         }
-     }
+                UpdateToolTypes();
+            }
+        }
 
     }
 }

@@ -39,14 +39,7 @@
             this.zrealizowaneToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bibliotekiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pracownicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maszynyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.urlopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.harmonogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNew = new System.Windows.Forms.Button();
-            this.toolTypeName = new System.Windows.Forms.TextBox();
-            this.toolTypes2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.narzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.narzedziaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,9 +58,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.programToolStripMenuItem,
             this.zadaniaToolStripMenuItem,
-            this.bibliotekiToolStripMenuItem,
-            this.urlopyToolStripMenuItem,
-            this.harmonogramToolStripMenuItem});
+            this.bibliotekiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(834, 24);
@@ -94,33 +85,32 @@
             // noweToolStripMenuItem
             // 
             this.noweToolStripMenuItem.Name = "noweToolStripMenuItem";
-            this.noweToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.noweToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.noweToolStripMenuItem.Text = "Nowe";
             // 
             // oczekujaceToolStripMenuItem
             // 
             this.oczekujaceToolStripMenuItem.Name = "oczekujaceToolStripMenuItem";
-            this.oczekujaceToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.oczekujaceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.oczekujaceToolStripMenuItem.Text = "Oczekujące";
             // 
             // aktualneToolStripMenuItem
             // 
             this.aktualneToolStripMenuItem.Name = "aktualneToolStripMenuItem";
-            this.aktualneToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.aktualneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aktualneToolStripMenuItem.Text = "Aktualne";
             // 
             // zrealizowaneToolStripMenuItem1
             // 
             this.zrealizowaneToolStripMenuItem1.Name = "zrealizowaneToolStripMenuItem1";
-            this.zrealizowaneToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.zrealizowaneToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.zrealizowaneToolStripMenuItem1.Text = "Zrealizowane";
             // 
             // bibliotekiToolStripMenuItem
             // 
             this.bibliotekiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pracownicyToolStripMenuItem,
-            this.maszynyToolStripMenuItem,
-            this.narzToolStripMenuItem});
+            this.narzedziaToolStripMenuItem});
             this.bibliotekiToolStripMenuItem.Name = "bibliotekiToolStripMenuItem";
             this.bibliotekiToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.bibliotekiToolStripMenuItem.Text = "Biblioteki";
@@ -130,67 +120,14 @@
             this.pracownicyToolStripMenuItem.Name = "pracownicyToolStripMenuItem";
             this.pracownicyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pracownicyToolStripMenuItem.Text = "Pracownicy";
+            this.pracownicyToolStripMenuItem.Click += new System.EventHandler(this.pracownicyToolStripMenuItem_Click);
             // 
-            // maszynyToolStripMenuItem
+            // narzedziaToolStripMenuItem
             // 
-            this.maszynyToolStripMenuItem.Name = "maszynyToolStripMenuItem";
-            this.maszynyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.maszynyToolStripMenuItem.Text = "Maszyny";
-            // 
-            // urlopyToolStripMenuItem
-            // 
-            this.urlopyToolStripMenuItem.Name = "urlopyToolStripMenuItem";
-            this.urlopyToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.urlopyToolStripMenuItem.Text = "Urlopy";
-            // 
-            // harmonogramToolStripMenuItem
-            // 
-            this.harmonogramToolStripMenuItem.Name = "harmonogramToolStripMenuItem";
-            this.harmonogramToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.harmonogramToolStripMenuItem.Text = "Harmonogram";
-            // 
-            // addNew
-            // 
-            this.addNew.Location = new System.Drawing.Point(736, 188);
-            this.addNew.Name = "addNew";
-            this.addNew.Size = new System.Drawing.Size(75, 23);
-            this.addNew.TabIndex = 17;
-            this.addNew.Text = "Dodaj";
-            this.addNew.UseVisualStyleBackColor = true;
-            this.addNew.Click += new System.EventHandler(this.addNew_Click);
-            // 
-            // toolTypeName
-            // 
-            this.toolTypeName.Location = new System.Drawing.Point(537, 188);
-            this.toolTypeName.Name = "toolTypeName";
-            this.toolTypeName.Size = new System.Drawing.Size(193, 20);
-            this.toolTypeName.TabIndex = 18;
-            // 
-            // toolTypes2
-            // 
-            this.toolTypes2.FormattingEnabled = true;
-            this.toolTypes2.Location = new System.Drawing.Point(537, 233);
-            this.toolTypes2.Name = "toolTypes2";
-            this.toolTypes2.Size = new System.Drawing.Size(274, 238);
-            this.toolTypes2.TabIndex = 19;
-            this.toolTypes2.DoubleClick += new System.EventHandler(this.toolTypes2_DoubleClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(736, 477);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Usuń";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // narzToolStripMenuItem
-            // 
-            this.narzToolStripMenuItem.Name = "narzToolStripMenuItem";
-            this.narzToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.narzToolStripMenuItem.Text = "Narzędzia";
-            this.narzToolStripMenuItem.Click += new System.EventHandler(this.narzToolStripMenuItem_Click);
+            this.narzedziaToolStripMenuItem.Name = "narzedziaToolStripMenuItem";
+            this.narzedziaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.narzedziaToolStripMenuItem.Text = "Narzędzia";
+            this.narzedziaToolStripMenuItem.Click += new System.EventHandler(this.narzToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -198,10 +135,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(834, 512);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.toolTypes2);
-            this.Controls.Add(this.toolTypeName);
-            this.Controls.Add(this.addNew);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -226,14 +159,7 @@
         private System.Windows.Forms.ToolStripMenuItem noweToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zrealizowaneToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pracownicyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem maszynyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem urlopyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem harmonogramToolStripMenuItem;
-        private System.Windows.Forms.Button addNew;
-        private System.Windows.Forms.TextBox toolTypeName;
-        private System.Windows.Forms.ListBox toolTypes2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripMenuItem narzToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem narzedziaToolStripMenuItem;
     }
 }
 
