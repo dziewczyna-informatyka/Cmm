@@ -34,7 +34,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.newEmployee = new System.Windows.Forms.Button();
             this.deleteEmployee = new System.Windows.Forms.Button();
-            this.employeesList = new System.Windows.Forms.ListBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // previewOfEmployee
@@ -96,20 +97,24 @@
             this.deleteEmployee.Text = "Usuń";
             this.deleteEmployee.UseVisualStyleBackColor = true;
             // 
-            // employeesList
+            // dataGridView
             // 
-            this.employeesList.FormattingEnabled = true;
-            this.employeesList.Location = new System.Drawing.Point(12, 8);
-            this.employeesList.Name = "employeesList";
-            this.employeesList.Size = new System.Drawing.Size(263, 342);
-            this.employeesList.TabIndex = 19;
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(12, 11);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(263, 339);
+            this.dataGridView.TabIndex = 19;
             // 
             // ListOfEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 391);
-            this.Controls.Add(this.employeesList);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.deleteEmployee);
             this.Controls.Add(this.newEmployee);
             this.Controls.Add(this.button4);
@@ -118,6 +123,7 @@
             this.Controls.Add(this.previewOfEmployee);
             this.Name = "ListOfEmployees";
             this.Text = "Lista pracowników";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,7 +136,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button newEmployee;
         private System.Windows.Forms.Button deleteEmployee;
-        private System.Windows.Forms.ListBox employeesList;
+        private System.Windows.Forms.DataGridView dataGridView;
 
     }
 }

@@ -21,28 +21,33 @@ namespace MaintenanceManagement.UI
 
         private void UpdateEmployees()
         {
-            employeesList.Items.Clear();
-
             using (var context = new MainContext())
             {
-                foreach (var employee in context.Employees)
-                {
-                    employeesList.Items.Add(employee.Surname);
-                }
+                dataGridView.DataSource = context.Employees.ToList();
             }
         }
 
         private void newEmployee_Click(object sender, EventArgs e)
         {
             var form = new EmployeeEdit();
-            form.ShowDialog();
-            UpdateEmployees();
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                using (var context = new MainContext())
+                {
+                    context.Employees.Add(form.Employee);
+                    context.SaveChanges();
+                }
+
+                UpdateEmployees();
+            }
+
         }
-        
+
         private void previewOfEmployee_Click(object sender, EventArgs e)
         {
             var form = new EmployeeDetails();
-            var selectedEmployee = employeesList.SelectedItems;
+           // var selectedEmployee = employeesList.SelectedItems;
 
             /*if (form.ShowDialog() == DialogResult.OK())
             {
@@ -55,40 +60,45 @@ namespace MaintenanceManagement.UI
 
             form.ShowDialog();
         }
-        
-      /*  private void editEmployee_Click(object sender, EventArgs e)
-        {
-            var form = new EmployeeEdit();
-            var selectedEmployee = listViewEmployees.SelectedItems;
+
+        /*  private void editEmployee_Click(object sender, EventArgs e)
+          {
+              var form = new EmployeeEdit();
+              var selectedEmployee = listViewEmployees.SelectedItems;
             
-            /* var selectedToolType = (string)toolTypesList.SelectedItem;
-             var form = new EditForm { EditedText = selectedToolType };
+              /* var selectedToolType = (string)toolTypesList.SelectedItem;
+               var form = new EditForm { EditedText = selectedToolType };
 
-             if (form.ShowDialog() == DialogResult.OK)
-             {
-                 using (var context = new MainContext())
-                 {
-                     var toolType = context.ToolTypes.Single(t => t.Name == selectedToolType);
+               if (form.ShowDialog() == DialogResult.OK)
+               {
+                   using (var context = new MainContext())
+                   {
+                       var toolType = context.ToolTypes.Single(t => t.Name == selectedToolType);
 
-                     toolType.Name = form.EditedText;
+                       toolType.Name = form.EditedText;
 
-                     context.SaveChanges();
-                 }
+                       context.SaveChanges();
+                   }
 
-                 UpdateToolTypes();
+                   UpdateToolTypes();
 
-            form.ShowDialog();
-        }
-    */
+              form.ShowDialog();
+          }
+      */
 
         private void editEmployee_Click(object sender, EventArgs e)
         {
             var form = new EmployeeEdit();
-            var selectedEmployee = employeesList.SelectedItems;
+           // var selectedEmployee = employeesList.SelectedItems;
             form.ShowDialog();
         }
 
-       
+        private void employeesList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //dataGrid.SelectedRows[0].DataBoundItem
+        }
+
+
     }
 
 

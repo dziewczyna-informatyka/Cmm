@@ -11,44 +11,45 @@ namespace MaintenanceManagement.UI
         public EmployeeEdit()
         {
             InitializeComponent();
+
+            LoadEmploymentTypes();
         }
 
-
-        private void addNewEmployee_Click(object sender, EventArgs e)
+        public Employee Employee
         {
-            using (var context = new MainContext())
+            get
             {
-
-             //   var emp = new Employee()
+                return new Employee()
                 {
-                   // Name = employeeName.Text,
-                    //  Surname = employeeSurname.Text,
-                    //  PersonalNumber = (int)employeePersonalNr.ValidateText(),
-                    //  Address = String.Concat(employeeAdress1.Text, employeeAdress2.Text),
-                    //  EmploymentStart = employeeEmploymentStart.Value,
-                    //  EmploymentType = (EmploymentType)employeeEmploymentType.SelectedItem,
-                    //  MobilePhone = employeeMobilePhone.Text,
-                    //  HomePhone = employeePhone.Text,
+                    Name = employeeName.Text,
+                    Surname = employeeSurname.Text,
+                    PersonalNumber = int.Parse(employeePersonalNr.Text),
+                    Address = employeeAdress.Text,
+                    EmploymentStart = employeeEmploymentStart.Value,
+                    EmploymentType = (EmploymentType)employeeEmploymentType.SelectedItem,
+                    MobilePhone = employeeMobilePhone.Text,
+                    HomePhone = employeePhone.Text,
                 };
-                // w tym miejscu wywala błąd - baza danych zmieniła się od ostatniej migracji?
-            //    context.Employees.Add(emp);
-            //    context.SaveChanges();
-
             }
 
-            Close();
-
+            set
+            {
+                employeeName.Text = value.Name;
+                employeeSurname.Text = value.Surname;
+                employeePersonalNr.Text = value.PersonalNumber.ToString();
+                employeeAdress.Text = value.Address;
+                employeeEmploymentStart.Value = value.EmploymentStart.GetValueOrDefault();
+                employeeEmploymentType.SelectedItem = value.EmploymentType;
+                employeeMobilePhone.Text = value.MobilePhone;
+                employeePhone.Text = value.HomePhone;
+            }
         }
 
-        private void employeeSave_Click(object sender, EventArgs e)
+        private void LoadEmploymentTypes()
         {
-            Close();
+            employeeEmploymentType.Items.Clear();
+
+            employeeEmploymentType.DataSource = Enum.GetValues(typeof(EmploymentType));
         }
-
-        
     }
-
-
-
-
 }

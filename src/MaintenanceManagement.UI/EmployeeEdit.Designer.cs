@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.employeeAdress2 = new System.Windows.Forms.TextBox();
             this.cancel = new System.Windows.Forms.Button();
             this.addNewEmployee = new System.Windows.Forms.Button();
             this.employeeMobilePhone = new System.Windows.Forms.TextBox();
             this.employeePhone = new System.Windows.Forms.TextBox();
-            this.employeeAdress1 = new System.Windows.Forms.TextBox();
+            this.employeeAdress = new System.Windows.Forms.TextBox();
             this.employeeTeam = new System.Windows.Forms.TextBox();
             this.employeeArea = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,15 +50,7 @@
             this.employeeEmploymentStart = new System.Windows.Forms.DateTimePicker();
             this.employeeEmploymentType = new System.Windows.Forms.ComboBox();
             this.employeePersonalNr = new System.Windows.Forms.MaskedTextBox();
-            this.employeeSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // employeeAdress2
-            // 
-            this.employeeAdress2.Location = new System.Drawing.Point(114, 222);
-            this.employeeAdress2.Name = "employeeAdress2";
-            this.employeeAdress2.Size = new System.Drawing.Size(166, 20);
-            this.employeeAdress2.TabIndex = 45;
             // 
             // cancel
             // 
@@ -73,13 +64,13 @@
             // 
             // addNewEmployee
             // 
-            this.addNewEmployee.Location = new System.Drawing.Point(16, 314);
+            this.addNewEmployee.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.addNewEmployee.Location = new System.Drawing.Point(122, 314);
             this.addNewEmployee.Name = "addNewEmployee";
             this.addNewEmployee.Size = new System.Drawing.Size(75, 23);
             this.addNewEmployee.TabIndex = 43;
-            this.addNewEmployee.Text = "Dodaj";
-            this.addNewEmployee.UseVisualStyleBackColor = true;
-            this.addNewEmployee.Click += new System.EventHandler(this.addNewEmployee_Click);
+            this.addNewEmployee.Text = "Zapisz";
+            this.addNewEmployee.UseVisualStyleBackColor = true;           
             // 
             // employeeMobilePhone
             // 
@@ -95,12 +86,13 @@
             this.employeePhone.Size = new System.Drawing.Size(166, 20);
             this.employeePhone.TabIndex = 41;
             // 
-            // employeeAdress1
+            // employeeAdress
             // 
-            this.employeeAdress1.Location = new System.Drawing.Point(114, 196);
-            this.employeeAdress1.Name = "employeeAdress1";
-            this.employeeAdress1.Size = new System.Drawing.Size(166, 20);
-            this.employeeAdress1.TabIndex = 40;
+            this.employeeAdress.Location = new System.Drawing.Point(114, 196);
+            this.employeeAdress.Multiline = true;
+            this.employeeAdress.Name = "employeeAdress";
+            this.employeeAdress.Size = new System.Drawing.Size(166, 46);
+            this.employeeAdress.TabIndex = 40;
             // 
             // employeeTeam
             // 
@@ -231,9 +223,6 @@
             // employeeEmploymentType
             // 
             this.employeeEmploymentType.FormattingEnabled = true;
-            this.employeeEmploymentType.Items.AddRange(new object[] {
-            "Clinico",
-            "Manpower"});
             this.employeeEmploymentType.Location = new System.Drawing.Point(114, 169);
             this.employeeEmploymentType.Name = "employeeEmploymentType";
             this.employeeEmploymentType.Size = new System.Drawing.Size(166, 21);
@@ -248,31 +237,19 @@
             this.employeePersonalNr.TabIndex = 48;
             this.employeePersonalNr.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // employeeSave
-            // 
-            this.employeeSave.Location = new System.Drawing.Point(103, 314);
-            this.employeeSave.Name = "employeeSave";
-            this.employeeSave.Size = new System.Drawing.Size(88, 23);
-            this.employeeSave.TabIndex = 49;
-            this.employeeSave.Text = "Zapisz zmiany";
-            this.employeeSave.UseVisualStyleBackColor = true;
-            this.employeeSave.Click += new System.EventHandler(this.employeeSave_Click);
-            // 
             // EmployeeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 349);
-            this.Controls.Add(this.employeeSave);
             this.Controls.Add(this.employeePersonalNr);
             this.Controls.Add(this.employeeEmploymentType);
             this.Controls.Add(this.employeeEmploymentStart);
-            this.Controls.Add(this.employeeAdress2);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.addNewEmployee);
             this.Controls.Add(this.employeeMobilePhone);
             this.Controls.Add(this.employeePhone);
-            this.Controls.Add(this.employeeAdress1);
+            this.Controls.Add(this.employeeAdress);
             this.Controls.Add(this.employeeTeam);
             this.Controls.Add(this.employeeArea);
             this.Controls.Add(this.label10);
@@ -296,12 +273,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox employeeAdress2;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button addNewEmployee;
         private System.Windows.Forms.TextBox employeeMobilePhone;
         private System.Windows.Forms.TextBox employeePhone;
-        private System.Windows.Forms.TextBox employeeAdress1;
+        private System.Windows.Forms.TextBox employeeAdress;
         private System.Windows.Forms.TextBox employeeTeam;
         private System.Windows.Forms.TextBox employeeArea;
         private System.Windows.Forms.Label label10;
@@ -319,6 +295,5 @@
         private System.Windows.Forms.DateTimePicker employeeEmploymentStart;
         private System.Windows.Forms.ComboBox employeeEmploymentType;
         private System.Windows.Forms.MaskedTextBox employeePersonalNr;
-        private System.Windows.Forms.Button employeeSave;
     }
 }
