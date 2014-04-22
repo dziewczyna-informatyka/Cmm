@@ -21,13 +21,13 @@ namespace MaintenanceManagement.UI
 
         private void UpdateToolTypes()
         {
-            toolTypes.Items.Clear();
+            toolTypes2.Items.Clear();
 
             using (var context = new MainContext())
             {
                 foreach (var toolType in context.ToolTypes)
                 {
-                    toolTypes.Items.Add(toolType.Name);
+                    toolTypes2.Items.Add(toolType.Name);
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace MaintenanceManagement.UI
         {
             using (var context = new MainContext())
             {
-                var selectedToolType = (string)toolTypes.SelectedItem;
+                var selectedToolType = (string)toolTypes2.SelectedItem;
 
                 if (selectedToolType != null)
                 {
@@ -59,9 +59,9 @@ namespace MaintenanceManagement.UI
             UpdateToolTypes();
         }
 
-        private void toolTypes_DoubleClick(object sender, EventArgs e)
+        private void toolTypes2_DoubleClick(object sender, EventArgs e)
         {
-            var selectedToolType = (string)toolTypes.SelectedItem;
+            var selectedToolType = (string)toolTypes2.SelectedItem;
             var form = new EditForm { EditedText = selectedToolType };
 
             if (form.ShowDialog() == DialogResult.OK)
@@ -77,6 +77,12 @@ namespace MaintenanceManagement.UI
 
                 UpdateToolTypes();
             }
+        }
+
+        private void narzToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new ListOfTools();
+            form.ShowDialog();
         }
     }
 }

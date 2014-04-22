@@ -44,8 +44,9 @@
             this.harmonogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNew = new System.Windows.Forms.Button();
             this.toolTypeName = new System.Windows.Forms.TextBox();
-            this.toolTypes = new System.Windows.Forms.ListBox();
+            this.toolTypes2 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.narzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,7 +119,8 @@
             // 
             this.bibliotekiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pracownicyToolStripMenuItem,
-            this.maszynyToolStripMenuItem});
+            this.maszynyToolStripMenuItem,
+            this.narzToolStripMenuItem});
             this.bibliotekiToolStripMenuItem.Name = "bibliotekiToolStripMenuItem";
             this.bibliotekiToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.bibliotekiToolStripMenuItem.Text = "Biblioteki";
@@ -126,13 +128,13 @@
             // pracownicyToolStripMenuItem
             // 
             this.pracownicyToolStripMenuItem.Name = "pracownicyToolStripMenuItem";
-            this.pracownicyToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.pracownicyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pracownicyToolStripMenuItem.Text = "Pracownicy";
             // 
             // maszynyToolStripMenuItem
             // 
             this.maszynyToolStripMenuItem.Name = "maszynyToolStripMenuItem";
-            this.maszynyToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.maszynyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.maszynyToolStripMenuItem.Text = "Maszyny";
             // 
             // urlopyToolStripMenuItem
@@ -149,7 +151,7 @@
             // 
             // addNew
             // 
-            this.addNew.Location = new System.Drawing.Point(417, 140);
+            this.addNew.Location = new System.Drawing.Point(736, 188);
             this.addNew.Name = "addNew";
             this.addNew.Size = new System.Drawing.Size(75, 23);
             this.addNew.TabIndex = 17;
@@ -159,29 +161,36 @@
             // 
             // toolTypeName
             // 
-            this.toolTypeName.Location = new System.Drawing.Point(218, 140);
+            this.toolTypeName.Location = new System.Drawing.Point(537, 188);
             this.toolTypeName.Name = "toolTypeName";
             this.toolTypeName.Size = new System.Drawing.Size(193, 20);
             this.toolTypeName.TabIndex = 18;
             // 
-            // toolTypes
+            // toolTypes2
             // 
-            this.toolTypes.FormattingEnabled = true;
-            this.toolTypes.Location = new System.Drawing.Point(218, 185);
-            this.toolTypes.Name = "toolTypes";
-            this.toolTypes.Size = new System.Drawing.Size(274, 238);
-            this.toolTypes.TabIndex = 19;
-            this.toolTypes.DoubleClick += new System.EventHandler(this.toolTypes_DoubleClick);
+            this.toolTypes2.FormattingEnabled = true;
+            this.toolTypes2.Location = new System.Drawing.Point(537, 233);
+            this.toolTypes2.Name = "toolTypes2";
+            this.toolTypes2.Size = new System.Drawing.Size(274, 238);
+            this.toolTypes2.TabIndex = 19;
+            this.toolTypes2.DoubleClick += new System.EventHandler(this.toolTypes2_DoubleClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(417, 429);
+            this.button1.Location = new System.Drawing.Point(736, 477);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
             this.button1.Text = "Usuń";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // narzToolStripMenuItem
+            // 
+            this.narzToolStripMenuItem.Name = "narzToolStripMenuItem";
+            this.narzToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.narzToolStripMenuItem.Text = "Narzędzia";
+            this.narzToolStripMenuItem.Click += new System.EventHandler(this.narzToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -190,7 +199,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(834, 512);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.toolTypes);
+            this.Controls.Add(this.toolTypes2);
             this.Controls.Add(this.toolTypeName);
             this.Controls.Add(this.addNew);
             this.Controls.Add(this.panel1);
@@ -222,8 +231,9 @@
         private System.Windows.Forms.ToolStripMenuItem harmonogramToolStripMenuItem;
         private System.Windows.Forms.Button addNew;
         private System.Windows.Forms.TextBox toolTypeName;
-        private System.Windows.Forms.ListBox toolTypes;
+        private System.Windows.Forms.ListBox toolTypes2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem narzToolStripMenuItem;
     }
 }
 
