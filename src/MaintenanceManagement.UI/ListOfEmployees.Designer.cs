@@ -28,19 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.previewOfEmployee = new System.Windows.Forms.Button();
             this.editEmployee = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.newEmployee = new System.Windows.Forms.Button();
             this.deleteEmployee = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.employeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personalNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
+            this.employeesTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // previewOfEmployee
             // 
-            this.previewOfEmployee.Location = new System.Drawing.Point(281, 80);
+            this.previewOfEmployee.Location = new System.Drawing.Point(500, 79);
             this.previewOfEmployee.Name = "previewOfEmployee";
             this.previewOfEmployee.Size = new System.Drawing.Size(75, 23);
             this.previewOfEmployee.TabIndex = 2;
@@ -50,7 +59,7 @@
             // 
             // editEmployee
             // 
-            this.editEmployee.Location = new System.Drawing.Point(281, 109);
+            this.editEmployee.Location = new System.Drawing.Point(500, 108);
             this.editEmployee.Name = "editEmployee";
             this.editEmployee.Size = new System.Drawing.Size(75, 23);
             this.editEmployee.TabIndex = 3;
@@ -61,7 +70,7 @@
             // button3
             // 
             this.button3.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button3.Location = new System.Drawing.Point(200, 356);
+            this.button3.Location = new System.Drawing.Point(419, 355);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -71,7 +80,7 @@
             // button4
             // 
             this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.Location = new System.Drawing.Point(281, 356);
+            this.button4.Location = new System.Drawing.Point(500, 355);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
@@ -80,7 +89,7 @@
             // 
             // newEmployee
             // 
-            this.newEmployee.Location = new System.Drawing.Point(281, 12);
+            this.newEmployee.Location = new System.Drawing.Point(500, 11);
             this.newEmployee.Name = "newEmployee";
             this.newEmployee.Size = new System.Drawing.Size(75, 23);
             this.newEmployee.TabIndex = 6;
@@ -90,31 +99,74 @@
             // 
             // deleteEmployee
             // 
-            this.deleteEmployee.Location = new System.Drawing.Point(281, 138);
+            this.deleteEmployee.Location = new System.Drawing.Point(500, 137);
             this.deleteEmployee.Name = "deleteEmployee";
             this.deleteEmployee.Size = new System.Drawing.Size(75, 23);
             this.deleteEmployee.TabIndex = 18;
             this.deleteEmployee.Text = "Usuń";
             this.deleteEmployee.UseVisualStyleBackColor = true;
+            this.deleteEmployee.Click += new System.EventHandler(this.deleteEmployee_Click);
             // 
-            // dataGridView
+            // employeesDataGridView
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(12, 11);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(263, 339);
-            this.dataGridView.TabIndex = 19;
+            this.employeesDataGridView.AllowUserToAddRows = false;
+            this.employeesDataGridView.AllowUserToDeleteRows = false;
+            this.employeesDataGridView.AllowUserToOrderColumns = true;
+            this.employeesDataGridView.AutoGenerateColumns = false;
+            this.employeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.surnameDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.personalNumberDataGridViewTextBoxColumn});
+            this.employeesDataGridView.DataSource = this.employeesBindingSource;
+            this.employeesDataGridView.Location = new System.Drawing.Point(12, 11);
+            this.employeesDataGridView.MultiSelect = false;
+            this.employeesDataGridView.Name = "employeesDataGridView";
+            this.employeesDataGridView.ReadOnly = true;
+            this.employeesDataGridView.Size = new System.Drawing.Size(482, 339);
+            this.employeesDataGridView.TabIndex = 19;
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Imię";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // personalNumberDataGridViewTextBoxColumn
+            // 
+            this.personalNumberDataGridViewTextBoxColumn.DataPropertyName = "PersonalNumber";
+            this.personalNumberDataGridViewTextBoxColumn.HeaderText = "Nr personalny";
+            this.personalNumberDataGridViewTextBoxColumn.Name = "personalNumberDataGridViewTextBoxColumn";
+            this.personalNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataMember = "Employees";
+            this.employeesBindingSource.DataSource = this.maintenanceManagementDataSet;
+            // 
+            // maintenanceManagementDataSet
+            // 
+            this.maintenanceManagementDataSet.DataSetName = "MaintenanceManagementDataSet";
+            this.maintenanceManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeesTableAdapter
+            // 
+            this.employeesTableAdapter.ClearBeforeFill = true;
             // 
             // ListOfEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 391);
-            this.Controls.Add(this.dataGridView);
+            this.ClientSize = new System.Drawing.Size(587, 391);
+            this.Controls.Add(this.employeesDataGridView);
             this.Controls.Add(this.deleteEmployee);
             this.Controls.Add(this.newEmployee);
             this.Controls.Add(this.button4);
@@ -123,7 +175,10 @@
             this.Controls.Add(this.previewOfEmployee);
             this.Name = "ListOfEmployees";
             this.Text = "Lista pracowników";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Load += new System.EventHandler(this.ListOfEmployees_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,7 +191,13 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button newEmployee;
         private System.Windows.Forms.Button deleteEmployee;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView employeesDataGridView;
+        private MaintenanceManagementDataSet maintenanceManagementDataSet;
+        private System.Windows.Forms.BindingSource employeesBindingSource;
+        private MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personalNumberDataGridViewTextBoxColumn;
 
     }
 }

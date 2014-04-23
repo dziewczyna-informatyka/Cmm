@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 
@@ -13,13 +14,13 @@ namespace MaintenanceManagement.UI
             InitializeComponent();
 
             LoadEmploymentTypes();
-        }
+        }        
 
         public Employee Employee
         {
             get
             {
-                return new Employee()
+                return new Employee() //wywala się w tym miejscu, jak kliknie się "zapisz" w oknie "nowy" nie wpisując nic w pola
                 {
                     Name = employeeName.Text,
                     Surname = employeeSurname.Text,

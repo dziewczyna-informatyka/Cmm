@@ -43,11 +43,10 @@
             this.employeeArea = new System.Windows.Forms.TextBox();
             this.employeePersonalNr = new System.Windows.Forms.TextBox();
             this.employeeTeam = new System.Windows.Forms.TextBox();
-            this.employeeAdress1 = new System.Windows.Forms.TextBox();
+            this.employeeAdress = new System.Windows.Forms.TextBox();
             this.employeeMobilePhone = new System.Windows.Forms.TextBox();
             this.employeePhone = new System.Windows.Forms.TextBox();
             this.ack = new System.Windows.Forms.Button();
-            this.employeeAdress2 = new System.Windows.Forms.TextBox();
             this.employeeEmploymentType = new System.Windows.Forms.TextBox();
             this.employeeEmploymentStart = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -182,13 +181,14 @@
             this.employeeTeam.Size = new System.Drawing.Size(166, 20);
             this.employeeTeam.TabIndex = 14;
             // 
-            // employeeAdress1
+            // employeeAdress
             // 
-            this.employeeAdress1.Location = new System.Drawing.Point(113, 194);
-            this.employeeAdress1.Name = "employeeAdress1";
-            this.employeeAdress1.ReadOnly = true;
-            this.employeeAdress1.Size = new System.Drawing.Size(166, 20);
-            this.employeeAdress1.TabIndex = 17;
+            this.employeeAdress.Location = new System.Drawing.Point(113, 194);
+            this.employeeAdress.Multiline = true;
+            this.employeeAdress.Name = "employeeAdress";
+            this.employeeAdress.ReadOnly = true;
+            this.employeeAdress.Size = new System.Drawing.Size(166, 46);
+            this.employeeAdress.TabIndex = 17;
             // 
             // employeeMobilePhone
             // 
@@ -216,14 +216,6 @@
             this.ack.UseVisualStyleBackColor = true;
             this.ack.Click += new System.EventHandler(this.ack_Click);
             // 
-            // employeeAdress2
-            // 
-            this.employeeAdress2.Location = new System.Drawing.Point(113, 220);
-            this.employeeAdress2.Name = "employeeAdress2";
-            this.employeeAdress2.ReadOnly = true;
-            this.employeeAdress2.Size = new System.Drawing.Size(166, 20);
-            this.employeeAdress2.TabIndex = 22;
-            // 
             // employeeEmploymentType
             // 
             this.employeeEmploymentType.Location = new System.Drawing.Point(113, 168);
@@ -247,11 +239,10 @@
             this.ClientSize = new System.Drawing.Size(299, 347);
             this.Controls.Add(this.employeeEmploymentStart);
             this.Controls.Add(this.employeeEmploymentType);
-            this.Controls.Add(this.employeeAdress2);
             this.Controls.Add(this.ack);
             this.Controls.Add(this.employeeMobilePhone);
             this.Controls.Add(this.employeePhone);
-            this.Controls.Add(this.employeeAdress1);
+            this.Controls.Add(this.employeeAdress);
             this.Controls.Add(this.employeeTeam);
             this.Controls.Add(this.employeeArea);
             this.Controls.Add(this.employeePersonalNr);
@@ -291,11 +282,10 @@
         private System.Windows.Forms.TextBox employeeArea;
         private System.Windows.Forms.TextBox employeePersonalNr;
         private System.Windows.Forms.TextBox employeeTeam;
-        private System.Windows.Forms.TextBox employeeAdress1;
+        private System.Windows.Forms.TextBox employeeAdress;
         private System.Windows.Forms.TextBox employeeMobilePhone;
         private System.Windows.Forms.TextBox employeePhone;
         private System.Windows.Forms.Button ack;
-        private System.Windows.Forms.TextBox employeeAdress2;
         private System.Windows.Forms.TextBox employeeEmploymentType;
         private System.Windows.Forms.TextBox employeeEmploymentStart;
     }

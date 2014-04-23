@@ -40,6 +40,7 @@
             this.bibliotekiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pracownicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.narzedziaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeExample = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,12 +130,23 @@
             this.narzedziaToolStripMenuItem.Text = "Narzędzia";
             this.narzedziaToolStripMenuItem.Click += new System.EventHandler(this.narzToolStripMenuItem_Click);
             // 
+            // employeeExample
+            // 
+            this.employeeExample.Location = new System.Drawing.Point(25, 68);
+            this.employeeExample.Name = "employeeExample";
+            this.employeeExample.Size = new System.Drawing.Size(78, 50);
+            this.employeeExample.TabIndex = 17;
+            this.employeeExample.Text = "Przykładowy pracownik";
+            this.employeeExample.UseVisualStyleBackColor = true;
+            this.employeeExample.Click += new System.EventHandler(this.employeeExample_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(834, 512);
+            this.Controls.Add(this.employeeExample);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -160,6 +172,7 @@
         private System.Windows.Forms.ToolStripMenuItem zrealizowaneToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pracownicyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem narzedziaToolStripMenuItem;
+        private System.Windows.Forms.Button employeeExample;
     }
 }
 

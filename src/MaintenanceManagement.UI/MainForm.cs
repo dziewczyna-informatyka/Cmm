@@ -29,5 +29,14 @@ namespace MaintenanceManagement.UI
             var form = new ListOfEmployees();
             form.ShowDialog();
         }
+
+        private void employeeExample_Click(object sender, EventArgs e)
+        {
+            var form = new EmployeeTaskSummary();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

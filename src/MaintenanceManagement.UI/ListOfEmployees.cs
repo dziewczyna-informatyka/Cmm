@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
@@ -23,10 +24,23 @@ namespace MaintenanceManagement.UI
         {
             using (var context = new MainContext())
             {
-                dataGridView.DataSource = context.Employees.ToList();
+                employeesDataGridView.DataSource = context.Employees.OrderBy(e => e.Surname).ToList();
+                //
+                //sortowanie nie działa :(
+                //
+                // employeesDataGridView.Sort(surnameDataGridViewTextBoxColumn, ListSortDirection.Ascending);
             }
         }
 
+        private void ListOfEmployees_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'maintenanceManagementDataSet.Employees' table. You can move, or remove it, as needed.
+            // this.employeesTableAdapter.Fill(this.maintenanceManagementDataSet.Employees);
+        }
+
+        //
+        //dodawanie nowego pracownika
+        //
         private void newEmployee_Click(object sender, EventArgs e)
         {
             var form = new EmployeeEdit();
@@ -43,64 +57,62 @@ namespace MaintenanceManagement.UI
             }
 
         }
-
+        //
+        //podgląd szczegółów
+        //
         private void previewOfEmployee_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeDetails();
-           // var selectedEmployee = employeesList.SelectedItems;
-
-            /*if (form.ShowDialog() == DialogResult.OK())
+            if (employeesDataGridView.CurrentRow == null)
             {
-                using (var context = new MainContext())
-                {
-                    var employee = context.Employees.Single(emp => emp.PersonalNumber == selectedEmployee.PersonalNumber);
-                }
-            }*/
+                return;
+            }
 
+            var form = new EmployeeDetails
+            {
+                Employee = employeesDataGridView.CurrentRow.DataBoundItem as Employee,
+            };
 
-            form.ShowDialog();
+            form.Show();
+
+            //if (form.ShowDialog() == DialogResult.OK)
+            //{
+            //    using (var context = new MainContext())
+            //    {
+            //        if (employeesDataGridView.CurrentRow != null)
+            //        {
+            //            int persNr = Convert.ToInt32(employeesDataGridView.CurrentRow.Cells[2].Value);
+
+            //            MessageBox.Show(Convert.ToString(persNr));
+            //        }
+            //        // DataGridViewRow currentRow = employeesDataGridView.SelectedRows[0];
+            //        // int persNr = int.Parse(currentRow.Cells[2].Value.ToString());
+            //    }
+            //}
         }
-
-        /*  private void editEmployee_Click(object sender, EventArgs e)
-          {
-              var form = new EmployeeEdit();
-              var selectedEmployee = listViewEmployees.SelectedItems;
-            
-              /* var selectedToolType = (string)toolTypesList.SelectedItem;
-               var form = new EditForm { EditedText = selectedToolType };
-
-               if (form.ShowDialog() == DialogResult.OK)
-               {
-                   using (var context = new MainContext())
-                   {
-                       var toolType = context.ToolTypes.Single(t => t.Name == selectedToolType);
-
-                       toolType.Name = form.EditedText;
-
-                       context.SaveChanges();
-                   }
-
-                   UpdateToolTypes();
-
-              form.ShowDialog();
-          }
-      */
-
+        //
+        //edycja danych pracownika
+        //
         private void editEmployee_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeEdit();
-           // var selectedEmployee = employeesList.SelectedItems;
-            form.ShowDialog();
-        }
+            var form = new EmployeeDetails();
 
-        private void employeesList_MouseDoubleClick(object sender, MouseEventArgs e)
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+        //
+        //usuwanie pracownika z listy
+        //
+        private void deleteEmployee_Click(object sender, EventArgs e)
         {
-            //dataGrid.SelectedRows[0].DataBoundItem
+
         }
 
 
     }
-
-
-
 }
+
+
+
+

@@ -63,6 +63,18 @@
     <Compile Include="EmployeeDetails.Designer.cs">
       <DependentUpon>EmployeeDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeTasksList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTasksList.Designer.cs">
+      <DependentUpon>EmployeeTasksList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTaskSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTaskSummary.Designer.cs">
+      <DependentUpon>EmployeeTaskSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListOfTools.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,17 @@
     <Compile Include="EmployeeEdit.Designer.cs">
       <DependentUpon>EmployeeEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintenanceManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EditTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTask.Designer.cs">
+      <DependentUpon>EditTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EditForm.resx">
@@ -94,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeDetails.resx">
       <DependentUpon>EmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTasksList.resx">
+      <DependentUpon>EmployeeTasksList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTaskSummary.resx">
+      <DependentUpon>EmployeeTaskSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListOfTools.resx">
       <DependentUpon>ListOfTools.cs</DependentUpon>
@@ -107,6 +136,9 @@
     <EmbeddedResource Include="EmployeeEdit.resx">
       <DependentUpon>EmployeeEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditTask.resx">
+      <DependentUpon>EditTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,6 +148,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="MaintenanceManagementDataSet.xsc">
+      <DependentUpon>MaintenanceManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaintenanceManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MaintenanceManagementDataSet.xss">
+      <DependentUpon>MaintenanceManagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

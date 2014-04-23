@@ -50,12 +50,14 @@
             this.employeeEmploymentStart = new System.Windows.Forms.DateTimePicker();
             this.employeeEmploymentType = new System.Windows.Forms.ComboBox();
             this.employeePersonalNr = new System.Windows.Forms.MaskedTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cancel
             // 
             this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancel.Location = new System.Drawing.Point(203, 314);
+            this.cancel.Location = new System.Drawing.Point(207, 314);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 44;
@@ -65,30 +67,30 @@
             // addNewEmployee
             // 
             this.addNewEmployee.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.addNewEmployee.Location = new System.Drawing.Point(122, 314);
+            this.addNewEmployee.Location = new System.Drawing.Point(116, 314);
             this.addNewEmployee.Name = "addNewEmployee";
             this.addNewEmployee.Size = new System.Drawing.Size(75, 23);
             this.addNewEmployee.TabIndex = 43;
             this.addNewEmployee.Text = "Zapisz";
-            this.addNewEmployee.UseVisualStyleBackColor = true;           
+            this.addNewEmployee.UseVisualStyleBackColor = true;
             // 
             // employeeMobilePhone
             // 
-            this.employeeMobilePhone.Location = new System.Drawing.Point(114, 274);
+            this.employeeMobilePhone.Location = new System.Drawing.Point(104, 261);
             this.employeeMobilePhone.Name = "employeeMobilePhone";
             this.employeeMobilePhone.Size = new System.Drawing.Size(166, 20);
             this.employeeMobilePhone.TabIndex = 42;
             // 
             // employeePhone
             // 
-            this.employeePhone.Location = new System.Drawing.Point(114, 248);
+            this.employeePhone.Location = new System.Drawing.Point(104, 235);
             this.employeePhone.Name = "employeePhone";
             this.employeePhone.Size = new System.Drawing.Size(166, 20);
             this.employeePhone.TabIndex = 41;
             // 
             // employeeAdress
             // 
-            this.employeeAdress.Location = new System.Drawing.Point(114, 196);
+            this.employeeAdress.Location = new System.Drawing.Point(104, 183);
             this.employeeAdress.Multiline = true;
             this.employeeAdress.Name = "employeeAdress";
             this.employeeAdress.Size = new System.Drawing.Size(166, 46);
@@ -96,14 +98,14 @@
             // 
             // employeeTeam
             // 
-            this.employeeTeam.Location = new System.Drawing.Point(114, 118);
+            this.employeeTeam.Location = new System.Drawing.Point(104, 105);
             this.employeeTeam.Name = "employeeTeam";
             this.employeeTeam.Size = new System.Drawing.Size(166, 20);
             this.employeeTeam.TabIndex = 37;
             // 
             // employeeArea
             // 
-            this.employeeArea.Location = new System.Drawing.Point(114, 92);
+            this.employeeArea.Location = new System.Drawing.Point(104, 79);
             this.employeeArea.Name = "employeeArea";
             this.employeeArea.Size = new System.Drawing.Size(166, 20);
             this.employeeArea.TabIndex = 36;
@@ -111,7 +113,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 173);
+            this.label10.Location = new System.Drawing.Point(3, 160);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 13);
             this.label10.TabIndex = 34;
@@ -120,7 +122,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 199);
+            this.label9.Location = new System.Drawing.Point(3, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 33;
@@ -129,7 +131,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 251);
+            this.label8.Location = new System.Drawing.Point(3, 238);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(25, 13);
             this.label8.TabIndex = 32;
@@ -138,7 +140,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 277);
+            this.label7.Location = new System.Drawing.Point(3, 264);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 31;
@@ -147,7 +149,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 147);
+            this.label6.Location = new System.Drawing.Point(3, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 30;
@@ -156,7 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 121);
+            this.label5.Location = new System.Drawing.Point(3, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 29;
@@ -165,7 +167,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 95);
+            this.label4.Location = new System.Drawing.Point(3, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 28;
@@ -174,7 +176,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 69);
+            this.label3.Location = new System.Drawing.Point(3, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 27;
@@ -183,7 +185,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 43);
+            this.label2.Location = new System.Drawing.Point(3, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 26;
@@ -192,7 +194,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 17);
+            this.label1.Location = new System.Drawing.Point(3, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 25;
@@ -200,14 +202,14 @@
             // 
             // employeeSurname
             // 
-            this.employeeSurname.Location = new System.Drawing.Point(114, 40);
+            this.employeeSurname.Location = new System.Drawing.Point(104, 27);
             this.employeeSurname.Name = "employeeSurname";
             this.employeeSurname.Size = new System.Drawing.Size(166, 20);
             this.employeeSurname.TabIndex = 24;
             // 
             // employeeName
             // 
-            this.employeeName.Location = new System.Drawing.Point(114, 14);
+            this.employeeName.Location = new System.Drawing.Point(104, 1);
             this.employeeName.Name = "employeeName";
             this.employeeName.Size = new System.Drawing.Size(166, 20);
             this.employeeName.TabIndex = 23;
@@ -215,7 +217,7 @@
             // employeeEmploymentStart
             // 
             this.employeeEmploymentStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.employeeEmploymentStart.Location = new System.Drawing.Point(114, 144);
+            this.employeeEmploymentStart.Location = new System.Drawing.Point(104, 131);
             this.employeeEmploymentStart.Name = "employeeEmploymentStart";
             this.employeeEmploymentStart.Size = new System.Drawing.Size(166, 20);
             this.employeeEmploymentStart.TabIndex = 46;
@@ -223,51 +225,60 @@
             // employeeEmploymentType
             // 
             this.employeeEmploymentType.FormattingEnabled = true;
-            this.employeeEmploymentType.Location = new System.Drawing.Point(114, 169);
+            this.employeeEmploymentType.Location = new System.Drawing.Point(104, 156);
             this.employeeEmploymentType.Name = "employeeEmploymentType";
             this.employeeEmploymentType.Size = new System.Drawing.Size(166, 21);
             this.employeeEmploymentType.TabIndex = 47;
             // 
             // employeePersonalNr
             // 
-            this.employeePersonalNr.Location = new System.Drawing.Point(114, 66);
+            this.employeePersonalNr.Location = new System.Drawing.Point(104, 53);
             this.employeePersonalNr.Mask = "0000";
             this.employeePersonalNr.Name = "employeePersonalNr";
             this.employeePersonalNr.Size = new System.Drawing.Size(166, 20);
             this.employeePersonalNr.TabIndex = 48;
             this.employeePersonalNr.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.employeeAdress);
+            this.panel1.Controls.Add(this.employeePersonalNr);
+            this.panel1.Controls.Add(this.employeeName);
+            this.panel1.Controls.Add(this.employeeEmploymentType);
+            this.panel1.Controls.Add(this.employeeSurname);
+            this.panel1.Controls.Add(this.employeeEmploymentStart);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.employeeMobilePhone);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.employeePhone);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.employeeTeam);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.employeeArea);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(274, 296);
+            this.panel1.TabIndex = 49;
+            // 
             // EmployeeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 349);
-            this.Controls.Add(this.employeePersonalNr);
-            this.Controls.Add(this.employeeEmploymentType);
-            this.Controls.Add(this.employeeEmploymentStart);
+            this.ClientSize = new System.Drawing.Size(297, 345);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.addNewEmployee);
-            this.Controls.Add(this.employeeMobilePhone);
-            this.Controls.Add(this.employeePhone);
-            this.Controls.Add(this.employeeAdress);
-            this.Controls.Add(this.employeeTeam);
-            this.Controls.Add(this.employeeArea);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.employeeSurname);
-            this.Controls.Add(this.employeeName);
             this.Name = "EmployeeEdit";
             this.Text = "Pracownik";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -295,5 +306,6 @@
         private System.Windows.Forms.DateTimePicker employeeEmploymentStart;
         private System.Windows.Forms.ComboBox employeeEmploymentType;
         private System.Windows.Forms.MaskedTextBox employeePersonalNr;
+        private System.Windows.Forms.Panel panel1;
     }
 }
