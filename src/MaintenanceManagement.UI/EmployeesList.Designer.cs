@@ -1,6 +1,6 @@
 ﻿namespace MaintenanceManagement.UI
 {
-    partial class ListOfEmployees
+    partial class EmployeesList
     {
         /// <summary>
         /// Required designer variable.
@@ -175,7 +175,7 @@
             this.Controls.Add(this.previewOfEmployee);
             this.Name = "ListOfEmployees";
             this.Text = "Lista pracowników";
-            this.Load += new System.EventHandler(this.ListOfEmployees_Load);
+            //this.Load += new System.EventHandler(this.ListOfEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();

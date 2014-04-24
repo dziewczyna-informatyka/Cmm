@@ -34,9 +34,10 @@
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zadaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oczekujaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zaplanowaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aktualneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zrealizowaneToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.zrealizowaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zestawienieZbiorczeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bibliotekiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pracownicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.narzedziaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +50,9 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(734, 24);
+            this.panel1.Location = new System.Drawing.Point(703, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 50);
+            this.panel1.Size = new System.Drawing.Size(131, 60);
             this.panel1.TabIndex = 14;
             // 
             // menuStrip1
@@ -76,9 +77,10 @@
             // 
             this.zadaniaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.noweToolStripMenuItem,
-            this.oczekujaceToolStripMenuItem,
+            this.zaplanowaneToolStripMenuItem,
             this.aktualneToolStripMenuItem,
-            this.zrealizowaneToolStripMenuItem1});
+            this.zrealizowaneToolStripMenuItem,
+            this.zestawienieZbiorczeToolStripMenuItem});
             this.zadaniaToolStripMenuItem.Name = "zadaniaToolStripMenuItem";
             this.zadaniaToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.zadaniaToolStripMenuItem.Text = "Zadania";
@@ -86,26 +88,37 @@
             // noweToolStripMenuItem
             // 
             this.noweToolStripMenuItem.Name = "noweToolStripMenuItem";
-            this.noweToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.noweToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.noweToolStripMenuItem.Text = "Nowe";
+            this.noweToolStripMenuItem.Click += new System.EventHandler(this.noweToolStripMenuItem_Click);
             // 
-            // oczekujaceToolStripMenuItem
+            // zaplanowaneToolStripMenuItem
             // 
-            this.oczekujaceToolStripMenuItem.Name = "oczekujaceToolStripMenuItem";
-            this.oczekujaceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.oczekujaceToolStripMenuItem.Text = "Oczekujące";
+            this.zaplanowaneToolStripMenuItem.Name = "zaplanowaneToolStripMenuItem";
+            this.zaplanowaneToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.zaplanowaneToolStripMenuItem.Text = "Zaplanowane";
+            this.zaplanowaneToolStripMenuItem.Click += new System.EventHandler(this.zaplanowaneToolStripMenuItem_Click);
             // 
             // aktualneToolStripMenuItem
             // 
             this.aktualneToolStripMenuItem.Name = "aktualneToolStripMenuItem";
-            this.aktualneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aktualneToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.aktualneToolStripMenuItem.Text = "Aktualne";
+            this.aktualneToolStripMenuItem.Click += new System.EventHandler(this.aktualneToolStripMenuItem_Click);
             // 
-            // zrealizowaneToolStripMenuItem1
+            // zrealizowaneToolStripMenuItem
             // 
-            this.zrealizowaneToolStripMenuItem1.Name = "zrealizowaneToolStripMenuItem1";
-            this.zrealizowaneToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.zrealizowaneToolStripMenuItem1.Text = "Zrealizowane";
+            this.zrealizowaneToolStripMenuItem.Name = "zrealizowaneToolStripMenuItem";
+            this.zrealizowaneToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.zrealizowaneToolStripMenuItem.Text = "Zrealizowane";
+            this.zrealizowaneToolStripMenuItem.Click += new System.EventHandler(this.zrealizowaneToolStripMenuItem_Click);
+            // 
+            // zestawienieZbiorczeToolStripMenuItem
+            // 
+            this.zestawienieZbiorczeToolStripMenuItem.Name = "zestawienieZbiorczeToolStripMenuItem";
+            this.zestawienieZbiorczeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.zestawienieZbiorczeToolStripMenuItem.Text = "Zestawienie zbiorcze";
+            this.zestawienieZbiorczeToolStripMenuItem.Click += new System.EventHandler(this.zestawienieZbiorczeToolStripMenuItem_Click);
             // 
             // bibliotekiToolStripMenuItem
             // 
@@ -119,14 +132,14 @@
             // pracownicyToolStripMenuItem
             // 
             this.pracownicyToolStripMenuItem.Name = "pracownicyToolStripMenuItem";
-            this.pracownicyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pracownicyToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.pracownicyToolStripMenuItem.Text = "Pracownicy";
             this.pracownicyToolStripMenuItem.Click += new System.EventHandler(this.pracownicyToolStripMenuItem_Click);
             // 
             // narzedziaToolStripMenuItem
             // 
             this.narzedziaToolStripMenuItem.Name = "narzedziaToolStripMenuItem";
-            this.narzedziaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.narzedziaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.narzedziaToolStripMenuItem.Text = "Narzędzia";
             this.narzedziaToolStripMenuItem.Click += new System.EventHandler(this.narzToolStripMenuItem_Click);
             // 
@@ -165,14 +178,15 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem programToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zadaniaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oczekujaceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zaplanowaneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aktualneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bibliotekiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noweToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zrealizowaneToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem zrealizowaneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pracownicyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem narzedziaToolStripMenuItem;
         private System.Windows.Forms.Button employeeExample;
+        private System.Windows.Forms.ToolStripMenuItem zestawienieZbiorczeToolStripMenuItem;
     }
 }
 

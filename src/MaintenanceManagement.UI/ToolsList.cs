@@ -6,9 +6,9 @@ using MaintenanceManagement.DataAccess.Entities;
 
 namespace MaintenanceManagement.UI
 {
-    public partial class ListOfTools : Form
+    public partial class ToolsList : Form
     {
-        public ListOfTools()
+        public ToolsList()
         {
             InitializeComponent();
         }
@@ -19,6 +19,9 @@ namespace MaintenanceManagement.UI
             base.OnLoad(e);
         }
 
+        //
+        //uaktualnienie listy narzędzi
+        //
         private void UpdateToolTypes()
         {
             toolTypesList.Items.Clear();
@@ -32,6 +35,9 @@ namespace MaintenanceManagement.UI
             }
         }
 
+        //
+        //dodanie nowego typu narzędzi
+        //
         private void addNewTool_Click(object sender, EventArgs e)
         {
             using (var context = new MainContext())
@@ -62,7 +68,7 @@ namespace MaintenanceManagement.UI
         private void toolTypesList_DoubleClick(object sender, EventArgs e)
         {
             var selectedToolType = (string)toolTypesList.SelectedItem;
-            var form = new EditForm { EditedText = selectedToolType };
+            var form = new ToolTypeEdit { EditedText = selectedToolType };
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -82,7 +88,7 @@ namespace MaintenanceManagement.UI
         private void editTool_Click(object sender, EventArgs e)
         {
             var selectedToolType = (string)toolTypesList.SelectedItem;
-            var form = new EditForm { EditedText = selectedToolType };
+            var form = new ToolTypeEdit { EditedText = selectedToolType };
 
             if (form.ShowDialog() == DialogResult.OK)
             {

@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201404221858431_CreatingLibraries.Designer.cs">
       <DependentUpon>201404221858431_CreatingLibraries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404241857420_EntitiesChanges.cs" />
+    <Compile Include="Migrations\201404241857420_EntitiesChanges.Designer.cs">
+      <DependentUpon>201404241857420_EntitiesChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToolEndReason.cs" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404221858431_CreatingLibraries.resx">
       <DependentUpon>201404221858431_CreatingLibraries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404241857420_EntitiesChanges.resx">
+      <DependentUpon>201404241857420_EntitiesChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
