@@ -1,6 +1,6 @@
 ﻿namespace MaintenanceManagement.UI
 {
-    partial class TaskEdit
+    partial class EditTask
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
+            this.taskResponsibleEmployee = new System.Windows.Forms.TextBox();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
             this.taskArea = new System.Windows.Forms.TextBox();
@@ -42,16 +43,9 @@
             this.taskDueDate = new System.Windows.Forms.DateTimePicker();
             this.saveTask = new System.Windows.Forms.Button();
             this.cancelTask = new System.Windows.Forms.Button();
-            this.taskAssignee = new System.Windows.Forms.ComboBox();
-            this.taskStatus = new System.Windows.Forms.ComboBox();
-            this.employeeTasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
+            this.employeesTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,6 +57,15 @@
             this.label1.Size = new System.Drawing.Size(133, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Osoba odpowiedzialna";
+            // 
+            // taskResponsibleEmployee
+            // 
+            this.taskResponsibleEmployee.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.employeesBindingSource, "Surname", true));
+            this.taskResponsibleEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.taskResponsibleEmployee.Location = new System.Drawing.Point(203, 6);
+            this.taskResponsibleEmployee.Name = "taskResponsibleEmployee";
+            this.taskResponsibleEmployee.Size = new System.Drawing.Size(200, 21);
+            this.taskResponsibleEmployee.TabIndex = 1;
             // 
             // employeesBindingSource
             // 
@@ -142,7 +145,6 @@
             // 
             // taskDueDate
             // 
-            this.taskDueDate.CustomFormat = "0000-00-00";
             this.taskDueDate.Location = new System.Drawing.Point(203, 232);
             this.taskDueDate.Name = "taskDueDate";
             this.taskDueDate.Size = new System.Drawing.Size(200, 20);
@@ -151,7 +153,7 @@
             // saveTask
             // 
             this.saveTask.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.saveTask.Location = new System.Drawing.Point(247, 375);
+            this.saveTask.Location = new System.Drawing.Point(247, 269);
             this.saveTask.Name = "saveTask";
             this.saveTask.Size = new System.Drawing.Size(75, 23);
             this.saveTask.TabIndex = 10;
@@ -161,77 +163,22 @@
             // cancelTask
             // 
             this.cancelTask.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelTask.Location = new System.Drawing.Point(328, 375);
+            this.cancelTask.Location = new System.Drawing.Point(328, 269);
             this.cancelTask.Name = "cancelTask";
             this.cancelTask.Size = new System.Drawing.Size(75, 23);
             this.cancelTask.TabIndex = 11;
             this.cancelTask.Text = "Anuluj";
             this.cancelTask.UseVisualStyleBackColor = true;
             // 
-            // taskAssignee
+            // employeesTableAdapter
             // 
-            this.taskAssignee.FormattingEnabled = true;
-            this.taskAssignee.Location = new System.Drawing.Point(203, 9);
-            this.taskAssignee.Name = "taskAssignee";
-            this.taskAssignee.Size = new System.Drawing.Size(200, 21);
-            this.taskAssignee.TabIndex = 48;
+            this.employeesTableAdapter.ClearBeforeFill = true;
             // 
-            // taskStatus
-            // 
-            this.taskStatus.DataSource = this.employeeTasksBindingSource;
-            this.taskStatus.FormattingEnabled = true;
-            this.taskStatus.Location = new System.Drawing.Point(203, 264);
-            this.taskStatus.Name = "taskStatus";
-            this.taskStatus.Size = new System.Drawing.Size(200, 21);
-            this.taskStatus.TabIndex = 50;
-            // 
-            // employeeTasksBindingSource
-            // 
-            this.employeeTasksBindingSource.DataMember = "EmployeeTasks";
-            this.employeeTasksBindingSource.DataSource = this.maintenanceManagementDataSet;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(12, 264);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 15);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Status";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(203, 299);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 52;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(12, 299);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 15);
-            this.label7.TabIndex = 51;
-            this.label7.Text = "Wykonanie";
-            // 
-            // employeeTasksTableAdapter
-            // 
-            this.employeeTasksTableAdapter.ClearBeforeFill = true;
-            // 
-            // TaskEdit
+            // EditTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 410);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.taskStatus);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.taskAssignee);
+            this.ClientSize = new System.Drawing.Size(421, 302);
             this.Controls.Add(this.cancelTask);
             this.Controls.Add(this.saveTask);
             this.Controls.Add(this.taskDueDate);
@@ -242,12 +189,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.taskArea);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.taskResponsibleEmployee);
             this.Controls.Add(this.label1);
-            this.Name = "TaskEdit";
+            this.Name = "EditTask";
             this.Text = "Zadanie";
+            this.Load += new System.EventHandler(this.NewEmployeeTask_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +204,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox taskResponsibleEmployee;
         private System.Windows.Forms.TextBox taskArea;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox taskSubject;
@@ -268,12 +217,6 @@
         private System.Windows.Forms.Button cancelTask;
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeesBindingSource;
-        private System.Windows.Forms.ComboBox taskAssignee;
-        private System.Windows.Forms.ComboBox taskStatus;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.BindingSource employeeTasksBindingSource;
-        private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
+        private MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter;
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 
@@ -12,19 +14,17 @@ namespace MaintenanceManagement.UI
             InitializeComponent();
 
             LoadEmploymentTypes();
-        }
+        }        
 
         public Employee Employee
         {
             get
             {
-                int number = 0;
-
-                return new Employee()
+                return new Employee() //wywala się w tym miejscu, jak kliknie się "zapisz" w oknie "nowy" nie wpisując nic w pola
                 {
                     Name = employeeName.Text,
                     Surname = employeeSurname.Text,
-                    PersonalNumber = int.TryParse(employeePersonalNr.Text, out number) ? number : 0,
+                    PersonalNumber = int.Parse(employeePersonalNr.Text),
                     Address = employeeAdress.Text,
                     EmploymentStart = employeeEmploymentStart.Value,
                     EmploymentType = (EmploymentType)employeeEmploymentType.SelectedItem,
@@ -52,8 +52,5 @@ namespace MaintenanceManagement.UI
 
             employeeEmploymentType.DataSource = Enum.GetValues(typeof(EmploymentType));
         }
-
-
-
     }
 }

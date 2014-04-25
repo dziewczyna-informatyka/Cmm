@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MaintenanceManagement.UI
@@ -13,7 +20,6 @@ namespace MaintenanceManagement.UI
         private void plannedTasks_Click(object sender, EventArgs e)
         {
             var form = new EmployeeTasksList();
-            
             if (form.ShowDialog() == DialogResult.OK)
             {
                 
@@ -23,36 +29,25 @@ namespace MaintenanceManagement.UI
         private void actualTasks_Click(object sender, EventArgs e)
         {
             var form = new EmployeeTasksList();
-            
             if (form.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
         }
 
         private void doneTasks_Click(object sender, EventArgs e)
         {
             var form = new EmployeeTasksList();
-            
             if (form.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
         }
 
 
         private void newTasksCreator_Click(object sender, EventArgs e)
         {
-            var form = new TaskEdit();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
-
-        private void employeeTools_Click(object sender, EventArgs e)
-        {
-            var form = new EmployeeToolsList();
+            var form = new EditTask();
             if (form.ShowDialog() == DialogResult.OK)
             {
 

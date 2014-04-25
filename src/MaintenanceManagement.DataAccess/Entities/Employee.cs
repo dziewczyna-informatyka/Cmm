@@ -7,7 +7,7 @@ namespace MaintenanceManagement.DataAccess.Entities
     /// </summary>
     public class Employee : BaseEntity
     {
-        public int PersonalNumber { get; set; }
+        public int? PersonalNumber { get; set; }
 
         public string Name { get; set; }
 
@@ -30,10 +30,5 @@ namespace MaintenanceManagement.DataAccess.Entities
         public string PasswordHash { get; set; }
 
         public WorkSchedule? WorkSchedule { get; set; }
-
-        public override string ToString()
-        {
-            return Surname;
-        }
     }
 }

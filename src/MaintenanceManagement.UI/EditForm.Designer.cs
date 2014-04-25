@@ -1,6 +1,6 @@
 ﻿namespace MaintenanceManagement.UI
 {
-    partial class ToolTypeEdit
+    partial class EditForm
     {
         /// <summary>
         /// Required designer variable.

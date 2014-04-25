@@ -39,7 +39,6 @@
             this.actualTasksAmount = new System.Windows.Forms.TextBox();
             this.doneTasksAmount = new System.Windows.Forms.TextBox();
             this.newTasksCreator = new System.Windows.Forms.Button();
-            this.employeeTools = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // plannedTasks
@@ -94,7 +93,7 @@
             // button5
             // 
             this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button5.Location = new System.Drawing.Point(217, 176);
+            this.button5.Location = new System.Drawing.Point(99, 176);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 11;
@@ -104,7 +103,7 @@
             // button6
             // 
             this.button6.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button6.Location = new System.Drawing.Point(136, 176);
+            this.button6.Location = new System.Drawing.Point(15, 176);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 10;
@@ -145,22 +144,11 @@
             this.newTasksCreator.UseVisualStyleBackColor = true;
             this.newTasksCreator.Click += new System.EventHandler(this.newTasksCreator_Click);
             // 
-            // employeeTools
-            // 
-            this.employeeTools.Location = new System.Drawing.Point(196, 110);
-            this.employeeTools.Name = "employeeTools";
-            this.employeeTools.Size = new System.Drawing.Size(96, 35);
-            this.employeeTools.TabIndex = 16;
-            this.employeeTools.Text = "Narzędzia";
-            this.employeeTools.UseVisualStyleBackColor = true;
-            this.employeeTools.Click += new System.EventHandler(this.employeeTools_Click);
-            // 
             // EmployeeTaskSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 208);
-            this.Controls.Add(this.employeeTools);
             this.Controls.Add(this.newTasksCreator);
             this.Controls.Add(this.doneTasksAmount);
             this.Controls.Add(this.actualTasksAmount);
@@ -192,6 +180,5 @@
         private System.Windows.Forms.TextBox actualTasksAmount;
         private System.Windows.Forms.TextBox doneTasksAmount;
         private System.Windows.Forms.Button newTasksCreator;
-        private System.Windows.Forms.Button employeeTools;
     }
 }

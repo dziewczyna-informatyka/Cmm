@@ -1,6 +1,6 @@
 ﻿namespace MaintenanceManagement.UI
 {
-    partial class ToolsList
+    partial class ListOfTools
     {
         /// <summary>
         /// Required designer variable.

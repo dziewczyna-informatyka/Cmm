@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Assignee_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.areaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,44 +39,25 @@
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeTasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
-            this.responsibleEmployee = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.responsibleEmployee = new System.Windows.Forms.TextBox();
+            this.statusOfTasks = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.editTask = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
-            // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Location = new System.Drawing.Point(702, 296);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "OK";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(783, 296);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Anuluj";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.Assignee_Id,
+            this.Column1,
             this.areaIdDataGridViewTextBoxColumn,
             this.subjectDataGridViewTextBoxColumn,
             this.actionsDataGridViewTextBoxColumn,
@@ -87,23 +65,16 @@
             this.progressDataGridViewTextBoxColumn,
             this.dueDateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.employeeTasksBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 46);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(846, 252);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.Size = new System.Drawing.Size(1082, 312);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn
+            // Column1
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id zadania";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Assignee_Id
-            // 
-            this.Assignee_Id.DataPropertyName = "Assignee_Id";
-            this.Assignee_Id.HeaderText = "Osoba odpowiedzialna";
-            this.Assignee_Id.Name = "Assignee_Id";
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
             // 
             // areaIdDataGridViewTextBoxColumn
             // 
@@ -151,54 +122,75 @@
             this.maintenanceManagementDataSet.DataSetName = "MaintenanceManagementDataSet";
             this.maintenanceManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // responsibleEmployee
+            // employeeTasksTableAdapter
             // 
-            this.responsibleEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.responsibleEmployee.Location = new System.Drawing.Point(88, 6);
-            this.responsibleEmployee.Name = "responsibleEmployee";
-            this.responsibleEmployee.ReadOnly = true;
-            this.responsibleEmployee.Size = new System.Drawing.Size(159, 22);
-            this.responsibleEmployee.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Pracownik";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(349, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
-            this.textBox1.TabIndex = 9;
+            this.employeeTasksTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(299, 9);
+            this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Status";
+            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Pracownik";
             // 
-            // employeeTasksTableAdapter
+            // responsibleEmployee
             // 
-            this.employeeTasksTableAdapter.ClearBeforeFill = true;
+            this.responsibleEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.responsibleEmployee.Location = new System.Drawing.Point(85, 8);
+            this.responsibleEmployee.Name = "responsibleEmployee";
+            this.responsibleEmployee.ReadOnly = true;
+            this.responsibleEmployee.Size = new System.Drawing.Size(150, 22);
+            this.responsibleEmployee.TabIndex = 2;
+            // 
+            // statusOfTasks
+            // 
+            this.statusOfTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.statusOfTasks.Location = new System.Drawing.Point(429, 8);
+            this.statusOfTasks.Name = "statusOfTasks";
+            this.statusOfTasks.ReadOnly = true;
+            this.statusOfTasks.Size = new System.Drawing.Size(150, 22);
+            this.statusOfTasks.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(338, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Status zadań";
+            // 
+            // button5
+            // 
+            this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button5.Location = new System.Drawing.Point(1021, 364);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Anuluj";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button6.Location = new System.Drawing.Point(937, 364);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "OK";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // editTask
             // 
-            this.editTask.Location = new System.Drawing.Point(621, 296);
+            this.editTask.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.editTask.Location = new System.Drawing.Point(856, 364);
             this.editTask.Name = "editTask";
             this.editTask.Size = new System.Drawing.Size(75, 23);
-            this.editTask.TabIndex = 10;
+            this.editTask.TabIndex = 14;
             this.editTask.Text = "Edytuj";
             this.editTask.UseVisualStyleBackColor = true;
             this.editTask.Click += new System.EventHandler(this.editTask_Click);
@@ -207,18 +199,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 343);
+            this.ClientSize = new System.Drawing.Size(1106, 399);
             this.Controls.Add(this.editTask);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.responsibleEmployee);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.statusOfTasks);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.responsibleEmployee);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "EmployeeTasksList";
             this.Text = "Lista zadań pracownika";
-            this.Load += new System.EventHandler(this.EmployeeTaskList_Load);
+            this.Load += new System.EventHandler(this.EmployeeTasksList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
@@ -229,24 +221,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox responsibleEmployee;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeeTasksBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Assignee_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn areaIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actionsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn progressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox responsibleEmployee;
+        private System.Windows.Forms.TextBox statusOfTasks;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button editTask;
     }
 }

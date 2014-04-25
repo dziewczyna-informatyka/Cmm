@@ -53,7 +53,7 @@
             // 
             // employeeName
             // 
-            this.employeeName.Location = new System.Drawing.Point(113, 38);
+            this.employeeName.Location = new System.Drawing.Point(113, 12);
             this.employeeName.Name = "employeeName";
             this.employeeName.ReadOnly = true;
             this.employeeName.Size = new System.Drawing.Size(166, 20);
@@ -61,7 +61,7 @@
             // 
             // employeeSurname
             // 
-            this.employeeSurname.Location = new System.Drawing.Point(113, 12);
+            this.employeeSurname.Location = new System.Drawing.Point(113, 38);
             this.employeeSurname.Name = "employeeSurname";
             this.employeeSurname.ReadOnly = true;
             this.employeeSurname.Size = new System.Drawing.Size(166, 20);
@@ -70,7 +70,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 41);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 2;
@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 15);
+            this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
