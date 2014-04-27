@@ -221,6 +221,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MaintenanceManagement.Core\MaintenanceManagement.Core.csproj">
+      <Project>{9a3da4e2-3753-4341-bdb3-e2c1090f3cbd}</Project>
+      <Name>MaintenanceManagement.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MaintenanceManagement.DataAccess\MaintenanceManagement.DataAccess.csproj">
       <Project>{2E61B830-A3BD-4938-B138-6D6696DBE604}</Project>
       <Name>MaintenanceManagement.DataAccess</Name>

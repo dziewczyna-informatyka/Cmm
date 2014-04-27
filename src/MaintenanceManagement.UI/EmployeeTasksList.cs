@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 
@@ -27,7 +28,7 @@ namespace MaintenanceManagement.UI
             set
             {
                 tasksStatus.Tag = value;
-                tasksStatus.Text = value.ToString();
+                tasksStatus.Text = value.EnumToString();
             }
         }
 
