@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.cancel = new System.Windows.Forms.Button();
-            this.addNewEmployee = new System.Windows.Forms.Button();
+            this.saveEmployee = new System.Windows.Forms.Button();
             this.employeeMobilePhone = new System.Windows.Forms.TextBox();
             this.employeePhone = new System.Windows.Forms.TextBox();
             this.employeeAdress = new System.Windows.Forms.TextBox();
-            this.employeeTeam = new System.Windows.Forms.TextBox();
-            this.employeeArea = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,6 +49,8 @@
             this.employeeEmploymentType = new System.Windows.Forms.ComboBox();
             this.employeePersonalNr = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.employeeArea = new System.Windows.Forms.ComboBox();
+            this.employeeTeam = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,15 +64,17 @@
             this.cancel.Text = "Anuluj";
             this.cancel.UseVisualStyleBackColor = true;
             // 
-            // addNewEmployee
+            // saveEmployee
             // 
-            this.addNewEmployee.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.addNewEmployee.Location = new System.Drawing.Point(116, 314);
-            this.addNewEmployee.Name = "addNewEmployee";
-            this.addNewEmployee.Size = new System.Drawing.Size(75, 23);
-            this.addNewEmployee.TabIndex = 43;
-            this.addNewEmployee.Text = "Zapisz";
-            this.addNewEmployee.UseVisualStyleBackColor = true;
+
+            this.saveEmployee.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.saveEmployee.Location = new System.Drawing.Point(116, 314);
+            this.saveEmployee.Name = "saveEmployee";
+            this.saveEmployee.Size = new System.Drawing.Size(75, 23);
+            this.saveEmployee.TabIndex = 43;
+            this.saveEmployee.Text = "Zapisz";
+            this.saveEmployee.UseVisualStyleBackColor = true;
+
             // 
             // employeeMobilePhone
             // 
@@ -96,20 +98,7 @@
             this.employeeAdress.Size = new System.Drawing.Size(166, 46);
             this.employeeAdress.TabIndex = 40;
             // 
-            // employeeTeam
-            // 
-            this.employeeTeam.Location = new System.Drawing.Point(104, 105);
-            this.employeeTeam.Name = "employeeTeam";
-            this.employeeTeam.Size = new System.Drawing.Size(166, 20);
-            this.employeeTeam.TabIndex = 37;
-            // 
-            // employeeArea
-            // 
-            this.employeeArea.Location = new System.Drawing.Point(104, 79);
-            this.employeeArea.Name = "employeeArea";
-            this.employeeArea.Size = new System.Drawing.Size(166, 20);
-            this.employeeArea.TabIndex = 36;
-            // 
+
             // label10
             // 
             this.label10.AutoSize = true;
@@ -185,7 +174,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 30);
+
+            this.label2.Location = new System.Drawing.Point(3, 6);
+
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 26;
@@ -194,7 +185,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 4);
+
+            this.label1.Location = new System.Drawing.Point(3, 31);
+
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 25;
@@ -202,25 +195,34 @@
             // 
             // employeeSurname
             // 
-            this.employeeSurname.Location = new System.Drawing.Point(104, 27);
+
+            this.employeeSurname.Location = new System.Drawing.Point(104, 3);
+
             this.employeeSurname.Name = "employeeSurname";
             this.employeeSurname.Size = new System.Drawing.Size(166, 20);
             this.employeeSurname.TabIndex = 24;
             // 
             // employeeName
             // 
-            this.employeeName.Location = new System.Drawing.Point(104, 1);
+
+            this.employeeName.Location = new System.Drawing.Point(104, 28);
+
             this.employeeName.Name = "employeeName";
             this.employeeName.Size = new System.Drawing.Size(166, 20);
             this.employeeName.TabIndex = 23;
             // 
             // employeeEmploymentStart
             // 
+            this.employeeEmploymentStart.CustomFormat = "0000-00-00";
             this.employeeEmploymentStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.employeeEmploymentStart.Location = new System.Drawing.Point(104, 131);
+
+            this.employeeEmploymentStart.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+
             this.employeeEmploymentStart.Name = "employeeEmploymentStart";
             this.employeeEmploymentStart.Size = new System.Drawing.Size(166, 20);
             this.employeeEmploymentStart.TabIndex = 46;
+            this.employeeEmploymentStart.Value = new System.DateTime(2014, 4, 25, 0, 0, 0, 0);
             // 
             // employeeEmploymentType
             // 
@@ -241,6 +243,10 @@
             // 
             // panel1
             // 
+
+            this.panel1.Controls.Add(this.employeeTeam);
+            this.panel1.Controls.Add(this.employeeArea);
+
             this.panel1.Controls.Add(this.employeeAdress);
             this.panel1.Controls.Add(this.employeePersonalNr);
             this.panel1.Controls.Add(this.employeeName);
@@ -255,9 +261,9 @@
             this.panel1.Controls.Add(this.employeePhone);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.employeeTeam);
+
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.employeeArea);
+
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
@@ -266,6 +272,24 @@
             this.panel1.Size = new System.Drawing.Size(274, 296);
             this.panel1.TabIndex = 49;
             // 
+
+            // employeeArea
+            // 
+            this.employeeArea.FormattingEnabled = true;
+            this.employeeArea.Location = new System.Drawing.Point(105, 79);
+            this.employeeArea.Name = "employeeArea";
+            this.employeeArea.Size = new System.Drawing.Size(166, 21);
+            this.employeeArea.TabIndex = 49;
+            // 
+            // employeeTeam
+            // 
+            this.employeeTeam.FormattingEnabled = true;
+            this.employeeTeam.Location = new System.Drawing.Point(104, 104);
+            this.employeeTeam.Name = "employeeTeam";
+            this.employeeTeam.Size = new System.Drawing.Size(166, 21);
+            this.employeeTeam.TabIndex = 50;
+            // 
+
             // EmployeeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,7 +297,9 @@
             this.ClientSize = new System.Drawing.Size(297, 345);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cancel);
-            this.Controls.Add(this.addNewEmployee);
+
+            this.Controls.Add(this.saveEmployee);
+
             this.Name = "EmployeeEdit";
             this.Text = "Pracownik";
             this.panel1.ResumeLayout(false);
@@ -285,12 +311,10 @@
         #endregion
 
         private System.Windows.Forms.Button cancel;
-        private System.Windows.Forms.Button addNewEmployee;
+        private System.Windows.Forms.Button saveEmployee;
         private System.Windows.Forms.TextBox employeeMobilePhone;
         private System.Windows.Forms.TextBox employeePhone;
         private System.Windows.Forms.TextBox employeeAdress;
-        private System.Windows.Forms.TextBox employeeTeam;
-        private System.Windows.Forms.TextBox employeeArea;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -307,5 +331,9 @@
         private System.Windows.Forms.ComboBox employeeEmploymentType;
         private System.Windows.Forms.MaskedTextBox employeePersonalNr;
         private System.Windows.Forms.Panel panel1;
+
+        private System.Windows.Forms.ComboBox employeeTeam;
+        private System.Windows.Forms.ComboBox employeeArea;
+
     }
 }

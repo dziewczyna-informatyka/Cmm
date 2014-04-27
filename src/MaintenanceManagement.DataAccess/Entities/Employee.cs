@@ -30,5 +30,9 @@ namespace MaintenanceManagement.DataAccess.Entities
         public string PasswordHash { get; set; }
 
         public WorkSchedule? WorkSchedule { get; set; }
+
+        public Area Area { get; set; }
+
+        public string Team { get; set; }
     }
 }

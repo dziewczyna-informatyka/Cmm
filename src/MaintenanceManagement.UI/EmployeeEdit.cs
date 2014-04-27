@@ -14,22 +14,29 @@ namespace MaintenanceManagement.UI
             InitializeComponent();
 
             LoadEmploymentTypes();
-        }        
+
+            LoadAreas();
+        }
+
 
         public Employee Employee
         {
             get
             {
-                return new Employee() //wywala się w tym miejscu, jak kliknie się "zapisz" w oknie "nowy" nie wpisując nic w pola
+                int number = 0;
+
+                return new Employee()
                 {
                     Name = employeeName.Text,
                     Surname = employeeSurname.Text,
-                    PersonalNumber = int.Parse(employeePersonalNr.Text),
+                    PersonalNumber = int.TryParse(employeePersonalNr.Text, out number) ? number : 0,
                     Address = employeeAdress.Text,
-                    EmploymentStart = employeeEmploymentStart.Value,
+                    EmploymentStart = employeeEmploymentStart.Value.Date,
                     EmploymentType = (EmploymentType)employeeEmploymentType.SelectedItem,
                     MobilePhone = employeeMobilePhone.Text,
                     HomePhone = employeePhone.Text,
+                    Area = (Area)employeeArea.SelectedItem,
+                    Team = employeeTeam.SelectedText,
                 };
             }
 
@@ -43,6 +50,8 @@ namespace MaintenanceManagement.UI
                 employeeEmploymentType.SelectedItem = value.EmploymentType;
                 employeeMobilePhone.Text = value.MobilePhone;
                 employeePhone.Text = value.HomePhone;
+                employeeArea.SelectedItem = value.Area;
+                employeeTeam.SelectedText = value.Team;
             }
         }
 
@@ -52,5 +61,19 @@ namespace MaintenanceManagement.UI
 
             employeeEmploymentType.DataSource = Enum.GetValues(typeof(EmploymentType));
         }
+
+        private void LoadAreas()
+        {
+            employeeArea.Items.Clear();
+
+            using (var context = new MainContext())
+            {
+                employeeArea.DataSource = context.Areas.ToList();
+            }
+        
+        }
+
+
+
     }
 }

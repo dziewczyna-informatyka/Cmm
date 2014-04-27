@@ -14,7 +14,7 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public ToolEndReason? ToolEndReason { get; set; }
 
-        public Employee Employee { get; set; }
+        public Employee Owner { get; set; }
 
         public ToolType ToolType { get; set; }
     }
