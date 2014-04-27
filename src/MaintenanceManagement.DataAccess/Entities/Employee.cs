@@ -39,5 +39,10 @@ namespace MaintenanceManagement.DataAccess.Entities
         {
             get { return string.Format("{0} {1}", Name, Surname); }
         }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
 }

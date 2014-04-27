@@ -34,7 +34,17 @@ namespace MaintenanceManagement.UI
 
         private void employeeExample_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeTaskSummary();
+            var emp = new Employee
+            {
+                Address = "adjadja",
+                EmploymentStart = new DateTime(2012, 11, 14),
+                PersonalNumber = 1234,
+                EmploymentType = EmploymentType.Clinico,
+                Id = 0,
+                Name = "adadadadad",
+                Surname = "opiofspfj",
+            };
+            var form = new EmployeeTaskSummary {AssignedEmployee = emp, TasksAmount = 3,};
             if (form.ShowDialog() == DialogResult.OK)
             {
 

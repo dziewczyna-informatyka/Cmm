@@ -13,6 +13,17 @@ namespace MaintenanceManagement.UI
             InitializeComponent();
         }
 
+
+        public int TasksAmount
+        {
+            get
+            {
+                int v;
+                return int.TryParse(totalTaskAmount.Text, out v) ? v : 0;
+            }
+            set { totalTaskAmount.Text = value.ToString(); }
+        }
+
         public Employee AssignedEmployee
         {
             get { return (Employee)responsibleEmployee.Tag; }
@@ -25,7 +36,7 @@ namespace MaintenanceManagement.UI
 
         private void plannedTasks_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeTasksList {EmployeeTaskStatus = EmployeeTaskStatus.Planned};//, AssignedEmployee = responsibleEmployee.Text}; 
+            var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned, AssignedEmployee = AssignedEmployee }; 
             if (form.ShowDialog() == DialogResult.OK)
             {
 
