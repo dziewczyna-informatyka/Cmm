@@ -30,16 +30,18 @@
         {
             this.plannedTasks = new System.Windows.Forms.Button();
             this.actualTasks = new System.Windows.Forms.Button();
-            this.doneTasks = new System.Windows.Forms.Button();
             this.responsibleEmployee = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.plannedTasksAmount = new System.Windows.Forms.TextBox();
             this.actualTasksAmount = new System.Windows.Forms.TextBox();
-            this.doneTasksAmount = new System.Windows.Forms.TextBox();
             this.newTasksCreator = new System.Windows.Forms.Button();
             this.employeeTools = new System.Windows.Forms.Button();
+            this.doneTasks = new System.Windows.Forms.Button();
+            this.doneTasksAmount = new System.Windows.Forms.TextBox();
+            this.totalTaskAmount = new System.Windows.Forms.TextBox();
+            this.allTasks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // plannedTasks
@@ -54,23 +56,13 @@
             // 
             // actualTasks
             // 
-            this.actualTasks.Location = new System.Drawing.Point(15, 100);
+            this.actualTasks.Location = new System.Drawing.Point(15, 101);
             this.actualTasks.Name = "actualTasks";
             this.actualTasks.Size = new System.Drawing.Size(85, 23);
             this.actualTasks.TabIndex = 1;
             this.actualTasks.Text = "W realizacji";
             this.actualTasks.UseVisualStyleBackColor = true;
             this.actualTasks.Click += new System.EventHandler(this.actualTasks_Click);
-            // 
-            // doneTasks
-            // 
-            this.doneTasks.Location = new System.Drawing.Point(15, 136);
-            this.doneTasks.Name = "doneTasks";
-            this.doneTasks.Size = new System.Drawing.Size(85, 23);
-            this.doneTasks.TabIndex = 2;
-            this.doneTasks.Text = "Zakończone";
-            this.doneTasks.UseVisualStyleBackColor = true;
-            this.doneTasks.Click += new System.EventHandler(this.doneTasks_Click);
             // 
             // responsibleEmployee
             // 
@@ -94,7 +86,7 @@
             // button5
             // 
             this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button5.Location = new System.Drawing.Point(242, 176);
+            this.button5.Location = new System.Drawing.Point(242, 227);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 11;
@@ -104,7 +96,7 @@
             // button6
             // 
             this.button6.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button6.Location = new System.Drawing.Point(161, 176);
+            this.button6.Location = new System.Drawing.Point(161, 227);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 10;
@@ -121,25 +113,15 @@
             // 
             // actualTasksAmount
             // 
-            this.actualTasksAmount.Location = new System.Drawing.Point(138, 101);
+            this.actualTasksAmount.Location = new System.Drawing.Point(138, 102);
             this.actualTasksAmount.Name = "actualTasksAmount";
             this.actualTasksAmount.ReadOnly = true;
             this.actualTasksAmount.Size = new System.Drawing.Size(36, 20);
             this.actualTasksAmount.TabIndex = 13;
             // 
-            // doneTasksAmount
-            // 
-            this.doneTasksAmount.Location = new System.Drawing.Point(138, 138);
-            this.doneTasksAmount.Name = "doneTasksAmount";
-            this.doneTasksAmount.ReadOnly = true;
-            this.doneTasksAmount.Size = new System.Drawing.Size(36, 20);
-            this.doneTasksAmount.TabIndex = 14;
-            // 
             // newTasksCreator
             // 
-
             this.newTasksCreator.Location = new System.Drawing.Point(221, 28);
-
             this.newTasksCreator.Name = "newTasksCreator";
             this.newTasksCreator.Size = new System.Drawing.Size(96, 35);
             this.newTasksCreator.TabIndex = 15;
@@ -157,11 +139,49 @@
             this.employeeTools.UseVisualStyleBackColor = true;
             this.employeeTools.Click += new System.EventHandler(this.employeeTools_Click);
             // 
+            // doneTasks
+            // 
+            this.doneTasks.Location = new System.Drawing.Point(15, 138);
+            this.doneTasks.Name = "doneTasks";
+            this.doneTasks.Size = new System.Drawing.Size(85, 23);
+            this.doneTasks.TabIndex = 2;
+            this.doneTasks.Text = "Zakończone";
+            this.doneTasks.UseVisualStyleBackColor = true;
+            this.doneTasks.Click += new System.EventHandler(this.doneTasks_Click);
+            // 
+            // doneTasksAmount
+            // 
+            this.doneTasksAmount.Location = new System.Drawing.Point(138, 140);
+            this.doneTasksAmount.Name = "doneTasksAmount";
+            this.doneTasksAmount.ReadOnly = true;
+            this.doneTasksAmount.Size = new System.Drawing.Size(36, 20);
+            this.doneTasksAmount.TabIndex = 14;
+            // 
+            // totalTaskAmount
+            // 
+            this.totalTaskAmount.Location = new System.Drawing.Point(138, 178);
+            this.totalTaskAmount.Name = "totalTaskAmount";
+            this.totalTaskAmount.ReadOnly = true;
+            this.totalTaskAmount.Size = new System.Drawing.Size(36, 20);
+            this.totalTaskAmount.TabIndex = 18;
+            // 
+            // allTasks
+            // 
+            this.allTasks.Location = new System.Drawing.Point(15, 175);
+            this.allTasks.Name = "allTasks";
+            this.allTasks.Size = new System.Drawing.Size(85, 23);
+            this.allTasks.TabIndex = 17;
+            this.allTasks.Text = "Wszystkie";
+            this.allTasks.UseVisualStyleBackColor = true;
+            this.allTasks.Click += new System.EventHandler(this.allTasks_Click);
+            // 
             // EmployeeTaskSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 208);
+            this.ClientSize = new System.Drawing.Size(327, 264);
+            this.Controls.Add(this.totalTaskAmount);
+            this.Controls.Add(this.allTasks);
             this.Controls.Add(this.employeeTools);
             this.Controls.Add(this.newTasksCreator);
             this.Controls.Add(this.doneTasksAmount);
@@ -185,16 +205,18 @@
 
         private System.Windows.Forms.Button plannedTasks;
         private System.Windows.Forms.Button actualTasks;
-        private System.Windows.Forms.Button doneTasks;
         private System.Windows.Forms.TextBox responsibleEmployee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox plannedTasksAmount;
         private System.Windows.Forms.TextBox actualTasksAmount;
-        private System.Windows.Forms.TextBox doneTasksAmount;
         private System.Windows.Forms.Button newTasksCreator;
         private System.Windows.Forms.Button employeeTools;
+        private System.Windows.Forms.Button doneTasks;
+        private System.Windows.Forms.TextBox doneTasksAmount;
+        private System.Windows.Forms.TextBox totalTaskAmount;
+        private System.Windows.Forms.Button allTasks;
 
     }
 }

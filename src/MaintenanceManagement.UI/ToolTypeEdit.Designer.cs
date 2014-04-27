@@ -60,7 +60,7 @@
             this.button2.Text = "Anuluj";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // EditForm
+            // ToolTypeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,8 +68,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Name = "EditForm";
-            this.Text = "EditForm";
+            this.Name = "ToolTypeEdit";
+            this.Text = "Edycja";
             this.ResumeLayout(false);
             this.PerformLayout();
 

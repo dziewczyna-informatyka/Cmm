@@ -34,5 +34,10 @@ namespace MaintenanceManagement.DataAccess.Entities
         public Area Area { get; set; }
 
         public string Team { get; set; }
+
+        public string FullName
+        {
+            get { return string.Format("{0} {1}", Name, Surname); }
+        }
     }
 }

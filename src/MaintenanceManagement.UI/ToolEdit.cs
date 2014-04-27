@@ -29,7 +29,7 @@ namespace MaintenanceManagement.UI
         {
             get
             {
-                return new EmployeeTool()
+                return new EmployeeTool
                 {
                     Owner = (Employee)toolOwner.SelectedItem,
                     ToolType = (ToolType)toolTypeComboBox.SelectedItem,

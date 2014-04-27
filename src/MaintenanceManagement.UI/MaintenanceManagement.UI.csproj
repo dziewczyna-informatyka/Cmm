@@ -93,18 +93,6 @@
     <Compile Include="EmployeeToolsList.Designer.cs">
       <DependentUpon>EmployeeToolsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListOfTools.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListOfTools.Designer.cs">
-      <DependentUpon>ListOfTools.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListOfEmployees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListOfEmployees.Designer.cs">
-      <DependentUpon>ListOfEmployees.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,12 +164,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeToolsList.resx">
       <DependentUpon>EmployeeToolsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListOfTools.resx">
-      <DependentUpon>ListOfTools.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListOfEmployees.resx">
-      <DependentUpon>ListOfEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

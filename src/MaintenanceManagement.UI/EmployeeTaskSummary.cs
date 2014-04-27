@@ -12,7 +12,7 @@ namespace MaintenanceManagement.UI
         {
             InitializeComponent();
         }
-        
+
         public Employee AssignedEmployee
         {
             get { return (Employee)responsibleEmployee.Tag; }
@@ -25,7 +25,12 @@ namespace MaintenanceManagement.UI
 
         private void plannedTasks_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeTasksList {EmployeeTaskStatus = EmployeeTaskStatus.Planned, AssignedEmployee = responsibleEmployee.Text};          
+            var form = new EmployeeTasksList {EmployeeTaskStatus = EmployeeTaskStatus.Planned};//, AssignedEmployee = responsibleEmployee.Text}; 
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+
+            }
         }
 
         private void actualTasks_Click(object sender, EventArgs e)
@@ -63,6 +68,16 @@ namespace MaintenanceManagement.UI
         {
             var form = new EmployeeToolsList();
   
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void allTasks_Click(object sender, EventArgs e)
+        {
+            var form = new EmployeeTasksList();
+
             if (form.ShowDialog() == DialogResult.OK)
             {
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
+using MaintenanceManagement.DataAccess.Entities;
 
 
 namespace MaintenanceManagement.UI
@@ -30,13 +31,13 @@ namespace MaintenanceManagement.UI
             }
         }
 
-        public string AssignedEmployee
+        public Employee AssignedEmployee
         {
-            get { return (string) responsibleEmployee.Tag; }
+            get { return (Employee)responsibleEmployee.Tag; }
             set
             {
                 responsibleEmployee.Tag = value;
-               // responsibleEmployee.Text = value.ToString();
+                responsibleEmployee.Text = value.FullName;
             }
         }
 

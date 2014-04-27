@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
-            this.taskArea = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.taskSubject = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,9 +45,10 @@
             this.taskStatus = new System.Windows.Forms.ComboBox();
             this.employeeTasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.taskArea = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 15);
             this.label1.TabIndex = 0;
@@ -74,19 +74,11 @@
             this.maintenanceManagementDataSet.DataSetName = "MaintenanceManagementDataSet";
             this.maintenanceManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // taskArea
-            // 
-            this.taskArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.taskArea.Location = new System.Drawing.Point(203, 35);
-            this.taskArea.Name = "taskArea";
-            this.taskArea.Size = new System.Drawing.Size(200, 21);
-            this.taskArea.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(12, 38);
+            this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 2;
@@ -95,7 +87,7 @@
             // taskSubject
             // 
             this.taskSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.taskSubject.Location = new System.Drawing.Point(203, 61);
+            this.taskSubject.Location = new System.Drawing.Point(203, 67);
             this.taskSubject.Multiline = true;
             this.taskSubject.Name = "taskSubject";
             this.taskSubject.Size = new System.Drawing.Size(200, 49);
@@ -105,7 +97,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(12, 64);
+            this.label3.Location = new System.Drawing.Point(12, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 4;
@@ -114,7 +106,7 @@
             // taskActions
             // 
             this.taskActions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.taskActions.Location = new System.Drawing.Point(203, 116);
+            this.taskActions.Location = new System.Drawing.Point(203, 124);
             this.taskActions.Multiline = true;
             this.taskActions.Name = "taskActions";
             this.taskActions.Size = new System.Drawing.Size(200, 110);
@@ -124,7 +116,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(12, 119);
+            this.label4.Location = new System.Drawing.Point(12, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 6;
@@ -134,7 +126,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(12, 232);
+            this.label5.Location = new System.Drawing.Point(12, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 15);
             this.label5.TabIndex = 8;
@@ -143,7 +135,7 @@
             // taskDueDate
             // 
             this.taskDueDate.CustomFormat = "0000-00-00";
-            this.taskDueDate.Location = new System.Drawing.Point(203, 232);
+            this.taskDueDate.Location = new System.Drawing.Point(203, 242);
             this.taskDueDate.Name = "taskDueDate";
             this.taskDueDate.Size = new System.Drawing.Size(200, 20);
             this.taskDueDate.TabIndex = 9;
@@ -180,7 +172,7 @@
             // 
             this.taskStatus.DataSource = this.employeeTasksBindingSource;
             this.taskStatus.FormattingEnabled = true;
-            this.taskStatus.Location = new System.Drawing.Point(203, 264);
+            this.taskStatus.Location = new System.Drawing.Point(203, 270);
             this.taskStatus.Name = "taskStatus";
             this.taskStatus.Size = new System.Drawing.Size(200, 21);
             this.taskStatus.TabIndex = 50;
@@ -194,25 +186,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(12, 264);
+            this.label6.Location = new System.Drawing.Point(12, 273);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 49;
             this.label6.Text = "Status";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(203, 299);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 52;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(12, 299);
+            this.label7.Location = new System.Drawing.Point(12, 302);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 15);
             this.label7.TabIndex = 51;
@@ -222,12 +206,29 @@
             // 
             this.employeeTasksTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(203, 299);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 21);
+            this.textBox1.TabIndex = 52;
+            // 
+            // taskArea
+            // 
+            this.taskArea.FormattingEnabled = true;
+            this.taskArea.Location = new System.Drawing.Point(203, 38);
+            this.taskArea.Name = "taskArea";
+            this.taskArea.Size = new System.Drawing.Size(200, 21);
+            this.taskArea.TabIndex = 53;
+            // 
             // TaskEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 410);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.taskArea);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.taskStatus);
             this.Controls.Add(this.label6);
@@ -240,7 +241,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.taskSubject);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.taskArea);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TaskEdit";
@@ -256,7 +256,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox taskArea;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox taskSubject;
         private System.Windows.Forms.Label label3;
@@ -271,9 +270,10 @@
         private System.Windows.Forms.ComboBox taskAssignee;
         private System.Windows.Forms.ComboBox taskStatus;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource employeeTasksBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox taskArea;
     }
 }
