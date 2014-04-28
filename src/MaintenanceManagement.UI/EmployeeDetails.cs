@@ -23,6 +23,8 @@ namespace MaintenanceManagement.UI
                 employeeEmploymentType.Text = value.EmploymentType.ToString();
                 employeeMobilePhone.Text = value.MobilePhone;
                 employeePhone.Text = value.HomePhone;
+                //employeeArea.Text = value.Area.ToString();
+                employeeTeam.Text = value.Team;
             }
         }
 

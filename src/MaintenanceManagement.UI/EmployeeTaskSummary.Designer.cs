@@ -40,7 +40,7 @@
             this.employeeTools = new System.Windows.Forms.Button();
             this.doneTasks = new System.Windows.Forms.Button();
             this.doneTasksAmount = new System.Windows.Forms.TextBox();
-            this.totalTaskAmount = new System.Windows.Forms.TextBox();
+            this.totalTasksAmount = new System.Windows.Forms.TextBox();
             this.allTasks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -157,13 +157,13 @@
             this.doneTasksAmount.Size = new System.Drawing.Size(36, 20);
             this.doneTasksAmount.TabIndex = 14;
             // 
-            // totalTaskAmount
+            // totalTasksAmount
             // 
-            this.totalTaskAmount.Location = new System.Drawing.Point(138, 178);
-            this.totalTaskAmount.Name = "totalTaskAmount";
-            this.totalTaskAmount.ReadOnly = true;
-            this.totalTaskAmount.Size = new System.Drawing.Size(36, 20);
-            this.totalTaskAmount.TabIndex = 18;
+            this.totalTasksAmount.Location = new System.Drawing.Point(138, 178);
+            this.totalTasksAmount.Name = "totalTasksAmount";
+            this.totalTasksAmount.ReadOnly = true;
+            this.totalTasksAmount.Size = new System.Drawing.Size(36, 20);
+            this.totalTasksAmount.TabIndex = 18;
             // 
             // allTasks
             // 
@@ -180,7 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 264);
-            this.Controls.Add(this.totalTaskAmount);
+            this.Controls.Add(this.totalTasksAmount);
             this.Controls.Add(this.allTasks);
             this.Controls.Add(this.employeeTools);
             this.Controls.Add(this.newTasksCreator);
@@ -215,7 +215,7 @@
         private System.Windows.Forms.Button employeeTools;
         private System.Windows.Forms.Button doneTasks;
         private System.Windows.Forms.TextBox doneTasksAmount;
-        private System.Windows.Forms.TextBox totalTaskAmount;
+        private System.Windows.Forms.TextBox totalTasksAmount;
         private System.Windows.Forms.Button allTasks;
 
     }

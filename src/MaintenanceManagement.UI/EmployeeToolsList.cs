@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using MaintenanceManagement.DataAccess;
+using MaintenanceManagement.DataAccess.Entities;
 
 namespace MaintenanceManagement.UI
 {
@@ -21,7 +23,11 @@ namespace MaintenanceManagement.UI
             var form = new ToolEdit();
             if (form.ShowDialog() == DialogResult.OK)
             {
-
+                using (var context = new MainContext())
+                {
+                    context.EmployeeTools.Add(form.EmployeeTool);
+                    context.SaveChanges();
+                }
             }
         }
 
@@ -34,6 +40,15 @@ namespace MaintenanceManagement.UI
             }
         }
 
+        public Employee ToolOwner
+        {
+            get { return (Employee)toolOwner.Tag; }
+            set
+            {
+                toolOwner.Tag = value;
+                toolOwner.Text = value.ToString();
+            }
+        }
 
 
     }

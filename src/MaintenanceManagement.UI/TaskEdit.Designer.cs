@@ -149,6 +149,7 @@
             this.saveTask.TabIndex = 10;
             this.saveTask.Text = "Zapisz";
             this.saveTask.UseVisualStyleBackColor = true;
+            this.saveTask.Click += new System.EventHandler(this.saveTask_Click);
             // 
             // cancelTask
             // 

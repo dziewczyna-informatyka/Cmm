@@ -44,6 +44,8 @@
             this.deleteTool = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.toolOwner = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeToolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -61,7 +63,7 @@
             this.toolEndReasonDataGridViewTextBoxColumn,
             this.commentDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.employeeToolsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(643, 374);
             this.dataGridView1.TabIndex = 0;
@@ -118,7 +120,7 @@
             // 
             // newTool
             // 
-            this.newTool.Location = new System.Drawing.Point(684, 12);
+            this.newTool.Location = new System.Drawing.Point(684, 40);
             this.newTool.Name = "newTool";
             this.newTool.Size = new System.Drawing.Size(75, 23);
             this.newTool.TabIndex = 1;
@@ -128,7 +130,7 @@
             // 
             // editTool
             // 
-            this.editTool.Location = new System.Drawing.Point(684, 41);
+            this.editTool.Location = new System.Drawing.Point(684, 69);
             this.editTool.Name = "editTool";
             this.editTool.Size = new System.Drawing.Size(75, 23);
             this.editTool.TabIndex = 2;
@@ -138,7 +140,7 @@
             // 
             // deleteTool
             // 
-            this.deleteTool.Location = new System.Drawing.Point(684, 70);
+            this.deleteTool.Location = new System.Drawing.Point(684, 98);
             this.deleteTool.Name = "deleteTool";
             this.deleteTool.Size = new System.Drawing.Size(75, 23);
             this.deleteTool.TabIndex = 3;
@@ -148,7 +150,7 @@
             // button5
             // 
             this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button5.Location = new System.Drawing.Point(700, 398);
+            this.button5.Location = new System.Drawing.Point(684, 431);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 5;
@@ -158,18 +160,39 @@
             // button6
             // 
             this.button6.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button6.Location = new System.Drawing.Point(619, 398);
+            this.button6.Location = new System.Drawing.Point(603, 431);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 6;
             this.button6.Text = "OK";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // toolOwner
+            // 
+            this.toolOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toolOwner.Location = new System.Drawing.Point(85, 6);
+            this.toolOwner.Name = "toolOwner";
+            this.toolOwner.ReadOnly = true;
+            this.toolOwner.Size = new System.Drawing.Size(159, 22);
+            this.toolOwner.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(9, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Pracownik";
+            // 
             // EmployeeToolsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 433);
+            this.ClientSize = new System.Drawing.Size(774, 469);
+            this.Controls.Add(this.toolOwner);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.deleteTool);
@@ -178,11 +201,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "EmployeeToolsList";
             this.Text = "Lista narzędzi pracownika";
-            //this.Load += new System.EventHandler(this.EmployeeToolsList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeToolsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -203,5 +226,7 @@
         private System.Windows.Forms.Button deleteTool;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox toolOwner;
+        private System.Windows.Forms.Label label2;
     }
 }

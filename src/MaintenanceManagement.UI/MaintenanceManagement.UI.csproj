@@ -124,6 +124,12 @@
     <Compile Include="TasksList.Designer.cs">
       <DependentUpon>TasksList.cs</DependentUpon>
     </Compile>
+    <Compile Include="TasksSummaryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TasksSummaryList.Designer.cs">
+      <DependentUpon>TasksSummaryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TasksList.resx">
       <DependentUpon>TasksList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TasksSummaryList.resx">
+      <DependentUpon>TasksSummaryList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolEdit.resx">
       <DependentUpon>ToolEdit.cs</DependentUpon>

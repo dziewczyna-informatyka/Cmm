@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Threading;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 
 namespace MaintenanceManagement.UI
 {
@@ -41,10 +46,18 @@ namespace MaintenanceManagement.UI
                 PersonalNumber = 1234,
                 EmploymentType = EmploymentType.Clinico,
                 Id = 0,
-                Name = "adadadadad",
-                Surname = "opiofspfj",
+                Name = "Przykładowy",
+                Surname = "pracownik",
             };
-            var form = new EmployeeTaskSummary {AssignedEmployee = emp, TasksAmount = 3,};
+            var form = new EmployeeTaskSummary
+            {
+                AssignedEmployee = emp,
+                TasksAmount = 0,
+                ActualTasksAmount = 0,
+                DoneTasksAmount = 0,
+                PlannedTasksAmount = 0,
+            };
+
             if (form.ShowDialog() == DialogResult.OK)
             {
 
@@ -56,6 +69,11 @@ namespace MaintenanceManagement.UI
             var form = new TaskEdit();
             if (form.ShowDialog() == DialogResult.OK)
             {
+                using (var context = new MainContext())
+                {
+                    context.EmployeeTasks.Add(form.EmployeeTask);
+                    context.SaveChanges();
+                }
 
             }
         }
@@ -72,7 +90,11 @@ namespace MaintenanceManagement.UI
 
         private void zaplanowaneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned };
+            var form = new TasksList
+            {
+                
+                EmployeeTaskStatus = EmployeeTaskStatus.Planned
+            };
             if (form.ShowDialog() == DialogResult.OK)
             {
 
@@ -90,7 +112,14 @@ namespace MaintenanceManagement.UI
 
         private void zestawienieZbiorczeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new TasksList();
+            var form = new TasksSummaryList
+            {
+                TasksAmount =  0,
+                ActualTasksAmount = 0,
+                DoneTasksAmount = 0,
+                PlannedTasksAmount = 0,
+            };
+
             if (form.ShowDialog() == DialogResult.OK)
             {
 

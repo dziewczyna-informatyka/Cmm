@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
@@ -16,13 +17,14 @@ namespace MaintenanceManagement.UI
 
         protected override void OnLoad(EventArgs e)
         {
-            taskStatus.DataSource = Enum.GetValues(typeof (EmployeeTaskStatus));
+            taskStatus.DataSource = Enum.GetValues(typeof(EmployeeTaskStatus)); //wyświetla angielskie nazwy
 
             using (var context = new MainContext())
             {
                 taskAssignee.DataSource = context.Employees.ToList();
+                //taskAssignee.SelectedItem =
             }
-           
+
             base.OnLoad(e);
         }
 
@@ -57,6 +59,14 @@ namespace MaintenanceManagement.UI
             // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
             this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
 
+        }
+
+        private void saveTask_Click(object sender, EventArgs e)
+        {
+            using (var context = new MainContext())
+            {
+
+            }
         }
     }
 }

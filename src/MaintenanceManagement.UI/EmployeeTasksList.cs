@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
@@ -14,12 +15,26 @@ namespace MaintenanceManagement.UI
             InitializeComponent();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            UpdateEmployeeTasks();
+            base.OnLoad(e);
+        }
+
 
         private void EmployeeTasksList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
             this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
 
+        }
+
+        private void UpdateEmployeeTasks()
+        {
+            using (var context = new MainContext())
+            {
+               employeeTasksGridView.DataSource = context.EmployeeTasks.OrderBy(e => e.Assignee).ToList();
+            }
         }
 
         public EmployeeTaskStatus EmployeeTaskStatus
