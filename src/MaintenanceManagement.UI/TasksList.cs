@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
@@ -25,10 +26,12 @@ namespace MaintenanceManagement.UI
         private void TasksList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
-            this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
+            //this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
 
+            using (var context = new MainContext())
+            {
+                taskListDataGrid.DataSource = context.EmployeeTasks.ToList();
+            }
         }
-
-
     }
 }

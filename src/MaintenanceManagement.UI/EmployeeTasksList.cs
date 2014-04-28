@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
@@ -25,16 +27,20 @@ namespace MaintenanceManagement.UI
         private void EmployeeTasksList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
-            this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
+            //this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
+
 
         }
 
         private void UpdateEmployeeTasks()
         {
+            employeeTasksGridView.AutoGenerateColumns = false;
+
             using (var context = new MainContext())
             {
-               employeeTasksGridView.DataSource = context.EmployeeTasks.OrderBy(e => e.Assignee).ToList();
-            }
+                var status = (EmployeeTaskStatus)Enum.Parse(typeof(EmployeeTaskStatus),tasksStatus.Text);                
+                employeeTasksGridView.DataSource = context.EmployeeTasks.Include(e => e.Assignee).OrderBy(e => e.Progress).Where(e => AssignedEmployee.Id == e.Id && EmployeeTaskStatus == status).ToList();
+            }           
         }
 
         public EmployeeTaskStatus EmployeeTaskStatus

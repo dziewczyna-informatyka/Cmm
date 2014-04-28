@@ -17,5 +17,13 @@ namespace MaintenanceManagement.DataAccess.Entities
         public DateTime DueDate { get; set; }
 
         public double Progress { get; set; }
+
+        public string AssigneeName
+        {
+            get
+            {
+                return Assignee != null ? Assignee.FullName : string.Empty;
+            }
+        }
     }
 }

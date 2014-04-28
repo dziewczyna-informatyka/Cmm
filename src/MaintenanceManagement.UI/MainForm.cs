@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+
 
 
 namespace MaintenanceManagement.UI
@@ -49,14 +49,20 @@ namespace MaintenanceManagement.UI
                 Name = "Przykładowy",
                 Surname = "pracownik",
             };
-            var form = new EmployeeTaskSummary
+            var form = new EmployeeTaskSummary();
+
+
+            using (var context = new MainContext())
             {
-                AssignedEmployee = emp,
-                TasksAmount = 0,
-                ActualTasksAmount = 0,
-                DoneTasksAmount = 0,
-                PlannedTasksAmount = 0,
-            };
+                form.AssignedEmployee = emp;
+                form.TasksAmount = context.EmployeeTasks.Count();
+                form.ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress);
+                form.PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned);
+                form.DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done);
+            }
+
+
+
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -92,7 +98,7 @@ namespace MaintenanceManagement.UI
         {
             var form = new TasksList
             {
-                
+
                 EmployeeTaskStatus = EmployeeTaskStatus.Planned
             };
             if (form.ShowDialog() == DialogResult.OK)
@@ -112,13 +118,14 @@ namespace MaintenanceManagement.UI
 
         private void zestawienieZbiorczeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new TasksSummaryList
+            var form = new TasksSummaryList();
+            using (var context = new MainContext())
             {
-                TasksAmount =  0,
-                ActualTasksAmount = 0,
-                DoneTasksAmount = 0,
-                PlannedTasksAmount = 0,
-            };
+                form.TasksAmount = context.EmployeeTasks.Count();
+                form.ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress);
+                form.PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned);
+                form.DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done);
+            }
 
             if (form.ShowDialog() == DialogResult.OK)
             {
