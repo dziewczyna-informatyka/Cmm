@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
@@ -15,17 +16,17 @@ namespace MaintenanceManagement.UI
 
         protected override void OnLoad(EventArgs e)
         {
-            toolTypeComboBox.DataSource = Enum.GetValues(typeof(ToolType));
-
             using (var context = new MainContext())
             {
                 toolOwner.DataSource = context.Employees.ToList();
+                toolTypeComboBox.DataSource = context.ToolTypes.ToList();
+                toolEndReason.DataSource = Enum.GetValues(typeof(ToolEndReason));
             }
-
+            
             base.OnLoad(e);
         }
 
-       public EmployeeTool EmployeeTool
+        public EmployeeTool EmployeeTool
         {
             get
             {
@@ -52,6 +53,5 @@ namespace MaintenanceManagement.UI
                 toolComment.Text = value.Comment;
             }
         }
-
     }
 }

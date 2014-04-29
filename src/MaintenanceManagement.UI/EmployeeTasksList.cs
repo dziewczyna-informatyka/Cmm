@@ -22,16 +22,7 @@ namespace MaintenanceManagement.UI
             UpdateEmployeeTasks();
             base.OnLoad(e);
         }
-
-
-        private void EmployeeTasksList_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
-            //this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
-
-
-        }
-
+        
         private void UpdateEmployeeTasks()
         {
             employeeTasksGridView.AutoGenerateColumns = false;
@@ -39,7 +30,12 @@ namespace MaintenanceManagement.UI
             using (var context = new MainContext())
             {
                 var status = (EmployeeTaskStatus)Enum.Parse(typeof(EmployeeTaskStatus),tasksStatus.Text);                
-                employeeTasksGridView.DataSource = context.EmployeeTasks.Include(e => e.Assignee).OrderBy(e => e.Progress).Where(e => AssignedEmployee.Id == e.Id && EmployeeTaskStatus == status).ToList();
+                employeeTasksGridView.DataSource =
+                    context.EmployeeTasks.
+                    Include(e => e.Assignee).
+                    OrderBy(e => e.Progress).
+                    Where(e => AssignedEmployee.Id == e.Id && EmployeeTaskStatus == status).
+                    ToList();
             }           
         }
 
@@ -62,12 +58,10 @@ namespace MaintenanceManagement.UI
                 responsibleEmployee.Text = value.FullName;
             }
         }
-
-
+        
         private void editTask_Click(object sender, EventArgs e)
         {
             var form = new TaskEdit();
-
             if (form.ShowDialog() == DialogResult.OK)
             {
 

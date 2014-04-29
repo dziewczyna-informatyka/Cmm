@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
@@ -12,11 +14,34 @@ namespace MaintenanceManagement.UI
             InitializeComponent();
         }
 
-        // private void EmployeeToolsList_Load(object sender, EventArgs e)
-        //{
-        //    // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTools' table. You can move, or remove it, as needed.
-        //  this.employeeToolsTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTools);
-        //}
+        protected override void OnLoad(EventArgs e)
+        {
+            UpdateTools();
+            base.OnLoad(e);
+        }
+
+        private void UpdateTools()
+        {
+            toolsListDataGrid.AutoGenerateColumns = false;
+
+            using (var context = new MainContext())
+            {
+                toolsListDataGrid.DataSource =
+                    context.EmployeeTools.
+                        Include(e => e.Owner).
+                        OrderBy(e => e.ToolType).
+                        Where(e => ToolOwner == e.Owner).
+                        ToList();
+            }
+        }
+
+        public Employee ToolOwner
+        {
+            get { return (Employee)toolOwner.Tag; }
+            set { toolOwner.Tag = value; toolOwner.Text = value.ToString(); }
+        }
+
+        //-----------------------------------------------------------------------------
 
         private void newTool_Click(object sender, EventArgs e)
         {
@@ -40,15 +65,7 @@ namespace MaintenanceManagement.UI
             }
         }
 
-        public Employee ToolOwner
-        {
-            get { return (Employee)toolOwner.Tag; }
-            set
-            {
-                toolOwner.Tag = value;
-                toolOwner.Text = value.ToString();
-            }
-        }
+        
 
 
     }

@@ -51,16 +51,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreaEdit.Designer.cs">
+      <DependentUpon>AreaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="AreaEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AreaEmployees.Designer.cs">
       <DependentUpon>AreaEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="AreasList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreasList.Designer.cs">
+      <DependentUpon>AreasList.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditForm.Designer.cs">
+    <Compile Include="EditForm.designer.cs">
       <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeDetails.cs">
@@ -136,11 +148,11 @@
     <Compile Include="ToolEdit.Designer.cs">
       <DependentUpon>ToolEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolsList.cs">
+    <Compile Include="ToolTypesList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolsList.Designer.cs">
-      <DependentUpon>ToolsList.cs</DependentUpon>
+    <Compile Include="ToolTypesList.Designer.cs">
+      <DependentUpon>ToolTypesList.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolTypeEdit.cs">
       <SubType>Form</SubType>
@@ -148,8 +160,14 @@
     <Compile Include="ToolTypeEdit.Designer.cs">
       <DependentUpon>ToolTypeEdit.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AreaEdit.resx">
+      <DependentUpon>AreaEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AreaEmployees.resx">
       <DependentUpon>AreaEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AreasList.resx">
+      <DependentUpon>AreasList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
@@ -198,8 +216,8 @@
     <EmbeddedResource Include="ToolEdit.resx">
       <DependentUpon>ToolEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolsList.resx">
-      <DependentUpon>ToolsList.cs</DependentUpon>
+    <EmbeddedResource Include="ToolTypesList.resx">
+      <DependentUpon>ToolTypesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolTypeEdit.resx">
       <DependentUpon>ToolTypeEdit.cs</DependentUpon>

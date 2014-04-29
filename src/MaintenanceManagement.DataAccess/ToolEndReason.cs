@@ -7,5 +7,8 @@ namespace MaintenanceManagement.DataAccess
     {
         [Display(ResourceType = typeof(Common), Name = "ToolEndReason_Damage")]
         Damage = 0,
+
+        [Display(ResourceType = typeof(Common), Name = "ToolEndReason_Exchange")]
+        Exchange = 1,
     }
 }

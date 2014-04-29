@@ -37,7 +37,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tasksStatus = new System.Windows.Forms.TextBox();
-            this.AssigneeNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssigneeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.taskListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -47,7 +52,12 @@
             // 
             this.taskListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.taskListDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AssigneeNameColumn});
+            this.AssigneeId,
+            this.Area,
+            this.Subject,
+            this.Actions,
+            this.Progress,
+            this.DueDate});
             this.taskListDataGrid.Location = new System.Drawing.Point(12, 45);
             this.taskListDataGrid.Name = "taskListDataGrid";
             this.taskListDataGrid.Size = new System.Drawing.Size(846, 252);
@@ -106,11 +116,41 @@
             this.tasksStatus.Size = new System.Drawing.Size(100, 22);
             this.tasksStatus.TabIndex = 4;
             // 
-            // AssigneeNameColumn
+            // AssigneeId
             // 
-            this.AssigneeNameColumn.DataPropertyName = "AssigneName";
-            this.AssigneeNameColumn.HeaderText = "Osoba odpowiedzialna";
-            this.AssigneeNameColumn.Name = "AssigneeNameColumn";
+            this.AssigneeId.DataPropertyName = "AssigneName";
+            this.AssigneeId.HeaderText = "Osoba odpowiedzialna";
+            this.AssigneeId.Name = "AssigneeId";
+            // 
+            // Area
+            // 
+            this.Area.DataPropertyName = "Area";
+            this.Area.HeaderText = "Obszar";
+            this.Area.Name = "Area";
+            // 
+            // Subject
+            // 
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Temat";
+            this.Subject.Name = "Subject";
+            // 
+            // Actions
+            // 
+            this.Actions.DataPropertyName = "Actions";
+            this.Actions.HeaderText = "Czynności";
+            this.Actions.Name = "Actions";
+            // 
+            // Progress
+            // 
+            this.Progress.DataPropertyName = "Progress";
+            this.Progress.HeaderText = "Wykonanie";
+            this.Progress.Name = "Progress";
+            // 
+            // DueDate
+            // 
+            this.DueDate.DataPropertyName = "DueDate";
+            this.DueDate.HeaderText = "Data zakończenia";
+            this.DueDate.Name = "DueDate";
             // 
             // TasksList
             // 
@@ -124,7 +164,6 @@
             this.Controls.Add(this.taskListDataGrid);
             this.Name = "TasksList";
             this.Text = "Lista zadań";
-            this.Load += new System.EventHandler(this.TasksList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.taskListDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
@@ -143,6 +182,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tasksStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AssigneeNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssigneeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Actions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
     }
 }

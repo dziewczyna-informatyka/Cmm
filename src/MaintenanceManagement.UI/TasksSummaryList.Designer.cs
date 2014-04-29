@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.taskListDataGrid = new System.Windows.Forms.DataGridView();
-            this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
+            this.tasksListDataGrid = new System.Windows.Forms.DataGridView();
             this.employeeTasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
             this.doneTasksAmount = new System.Windows.Forms.TextBox();
             this.actualTasksAmount = new System.Windows.Forms.TextBox();
@@ -41,19 +41,18 @@
             this.doneTasks = new System.Windows.Forms.Button();
             this.actualTasks = new System.Windows.Forms.Button();
             this.plannedTasks = new System.Windows.Forms.Button();
-            this.assigneeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.areaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.progressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalTasksAmount = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.taskListDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
+            this.AsigneeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.tasksListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -76,34 +75,31 @@
             this.button1.Text = "Anuluj";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // taskListDataGrid
+            // tasksListDataGrid
             // 
-            this.taskListDataGrid.AutoGenerateColumns = false;
-            this.taskListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.taskListDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.subjectDataGridViewTextBoxColumn,
-            this.actionsDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.dueDateDataGridViewTextBoxColumn,
-            this.progressDataGridViewTextBoxColumn,
-            this.areaIdDataGridViewTextBoxColumn,
-            this.assigneeIdDataGridViewTextBoxColumn});
-            this.taskListDataGrid.DataSource = this.employeeTasksBindingSource;
-            this.taskListDataGrid.Location = new System.Drawing.Point(12, 48);
-            this.taskListDataGrid.Name = "taskListDataGrid";
-            this.taskListDataGrid.Size = new System.Drawing.Size(858, 452);
-            this.taskListDataGrid.TabIndex = 3;
-            // 
-            // maintenanceManagementDataSet
-            // 
-            this.maintenanceManagementDataSet.DataSetName = "MaintenanceManagementDataSet";
-            this.maintenanceManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tasksListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tasksListDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AsigneeId,
+            this.Area,
+            this.Subject,
+            this.Actions,
+            this.Status,
+            this.Progress,
+            this.DueDate});
+            this.tasksListDataGrid.Location = new System.Drawing.Point(12, 48);
+            this.tasksListDataGrid.Name = "tasksListDataGrid";
+            this.tasksListDataGrid.Size = new System.Drawing.Size(858, 452);
+            this.tasksListDataGrid.TabIndex = 3;
             // 
             // employeeTasksBindingSource
             // 
             this.employeeTasksBindingSource.DataMember = "EmployeeTasks";
             this.employeeTasksBindingSource.DataSource = this.maintenanceManagementDataSet;
+            // 
+            // maintenanceManagementDataSet
+            // 
+            this.maintenanceManagementDataSet.DataSetName = "MaintenanceManagementDataSet";
+            this.maintenanceManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // employeeTasksTableAdapter
             // 
@@ -141,6 +137,7 @@
             this.doneTasks.TabIndex = 21;
             this.doneTasks.Text = "Zakończone";
             this.doneTasks.UseVisualStyleBackColor = true;
+            this.doneTasks.Click += new System.EventHandler(this.doneTasks_Click);
             // 
             // actualTasks
             // 
@@ -162,55 +159,6 @@
             this.plannedTasks.UseVisualStyleBackColor = true;
             this.plannedTasks.Click += new System.EventHandler(this.plannedTasks_Click);
             // 
-            // assigneeIdDataGridViewTextBoxColumn
-            // 
-            this.assigneeIdDataGridViewTextBoxColumn.DataPropertyName = "Assignee_Id";
-            this.assigneeIdDataGridViewTextBoxColumn.HeaderText = "Osoba odpowiedzialna";
-            this.assigneeIdDataGridViewTextBoxColumn.Name = "assigneeIdDataGridViewTextBoxColumn";
-            // 
-            // areaIdDataGridViewTextBoxColumn
-            // 
-            this.areaIdDataGridViewTextBoxColumn.DataPropertyName = "Area_Id";
-            this.areaIdDataGridViewTextBoxColumn.HeaderText = "Obszar";
-            this.areaIdDataGridViewTextBoxColumn.Name = "areaIdDataGridViewTextBoxColumn";
-            // 
-            // progressDataGridViewTextBoxColumn
-            // 
-            this.progressDataGridViewTextBoxColumn.DataPropertyName = "Progress";
-            this.progressDataGridViewTextBoxColumn.HeaderText = "Wykonanie";
-            this.progressDataGridViewTextBoxColumn.Name = "progressDataGridViewTextBoxColumn";
-            // 
-            // dueDateDataGridViewTextBoxColumn
-            // 
-            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
-            this.dueDateDataGridViewTextBoxColumn.HeaderText = "Data zakończenia";
-            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // actionsDataGridViewTextBoxColumn
-            // 
-            this.actionsDataGridViewTextBoxColumn.DataPropertyName = "Actions";
-            this.actionsDataGridViewTextBoxColumn.HeaderText = "Czynności";
-            this.actionsDataGridViewTextBoxColumn.Name = "actionsDataGridViewTextBoxColumn";
-            // 
-            // subjectDataGridViewTextBoxColumn
-            // 
-            this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
-            this.subjectDataGridViewTextBoxColumn.HeaderText = "Temat";
-            this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id zadania";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // totalTasksAmount
             // 
             this.totalTasksAmount.Location = new System.Drawing.Point(574, 12);
@@ -228,6 +176,49 @@
             this.textBox1.TabIndex = 27;
             this.textBox1.Text = "Sumarycznie";
             // 
+            // AsigneeId
+            // 
+            this.AsigneeId.DataPropertyName = "AssigneeName";
+            this.AsigneeId.HeaderText = "Osoba odpowiedzialna";
+            this.AsigneeId.Name = "AsigneeId";
+            this.AsigneeId.ReadOnly = true;
+            // 
+            // Area
+            // 
+            this.Area.DataPropertyName = "Area";
+            this.Area.HeaderText = "Obszar";
+            this.Area.Name = "Area";
+            // 
+            // Subject
+            // 
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Temat";
+            this.Subject.Name = "Subject";
+            // 
+            // Actions
+            // 
+            this.Actions.DataPropertyName = "Actions";
+            this.Actions.HeaderText = "Czynności";
+            this.Actions.Name = "Actions";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
+            // Progress
+            // 
+            this.Progress.DataPropertyName = "Progress";
+            this.Progress.HeaderText = "Wykonanie";
+            this.Progress.Name = "Progress";
+            // 
+            // DueDate
+            // 
+            this.DueDate.DataPropertyName = "DueDate";
+            this.DueDate.HeaderText = "Data zakończenia";
+            this.DueDate.Name = "DueDate";
+            // 
             // TasksSummaryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,13 +234,12 @@
             this.Controls.Add(this.plannedTasks);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.taskListDataGrid);
+            this.Controls.Add(this.tasksListDataGrid);
             this.Name = "TasksSummaryList";
             this.Text = "Lista wszystkich zadań";
-            this.Load += new System.EventHandler(this.TasksSummaryList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.taskListDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasksListDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +249,7 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView taskListDataGrid;
+        private System.Windows.Forms.DataGridView tasksListDataGrid;
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeeTasksBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
@@ -269,15 +259,14 @@
         private System.Windows.Forms.Button doneTasks;
         private System.Windows.Forms.Button actualTasks;
         private System.Windows.Forms.Button plannedTasks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subjectDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn actionsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn progressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn areaIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assigneeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox totalTasksAmount;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AsigneeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Actions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
     }
 }

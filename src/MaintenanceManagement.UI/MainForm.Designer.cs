@@ -42,6 +42,7 @@
             this.pracownicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.narzedziaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeExample = new System.Windows.Forms.Button();
+            this.obszaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,7 +125,8 @@
             // 
             this.bibliotekiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pracownicyToolStripMenuItem,
-            this.narzedziaToolStripMenuItem});
+            this.narzedziaToolStripMenuItem,
+            this.obszaryToolStripMenuItem});
             this.bibliotekiToolStripMenuItem.Name = "bibliotekiToolStripMenuItem";
             this.bibliotekiToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.bibliotekiToolStripMenuItem.Text = "Biblioteki";
@@ -132,14 +134,14 @@
             // pracownicyToolStripMenuItem
             // 
             this.pracownicyToolStripMenuItem.Name = "pracownicyToolStripMenuItem";
-            this.pracownicyToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.pracownicyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pracownicyToolStripMenuItem.Text = "Pracownicy";
             this.pracownicyToolStripMenuItem.Click += new System.EventHandler(this.pracownicyToolStripMenuItem_Click);
             // 
             // narzedziaToolStripMenuItem
             // 
             this.narzedziaToolStripMenuItem.Name = "narzedziaToolStripMenuItem";
-            this.narzedziaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.narzedziaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.narzedziaToolStripMenuItem.Text = "Narzędzia";
             this.narzedziaToolStripMenuItem.Click += new System.EventHandler(this.narzToolStripMenuItem_Click);
             // 
@@ -152,6 +154,13 @@
             this.employeeExample.Text = "Przykładowy pracownik";
             this.employeeExample.UseVisualStyleBackColor = true;
             this.employeeExample.Click += new System.EventHandler(this.employeeExample_Click);
+            // 
+            // obszaryToolStripMenuItem
+            // 
+            this.obszaryToolStripMenuItem.Name = "obszaryToolStripMenuItem";
+            this.obszaryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.obszaryToolStripMenuItem.Text = "Obszary";
+            this.obszaryToolStripMenuItem.Click += new System.EventHandler(this.obszaryToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -188,6 +197,7 @@
         private System.Windows.Forms.Button employeeExample;
 
         private System.Windows.Forms.ToolStripMenuItem zestawienieZbiorczeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obszaryToolStripMenuItem;
 
     }
 }

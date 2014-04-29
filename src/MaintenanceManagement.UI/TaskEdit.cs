@@ -22,7 +22,6 @@ namespace MaintenanceManagement.UI
             using (var context = new MainContext())
             {
                 taskAssignee.DataSource = context.Employees.ToList();
-                //taskAssignee.SelectedItem =
             }
 
             base.OnLoad(e);
@@ -52,13 +51,6 @@ namespace MaintenanceManagement.UI
                 taskStatus.SelectedItem = value.Status;
 
             }
-        }
-
-        private void TaskEdit_Load(object sender, System.EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
-            this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
-
         }
 
         private void saveTask_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
@@ -13,6 +14,12 @@ namespace MaintenanceManagement.UI
             InitializeComponent();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            UpdateTasks();
+            base.OnLoad(e);
+        }
+
         public EmployeeTaskStatus EmployeeTaskStatus
         {
             get { return (EmployeeTaskStatus)tasksStatus.Tag; }
@@ -23,14 +30,20 @@ namespace MaintenanceManagement.UI
             }
         }
 
-        private void TasksList_Load(object sender, EventArgs e)
+        private void UpdateTasks()
         {
-            // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
-            //this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
+            taskListDataGrid.AutoGenerateColumns = false;
 
             using (var context = new MainContext())
             {
-                taskListDataGrid.DataSource = context.EmployeeTasks.ToList();
+                taskListDataGrid.DataSource =
+                     context.EmployeeTasks.
+                     Include(e => e.Assignee).
+                     OrderBy(e => e.Progress).
+                     Where(e => EmployeeTaskStatus == e.Status).
+                     ToList();
+
+
             }
         }
     }

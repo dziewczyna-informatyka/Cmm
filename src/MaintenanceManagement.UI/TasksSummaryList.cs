@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
+using MaintenanceManagement.DataAccess.Entities;
 
 namespace MaintenanceManagement.UI
 {
@@ -16,6 +14,22 @@ namespace MaintenanceManagement.UI
         public TasksSummaryList()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            UpdateTasks();
+            base.OnLoad(e);
+        }
+
+        private void UpdateTasks()
+        {
+            tasksListDataGrid.AutoGenerateColumns = false;
+
+            using (var context = new MainContext())
+            {
+                tasksListDataGrid.DataSource = context.EmployeeTasks.Include(e=>e.Assignee).OrderBy(e => e.Progress).ToList();
+            }
         }
 
         //-----------------------------------------------------------------------------
@@ -45,34 +59,24 @@ namespace MaintenanceManagement.UI
         }
 
         //-----------------------------------------------------------------------------
-        private void TasksSummaryList_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'maintenanceManagementDataSet.EmployeeTasks' table. You can move, or remove it, as needed.
-            this.employeeTasksTableAdapter.Fill(this.maintenanceManagementDataSet.EmployeeTasks);
-
-        }
 
         private void plannedTasks_Click(object sender, EventArgs e)
         {
             var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned };
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            form.ShowDialog();
         }
 
         private void actualTasks_Click(object sender, EventArgs e)
         {
             var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.InProgress };
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            form.ShowDialog();
         }
 
         private void doneTasks_Click(object sender, EventArgs e)
         {
-
+            var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Done };
+            form.ShowDialog();
         }
+
     }
 }

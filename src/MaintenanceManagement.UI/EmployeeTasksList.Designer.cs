@@ -194,7 +194,6 @@
             this.Controls.Add(this.employeeTasksGridView);
             this.Name = "EmployeeTasksList";
             this.Text = "Lista zadań pracownika";
-            this.Load += new System.EventHandler(this.EmployeeTasksList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();

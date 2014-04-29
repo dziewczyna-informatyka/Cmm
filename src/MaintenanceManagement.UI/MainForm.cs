@@ -22,6 +22,8 @@ namespace MaintenanceManagement.UI
             base.OnLoad(e);
         }
 
+        //-----------------------------------------------------------------------------
+
         private void narzToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new ToolsList();
@@ -31,11 +33,63 @@ namespace MaintenanceManagement.UI
         private void pracownicyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new EmployeesList();
+            form.ShowDialog();
+        }
+
+        private void obszaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AreasList();
+            form.ShowDialog();
+        }
+
+        //-----------------------------------------------------------------------------
+
+        private void noweToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TaskEdit();
             if (form.ShowDialog() == DialogResult.OK)
             {
+                using (var context = new MainContext())
+                {
+                    context.EmployeeTasks.Add(form.EmployeeTask);
+                    context.SaveChanges();
+                }
 
             }
         }
+
+        private void aktualneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.InProgress };
+            form.ShowDialog();
+        }
+
+        private void zaplanowaneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned };
+            form.ShowDialog();
+        }
+
+        private void zrealizowaneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Done };
+            form.ShowDialog();
+        }
+
+        private void zestawienieZbiorczeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TasksSummaryList();
+            using (var context = new MainContext())
+            {
+                form.TasksAmount = context.EmployeeTasks.Count();
+                form.ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress);
+                form.PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned);
+                form.DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done);
+            }
+            form.ShowDialog();
+        }
+
+        //-----------------------------------------------------------------------------
 
         private void employeeExample_Click(object sender, EventArgs e)
         {
@@ -55,76 +109,10 @@ namespace MaintenanceManagement.UI
             using (var context = new MainContext())
             {
                 form.AssignedEmployee = emp;
-                form.TasksAmount = context.EmployeeTasks.Count();
-                form.ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress);
-                form.PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned);
-                form.DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done);
-            }
-
-
-
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
-
-        private void noweToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new TaskEdit();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                using (var context = new MainContext())
-                {
-                    context.EmployeeTasks.Add(form.EmployeeTask);
-                    context.SaveChanges();
-                }
-
-            }
-        }
-
-        private void aktualneToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.InProgress };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
-
-        private void zaplanowaneToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new TasksList
-            {
-
-                EmployeeTaskStatus = EmployeeTaskStatus.Planned
-            };
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
-
-        private void zrealizowaneToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Done };
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
-
-        private void zestawienieZbiorczeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new TasksSummaryList();
-            using (var context = new MainContext())
-            {
-                form.TasksAmount = context.EmployeeTasks.Count();
-                form.ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress);
-                form.PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned);
-                form.DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done);
+                form.TasksAmount = context.EmployeeTasks.Count(a => a.Assignee.Id == emp.Id);
+                form.ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress && a.Assignee.Id == emp.Id);
+                form.PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned && a.Assignee.Id == emp.Id);
+                form.DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done && a.Assignee.Id == emp.Id);
             }
 
             if (form.ShowDialog() == DialogResult.OK)
@@ -132,6 +120,10 @@ namespace MaintenanceManagement.UI
 
             }
         }
+
+       
+
+
 
     }
 }

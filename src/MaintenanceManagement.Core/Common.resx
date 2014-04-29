@@ -165,6 +165,9 @@
   <data name="ToolEndReason_Damage" xml:space="preserve">
     <value>Uszkodzenie</value>
   </data>
+  <data name="ToolEndReason_Exchange" xml:space="preserve">
+    <value>Wymiana</value>
+  </data>
   <data name="WorkSchedule_Continuous" xml:space="preserve">
     <value>Czterobrygadówka</value>
   </data>

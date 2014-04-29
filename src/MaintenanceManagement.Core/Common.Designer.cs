@@ -9,6 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace MaintenanceManagement.Core {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -198,6 +201,15 @@ namespace MaintenanceManagement.Core {
         public static string ToolEndReason_Damage {
             get {
                 return ResourceManager.GetString("ToolEndReason_Damage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wymiana.
+        /// </summary>
+        public static string ToolEndReason_Exchange {
+            get {
+                return ResourceManager.GetString("ToolEndReason_Exchange", resourceCulture);
             }
         }
         

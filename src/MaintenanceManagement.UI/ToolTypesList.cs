@@ -24,13 +24,13 @@ namespace MaintenanceManagement.UI
         //
         private void UpdateToolTypes()
         {
-            toolTypesList.Items.Clear();
+            toolTypeList.Items.Clear();
 
             using (var context = new MainContext())
             {
                 foreach (var toolType in context.ToolTypes)
                 {
-                    toolTypesList.Items.Add(toolType.Name);
+                    toolTypeList.Items.Add(toolType.Name);
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace MaintenanceManagement.UI
         {
             using (var context = new MainContext())
             {
-                var selectedToolType = (string)toolTypesList.SelectedItem;
+                var selectedToolType = (string)toolTypeList.SelectedItem;
 
                 if (selectedToolType != null)
                 {
@@ -67,7 +67,7 @@ namespace MaintenanceManagement.UI
 
         private void toolTypesList_DoubleClick(object sender, EventArgs e)
         {
-            var selectedToolType = (string)toolTypesList.SelectedItem;
+            var selectedToolType = (string)toolTypeList.SelectedItem;
             var form = new ToolTypeEdit { EditedText = selectedToolType };
 
             if (form.ShowDialog() == DialogResult.OK)
@@ -87,7 +87,7 @@ namespace MaintenanceManagement.UI
 
         private void editTool_Click(object sender, EventArgs e)
         {
-            var selectedToolType = (string)toolTypesList.SelectedItem;
+            var selectedToolType = (string)toolTypeList.SelectedItem;
             var form = new ToolTypeEdit { EditedText = selectedToolType };
 
             if (form.ShowDialog() == DialogResult.OK)

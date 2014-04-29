@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolEndReasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolsListDataGrid = new System.Windows.Forms.DataGridView();
             this.employeeToolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
             this.employeeToolsTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeToolsTableAdapter();
@@ -46,63 +40,31 @@
             this.button6 = new System.Windows.Forms.Button();
             this.toolOwner = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ToolType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.toolsListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeToolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // toolsListDataGrid
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.toolTypeIdDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.toolEndReasonDataGridViewTextBoxColumn,
-            this.commentDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.employeeToolsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 40);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(643, 374);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // toolTypeIdDataGridViewTextBoxColumn
-            // 
-            this.toolTypeIdDataGridViewTextBoxColumn.DataPropertyName = "ToolType_Id";
-            this.toolTypeIdDataGridViewTextBoxColumn.HeaderText = "Nazwa";
-            this.toolTypeIdDataGridViewTextBoxColumn.Name = "toolTypeIdDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Ilość";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data wydania";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Data zwrotu";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // toolEndReasonDataGridViewTextBoxColumn
-            // 
-            this.toolEndReasonDataGridViewTextBoxColumn.DataPropertyName = "ToolEndReason";
-            this.toolEndReasonDataGridViewTextBoxColumn.HeaderText = "Przyczyna zwrotu";
-            this.toolEndReasonDataGridViewTextBoxColumn.Name = "toolEndReasonDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Uwagi";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            this.toolsListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.toolsListDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ToolType,
+            this.Quantity,
+            this.StartDate,
+            this.EndDate,
+            this.EndReason,
+            this.Comment});
+            this.toolsListDataGrid.Location = new System.Drawing.Point(12, 40);
+            this.toolsListDataGrid.Name = "toolsListDataGrid";
+            this.toolsListDataGrid.Size = new System.Drawing.Size(643, 374);
+            this.toolsListDataGrid.TabIndex = 0;
             // 
             // employeeToolsBindingSource
             // 
@@ -186,6 +148,42 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Pracownik";
             // 
+            // ToolType
+            // 
+            this.ToolType.DataPropertyName = "ToolType";
+            this.ToolType.HeaderText = "Rodzaj narzędzia";
+            this.ToolType.Name = "ToolType";
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Ilość sztuk";
+            this.Quantity.Name = "Quantity";
+            // 
+            // StartDate
+            // 
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "Data wydania";
+            this.StartDate.Name = "StartDate";
+            // 
+            // EndDate
+            // 
+            this.EndDate.DataPropertyName = "EndDate";
+            this.EndDate.HeaderText = "Data zwrotu";
+            this.EndDate.Name = "EndDate";
+            // 
+            // EndReason
+            // 
+            this.EndReason.DataPropertyName = "EndReason";
+            this.EndReason.HeaderText = "Przyczyna zwrotu";
+            this.EndReason.Name = "EndReason";
+            // 
+            // Comment
+            // 
+            this.Comment.DataPropertyName = "Comment";
+            this.Comment.HeaderText = "Uwagi";
+            this.Comment.Name = "Comment";
+            // 
             // EmployeeToolsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,10 +196,10 @@
             this.Controls.Add(this.deleteTool);
             this.Controls.Add(this.editTool);
             this.Controls.Add(this.newTool);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.toolsListDataGrid);
             this.Name = "EmployeeToolsList";
             this.Text = "Lista narzędzi pracownika";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolsListDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeToolsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -211,16 +209,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView toolsListDataGrid;
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeeToolsBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeToolsTableAdapter employeeToolsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toolTypeIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toolEndReasonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button newTool;
         private System.Windows.Forms.Button editTool;
         private System.Windows.Forms.Button deleteTool;
@@ -228,5 +220,11 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox toolOwner;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ToolType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndReason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
     }
 }

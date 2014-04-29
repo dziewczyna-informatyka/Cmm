@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.deleteTool = new System.Windows.Forms.Button();
-            this.toolTypesList = new System.Windows.Forms.ListBox();
+            this.toolTypeList = new System.Windows.Forms.ListBox();
             this.toolTypeName = new System.Windows.Forms.TextBox();
             this.addNewTool = new System.Windows.Forms.Button();
             this.editTool = new System.Windows.Forms.Button();
@@ -47,14 +47,14 @@
             this.deleteTool.UseVisualStyleBackColor = true;
             this.deleteTool.Click += new System.EventHandler(this.deleteTool_Click);
             // 
-            // toolTypesList
+            // toolTypeList
             // 
-            this.toolTypesList.FormattingEnabled = true;
-            this.toolTypesList.Location = new System.Drawing.Point(12, 48);
-            this.toolTypesList.Name = "toolTypesList";
-            this.toolTypesList.Size = new System.Drawing.Size(193, 303);
-            this.toolTypesList.TabIndex = 23;
-            this.toolTypesList.DoubleClick += new System.EventHandler(this.toolTypesList_DoubleClick);
+            this.toolTypeList.FormattingEnabled = true;
+            this.toolTypeList.Location = new System.Drawing.Point(12, 48);
+            this.toolTypeList.Name = "toolTypeList";
+            this.toolTypeList.Size = new System.Drawing.Size(193, 303);
+            this.toolTypeList.TabIndex = 23;
+            this.toolTypeList.DoubleClick += new System.EventHandler(this.toolTypesList_DoubleClick);
             // 
             // toolTypeName
             // 
@@ -103,7 +103,7 @@
             this.button2.Text = "Anuluj";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // ListOfTools
+            // ToolsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,11 +112,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.editTool);
             this.Controls.Add(this.deleteTool);
-            this.Controls.Add(this.toolTypesList);
+            this.Controls.Add(this.toolTypeList);
             this.Controls.Add(this.toolTypeName);
             this.Controls.Add(this.addNewTool);
-            this.Name = "ListOfTools";
-            this.Text = "Tools";
+            this.Name = "ToolsList";
+            this.Text = "Narzędzia";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +125,7 @@
         #endregion
 
         private System.Windows.Forms.Button deleteTool;
-        private System.Windows.Forms.ListBox toolTypesList;
+        private System.Windows.Forms.ListBox toolTypeList;
         private System.Windows.Forms.TextBox toolTypeName;
         private System.Windows.Forms.Button addNewTool;
         private System.Windows.Forms.Button editTool;
