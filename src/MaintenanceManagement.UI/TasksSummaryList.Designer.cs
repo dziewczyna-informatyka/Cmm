@@ -185,7 +185,7 @@
             // 
             // Area
             // 
-            this.Area.DataPropertyName = "Area";
+            this.Area.DataPropertyName = "AreaName";
             this.Area.HeaderText = "Obszar";
             this.Area.Name = "Area";
             // 

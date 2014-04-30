@@ -69,6 +69,7 @@
       <DependentUpon>201404271020465_AfterMerge.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToolEndReason.cs" />
     <Compile Include="WorkSchedule.cs" />

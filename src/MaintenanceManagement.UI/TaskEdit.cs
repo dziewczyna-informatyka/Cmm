@@ -22,6 +22,7 @@ namespace MaintenanceManagement.UI
             using (var context = new MainContext())
             {
                 taskAssignee.DataSource = context.Employees.ToList();
+                taskArea.DataSource = context.Areas.ToList();
             }
 
             base.OnLoad(e);
@@ -38,6 +39,8 @@ namespace MaintenanceManagement.UI
                     DueDate = taskDueDate.Value,
                     Assignee = (Employee)taskAssignee.SelectedItem,
                     Status = (EmployeeTaskStatus)taskStatus.SelectedItem,
+                    Area = (Area)taskArea.SelectedItem,
+                    Progress = int.Parse(taskProgress.Text),
 
                 };
             }
@@ -49,6 +52,8 @@ namespace MaintenanceManagement.UI
                 taskDueDate.Value = value.DueDate;
                 taskAssignee.SelectedItem = value.Assignee;
                 taskStatus.SelectedItem = value.Status;
+                taskArea.SelectedItem = value.Area;
+                taskProgress.Text = value.Progress.ToString();
 
             }
         }

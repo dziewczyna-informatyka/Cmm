@@ -41,8 +41,10 @@
             this.bibliotekiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pracownicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.narzedziaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeExample = new System.Windows.Forms.Button();
             this.obszaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeExample = new System.Windows.Forms.Button();
+            this.zleceniaWarsztatoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.harmonogramUrlopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +63,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.programToolStripMenuItem,
             this.zadaniaToolStripMenuItem,
-            this.bibliotekiToolStripMenuItem});
+            this.bibliotekiToolStripMenuItem,
+            this.zleceniaWarsztatoweToolStripMenuItem,
+            this.harmonogramUrlopyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(834, 24);
@@ -145,6 +149,13 @@
             this.narzedziaToolStripMenuItem.Text = "Narzędzia";
             this.narzedziaToolStripMenuItem.Click += new System.EventHandler(this.narzToolStripMenuItem_Click);
             // 
+            // obszaryToolStripMenuItem
+            // 
+            this.obszaryToolStripMenuItem.Name = "obszaryToolStripMenuItem";
+            this.obszaryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.obszaryToolStripMenuItem.Text = "Obszary";
+            this.obszaryToolStripMenuItem.Click += new System.EventHandler(this.obszaryToolStripMenuItem_Click);
+            // 
             // employeeExample
             // 
             this.employeeExample.Location = new System.Drawing.Point(25, 68);
@@ -155,12 +166,17 @@
             this.employeeExample.UseVisualStyleBackColor = true;
             this.employeeExample.Click += new System.EventHandler(this.employeeExample_Click);
             // 
-            // obszaryToolStripMenuItem
+            // zleceniaWarsztatoweToolStripMenuItem
             // 
-            this.obszaryToolStripMenuItem.Name = "obszaryToolStripMenuItem";
-            this.obszaryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.obszaryToolStripMenuItem.Text = "Obszary";
-            this.obszaryToolStripMenuItem.Click += new System.EventHandler(this.obszaryToolStripMenuItem_Click);
+            this.zleceniaWarsztatoweToolStripMenuItem.Name = "zleceniaWarsztatoweToolStripMenuItem";
+            this.zleceniaWarsztatoweToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
+            this.zleceniaWarsztatoweToolStripMenuItem.Text = "Zlecenia warsztatowe";
+            // 
+            // harmonogramUrlopyToolStripMenuItem
+            // 
+            this.harmonogramUrlopyToolStripMenuItem.Name = "harmonogramUrlopyToolStripMenuItem";
+            this.harmonogramUrlopyToolStripMenuItem.Size = new System.Drawing.Size(138, 20);
+            this.harmonogramUrlopyToolStripMenuItem.Text = "Harmonogram/Urlopy";
             // 
             // MainWindow
             // 
@@ -198,6 +214,8 @@
 
         private System.Windows.Forms.ToolStripMenuItem zestawienieZbiorczeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obszaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zleceniaWarsztatoweToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem harmonogramUrlopyToolStripMenuItem;
 
     }
 }

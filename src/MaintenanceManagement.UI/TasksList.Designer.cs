@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tasksStatus = new System.Windows.Forms.TextBox();
             this.AssigneeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AreaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@
             this.taskListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.taskListDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AssigneeId,
-            this.Area,
+            this.AreaId,
             this.Subject,
             this.Actions,
             this.Progress,
@@ -118,15 +118,15 @@
             // 
             // AssigneeId
             // 
-            this.AssigneeId.DataPropertyName = "AssigneName";
+            this.AssigneeId.DataPropertyName = "AssigneeName";
             this.AssigneeId.HeaderText = "Osoba odpowiedzialna";
             this.AssigneeId.Name = "AssigneeId";
             // 
-            // Area
+            // AreaId
             // 
-            this.Area.DataPropertyName = "Area";
-            this.Area.HeaderText = "Obszar";
-            this.Area.Name = "Area";
+            this.AreaId.DataPropertyName = "AreaName";
+            this.AreaId.HeaderText = "Obszar";
+            this.AreaId.Name = "AreaId";
             // 
             // Subject
             // 
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tasksStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn AssigneeId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AreaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;

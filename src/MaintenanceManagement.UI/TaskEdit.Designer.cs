@@ -47,7 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.taskProgress = new System.Windows.Forms.TextBox();
             this.taskArea = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -207,13 +207,13 @@
             // 
             this.employeeTasksTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // taskProgress
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(203, 299);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 21);
-            this.textBox1.TabIndex = 52;
+            this.taskProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.taskProgress.Location = new System.Drawing.Point(203, 299);
+            this.taskProgress.Name = "taskProgress";
+            this.taskProgress.Size = new System.Drawing.Size(200, 21);
+            this.taskProgress.TabIndex = 52;
             // 
             // taskArea
             // 
@@ -229,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 410);
             this.Controls.Add(this.taskArea);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.taskProgress);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.taskStatus);
             this.Controls.Add(this.label6);
@@ -274,7 +274,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource employeeTasksBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox taskProgress;
         private System.Windows.Forms.ComboBox taskArea;
     }
 }
