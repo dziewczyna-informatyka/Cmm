@@ -86,10 +86,7 @@ namespace MaintenanceManagement.UI
             {
                 using (var context = new MainContext())
                 {
-                    var area = context.Areas.Single(t => t.Id == selectedArea.Id);
-
-                    area.Name = ((Area)form.DataContext).Name;
-
+                    context.UpdateDetached((Area)form.DataContext);
                     context.SaveChanges();
                 }
 
