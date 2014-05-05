@@ -35,7 +35,7 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public Area Area { get; set; }
 
-        public string Team { get; set; }
+        public Team Team { get; set; }
 
         public string FullName
         {

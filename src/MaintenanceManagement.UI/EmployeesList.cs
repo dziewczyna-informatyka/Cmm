@@ -103,6 +103,7 @@ namespace MaintenanceManagement.UI
                     databaseEmployee.EmploymentType = form.Employee.EmploymentType;
                     databaseEmployee.JobTitle = form.Employee.JobTitle;
                     databaseEmployee.PersonalNumber = form.Employee.PersonalNumber;
+                    databaseEmployee.Team = form.Employee.Team;
                     context.SaveChanges();
                 }
 

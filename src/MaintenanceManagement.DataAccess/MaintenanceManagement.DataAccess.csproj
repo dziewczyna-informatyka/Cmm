@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201405050913197_Indexes.Designer.cs">
       <DependentUpon>201405050913197_Indexes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405051009463_EmployeeTeam.cs" />
+    <Compile Include="Migrations\201405051009463_EmployeeTeam.Designer.cs">
+      <DependentUpon>201405051009463_EmployeeTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405050913197_Indexes.resx">
       <DependentUpon>201405050913197_Indexes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051009463_EmployeeTeam.resx">
+      <DependentUpon>201405051009463_EmployeeTeam.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

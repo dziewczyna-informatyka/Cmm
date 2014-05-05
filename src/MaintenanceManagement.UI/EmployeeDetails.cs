@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess.Entities;
 
 namespace MaintenanceManagement.UI
@@ -24,7 +25,7 @@ namespace MaintenanceManagement.UI
                 employeeMobilePhone.Text = value.MobilePhone;
                 employeePhone.Text = value.HomePhone;
                 //employeeArea.Text = value.Area.ToString();
-                employeeTeam.Text = value.Team;
+                employeeTeam.Text = value.Team.EnumToString();
             }
         }
 
