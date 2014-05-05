@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using MaintenanceManagement.Core;
 
-namespace MaintenanceManagement.DataAccess.Migrations
+namespace MaintenanceManagement.DataAccess
 {
     public enum Team
     {

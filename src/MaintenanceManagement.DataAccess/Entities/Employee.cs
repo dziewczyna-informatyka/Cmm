@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaintenanceManagement.DataAccess.Entities
 {
@@ -7,6 +8,7 @@ namespace MaintenanceManagement.DataAccess.Entities
     /// </summary>
     public class Employee : BaseEntity
     {
+        [Index(IsUnique = true)]
         public int? PersonalNumber { get; set; }
 
         public string Name { get; set; }
