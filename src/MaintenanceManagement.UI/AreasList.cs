@@ -30,14 +30,10 @@ namespace MaintenanceManagement.UI
         //
         private void UpdateAreas()
         {
-            areaList.Items.Clear();
-
             using (var context = new MainContext())
             {
-                foreach (var area in context.Areas)
-                {
-                    areaList.Items.Add(area.Name);
-                }
+                areaList.DisplayMember = "Name";
+                areaList.DataSource = context.Areas.ToList();
             }
         }
 
@@ -59,11 +55,11 @@ namespace MaintenanceManagement.UI
         {
             using (var context = new MainContext())
             {
-                var selectedArea = (string)areaList.SelectedItem;
+                var selectedArea = (Area)areaList.SelectedItem;
 
                 if (selectedArea != null)
                 {
-                    context.Areas.Remove(context.Areas.Single(t => t.Name == selectedArea));
+                    context.Areas.Remove(context.Areas.Single(t => t.Id == selectedArea.Id));
                     context.SaveChanges();
                 }
             }
@@ -73,36 +69,26 @@ namespace MaintenanceManagement.UI
 
         private void editArea_Click(object sender, EventArgs e)
         {
-            var selectedArea = (string)areaList.SelectedItem;
-            var form = new AreaEdit { EditedName = selectedArea };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                using (var context = new MainContext())
-                {
-                    var area = context.Areas.Single(t => t.Name == selectedArea);
-
-                    area.Name = form.EditedName;
-
-                    context.SaveChanges();
-                }
-
-                UpdateAreas();
-            }
+            EditSelected();
         }
 
-        private void areaList_DoubleClick(object sender, EventArgs e)
+        private void areaList_DoubleClick(object sender, MouseEventArgs e)
         {
-            var selectedArea = (string)areaList.SelectedItem;
-            var form = new AreaEdit { EditedName = selectedArea };
+            EditSelected();
+        }
+
+        private void EditSelected()
+        {
+            var selectedArea = (Area)areaList.SelectedItem;
+            var form = new AreaEdit { DataContext = selectedArea };
 
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
                 {
-                    var area = context.Areas.Single(t => t.Name == selectedArea);
+                    var area = context.Areas.Single(t => t.Id == selectedArea.Id);
 
-                    area.Name = form.EditedName;
+                    area.Name = ((Area)form.DataContext).Name;
 
                     context.SaveChanges();
                 }
@@ -110,6 +96,5 @@ namespace MaintenanceManagement.UI
                 UpdateAreas();
             }
         }
-
     }
 }

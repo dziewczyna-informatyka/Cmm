@@ -7,20 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {
-    public partial class AreaEdit : Form
+    public partial class AreaEdit : BaseEditWindow
     {
         public AreaEdit()
         {
             InitializeComponent();
         }
 
-        public string EditedName
+        protected override void OnLoad(EventArgs e)
         {
-            get { return editedArea.Text; }
-            set { editedArea.Text = value; }
+            editedArea.DataBindings.Add("Text", DataContext, "Name");
+            base.OnLoad(e);
         }
     }
 }
