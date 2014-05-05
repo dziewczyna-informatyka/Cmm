@@ -35,9 +35,9 @@ namespace MaintenanceManagement.UI
                     Owner = (Employee)toolOwner.SelectedItem,
                     ToolType = (ToolType)toolTypeComboBox.SelectedItem,
                     StartDate = toolStartDate.Value.Date,
-                    EndDate = toolEndDate.Value.Date,
+                    EndDate = cbToolReturned.Checked ? toolEndDate.Value.Date as DateTime? : null,
                     Quantity = Convert.ToInt16(toolQuantity.Text),
-                    ToolEndReason = (ToolEndReason)toolEndReason.SelectedItem,
+                    ToolEndReason = cbToolReturned.Checked ? (ToolEndReason)toolEndReason.SelectedItem as ToolEndReason? : null,
                     Comment = toolComment.Text,
                 };
             }
@@ -52,6 +52,11 @@ namespace MaintenanceManagement.UI
                 toolEndReason.SelectedItem = value.ToolEndReason;
                 toolComment.Text = value.Comment;
             }
+        }
+
+        private void cbToolReturned_CheckedChanged(object sender, EventArgs e)
+        {
+            toolEndDate.Enabled = toolEndReason.Enabled = cbToolReturned.Checked;
         }
     }
 }

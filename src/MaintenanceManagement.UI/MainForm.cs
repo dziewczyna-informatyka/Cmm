@@ -15,8 +15,8 @@ namespace MaintenanceManagement.UI
         public MainWindow()
         {
             InitializeComponent();
-        }   
-    
+        }
+
         /* ----------------------------------------------------------------------------- */
 
         private void narzToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,16 +93,13 @@ namespace MaintenanceManagement.UI
 
         private void employeeExample_Click(object sender, EventArgs e)
         {
-            var emp = new Employee
+            Employee emp = null;
+
+            using (var context = new MainContext())
             {
-                Address = "adjadja",
-                EmploymentStart = new DateTime(2012, 11, 14),
-                PersonalNumber = 1234,
-                EmploymentType = EmploymentType.Clinico,
-                Id = 0,
-                Name = "Przykładowy",
-                Surname = "pracownik",
-            };
+                emp = context.Employees.First();
+            }
+            
             var form = new EmployeeTaskSummary();
 
 
@@ -121,7 +118,7 @@ namespace MaintenanceManagement.UI
             }
         }
 
-       
+
 
 
 

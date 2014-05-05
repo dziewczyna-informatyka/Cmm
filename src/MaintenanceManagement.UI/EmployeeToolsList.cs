@@ -27,11 +27,12 @@ namespace MaintenanceManagement.UI
             using (var context = new MainContext())
             {
                 toolsListDataGrid.DataSource =
-                    context.EmployeeTools.
-                        Include(e => e.Owner).
-                        OrderBy(e => e.ToolType).
-                        Where(e => ToolOwner == e.Owner).
-                        ToList();
+                    context.EmployeeTools
+                        .Include(e => e.Owner)
+                        .Include(e => e.ToolType)
+                        .OrderBy(e => e.ToolType.Name)
+                        .Where(e => ToolOwner.Id == e.Owner.Id)
+                        .ToList();
             }
         }
 
@@ -43,14 +44,19 @@ namespace MaintenanceManagement.UI
 
         //-----------------------------------------------------------------------------
 
-        private void newTool_Click(object sender, EventArgs e)
+        private void newTool_Click(object sender, EventArgs eventArgs)
         {
             var form = new ToolEdit();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
                 {
-                    context.EmployeeTools.Add(form.EmployeeTool);
+                    var tool = form.EmployeeTool;
+
+                    tool.Owner = context.Employees.Single(e => e.Id == tool.Owner.Id);
+                    tool.ToolType = context.ToolTypes.Single(t => t.Id == tool.ToolType.Id);
+
+                    context.EmployeeTools.Add(tool);
                     context.SaveChanges();
                 }
             }
@@ -65,7 +71,7 @@ namespace MaintenanceManagement.UI
             }
         }
 
-        
+
 
 
     }

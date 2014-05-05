@@ -150,7 +150,7 @@
             // 
             // ToolType
             // 
-            this.ToolType.DataPropertyName = "ToolType";
+            this.ToolType.DataPropertyName = "ToolTypeName";
             this.ToolType.HeaderText = "Rodzaj narzędzia";
             this.ToolType.Name = "ToolType";
             // 
