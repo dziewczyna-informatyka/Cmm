@@ -18,16 +18,8 @@ namespace MaintenanceManagement.UI
         }
 
         protected override void OnLoad(EventArgs e)
-        {
-            //wyświetla angielskie nazwy
-
-            taskStatus.DataSource =
-                Enum.GetValues(typeof(EmployeeTaskStatus))
-                    .Cast<EmployeeTaskStatus>()
-                    .Select(v => new { Value = v, Name = v.EnumToString() })
-                    .ToList();
-            taskStatus.ValueMember = "Value";
-            taskStatus.DisplayMember = "Name";
+        {           
+            taskStatus.LoadEnumAsDataSource(typeof(EmployeeTaskStatus));
 
             using (var context = new MainContext())
             {

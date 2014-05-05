@@ -69,6 +69,7 @@
     <Compile Include="AreasList.Designer.cs">
       <DependentUpon>AreasList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxExtensions.cs" />
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>

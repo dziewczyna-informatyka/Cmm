@@ -20,9 +20,9 @@ namespace MaintenanceManagement.UI
             {
                 toolOwner.DataSource = context.Employees.ToList();
                 toolTypeComboBox.DataSource = context.ToolTypes.ToList();
-                toolEndReason.DataSource = Enum.GetValues(typeof(ToolEndReason));
+                toolEndReason.LoadEnumAsDataSource(typeof(ToolEndReason));
             }
-            
+
             base.OnLoad(e);
         }
 
