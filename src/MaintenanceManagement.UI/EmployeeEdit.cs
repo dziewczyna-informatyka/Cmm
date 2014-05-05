@@ -46,7 +46,12 @@ namespace MaintenanceManagement.UI
                 employeeSurname.Text = value.Surname;
                 employeePersonalNr.Text = value.PersonalNumber.ToString();
                 employeeAdress.Text = value.Address;
-                employeeEmploymentStart.Value = value.EmploymentStart.GetValueOrDefault();
+
+                if (value.EmploymentStart != null)
+                {
+                    employeeEmploymentStart.Value = value.EmploymentStart.GetValueOrDefault();
+                }
+
                 employeeEmploymentType.SelectedItem = value.EmploymentType;
                 employeeMobilePhone.Text = value.MobilePhone;
                 employeePhone.Text = value.HomePhone;
