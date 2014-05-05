@@ -62,12 +62,25 @@ namespace MaintenanceManagement.UI
             }
         }
 
-        private void editTool_Click(object sender, EventArgs e)
+        private void editTool_Click(object sender, EventArgs eventArgs)
         {
-            var form = new ToolEdit();
+            var form = new ToolEdit { EmployeeTool = toolsListDataGrid.CurrentRow.DataBoundItem as EmployeeTool };
+
             if (form.ShowDialog() == DialogResult.OK)
             {
+                using (var context = new MainContext())
+                {
+                    var tool = form.EmployeeTool;
+                   
+                    var databaseEntity = context.EmployeeTools.Single(t => t.Id == tool.Id);
+                    var entry = context.ChangeTracker.Entries<EmployeeTool>().Single(t => t.Entity.Id == tool.Id);
+                    entry.CurrentValues.SetValues(tool);
 
+                    databaseEntity.Owner = context.Employees.Single(e => e.Id == tool.Owner.Id);
+                    databaseEntity.ToolType = context.ToolTypes.Single(t => t.Id == tool.ToolType.Id);
+                    
+                    context.SaveChanges();
+                }
             }
         }
 
