@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
 
-namespace MaintenanceManagement.UI
+namespace MaintenanceManagement.UI.Core
 {
     public static class ComboBoxExtensions
     {

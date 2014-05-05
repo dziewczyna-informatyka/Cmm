@@ -4,6 +4,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {

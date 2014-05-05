@@ -69,15 +69,9 @@
     <Compile Include="AreasList.Designer.cs">
       <DependentUpon>AreasList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComboBoxExtensions.cs" />
+    <Compile Include="Core\ComboBoxExtensions.cs" />
     <Compile Include="Core\BaseEditWindow.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditForm.designer.cs">
-      <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeDetails.cs">
       <SubType>Form</SubType>
@@ -172,9 +166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AreasList.resx">
       <DependentUpon>AreasList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditForm.resx">
-      <DependentUpon>EditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeDetails.resx">
       <DependentUpon>EmployeeDetails.cs</DependentUpon>
