@@ -15,14 +15,9 @@ namespace MaintenanceManagement.UI
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-        }
-
-        //-----------------------------------------------------------------------------
+        }   
+    
+        /* ----------------------------------------------------------------------------- */
 
         private void narzToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -42,16 +37,21 @@ namespace MaintenanceManagement.UI
             form.ShowDialog();
         }
 
-        //-----------------------------------------------------------------------------
+        /* ----------------------------------------------------------------------------- */
 
-        private void noweToolStripMenuItem_Click(object sender, EventArgs e)
+        private void noweToolStripMenuItem_Click(object sender, EventArgs eventArgs)
         {
             var form = new TaskEdit();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
                 {
-                    context.EmployeeTasks.Add(form.EmployeeTask);
+                    var task = form.EmployeeTask;
+
+                    task.Area = context.Areas.SingleOrDefault(a => a.Id == task.Area.Id);
+                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == task.Assignee.Id);
+
+                    context.EmployeeTasks.Add(task);
                     context.SaveChanges();
                 }
 

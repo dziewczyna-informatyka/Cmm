@@ -203,7 +203,7 @@
             // 
             // Status
             // 
-            this.Status.DataPropertyName = "Status";
+            this.Status.DataPropertyName = "StatusName";
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             // 

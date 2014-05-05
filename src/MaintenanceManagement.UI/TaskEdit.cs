@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 
@@ -17,7 +19,15 @@ namespace MaintenanceManagement.UI
 
         protected override void OnLoad(EventArgs e)
         {
-            taskStatus.DataSource = Enum.GetValues(typeof(EmployeeTaskStatus)); //wyświetla angielskie nazwy
+            //wyświetla angielskie nazwy
+
+            taskStatus.DataSource =
+                Enum.GetValues(typeof(EmployeeTaskStatus))
+                    .Cast<EmployeeTaskStatus>()
+                    .Select(v => new { Value = v, Name = v.EnumToString() })
+                    .ToList();
+            taskStatus.ValueMember = "Value";
+            taskStatus.DisplayMember = "Name";
 
             using (var context = new MainContext())
             {
@@ -38,7 +48,7 @@ namespace MaintenanceManagement.UI
                     Actions = taskActions.Text,
                     DueDate = taskDueDate.Value,
                     Assignee = (Employee)taskAssignee.SelectedItem,
-                    Status = (EmployeeTaskStatus)taskStatus.SelectedItem,
+                    Status = (EmployeeTaskStatus)taskStatus.SelectedValue,
                     Area = (Area)taskArea.SelectedItem,
                     Progress = int.Parse(taskProgress.Text),
 
