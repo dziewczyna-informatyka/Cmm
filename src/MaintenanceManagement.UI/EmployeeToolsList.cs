@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Schema;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 
@@ -60,32 +61,34 @@ namespace MaintenanceManagement.UI
                     context.SaveChanges();
                 }
             }
+
+            UpdateTools();
         }
 
         private void editTool_Click(object sender, EventArgs eventArgs)
         {
-            var form = new ToolEdit { EmployeeTool = toolsListDataGrid.CurrentRow.DataBoundItem as EmployeeTool };
+            var selectedEmployeeTool = toolsListDataGrid.CurrentRow.DataBoundItem as EmployeeTool;
+            var form = new ToolEdit { EmployeeTool = selectedEmployeeTool };
 
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
                 {
                     var tool = form.EmployeeTool;
-                   
-                    var databaseEntity = context.EmployeeTools.Single(t => t.Id == tool.Id);
-                    var entry = context.ChangeTracker.Entries<EmployeeTool>().Single(t => t.Entity.Id == tool.Id);
+                    tool.Id = selectedEmployeeTool.Id;
+
+                    var databaseEntity = context.EmployeeTools.Single(t => t.Id == selectedEmployeeTool.Id);
+                    var entry = context.ChangeTracker.Entries<EmployeeTool>().Single(t => t.Entity.Id == selectedEmployeeTool.Id);
                     entry.CurrentValues.SetValues(tool);
 
                     databaseEntity.Owner = context.Employees.Single(e => e.Id == tool.Owner.Id);
                     databaseEntity.ToolType = context.ToolTypes.Single(t => t.Id == tool.ToolType.Id);
-                    
+
                     context.SaveChanges();
                 }
             }
+
+            UpdateTools();
         }
-
-
-
-
     }
 }

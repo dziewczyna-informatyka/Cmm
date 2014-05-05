@@ -174,7 +174,7 @@
             // 
             // EndReason
             // 
-            this.EndReason.DataPropertyName = "EndReason";
+            this.EndReason.DataPropertyName = "EndReasonName";
             this.EndReason.HeaderText = "Przyczyna zwrotu";
             this.EndReason.Name = "EndReason";
             // 
