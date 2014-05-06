@@ -46,6 +46,7 @@
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
     <Compile Include="EnumExtensions.cs" />
+    <Compile Include="HashHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

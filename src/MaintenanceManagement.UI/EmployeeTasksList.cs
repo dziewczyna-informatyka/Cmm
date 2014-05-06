@@ -22,21 +22,19 @@ namespace MaintenanceManagement.UI
             UpdateEmployeeTasks();
             base.OnLoad(e);
         }
-        
+
         private void UpdateEmployeeTasks()
         {
             employeeTasksGridView.AutoGenerateColumns = false;
 
             using (var context = new MainContext())
             {
-                var status = (EmployeeTaskStatus)Enum.Parse(typeof(EmployeeTaskStatus),tasksStatus.Text);                
                 employeeTasksGridView.DataSource =
-                    context.EmployeeTasks.
-                    Include(e => e.Assignee).
-                    OrderBy(e => e.Progress).
-                    Where(e => AssignedEmployee.Id == e.Id && EmployeeTaskStatus == status).
-                    ToList();
-            }           
+                    context.EmployeeTasks.Include(e => e.Assignee)
+                        .OrderBy(e => e.Progress)
+                        .Where(e => AssignedEmployee.Id == e.Id && e.Status == EmployeeTaskStatus)
+                        .ToList();
+            }
         }
 
         public EmployeeTaskStatus EmployeeTaskStatus
@@ -58,7 +56,7 @@ namespace MaintenanceManagement.UI
                 responsibleEmployee.Text = value.FullName;
             }
         }
-        
+
         private void editTask_Click(object sender, EventArgs e)
         {
             var form = new TaskEdit();
