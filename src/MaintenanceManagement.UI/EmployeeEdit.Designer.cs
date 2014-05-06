@@ -51,13 +51,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.employeeTeam = new System.Windows.Forms.ComboBox();
             this.employeeArea = new System.Windows.Forms.ComboBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cancel
             // 
             this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancel.Location = new System.Drawing.Point(207, 314);
+            this.cancel.Location = new System.Drawing.Point(207, 350);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 44;
@@ -67,7 +69,7 @@
             // saveEmployee
             // 
             this.saveEmployee.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.saveEmployee.Location = new System.Drawing.Point(116, 314);
+            this.saveEmployee.Location = new System.Drawing.Point(116, 350);
             this.saveEmployee.Name = "saveEmployee";
             this.saveEmployee.Size = new System.Drawing.Size(75, 23);
             this.saveEmployee.TabIndex = 43;
@@ -230,6 +232,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtPassword);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.employeeTeam);
             this.panel1.Controls.Add(this.employeeArea);
             this.panel1.Controls.Add(this.employeeAdress);
@@ -252,7 +256,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 296);
+            this.panel1.Size = new System.Drawing.Size(274, 332);
             this.panel1.TabIndex = 49;
             // 
             // employeeTeam
@@ -271,11 +275,28 @@
             this.employeeArea.Size = new System.Drawing.Size(166, 21);
             this.employeeArea.TabIndex = 49;
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(104, 309);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(166, 20);
+            this.txtPassword.TabIndex = 52;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "Haslo";
+            // 
             // EmployeeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 345);
+            this.ClientSize = new System.Drawing.Size(297, 385);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.saveEmployee);
@@ -313,6 +334,8 @@
 
         private System.Windows.Forms.ComboBox employeeTeam;
         private System.Windows.Forms.ComboBox employeeArea;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label11;
 
     }
 }

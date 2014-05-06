@@ -46,7 +46,7 @@ namespace MaintenanceManagement.UI
                 {
                     var employee = form.Employee;
                     employee.Area = context.Areas.SingleOrDefault(a => a.Id == form.Employee.Id);
-                    employee.PasswordHash = HashHelper.GetHash("password");
+                    employee.PasswordHash = HashHelper.GetHash(employee.PasswordHash);
                     context.Employees.Add(employee);
                     context.SaveChanges();
                 }
@@ -106,6 +106,12 @@ namespace MaintenanceManagement.UI
                     databaseEmployee.JobTitle = form.Employee.JobTitle;
                     databaseEmployee.PersonalNumber = form.Employee.PersonalNumber;
                     databaseEmployee.Team = form.Employee.Team;
+
+                    if (!string.IsNullOrWhiteSpace(form.Employee.PasswordHash))
+                    {
+                        databaseEmployee.PasswordHash = HashHelper.GetHash(form.Employee.PasswordHash);
+                    }
+
                     context.SaveChanges();
                 }
 
