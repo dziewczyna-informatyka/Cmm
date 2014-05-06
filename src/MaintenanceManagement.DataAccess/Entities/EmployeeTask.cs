@@ -31,5 +31,10 @@ namespace MaintenanceManagement.DataAccess.Entities
                 return Assignee != null ? Assignee.FullName : string.Empty;
             }
         }
+
+        public string AreaName
+        {
+            get { return Area == null ? string.Empty : Area.Name; }
+        }
     }
 }

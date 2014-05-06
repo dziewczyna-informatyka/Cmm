@@ -156,26 +156,31 @@
             // 
             // AreaName
             // 
+            this.AreaName.DataPropertyName = "AreaName";
             this.AreaName.HeaderText = "Obszar";
             this.AreaName.Name = "AreaName";
             // 
             // Subject
             // 
+            this.Subject.DataPropertyName = "Subject";
             this.Subject.HeaderText = "Temat";
             this.Subject.Name = "Subject";
             // 
             // Actions
             // 
+            this.Actions.DataPropertyName = "Actions";
             this.Actions.HeaderText = "Czynności";
             this.Actions.Name = "Actions";
             // 
             // Progress
             // 
+            this.Progress.DataPropertyName = "Progress";
             this.Progress.HeaderText = "Wykonanie";
             this.Progress.Name = "Progress";
             // 
             // DueDate
             // 
+            this.DueDate.DataPropertyName = "DueDate";
             this.DueDate.HeaderText = "Data zakończenia";
             this.DueDate.Name = "DueDate";
             // 

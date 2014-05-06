@@ -30,7 +30,9 @@ namespace MaintenanceManagement.UI
             using (var context = new MainContext())
             {
                 employeeTasksGridView.DataSource =
-                    context.EmployeeTasks.Include(e => e.Assignee)
+                    context.EmployeeTasks
+                        .Include(e => e.Assignee)
+                        .Include(e => e.Area)
                         .OrderBy(e => e.Progress)
                         .Where(t => AssignedEmployee.Id == t.Assignee.Id && (t.Status == EmployeeTaskStatus || EmployeeTaskStatus == null))
                         .ToList();
@@ -57,14 +59,27 @@ namespace MaintenanceManagement.UI
             }
         }
 
-        private void editTask_Click(object sender, EventArgs e)
+        private void editTask_Click(object sender, EventArgs eventArgs)
         {
             var form = new TaskEdit();
+            var selected = employeeTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
+
             if (form.ShowDialog() == DialogResult.OK)
             {
+                using (var context = new MainContext())
+                {
+                    var task = form.EmployeeTask;
+                    task.Id = selected.Id;
 
+                    task.Area = context.Areas.SingleOrDefault(a => a.Id == task.Area.Id);
+                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == task.Assignee.Id);
+
+                    context.UpdateDetached(task);
+                    context.SaveChanges();
+                }
             }
 
+            UpdateEmployeeTasks();
         }
     }
 }

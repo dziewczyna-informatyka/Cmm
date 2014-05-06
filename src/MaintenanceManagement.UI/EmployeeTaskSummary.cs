@@ -84,14 +84,19 @@ namespace MaintenanceManagement.UI
 
         //-----------------------------------------------------------------------------
 
-        private void newTasksCreator_Click(object sender, EventArgs e)
+        private void newTasksCreator_Click(object sender, EventArgs eventArgs)
         {
             var form = new TaskEdit();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
                 {
-                    context.EmployeeTasks.Add(form.EmployeeTask);
+                    var task = form.EmployeeTask;
+
+                    task.Area = context.Areas.SingleOrDefault(a => a.Id == task.Area.Id);
+                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == task.Assignee.Id);
+
+                    context.EmployeeTasks.Add(task);
                     context.SaveChanges();
                 }
             }
