@@ -32,18 +32,18 @@ namespace MaintenanceManagement.UI
                 employeeTasksGridView.DataSource =
                     context.EmployeeTasks.Include(e => e.Assignee)
                         .OrderBy(e => e.Progress)
-                        .Where(e => AssignedEmployee.Id == e.Id && e.Status == EmployeeTaskStatus)
+                        .Where(t => AssignedEmployee.Id == t.Assignee.Id && (t.Status == EmployeeTaskStatus || EmployeeTaskStatus == null))
                         .ToList();
             }
         }
 
-        public EmployeeTaskStatus EmployeeTaskStatus
+        public EmployeeTaskStatus? EmployeeTaskStatus
         {
-            get { return (EmployeeTaskStatus)tasksStatus.Tag; }
+            get { return (EmployeeTaskStatus?)tasksStatus.Tag; }
             set
             {
                 tasksStatus.Tag = value;
-                tasksStatus.Text = value.EnumToString();
+                tasksStatus.Text = value != null ? value.EnumToString() : string.Empty;
             }
         }
 

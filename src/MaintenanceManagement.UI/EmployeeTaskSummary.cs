@@ -58,42 +58,28 @@ namespace MaintenanceManagement.UI
         {
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-
-            }
+            form.ShowDialog();
         }
 
         private void actualTasks_Click(object sender, EventArgs e)
         {
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.InProgress, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-
-            }
+            form.ShowDialog();
         }
 
         private void doneTasks_Click(object sender, EventArgs e)
         {
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.Done, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            form.ShowDialog();
         }
 
         private void allTasks_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeTasksList();
+            var form = new EmployeeTasksList { EmployeeTaskStatus = null, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            form.ShowDialog();
         }
 
         //-----------------------------------------------------------------------------
@@ -122,7 +108,7 @@ namespace MaintenanceManagement.UI
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
         }
 
