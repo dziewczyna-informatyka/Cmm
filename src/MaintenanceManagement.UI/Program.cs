@@ -22,9 +22,7 @@ namespace MaintenanceManagement.UI
             var loginWindow = new LoginWindow();
 
             if (loginWindow.ShowDialog() == DialogResult.OK)
-            {
-                bool isUserValid;
-
+            {               
                 using (var context = new MainContext())
                 {
                     var hash = HashHelper.GetHash(loginWindow.Password);

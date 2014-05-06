@@ -99,7 +99,7 @@ namespace MaintenanceManagement.UI
             {
                 emp = context.Employees.First();
             }
-            
+
             var form = new EmployeeTaskSummary();
 
 
@@ -116,6 +116,11 @@ namespace MaintenanceManagement.UI
             {
 
             }
+        }
+
+        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
 
