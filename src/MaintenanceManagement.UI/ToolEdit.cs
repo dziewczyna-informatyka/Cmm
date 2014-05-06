@@ -13,13 +13,28 @@ namespace MaintenanceManagement.UI
         public ToolEdit()
         {
             InitializeComponent();
-            
+
             using (var context = new MainContext())
             {
-                toolOwner.DataSource = context.Employees.ToList();
+                if (UserContext.IsAdmin)
+                {
+                    toolOwner.DataSource = context.Employees.ToList();
+                }
+                else
+                {
+                    toolOwner.DataSource = new[] { UserContext.User };
+                }
+
                 toolTypeComboBox.DataSource = context.ToolTypes.ToList();
                 toolEndReason.LoadEnumAsDataSource(typeof(ToolEndReason));
             }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            toolOwner.Enabled = UserContext.IsAdmin;
+
+            base.OnLoad(e);
         }
 
         public EmployeeTool EmployeeTool

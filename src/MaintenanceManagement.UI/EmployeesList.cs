@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 
@@ -45,6 +46,7 @@ namespace MaintenanceManagement.UI
                 {
                     var employee = form.Employee;
                     employee.Area = context.Areas.SingleOrDefault(a => a.Id == form.Employee.Id);
+                    employee.PasswordHash = HashHelper.GetHash("password");
                     context.Employees.Add(employee);
                     context.SaveChanges();
                 }

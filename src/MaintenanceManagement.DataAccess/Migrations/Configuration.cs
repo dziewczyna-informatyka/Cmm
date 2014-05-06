@@ -40,6 +40,8 @@ namespace MaintenanceManagement.DataAccess.Migrations
                     PersonalNumber = 3554,
                     Surname = "Wolkowska",
                     Name = "Marta",
+                    PasswordHash = HashHelper.GetHash("test"),
+                    IsAdmin = true
                 },
                 new Employee
                 {

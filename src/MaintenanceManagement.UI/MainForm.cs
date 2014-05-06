@@ -5,7 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
-
+using MaintenanceManagement.UI.Core;
 
 
 namespace MaintenanceManagement.UI
@@ -15,6 +15,13 @@ namespace MaintenanceManagement.UI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            bibliotekiToolStripMenuItem.Visible = UserContext.IsAdmin;
+
+            base.OnLoad(e);
         }
 
         /* ----------------------------------------------------------------------------- */
@@ -93,12 +100,7 @@ namespace MaintenanceManagement.UI
 
         private void employeeExample_Click(object sender, EventArgs e)
         {
-            Employee emp = null;
-
-            using (var context = new MainContext())
-            {
-                emp = context.Employees.First();
-            }
+            Employee emp = UserContext.User;
 
             var form = new EmployeeTaskSummary();
 
