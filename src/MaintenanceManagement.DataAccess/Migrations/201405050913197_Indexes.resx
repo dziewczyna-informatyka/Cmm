@@ -117,76 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EmployeeTaskStatus_Canceled" xml:space="preserve">
-    <value>Anulowane</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="EmployeeTaskStatus_Done" xml:space="preserve">
-    <value>Zakończone</value>
-  </data>
-  <data name="EmployeeTaskStatus_InProgress" xml:space="preserve">
-    <value>W realizacji</value>
-  </data>
-  <data name="EmployeeTaskStatus_Planned" xml:space="preserve">
-    <value>Zaplanowane</value>
-  </data>
-  <data name="EmployeeTaskStatus_Suggestion" xml:space="preserve">
-    <value>Propozycja</value>
-  </data>
-  <data name="EmploymentType_Clinico" xml:space="preserve">
-    <value>Clinico</value>
-  </data>
-  <data name="EmploymentType_Manpower" xml:space="preserve">
-    <value>Manpower</value>
-  </data>
-  <data name="JobTitle_Area_Leader" xml:space="preserve">
-    <value>Lider obszaru</value>
-  </data>
-  <data name="JobTitle_Controlling_Worker" xml:space="preserve">
-    <value>Pracownik kontrollingu</value>
-  </data>
-  <data name="JobTitle_Electrician" xml:space="preserve">
-    <value>Elektryk</value>
-  </data>
-  <data name="JobTitle_Facility_Worker" xml:space="preserve">
-    <value>Pracownik infrastruktóry</value>
-  </data>
-  <data name="JobTitle_Manager" xml:space="preserve">
-    <value>Kierownik</value>
-  </data>
-  <data name="JobTitle_Mechanic" xml:space="preserve">
-    <value>Mechanik</value>
-  </data>
-  <data name="JobTitle_Shift_Leader" xml:space="preserve">
-    <value>Szef zmiany</value>
-  </data>
-  <data name="JobTitle_Workshop_Worker" xml:space="preserve">
-    <value>Pracownik warsztatu</value>
-  </data>
-  <data name="Team_A" xml:space="preserve">
-    <value>A</value>
-  </data>
-  <data name="Team_B" xml:space="preserve">
-    <value>B</value>
-  </data>
-  <data name="Team_C" xml:space="preserve">
-    <value>C</value>
-  </data>
-  <data name="Team_D" xml:space="preserve">
-    <value>D</value>
-  </data>
-  <data name="ToolEndReason_Damage" xml:space="preserve">
-    <value>Uszkodzenie</value>
-  </data>
-  <data name="ToolEndReason_Exchange" xml:space="preserve">
-    <value>Wymiana</value>
-  </data>
-  <data name="WorkSchedule_Continuous" xml:space="preserve">
-    <value>Czterobrygadówka</value>
-  </data>
-  <data name="WorkSchedule_Regular" xml:space="preserve">
-    <value>Jedna zmiana</value>
-  </data>
-  <data name="WorkSchedule_TwoShifts" xml:space="preserve">
-    <value>Dwie zmiany</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

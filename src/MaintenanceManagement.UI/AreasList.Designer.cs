@@ -85,7 +85,7 @@
             this.areaList.Name = "areaList";
             this.areaList.Size = new System.Drawing.Size(193, 303);
             this.areaList.TabIndex = 30;
-            this.areaList.SelectedIndexChanged += new System.EventHandler(this.areaList_DoubleClick);
+            this.areaList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.areaList_DoubleClick);
             // 
             // areaName
             // 

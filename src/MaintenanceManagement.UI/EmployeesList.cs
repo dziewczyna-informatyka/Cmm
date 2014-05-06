@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
@@ -26,7 +27,8 @@ namespace MaintenanceManagement.UI
         {
             using (var context = new MainContext())
             {
-                employeesDataGridView.DataSource = context.Employees.OrderBy(e => e.Surname).ToList();
+                employeesDataGridView.DataSource =
+                    context.Employees.Include(e => e.Area).OrderBy(e => e.Surname).ToList();
             }
         }
 
@@ -41,7 +43,9 @@ namespace MaintenanceManagement.UI
             {
                 using (var context = new MainContext())
                 {
-                    context.Employees.Add(form.Employee);
+                    var employee = form.Employee;
+                    employee.Area = context.Areas.SingleOrDefault(a => a.Id == form.Employee.Id);
+                    context.Employees.Add(employee);
                     context.SaveChanges();
                 }
             }
@@ -89,6 +93,7 @@ namespace MaintenanceManagement.UI
                 using (var context = new MainContext())
                 {
                     var databaseEmployee = context.Employees.Single(emp => emp.Id == employee.Id);
+                    databaseEmployee.Area = context.Areas.SingleOrDefault(a => a.Id == form.Employee.Area.Id);
                     databaseEmployee.Name = form.Employee.Name;
                     databaseEmployee.Surname = form.Employee.Surname;
                     databaseEmployee.Address = form.Employee.Address;
@@ -98,6 +103,7 @@ namespace MaintenanceManagement.UI
                     databaseEmployee.EmploymentType = form.Employee.EmploymentType;
                     databaseEmployee.JobTitle = form.Employee.JobTitle;
                     databaseEmployee.PersonalNumber = form.Employee.PersonalNumber;
+                    databaseEmployee.Team = form.Employee.Team;
                     context.SaveChanges();
                 }
 

@@ -150,7 +150,7 @@
             // 
             // ToolType
             // 
-            this.ToolType.DataPropertyName = "ToolType";
+            this.ToolType.DataPropertyName = "ToolTypeName";
             this.ToolType.HeaderText = "Rodzaj narzędzia";
             this.ToolType.Name = "ToolType";
             // 
@@ -174,7 +174,7 @@
             // 
             // EndReason
             // 
-            this.EndReason.DataPropertyName = "EndReason";
+            this.EndReason.DataPropertyName = "EndReasonName";
             this.EndReason.HeaderText = "Przyczyna zwrotu";
             this.EndReason.Name = "EndReason";
             // 

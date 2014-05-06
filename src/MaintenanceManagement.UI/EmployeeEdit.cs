@@ -16,8 +16,9 @@ namespace MaintenanceManagement.UI
             LoadEmploymentTypes();
 
             LoadAreas();
-        }
 
+            LoadTeams();
+        }
 
         public Employee Employee
         {
@@ -36,7 +37,7 @@ namespace MaintenanceManagement.UI
                     MobilePhone = employeeMobilePhone.Text,
                     HomePhone = employeePhone.Text,
                     Area = (Area)employeeArea.SelectedItem,
-                    Team = employeeTeam.SelectedText,
+                    Team = (Team)employeeTeam.SelectedItem,
                 };
             }
 
@@ -46,13 +47,25 @@ namespace MaintenanceManagement.UI
                 employeeSurname.Text = value.Surname;
                 employeePersonalNr.Text = value.PersonalNumber.ToString();
                 employeeAdress.Text = value.Address;
-                employeeEmploymentStart.Value = value.EmploymentStart.GetValueOrDefault();
+
+                if (value.EmploymentStart != null)
+                {
+                    employeeEmploymentStart.Value = value.EmploymentStart.GetValueOrDefault();
+                }
+
                 employeeEmploymentType.SelectedItem = value.EmploymentType;
                 employeeMobilePhone.Text = value.MobilePhone;
                 employeePhone.Text = value.HomePhone;
                 employeeArea.SelectedItem = value.Area;
-                employeeTeam.SelectedText = value.Team;
+                employeeTeam.SelectedItem = value.Team;
             }
+        }
+
+        private void LoadTeams()
+        {
+            employeeTeam.Items.Clear();
+
+            employeeTeam.DataSource = Enum.GetValues(typeof(Team));
         }
 
         private void LoadEmploymentTypes()
@@ -70,7 +83,7 @@ namespace MaintenanceManagement.UI
             {
                 employeeArea.DataSource = context.Areas.ToList();
             }
-        
+
         }
 
 

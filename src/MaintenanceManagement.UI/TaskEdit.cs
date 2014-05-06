@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {
@@ -16,8 +19,8 @@ namespace MaintenanceManagement.UI
         }
 
         protected override void OnLoad(EventArgs e)
-        {
-            taskStatus.DataSource = Enum.GetValues(typeof(EmployeeTaskStatus)); //wyświetla angielskie nazwy
+        {           
+            taskStatus.LoadEnumAsDataSource(typeof(EmployeeTaskStatus));
 
             using (var context = new MainContext())
             {
@@ -38,7 +41,7 @@ namespace MaintenanceManagement.UI
                     Actions = taskActions.Text,
                     DueDate = taskDueDate.Value,
                     Assignee = (Employee)taskAssignee.SelectedItem,
-                    Status = (EmployeeTaskStatus)taskStatus.SelectedItem,
+                    Status = (EmployeeTaskStatus)taskStatus.SelectedValue,
                     Area = (Area)taskArea.SelectedItem,
                     Progress = int.Parse(taskProgress.Text),
 

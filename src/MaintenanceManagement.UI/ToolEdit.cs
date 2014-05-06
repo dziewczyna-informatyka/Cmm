@@ -4,6 +4,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {
@@ -12,18 +13,13 @@ namespace MaintenanceManagement.UI
         public ToolEdit()
         {
             InitializeComponent();
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
+            
             using (var context = new MainContext())
             {
                 toolOwner.DataSource = context.Employees.ToList();
                 toolTypeComboBox.DataSource = context.ToolTypes.ToList();
-                toolEndReason.DataSource = Enum.GetValues(typeof(ToolEndReason));
+                toolEndReason.LoadEnumAsDataSource(typeof(ToolEndReason));
             }
-            
-            base.OnLoad(e);
         }
 
         public EmployeeTool EmployeeTool
@@ -35,9 +31,9 @@ namespace MaintenanceManagement.UI
                     Owner = (Employee)toolOwner.SelectedItem,
                     ToolType = (ToolType)toolTypeComboBox.SelectedItem,
                     StartDate = toolStartDate.Value.Date,
-                    EndDate = toolEndDate.Value.Date,
-                    Quantity = Convert.ToInt16(toolQuantity.Text),
-                    ToolEndReason = (ToolEndReason)toolEndReason.SelectedItem,
+                    EndDate = cbToolReturned.Checked ? toolEndDate.Value as DateTime? : null,
+                    Quantity = Convert.ToInt32(toolQuantity.Text),
+                    ToolEndReason = cbToolReturned.Checked ? (ToolEndReason)toolEndReason.SelectedValue as ToolEndReason? : null,
                     Comment = toolComment.Text,
                 };
             }
@@ -47,11 +43,20 @@ namespace MaintenanceManagement.UI
                 toolOwner.SelectedItem = value.Owner;
                 toolTypeComboBox.SelectedItem = value.ToolType;
                 toolStartDate.Value = value.StartDate;
-                toolEndDate.Value = value.EndDate.GetValueOrDefault();
                 toolQuantity.Text = value.Quantity.ToString();
                 toolEndReason.SelectedItem = value.ToolEndReason;
                 toolComment.Text = value.Comment;
+
+                if (value.EndDate != null)
+                {
+                    toolEndDate.Value = value.EndDate.GetValueOrDefault();
+                }
             }
+        }
+
+        private void cbToolReturned_CheckedChanged(object sender, EventArgs e)
+        {
+            toolEndDate.Enabled = toolEndReason.Enabled = cbToolReturned.Checked;
         }
     }
 }

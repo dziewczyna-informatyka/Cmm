@@ -44,6 +44,7 @@
             this.toolOwner = new System.Windows.Forms.ComboBox();
             this.toolTypeComboBox = new System.Windows.Forms.ComboBox();
             this.toolEndReason = new System.Windows.Forms.ComboBox();
+            this.cbToolReturned = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 123);
+            this.label5.Location = new System.Drawing.Point(13, 250);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 9;
@@ -101,7 +102,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 149);
+            this.label6.Location = new System.Drawing.Point(13, 276);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 13);
             this.label6.TabIndex = 11;
@@ -119,7 +120,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 175);
+            this.label7.Location = new System.Drawing.Point(13, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 14;
@@ -127,7 +128,7 @@
             // 
             // toolComment
             // 
-            this.toolComment.Location = new System.Drawing.Point(109, 172);
+            this.toolComment.Location = new System.Drawing.Point(109, 120);
             this.toolComment.Multiline = true;
             this.toolComment.Name = "toolComment";
             this.toolComment.Size = new System.Drawing.Size(163, 78);
@@ -137,7 +138,8 @@
             // 
             this.toolEndDate.Cursor = System.Windows.Forms.Cursors.No;
             this.toolEndDate.CustomFormat = "0000-00-00";
-            this.toolEndDate.Location = new System.Drawing.Point(109, 120);
+            this.toolEndDate.Enabled = false;
+            this.toolEndDate.Location = new System.Drawing.Point(109, 247);
             this.toolEndDate.Name = "toolEndDate";
             this.toolEndDate.Size = new System.Drawing.Size(163, 20);
             this.toolEndDate.TabIndex = 15;
@@ -146,7 +148,7 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(197, 264);
+            this.button1.Location = new System.Drawing.Point(196, 300);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 16;
@@ -156,7 +158,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Location = new System.Drawing.Point(116, 264);
+            this.button2.Location = new System.Drawing.Point(115, 300);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 17;
@@ -181,17 +183,30 @@
             // 
             // toolEndReason
             // 
+            this.toolEndReason.Enabled = false;
             this.toolEndReason.FormattingEnabled = true;
-            this.toolEndReason.Location = new System.Drawing.Point(108, 146);
+            this.toolEndReason.Location = new System.Drawing.Point(108, 273);
             this.toolEndReason.Name = "toolEndReason";
             this.toolEndReason.Size = new System.Drawing.Size(163, 21);
             this.toolEndReason.TabIndex = 20;
+            // 
+            // cbToolReturned
+            // 
+            this.cbToolReturned.AutoSize = true;
+            this.cbToolReturned.Location = new System.Drawing.Point(109, 224);
+            this.cbToolReturned.Name = "cbToolReturned";
+            this.cbToolReturned.Size = new System.Drawing.Size(122, 17);
+            this.cbToolReturned.TabIndex = 22;
+            this.cbToolReturned.Text = "Narzedzie zwrócono";
+            this.cbToolReturned.UseVisualStyleBackColor = true;
+            this.cbToolReturned.CheckedChanged += new System.EventHandler(this.cbToolReturned_CheckedChanged);
             // 
             // ToolEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 299);
+            this.ClientSize = new System.Drawing.Size(287, 337);
+            this.Controls.Add(this.cbToolReturned);
             this.Controls.Add(this.toolEndReason);
             this.Controls.Add(this.toolTypeComboBox);
             this.Controls.Add(this.toolOwner);
@@ -233,5 +248,6 @@
         private System.Windows.Forms.ComboBox toolOwner;
         private System.Windows.Forms.ComboBox toolTypeComboBox;
         private System.Windows.Forms.ComboBox toolEndReason;
+        private System.Windows.Forms.CheckBox cbToolReturned;
     }
 }

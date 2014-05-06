@@ -68,8 +68,20 @@
     <Compile Include="Migrations\201404271020465_AfterMerge.Designer.cs">
       <DependentUpon>201404271020465_AfterMerge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405050907294_StringLength.cs" />
+    <Compile Include="Migrations\201405050907294_StringLength.Designer.cs">
+      <DependentUpon>201405050907294_StringLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405050913197_Indexes.cs" />
+    <Compile Include="Migrations\201405050913197_Indexes.Designer.cs">
+      <DependentUpon>201405050913197_Indexes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405051009463_EmployeeTeam.cs" />
+    <Compile Include="Migrations\201405051009463_EmployeeTeam.Designer.cs">
+      <DependentUpon>201405051009463_EmployeeTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\Team.cs" />
+    <Compile Include="Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToolEndReason.cs" />
     <Compile Include="WorkSchedule.cs" />
@@ -94,6 +106,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404271020465_AfterMerge.resx">
       <DependentUpon>201404271020465_AfterMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405050907294_StringLength.resx">
+      <DependentUpon>201405050907294_StringLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405050913197_Indexes.resx">
+      <DependentUpon>201405050913197_Indexes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405051009463_EmployeeTeam.resx">
+      <DependentUpon>201405051009463_EmployeeTeam.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

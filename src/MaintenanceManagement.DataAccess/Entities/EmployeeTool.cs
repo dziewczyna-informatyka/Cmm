@@ -1,4 +1,6 @@
 ﻿using System;
+using MaintenanceManagement.Core;
+using Microsoft.SqlServer.Server;
 
 namespace MaintenanceManagement.DataAccess.Entities
 {
@@ -17,5 +19,15 @@ namespace MaintenanceManagement.DataAccess.Entities
         public Employee Owner { get; set; }
 
         public ToolType ToolType { get; set; }
+
+        public string EndReasonName
+        {
+            get { return ToolEndReason == null ? string.Empty : ToolEndReason.Value.EnumToString(); }
+        }
+
+        public string ToolTypeName
+        {
+            get { return ToolType == null ? string.Empty : ToolType.Name; }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using MaintenanceManagement.Core;
 
 namespace MaintenanceManagement.DataAccess.Entities
 {
@@ -13,6 +14,11 @@ namespace MaintenanceManagement.DataAccess.Entities
         public string Actions { get; set; }
 
         public EmployeeTaskStatus Status { get; set; }
+
+        public string StatusName
+        {
+            get { return Status.EnumToString(); }
+        }
 
         public DateTime DueDate { get; set; }
 
