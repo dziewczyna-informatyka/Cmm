@@ -45,7 +45,9 @@
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaysRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActualendDateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -80,7 +82,9 @@
             this.Subject,
             this.Actions,
             this.Progress,
-            this.DueDate});
+            this.DaysRemaining,
+            this.DueDate,
+            this.ActualendDateText});
             this.employeeTasksGridView.Location = new System.Drawing.Point(12, 36);
             this.employeeTasksGridView.Name = "employeeTasksGridView";
             this.employeeTasksGridView.Size = new System.Drawing.Size(846, 252);
@@ -178,11 +182,23 @@
             this.Progress.HeaderText = "Wykonanie";
             this.Progress.Name = "Progress";
             // 
+            // DaysRemaining
+            // 
+            this.DaysRemaining.DataPropertyName = "DaysRemaining";
+            this.DaysRemaining.HeaderText = "Pozostalo Dni";
+            this.DaysRemaining.Name = "DaysRemaining";
+            // 
             // DueDate
             // 
-            this.DueDate.DataPropertyName = "DueDate";
+            this.DueDate.DataPropertyName = "DueDateText";
             this.DueDate.HeaderText = "Data zakończenia";
             this.DueDate.Name = "DueDate";
+            // 
+            // ActualendDateText
+            // 
+            this.ActualendDateText.DataPropertyName = "ActualendDateText";
+            this.ActualendDateText.HeaderText = "Faktyczne zakonczenie";
+            this.ActualendDateText.Name = "ActualendDateText";
             // 
             // EmployeeTasksList
             // 
@@ -228,6 +244,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DaysRemaining;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActualendDateText;
     }
 }

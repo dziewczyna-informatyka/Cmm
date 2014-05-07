@@ -28,6 +28,8 @@ namespace MaintenanceManagement.UI
                 toolTypeComboBox.DataSource = context.ToolTypes.ToList();
                 toolEndReason.LoadEnumAsDataSource(typeof(ToolEndReason));
             }
+
+            toolEndDate.Value = DateTime.Now;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -47,8 +49,11 @@ namespace MaintenanceManagement.UI
                     ToolType = (ToolType)toolTypeComboBox.SelectedItem,
                     StartDate = toolStartDate.Value.Date,
                     EndDate = cbToolReturned.Checked ? toolEndDate.Value as DateTime? : null,
-                    Quantity = Convert.ToInt32(toolQuantity.Text),
-                    ToolEndReason = cbToolReturned.Checked ? (ToolEndReason)toolEndReason.SelectedValue as ToolEndReason? : null,
+                    Quantity = (int)toolQuantity.Value,
+                    ToolEndReason =
+                        cbToolReturned.Checked && toolEndReason.SelectedValue != null
+                            ? (ToolEndReason)toolEndReason.SelectedValue as ToolEndReason?
+                            : null,
                     Comment = toolComment.Text,
                 };
             }
@@ -58,7 +63,7 @@ namespace MaintenanceManagement.UI
                 toolOwner.SelectedItem = value.Owner;
                 toolTypeComboBox.SelectedItem = value.ToolType;
                 toolStartDate.Value = value.StartDate;
-                toolQuantity.Text = value.Quantity.ToString();
+                toolQuantity.Value = value.Quantity;
                 toolEndReason.SelectedItem = value.ToolEndReason;
                 toolComment.Text = value.Comment;
 
@@ -66,6 +71,8 @@ namespace MaintenanceManagement.UI
                 {
                     toolEndDate.Value = value.EndDate.GetValueOrDefault();
                 }
+
+                toolEndDate.Enabled = toolEndReason.Enabled = cbToolReturned.Checked = value.IsEnded;
             }
         }
 
