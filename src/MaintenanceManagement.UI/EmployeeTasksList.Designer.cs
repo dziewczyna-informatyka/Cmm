@@ -47,6 +47,7 @@
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DaysRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActualendDateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -82,7 +83,8 @@
             this.Actions,
             this.Progress,
             this.DaysRemaining,
-            this.DueDate});
+            this.DueDate,
+            this.ActualendDateText});
             this.employeeTasksGridView.Location = new System.Drawing.Point(12, 36);
             this.employeeTasksGridView.Name = "employeeTasksGridView";
             this.employeeTasksGridView.Size = new System.Drawing.Size(846, 252);
@@ -192,6 +194,12 @@
             this.DueDate.HeaderText = "Data zakończenia";
             this.DueDate.Name = "DueDate";
             // 
+            // ActualendDateText
+            // 
+            this.ActualendDateText.DataPropertyName = "ActualendDateText";
+            this.ActualendDateText.HeaderText = "Faktyczne zakonczenie";
+            this.ActualendDateText.Name = "ActualendDateText";
+            // 
             // EmployeeTasksList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,5 +246,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
         private System.Windows.Forms.DataGridViewTextBoxColumn DaysRemaining;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActualendDateText;
     }
 }

@@ -88,6 +88,10 @@
     <Compile Include="Migrations\201405072211320_RequiredRelations.Designer.cs">
       <DependentUpon>201405072211320_RequiredRelations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405072219330_ActualEndDate.cs" />
+    <Compile Include="Migrations\201405072219330_ActualEndDate.Designer.cs">
+      <DependentUpon>201405072219330_ActualEndDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405072211320_RequiredRelations.resx">
       <DependentUpon>201405072211320_RequiredRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405072219330_ActualEndDate.resx">
+      <DependentUpon>201405072219330_ActualEndDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

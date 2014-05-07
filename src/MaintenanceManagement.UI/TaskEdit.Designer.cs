@@ -49,6 +49,8 @@
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
             this.taskArea = new System.Windows.Forms.ComboBox();
             this.taskProgress = new System.Windows.Forms.NumericUpDown();
+            this.taskEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
@@ -178,6 +180,7 @@
             this.taskStatus.Name = "taskStatus";
             this.taskStatus.Size = new System.Drawing.Size(200, 21);
             this.taskStatus.TabIndex = 50;
+            this.taskStatus.SelectedIndexChanged += new System.EventHandler(this.taskStatus_SelectedIndexChanged);
             // 
             // employeeTasksBindingSource
             // 
@@ -223,11 +226,31 @@
             this.taskProgress.Size = new System.Drawing.Size(200, 20);
             this.taskProgress.TabIndex = 54;
             // 
+            // taskEndDate
+            // 
+            this.taskEndDate.CustomFormat = "0000-00-00";
+            this.taskEndDate.Location = new System.Drawing.Point(203, 323);
+            this.taskEndDate.Name = "taskEndDate";
+            this.taskEndDate.Size = new System.Drawing.Size(200, 20);
+            this.taskEndDate.TabIndex = 56;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(12, 326);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(160, 15);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Faktyczna data zakończenia";
+            // 
             // TaskEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 410);
+            this.Controls.Add(this.taskEndDate);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.taskProgress);
             this.Controls.Add(this.taskArea);
             this.Controls.Add(this.label7);
@@ -277,5 +300,7 @@
         private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
         private System.Windows.Forms.ComboBox taskArea;
         private System.Windows.Forms.NumericUpDown taskProgress;
+        private System.Windows.Forms.DateTimePicker taskEndDate;
+        private System.Windows.Forms.Label label8;
     }
 }

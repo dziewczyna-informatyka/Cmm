@@ -30,16 +30,21 @@ namespace MaintenanceManagement.DataAccess.Entities
             get { return DueDate.ToShortDateString(); }
         }
 
-        //public DateTime? ActualEndDate { get; set; }
+        public DateTime? ActualEndDate { get; set; }
 
-        //public string ActualEndDateText
-        //{
-        //    get { return ActualEndDate != null ? ActualEndDate.Value.ToShortDateString() : string.Empty; }
-        //}
-
-        public int DaysRemaining
+        public string ActualEndDateText
         {
-            get { return (int)Math.Floor(DateTime.Now.Subtract(DueDate).TotalDays); }
+            get { return ActualEndDate != null && Status == EmployeeTaskStatus.Done ? ActualEndDate.Value.ToShortDateString() : string.Empty; }
+        }
+
+        public string DaysRemaining
+        {
+            get
+            {
+                return Status != EmployeeTaskStatus.Done
+                    ? Math.Floor(DateTime.Now.Subtract(DueDate).TotalDays).ToString()
+                    : string.Empty;
+            }
         }
 
 
