@@ -49,7 +49,7 @@ namespace MaintenanceManagement.UI
                     ToolType = (ToolType)toolTypeComboBox.SelectedItem,
                     StartDate = toolStartDate.Value.Date,
                     EndDate = cbToolReturned.Checked ? toolEndDate.Value as DateTime? : null,
-                    Quantity = Convert.ToInt32(toolQuantity.Text),
+                    Quantity = (int)toolQuantity.Value,
                     ToolEndReason = cbToolReturned.Checked ? (ToolEndReason)toolEndReason.SelectedValue as ToolEndReason? : null,
                     Comment = toolComment.Text,
                 };
@@ -60,7 +60,7 @@ namespace MaintenanceManagement.UI
                 toolOwner.SelectedItem = value.Owner;
                 toolTypeComboBox.SelectedItem = value.ToolType;
                 toolStartDate.Value = value.StartDate;
-                toolQuantity.Text = value.Quantity.ToString();
+                toolQuantity.Value = value.Quantity;
                 toolEndReason.SelectedItem = value.ToolEndReason;
                 toolComment.Text = value.Comment;
 
