@@ -143,7 +143,7 @@
             this.toolEndDate.Name = "toolEndDate";
             this.toolEndDate.Size = new System.Drawing.Size(163, 20);
             this.toolEndDate.TabIndex = 15;
-            this.toolEndDate.Value = new System.DateTime(2014, 4, 25, 0, 0, 0, 0);
+            this.toolEndDate.Value = new System.DateTime(2014, 5, 7, 0, 0, 0, 0);
             // 
             // button1
             // 

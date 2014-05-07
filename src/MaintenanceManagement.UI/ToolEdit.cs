@@ -28,6 +28,8 @@ namespace MaintenanceManagement.UI
                 toolTypeComboBox.DataSource = context.ToolTypes.ToList();
                 toolEndReason.LoadEnumAsDataSource(typeof(ToolEndReason));
             }
+
+            toolEndDate.Value = DateTime.Now;
         }
 
         protected override void OnLoad(EventArgs e)

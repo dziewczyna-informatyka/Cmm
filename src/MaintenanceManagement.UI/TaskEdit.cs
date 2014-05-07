@@ -16,6 +16,8 @@ namespace MaintenanceManagement.UI
         public TaskEdit()
         {
             InitializeComponent();
+
+            taskDueDate.Value = DateTime.Now;
         }
 
         protected override void OnLoad(EventArgs e)
