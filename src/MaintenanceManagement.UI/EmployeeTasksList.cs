@@ -63,6 +63,7 @@ namespace MaintenanceManagement.UI
         {
             var form = new TaskEdit();
             var selected = employeeTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
+            form.EmployeeTask = selected;
 
             if (form.ShowDialog() == DialogResult.OK)
             {
