@@ -30,6 +30,19 @@ namespace MaintenanceManagement.DataAccess.Entities
             get { return DueDate.ToShortDateString(); }
         }
 
+        //public DateTime? ActualEndDate { get; set; }
+
+        //public string ActualEndDateText
+        //{
+        //    get { return ActualEndDate != null ? ActualEndDate.Value.ToShortDateString() : string.Empty; }
+        //}
+
+        public int DaysRemaining
+        {
+            get { return (int)Math.Floor(DateTime.Now.Subtract(DueDate).TotalDays); }
+        }
+
+
         public double Progress { get; set; }
 
         public string AssigneeName

@@ -42,6 +42,7 @@
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaysRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.taskListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
@@ -57,6 +58,7 @@
             this.Subject,
             this.Actions,
             this.Progress,
+            this.DaysRemaining,
             this.DueDate});
             this.taskListDataGrid.Location = new System.Drawing.Point(12, 45);
             this.taskListDataGrid.Name = "taskListDataGrid";
@@ -146,6 +148,12 @@
             this.Progress.HeaderText = "Wykonanie";
             this.Progress.Name = "Progress";
             // 
+            // DaysRemaining
+            // 
+            this.DaysRemaining.DataPropertyName = "DaysRemaining";
+            this.DaysRemaining.HeaderText = "Pozostalo Dni";
+            this.DaysRemaining.Name = "DaysRemaining";
+            // 
             // DueDate
             // 
             this.DueDate.DataPropertyName = "DueDateText";
@@ -187,6 +195,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DaysRemaining;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
     }
 }
