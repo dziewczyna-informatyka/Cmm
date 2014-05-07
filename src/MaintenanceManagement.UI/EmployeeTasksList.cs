@@ -63,6 +63,7 @@ namespace MaintenanceManagement.UI
         {
             var form = new TaskEdit();
             var selected = employeeTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
+            form.EmployeeTask = selected;
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -71,10 +72,14 @@ namespace MaintenanceManagement.UI
                     var task = form.EmployeeTask;
                     task.Id = selected.Id;
 
-                    task.Area = context.Areas.SingleOrDefault(a => a.Id == task.Area.Id);
-                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == task.Assignee.Id);
+                    var areaId = task.Area.Id;
+                    var assigneeId = task.Assignee.Id;
 
-                    context.UpdateDetached(task);
+                    task = context.UpdateDetached(task);
+
+                    task.Area = context.Areas.SingleOrDefault(a => a.Id == areaId);
+                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == assigneeId);
+
                     context.SaveChanges();
                 }
             }

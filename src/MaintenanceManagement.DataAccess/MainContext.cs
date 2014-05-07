@@ -26,11 +26,13 @@ namespace MaintenanceManagement.DataAccess
 
         public IDbSet<ToolType> ToolTypes { get; set; }
 
-        public void UpdateDetached<T>(T entity) where T : BaseEntity
+        public T UpdateDetached<T>(T entity) where T : BaseEntity
         {
             var databaseEntity = Set<T>().Single(e => e.Id == entity.Id);
             var entry = ChangeTracker.Entries<T>().Single(e => e.Entity.Id == entity.Id);
             entry.CurrentValues.SetValues(entity);
+
+            return databaseEntity;
         }
     }
 }
