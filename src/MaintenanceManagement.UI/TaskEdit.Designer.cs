@@ -47,11 +47,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
-            this.taskProgress = new System.Windows.Forms.TextBox();
             this.taskArea = new System.Windows.Forms.ComboBox();
+            this.taskProgress = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskProgress)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -207,14 +208,6 @@
             // 
             this.employeeTasksTableAdapter.ClearBeforeFill = true;
             // 
-            // taskProgress
-            // 
-            this.taskProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.taskProgress.Location = new System.Drawing.Point(203, 299);
-            this.taskProgress.Name = "taskProgress";
-            this.taskProgress.Size = new System.Drawing.Size(200, 21);
-            this.taskProgress.TabIndex = 52;
-            // 
             // taskArea
             // 
             this.taskArea.FormattingEnabled = true;
@@ -223,13 +216,20 @@
             this.taskArea.Size = new System.Drawing.Size(200, 21);
             this.taskArea.TabIndex = 53;
             // 
+            // taskProgress
+            // 
+            this.taskProgress.Location = new System.Drawing.Point(203, 297);
+            this.taskProgress.Name = "taskProgress";
+            this.taskProgress.Size = new System.Drawing.Size(200, 20);
+            this.taskProgress.TabIndex = 54;
+            // 
             // TaskEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 410);
-            this.Controls.Add(this.taskArea);
             this.Controls.Add(this.taskProgress);
+            this.Controls.Add(this.taskArea);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.taskStatus);
             this.Controls.Add(this.label6);
@@ -249,6 +249,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskProgress)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +275,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource employeeTasksBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
-        private System.Windows.Forms.TextBox taskProgress;
         private System.Windows.Forms.ComboBox taskArea;
+        private System.Windows.Forms.NumericUpDown taskProgress;
     }
 }

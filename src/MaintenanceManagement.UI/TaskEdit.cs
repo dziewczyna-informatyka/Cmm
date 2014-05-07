@@ -53,7 +53,7 @@ namespace MaintenanceManagement.UI
                     Assignee = (Employee)taskAssignee.SelectedItem,
                     Status = (EmployeeTaskStatus)taskStatus.SelectedValue,
                     Area = (Area)taskArea.SelectedItem,
-                    Progress = int.Parse(taskProgress.Text),
+                    Progress = (int)taskProgress.Value,
 
                 };
             }
@@ -66,7 +66,7 @@ namespace MaintenanceManagement.UI
                 taskAssignee.SelectedItem = value.Assignee;
                 taskStatus.SelectedItem = value.Status;
                 taskArea.SelectedItem = value.Area;
-                taskProgress.Text = value.Progress.ToString();
+                taskProgress.Value = (decimal)value.Progress;
 
             }
         }
