@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using MaintenanceManagement.Core;
 using Microsoft.SqlServer.Server;
 
@@ -16,9 +17,11 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public ToolEndReason? ToolEndReason { get; set; }
 
-        public Employee Owner { get; set; }
+        [Required]
+        public virtual Employee Owner { get; set; }
 
-        public ToolType ToolType { get; set; }
+        [Required]
+        public virtual ToolType ToolType { get; set; }
 
         public string EndReasonName
         {

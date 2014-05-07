@@ -1,13 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using MaintenanceManagement.Core;
 
 namespace MaintenanceManagement.DataAccess.Entities
 {
     public class EmployeeTask : BaseEntity
     {
-        public Employee Assignee { get; set; }
+        [Required]
+        public virtual Employee Assignee { get; set; }
 
-        public Area Area { get; set; }
+        [Required]
+        public virtual Area Area { get; set; }
 
         public string Subject { get; set; }
 
@@ -21,11 +24,11 @@ namespace MaintenanceManagement.DataAccess.Entities
         }
 
         public DateTime DueDate { get; set; }
-       
+
         public string DueDateText
         {
             get { return DueDate.ToShortDateString(); }
-        }        
+        }
 
         public double Progress { get; set; }
 
