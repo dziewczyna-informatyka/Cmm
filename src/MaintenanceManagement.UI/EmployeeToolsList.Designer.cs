@@ -108,6 +108,7 @@
             this.deleteTool.TabIndex = 3;
             this.deleteTool.Text = "Usuń";
             this.deleteTool.UseVisualStyleBackColor = true;
+            this.deleteTool.Click += new System.EventHandler(this.deleteTool_Click);
             // 
             // button5
             // 
