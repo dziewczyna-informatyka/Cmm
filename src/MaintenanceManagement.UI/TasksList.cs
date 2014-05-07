@@ -1,9 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
+using MaintenanceManagement.DataAccess.Entities;
 
 namespace MaintenanceManagement.UI
 {
@@ -12,6 +15,30 @@ namespace MaintenanceManagement.UI
         public TasksList()
         {
             InitializeComponent();
+
+            taskListDataGrid.DataBindingComplete += employeeTasksGridView_DataBindingComplete;
+        }
+
+        void employeeTasksGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (e.ListChangedType != ListChangedType.ItemDeleted)
+            {
+                foreach (DataGridViewRow r in taskListDataGrid.Rows)
+                {
+                    var task = r.DataBoundItem as EmployeeTask;
+
+                    if (task.IsDueDateWarning)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.LightYellow;
+                    }
+                    else if (task.IsDueDateError)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.LightCoral;
+                    }
+
+
+                }
+            }
         }
 
         protected override void OnLoad(EventArgs e)

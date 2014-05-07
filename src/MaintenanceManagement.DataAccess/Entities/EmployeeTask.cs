@@ -7,10 +7,10 @@ namespace MaintenanceManagement.DataAccess.Entities
     public class EmployeeTask : BaseEntity
     {
         [Required]
-        public virtual Employee Assignee { get; set; }
+        public Employee Assignee { get; set; }
 
         [Required]
-        public virtual Area Area { get; set; }
+        public Area Area { get; set; }
 
         public string Subject { get; set; }
 
@@ -30,6 +30,16 @@ namespace MaintenanceManagement.DataAccess.Entities
             get { return DueDate.ToShortDateString(); }
         }
 
+        public bool IsDueDateWarning
+        {
+            get { return Status != EmployeeTaskStatus.Done && !IsDueDateError && DueDate.Subtract(DateTime.Now).TotalDays < 3; }
+        }
+
+        public bool IsDueDateError
+        {
+            get { return Status != EmployeeTaskStatus.Done && DueDate.Subtract(DateTime.Now).TotalDays <= 0; }
+        }
+
         public DateTime? ActualEndDate { get; set; }
 
         public string ActualEndDateText
@@ -42,7 +52,7 @@ namespace MaintenanceManagement.DataAccess.Entities
             get
             {
                 return Status != EmployeeTaskStatus.Done
-                    ? Math.Floor(DateTime.Now.Subtract(DueDate).TotalDays).ToString()
+                    ? Math.Floor(DueDate.Subtract(DateTime.Now).TotalDays).ToString()
                     : string.Empty;
             }
         }
