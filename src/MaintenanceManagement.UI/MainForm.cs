@@ -102,17 +102,12 @@ namespace MaintenanceManagement.UI
         {
             Employee emp = UserContext.User;
 
-            var form = new EmployeeTaskSummary();
-
-
-            using (var context = new MainContext())
+            var form = new EmployeeTaskSummary
             {
-                form.AssignedEmployee = emp;
-                form.TasksAmount = context.EmployeeTasks.Count(a => a.Assignee.Id == emp.Id);
-                form.ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress && a.Assignee.Id == emp.Id);
-                form.PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned && a.Assignee.Id == emp.Id);
-                form.DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done && a.Assignee.Id == emp.Id);
-            }
+                AssignedEmployee = emp
+            };
+
+            form.UpdateData();
 
             if (form.ShowDialog() == DialogResult.OK)
             {

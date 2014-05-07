@@ -59,6 +59,8 @@ namespace MaintenanceManagement.UI
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned, AssignedEmployee = AssignedEmployee };
 
             form.ShowDialog();
+
+            UpdateData();
         }
 
         private void actualTasks_Click(object sender, EventArgs e)
@@ -66,6 +68,8 @@ namespace MaintenanceManagement.UI
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.InProgress, AssignedEmployee = AssignedEmployee };
 
             form.ShowDialog();
+
+            UpdateData();
         }
 
         private void doneTasks_Click(object sender, EventArgs e)
@@ -73,6 +77,8 @@ namespace MaintenanceManagement.UI
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.Done, AssignedEmployee = AssignedEmployee };
 
             form.ShowDialog();
+
+            UpdateData();
         }
 
         private void allTasks_Click(object sender, EventArgs e)
@@ -80,6 +86,8 @@ namespace MaintenanceManagement.UI
             var form = new EmployeeTasksList { EmployeeTaskStatus = null, AssignedEmployee = AssignedEmployee };
 
             form.ShowDialog();
+
+            UpdateData();
         }
 
         //-----------------------------------------------------------------------------
@@ -100,6 +108,8 @@ namespace MaintenanceManagement.UI
                     context.SaveChanges();
                 }
             }
+
+            UpdateData();
         }
 
         //-----------------------------------------------------------------------------
@@ -115,6 +125,20 @@ namespace MaintenanceManagement.UI
             {
 
             }
+
+            UpdateData();
+        }
+
+        public void UpdateData()
+        {
+            using (var context = new MainContext())
+            {
+
+                TasksAmount = context.EmployeeTasks.Count(a => a.Assignee.Id == AssignedEmployee.Id);
+                ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress && a.Assignee.Id == AssignedEmployee.Id);
+                PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned && a.Assignee.Id == AssignedEmployee.Id);
+                DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done && a.Assignee.Id == AssignedEmployee.Id);
+            } 
         }
 
     }
