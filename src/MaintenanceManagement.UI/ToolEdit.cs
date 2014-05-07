@@ -50,7 +50,10 @@ namespace MaintenanceManagement.UI
                     StartDate = toolStartDate.Value.Date,
                     EndDate = cbToolReturned.Checked ? toolEndDate.Value as DateTime? : null,
                     Quantity = (int)toolQuantity.Value,
-                    ToolEndReason = cbToolReturned.Checked ? (ToolEndReason)toolEndReason.SelectedValue as ToolEndReason? : null,
+                    ToolEndReason =
+                        cbToolReturned.Checked && toolEndReason.SelectedValue != null
+                            ? (ToolEndReason)toolEndReason.SelectedValue as ToolEndReason?
+                            : null,
                     Comment = toolComment.Text,
                 };
             }
@@ -68,6 +71,8 @@ namespace MaintenanceManagement.UI
                 {
                     toolEndDate.Value = value.EndDate.GetValueOrDefault();
                 }
+
+                toolEndDate.Enabled = toolEndReason.Enabled = cbToolReturned.Checked = value.IsEnded;
             }
         }
 
