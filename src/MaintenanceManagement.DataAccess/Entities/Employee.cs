@@ -37,6 +37,8 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public Team Team { get; set; }
 
+        public bool IsAdmin { get; set; }
+
         public string FullName
         {
             get { return string.Format("{0} {1}", Name, Surname); }

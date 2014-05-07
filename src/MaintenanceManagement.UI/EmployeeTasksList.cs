@@ -22,30 +22,30 @@ namespace MaintenanceManagement.UI
             UpdateEmployeeTasks();
             base.OnLoad(e);
         }
-        
+
         private void UpdateEmployeeTasks()
         {
             employeeTasksGridView.AutoGenerateColumns = false;
 
             using (var context = new MainContext())
             {
-                var status = (EmployeeTaskStatus)Enum.Parse(typeof(EmployeeTaskStatus),tasksStatus.Text);                
                 employeeTasksGridView.DataSource =
-                    context.EmployeeTasks.
-                    Include(e => e.Assignee).
-                    OrderBy(e => e.Progress).
-                    Where(e => AssignedEmployee.Id == e.Id && EmployeeTaskStatus == status).
-                    ToList();
-            }           
+                    context.EmployeeTasks
+                        .Include(e => e.Assignee)
+                        .Include(e => e.Area)
+                        .OrderBy(e => e.Progress)
+                        .Where(t => AssignedEmployee.Id == t.Assignee.Id && (t.Status == EmployeeTaskStatus || EmployeeTaskStatus == null))
+                        .ToList();
+            }
         }
 
-        public EmployeeTaskStatus EmployeeTaskStatus
+        public EmployeeTaskStatus? EmployeeTaskStatus
         {
-            get { return (EmployeeTaskStatus)tasksStatus.Tag; }
+            get { return (EmployeeTaskStatus?)tasksStatus.Tag; }
             set
             {
                 tasksStatus.Tag = value;
-                tasksStatus.Text = value.EnumToString();
+                tasksStatus.Text = value != null ? value.EnumToString() : string.Empty;
             }
         }
 
@@ -58,15 +58,28 @@ namespace MaintenanceManagement.UI
                 responsibleEmployee.Text = value.FullName;
             }
         }
-        
-        private void editTask_Click(object sender, EventArgs e)
+
+        private void editTask_Click(object sender, EventArgs eventArgs)
         {
             var form = new TaskEdit();
+            var selected = employeeTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
+
             if (form.ShowDialog() == DialogResult.OK)
             {
+                using (var context = new MainContext())
+                {
+                    var task = form.EmployeeTask;
+                    task.Id = selected.Id;
 
+                    task.Area = context.Areas.SingleOrDefault(a => a.Id == task.Area.Id);
+                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == task.Assignee.Id);
+
+                    context.UpdateDetached(task);
+                    context.SaveChanges();
+                }
             }
 
+            UpdateEmployeeTasks();
         }
     }
 }

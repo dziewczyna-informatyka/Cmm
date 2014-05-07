@@ -1,3 +1,4 @@
+using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess.Entities;
 
 namespace MaintenanceManagement.DataAccess.Migrations
@@ -39,6 +40,8 @@ namespace MaintenanceManagement.DataAccess.Migrations
                     PersonalNumber = 3554,
                     Surname = "Wolkowska",
                     Name = "Marta",
+                    PasswordHash = HashHelper.GetHash("test"),
+                    IsAdmin = true
                 },
                 new Employee
                 {
@@ -49,6 +52,7 @@ namespace MaintenanceManagement.DataAccess.Migrations
                     PersonalNumber = 3333,
                     Surname = "Mielnik",
                     Name = "Mariusz",
+                    PasswordHash = HashHelper.GetHash("test")
                 },
                 new Employee
                 {

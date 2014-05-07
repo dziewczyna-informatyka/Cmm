@@ -19,12 +19,22 @@ namespace MaintenanceManagement.UI
         }
 
         protected override void OnLoad(EventArgs e)
-        {           
+        {
+            taskAssignee.Enabled = UserContext.IsAdmin;
+
             taskStatus.LoadEnumAsDataSource(typeof(EmployeeTaskStatus));
 
             using (var context = new MainContext())
             {
-                taskAssignee.DataSource = context.Employees.ToList();
+                if (UserContext.IsAdmin)
+                {
+                    taskAssignee.DataSource = context.Employees.ToList();
+                }
+                else
+                {
+                    taskAssignee.DataSource = new[] { UserContext.User };
+                }
+
                 taskArea.DataSource = context.Areas.ToList();
             }
 

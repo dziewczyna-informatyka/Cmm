@@ -41,7 +41,7 @@
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
             this.editTask = new System.Windows.Forms.Button();
             this.Assignee_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AreaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +76,7 @@
             this.employeeTasksGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeTasksGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Assignee_Id,
-            this.Area,
+            this.AreaName,
             this.Subject,
             this.Actions,
             this.Progress,
@@ -154,28 +154,33 @@
             this.Assignee_Id.HeaderText = "Osoba odpowiedzialna";
             this.Assignee_Id.Name = "Assignee_Id";
             // 
-            // Area
+            // AreaName
             // 
-            this.Area.HeaderText = "Obszar";
-            this.Area.Name = "Area";
+            this.AreaName.DataPropertyName = "AreaName";
+            this.AreaName.HeaderText = "Obszar";
+            this.AreaName.Name = "AreaName";
             // 
             // Subject
             // 
+            this.Subject.DataPropertyName = "Subject";
             this.Subject.HeaderText = "Temat";
             this.Subject.Name = "Subject";
             // 
             // Actions
             // 
+            this.Actions.DataPropertyName = "Actions";
             this.Actions.HeaderText = "Czynności";
             this.Actions.Name = "Actions";
             // 
             // Progress
             // 
+            this.Progress.DataPropertyName = "Progress";
             this.Progress.HeaderText = "Wykonanie";
             this.Progress.Name = "Progress";
             // 
             // DueDate
             // 
+            this.DueDate.DataPropertyName = "DueDate";
             this.DueDate.HeaderText = "Data zakończenia";
             this.DueDate.Name = "DueDate";
             // 
@@ -219,7 +224,7 @@
 
         private System.Windows.Forms.Button editTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn Assignee_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AreaName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;

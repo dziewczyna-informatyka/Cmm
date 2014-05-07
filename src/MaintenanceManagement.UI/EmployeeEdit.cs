@@ -38,6 +38,7 @@ namespace MaintenanceManagement.UI
                     HomePhone = employeePhone.Text,
                     Area = (Area)employeeArea.SelectedItem,
                     Team = (Team)employeeTeam.SelectedItem,
+                    PasswordHash = txtPassword.Text
                 };
             }
 

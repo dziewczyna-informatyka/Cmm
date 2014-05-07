@@ -58,54 +58,45 @@ namespace MaintenanceManagement.UI
         {
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-
-            }
+            form.ShowDialog();
         }
 
         private void actualTasks_Click(object sender, EventArgs e)
         {
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.InProgress, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-
-            }
+            form.ShowDialog();
         }
 
         private void doneTasks_Click(object sender, EventArgs e)
         {
             var form = new EmployeeTasksList { EmployeeTaskStatus = EmployeeTaskStatus.Done, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            form.ShowDialog();
         }
 
         private void allTasks_Click(object sender, EventArgs e)
         {
-            var form = new EmployeeTasksList();
+            var form = new EmployeeTasksList { EmployeeTaskStatus = null, AssignedEmployee = AssignedEmployee };
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            form.ShowDialog();
         }
 
         //-----------------------------------------------------------------------------
 
-        private void newTasksCreator_Click(object sender, EventArgs e)
+        private void newTasksCreator_Click(object sender, EventArgs eventArgs)
         {
             var form = new TaskEdit();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
                 {
-                    context.EmployeeTasks.Add(form.EmployeeTask);
+                    var task = form.EmployeeTask;
+
+                    task.Area = context.Areas.SingleOrDefault(a => a.Id == task.Area.Id);
+                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == task.Assignee.Id);
+
+                    context.EmployeeTasks.Add(task);
                     context.SaveChanges();
                 }
             }
@@ -122,7 +113,7 @@ namespace MaintenanceManagement.UI
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
         }
 

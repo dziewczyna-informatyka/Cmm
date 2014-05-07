@@ -37,11 +37,12 @@ namespace MaintenanceManagement.UI
             using (var context = new MainContext())
             {
                 taskListDataGrid.DataSource =
-                     context.EmployeeTasks.
-                     Include(e => e.Assignee).
-                     OrderBy(e => e.Progress).
-                     Where(e => EmployeeTaskStatus == e.Status).
-                     ToList();
+                     context.EmployeeTasks
+                        .Include(e => e.Assignee)
+                        .Include(e => e.Area)
+                        .OrderBy(e => e.Progress)
+                        .Where(e => EmployeeTaskStatus == e.Status)
+                        .ToList();
 
 
             }
