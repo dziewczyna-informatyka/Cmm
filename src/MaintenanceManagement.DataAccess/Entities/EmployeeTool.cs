@@ -25,6 +25,22 @@ namespace MaintenanceManagement.DataAccess.Entities
             get { return ToolEndReason == null ? string.Empty : ToolEndReason.Value.EnumToString(); }
         }
 
+        public bool IsEnded
+        {
+            get { return EndDate != null; }
+        }
+
+        public string StartDateText
+        {
+            get { return StartDate.ToShortDateString(); }
+        }
+
+        public string EndDateText
+        {
+            get { return EndDate != null ? EndDate.Value.ToShortDateString() : string.Empty; }
+        }
+
+
         public string ToolTypeName
         {
             get { return ToolType == null ? string.Empty : ToolType.Name; }

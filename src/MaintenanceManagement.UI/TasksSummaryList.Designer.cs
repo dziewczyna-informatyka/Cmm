@@ -215,7 +215,7 @@
             // 
             // DueDate
             // 
-            this.DueDate.DataPropertyName = "DueDate";
+            this.DueDate.DataPropertyName = "DueDateText";
             this.DueDate.HeaderText = "Data zakończenia";
             this.DueDate.Name = "DueDate";
             // 

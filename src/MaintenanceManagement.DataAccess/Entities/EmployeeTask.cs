@@ -21,6 +21,11 @@ namespace MaintenanceManagement.DataAccess.Entities
         }
 
         public DateTime DueDate { get; set; }
+       
+        public string DueDateText
+        {
+            get { return DueDate.ToShortDateString(); }
+        }        
 
         public double Progress { get; set; }
 
