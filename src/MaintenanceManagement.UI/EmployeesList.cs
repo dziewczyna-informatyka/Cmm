@@ -106,6 +106,7 @@ namespace MaintenanceManagement.UI
                     databaseEmployee.JobTitle = form.Employee.JobTitle;
                     databaseEmployee.PersonalNumber = form.Employee.PersonalNumber;
                     databaseEmployee.Team = form.Employee.Team;
+                    databaseEmployee.Login = form.Employee.Login;
 
                     if (!string.IsNullOrWhiteSpace(form.Employee.PasswordHash))
                     {

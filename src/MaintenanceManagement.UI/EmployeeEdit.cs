@@ -39,7 +39,9 @@ namespace MaintenanceManagement.UI
                     HomePhone = employeePhone.Text,
                     Area = (Area)employeeArea.SelectedItem,
                     Team = (Team)employeeTeam.SelectedValue,
-                    PasswordHash = txtPassword.Text
+                    PasswordHash = txtPassword.Text,
+                    Login = string.Format("{0}{1}", employeeName.Text.Substring(0, 3), employeeSurname.Text.Substring(0, 3))
+
                 };
             }
 
@@ -64,7 +66,7 @@ namespace MaintenanceManagement.UI
         }
 
         private void LoadTeams()
-        {            
+        {
             employeeTeam.LoadEnumAsDataSource(typeof(Team));
         }
 
