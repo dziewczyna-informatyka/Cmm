@@ -123,58 +123,54 @@ namespace MaintenanceManagement.UI
 
         private void controllingButton_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(kontrollingButton.Text);
+            ShowAreaSummary(sender);
+        }
 
-            var form = new AreaSummary { AssignedArea = (Area)kontrollingButton.Tag};
+        private static void ShowAreaSummary(object sender)
+        {
+            Area area;
 
-            if (form.ShowDialog() == DialogResult.OK)
+            using (var context = new MainContext())
             {
+                area = context.Areas.SingleOrDefault(a => a.Name == ((Button)sender).Text);
             }
+
+            if (area == null)
+            {
+                MessageBox.Show("Brak takiej brygady");
+            }
+            else
+            {
+                var form = new AreaSummary { AssignedArea = area };
+
+                form.ShowDialog();
+            }
+
         }
 
         private void wtryskarkiButton_Click(object sender, EventArgs e)
         {
-            var form = new AreaSummary { AssignedArea = (Area)wtryskarkiButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
+            ShowAreaSummary(sender);
         }
 
         private void pakujaceButton_Click(object sender, EventArgs e)
         {
-            var form = new AreaSummary { AssignedArea = (Area)pakujaceButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
+            ShowAreaSummary(sender);
         }
 
         private void ekstruderButton_Click(object sender, EventArgs e)
         {
-            var form = new AreaSummary { AssignedArea = (Area)ekstruderButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
+            ShowAreaSummary(sender);
         }
 
         private void automatyButton_Click(object sender, EventArgs e)
         {
-            var form = new AreaSummary { AssignedArea = (Area)automatyButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
+            ShowAreaSummary(sender);
         }
 
         private void facilityButton_Click(object sender, EventArgs e)
         {
-            var form = new AreaSummary { AssignedArea = (Area)facilityButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
+            ShowAreaSummary(sender);
         }
 
         private void brygadaAButton_Click(object sender, EventArgs e)
@@ -215,20 +211,12 @@ namespace MaintenanceManagement.UI
 
         private void warsztatButton_Click(object sender, EventArgs e)
         {
-            var form = new AreaSummary { AssignedArea = (Area)warsztatButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
+            ShowAreaSummary(sender);
         }
 
         private void infrastrukturaButton_Click(object sender, EventArgs e)
         {
-            var form = new AreaSummary { AssignedArea = (Area)infrastrukturaButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
+            ShowAreaSummary(sender);
         }
 
     }
