@@ -81,7 +81,7 @@ namespace MaintenanceManagement.UI
             set
             {
                 responsibleEmployee.Tag = value;
-                responsibleEmployee.Text = value.Area.Name;
+                responsibleEmployee.Text = value.FullName;
             }
         }
 
