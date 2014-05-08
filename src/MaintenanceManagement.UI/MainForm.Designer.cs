@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zadaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaplanowaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,13 +46,24 @@
             this.zleceniaWarsztatoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.harmonogramUrlopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeExample = new System.Windows.Forms.Button();
-            this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kontrollingButton = new System.Windows.Forms.Button();
+            this.wtryskarkiButton = new System.Windows.Forms.Button();
+            this.pakujaceButton = new System.Windows.Forms.Button();
+            this.ekstruderButton = new System.Windows.Forms.Button();
+            this.automatyButton = new System.Windows.Forms.Button();
+            this.facilityButton = new System.Windows.Forms.Button();
+            this.brygadaAButton = new System.Windows.Forms.Button();
+            this.brygadaBButton = new System.Windows.Forms.Button();
+            this.brygadaCButton = new System.Windows.Forms.Button();
+            this.brygadaDButton = new System.Windows.Forms.Button();
+            this.warsztatButton = new System.Windows.Forms.Button();
+            this.infrastrukturaButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoScroll = true;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(703, 24);
@@ -80,6 +92,13 @@
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
+            // 
+            // zamknijToolStripMenuItem
+            // 
+            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.zamknijToolStripMenuItem.Text = "Zamknij";
+            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
             // zadaniaToolStripMenuItem
             // 
@@ -175,7 +194,7 @@
             // 
             // employeeExample
             // 
-            this.employeeExample.Location = new System.Drawing.Point(25, 68);
+            this.employeeExample.Location = new System.Drawing.Point(744, 450);
             this.employeeExample.Name = "employeeExample";
             this.employeeExample.Size = new System.Drawing.Size(78, 50);
             this.employeeExample.TabIndex = 17;
@@ -183,12 +202,137 @@
             this.employeeExample.UseVisualStyleBackColor = true;
             this.employeeExample.Click += new System.EventHandler(this.employeeExample_Click);
             // 
-            // zamknijToolStripMenuItem
+            // kontrollingButton
             // 
-            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.zamknijToolStripMenuItem.Text = "Zamknij";
-            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
+            this.kontrollingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kontrollingButton.Location = new System.Drawing.Point(12, 150);
+            this.kontrollingButton.Name = "kontrollingButton";
+            this.kontrollingButton.Size = new System.Drawing.Size(96, 49);
+            this.kontrollingButton.TabIndex = 18;
+            this.kontrollingButton.Text = "Kontrolling";
+            this.kontrollingButton.UseVisualStyleBackColor = true;
+            this.kontrollingButton.Click += new System.EventHandler(this.controllingButton_Click);
+            // 
+            // wtryskarkiButton
+            // 
+            this.wtryskarkiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wtryskarkiButton.Location = new System.Drawing.Point(150, 150);
+            this.wtryskarkiButton.Name = "wtryskarkiButton";
+            this.wtryskarkiButton.Size = new System.Drawing.Size(96, 49);
+            this.wtryskarkiButton.TabIndex = 19;
+            this.wtryskarkiButton.Text = "Wtryskarki";
+            this.wtryskarkiButton.UseVisualStyleBackColor = true;
+            this.wtryskarkiButton.Click += new System.EventHandler(this.wtryskarkiButton_Click);
+            // 
+            // pakujaceButton
+            // 
+            this.pakujaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pakujaceButton.Location = new System.Drawing.Point(288, 150);
+            this.pakujaceButton.Name = "pakujaceButton";
+            this.pakujaceButton.Size = new System.Drawing.Size(96, 49);
+            this.pakujaceButton.TabIndex = 20;
+            this.pakujaceButton.Text = "Maszyny pakujące";
+            this.pakujaceButton.UseVisualStyleBackColor = true;
+            this.pakujaceButton.Click += new System.EventHandler(this.pakujaceButton_Click);
+            // 
+            // ekstruderButton
+            // 
+            this.ekstruderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ekstruderButton.Location = new System.Drawing.Point(426, 150);
+            this.ekstruderButton.Name = "ekstruderButton";
+            this.ekstruderButton.Size = new System.Drawing.Size(96, 49);
+            this.ekstruderButton.TabIndex = 21;
+            this.ekstruderButton.Text = "Ekstruder";
+            this.ekstruderButton.UseVisualStyleBackColor = true;
+            this.ekstruderButton.Click += new System.EventHandler(this.ekstruderButton_Click);
+            // 
+            // automatyButton
+            // 
+            this.automatyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.automatyButton.Location = new System.Drawing.Point(564, 150);
+            this.automatyButton.Name = "automatyButton";
+            this.automatyButton.Size = new System.Drawing.Size(96, 49);
+            this.automatyButton.TabIndex = 22;
+            this.automatyButton.Text = "Automaty";
+            this.automatyButton.UseVisualStyleBackColor = true;
+            this.automatyButton.Click += new System.EventHandler(this.automatyButton_Click);
+            // 
+            // facilityButton
+            // 
+            this.facilityButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.facilityButton.Location = new System.Drawing.Point(702, 150);
+            this.facilityButton.Name = "facilityButton";
+            this.facilityButton.Size = new System.Drawing.Size(96, 49);
+            this.facilityButton.TabIndex = 23;
+            this.facilityButton.Text = "Facility";
+            this.facilityButton.UseVisualStyleBackColor = true;
+            this.facilityButton.Click += new System.EventHandler(this.facilityButton_Click);
+            // 
+            // brygadaAButton
+            // 
+            this.brygadaAButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.brygadaAButton.Location = new System.Drawing.Point(12, 244);
+            this.brygadaAButton.Name = "brygadaAButton";
+            this.brygadaAButton.Size = new System.Drawing.Size(96, 49);
+            this.brygadaAButton.TabIndex = 24;
+            this.brygadaAButton.Text = "Brygada A";
+            this.brygadaAButton.UseVisualStyleBackColor = true;
+            this.brygadaAButton.Click += new System.EventHandler(this.brygadaAButton_Click);
+            // 
+            // brygadaBButton
+            // 
+            this.brygadaBButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.brygadaBButton.Location = new System.Drawing.Point(150, 244);
+            this.brygadaBButton.Name = "brygadaBButton";
+            this.brygadaBButton.Size = new System.Drawing.Size(96, 49);
+            this.brygadaBButton.TabIndex = 25;
+            this.brygadaBButton.Text = "Brygada B";
+            this.brygadaBButton.UseVisualStyleBackColor = true;
+            this.brygadaBButton.Click += new System.EventHandler(this.brygadaBButton_Click);
+            // 
+            // brygadaCButton
+            // 
+            this.brygadaCButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.brygadaCButton.Location = new System.Drawing.Point(288, 244);
+            this.brygadaCButton.Name = "brygadaCButton";
+            this.brygadaCButton.Size = new System.Drawing.Size(96, 49);
+            this.brygadaCButton.TabIndex = 26;
+            this.brygadaCButton.Text = "Brygada C";
+            this.brygadaCButton.UseVisualStyleBackColor = true;
+            this.brygadaCButton.Click += new System.EventHandler(this.brygadaCButton_Click);
+            // 
+            // brygadaDButton
+            // 
+            this.brygadaDButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.brygadaDButton.Location = new System.Drawing.Point(426, 244);
+            this.brygadaDButton.Name = "brygadaDButton";
+            this.brygadaDButton.Size = new System.Drawing.Size(96, 49);
+            this.brygadaDButton.TabIndex = 27;
+            this.brygadaDButton.Text = "Brygada D";
+            this.brygadaDButton.UseVisualStyleBackColor = true;
+            this.brygadaDButton.Click += new System.EventHandler(this.brygadaDButton_Click);
+            // 
+            // warsztatButton
+            // 
+            this.warsztatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.warsztatButton.Location = new System.Drawing.Point(564, 244);
+            this.warsztatButton.Name = "warsztatButton";
+            this.warsztatButton.Size = new System.Drawing.Size(96, 49);
+            this.warsztatButton.TabIndex = 28;
+            this.warsztatButton.Text = "Warsztat";
+            this.warsztatButton.UseVisualStyleBackColor = true;
+            this.warsztatButton.Click += new System.EventHandler(this.warsztatButton_Click);
+            // 
+            // infrastrukturaButton
+            // 
+            this.infrastrukturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.infrastrukturaButton.Location = new System.Drawing.Point(702, 244);
+            this.infrastrukturaButton.Name = "infrastrukturaButton";
+            this.infrastrukturaButton.Size = new System.Drawing.Size(96, 49);
+            this.infrastrukturaButton.TabIndex = 29;
+            this.infrastrukturaButton.Text = "Infrastruktura";
+            this.infrastrukturaButton.UseVisualStyleBackColor = true;
+            this.infrastrukturaButton.Click += new System.EventHandler(this.infrastrukturaButton_Click);
             // 
             // MainWindow
             // 
@@ -196,12 +340,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(834, 512);
+            this.Controls.Add(this.infrastrukturaButton);
+            this.Controls.Add(this.warsztatButton);
+            this.Controls.Add(this.brygadaDButton);
+            this.Controls.Add(this.brygadaCButton);
+            this.Controls.Add(this.brygadaBButton);
+            this.Controls.Add(this.brygadaAButton);
+            this.Controls.Add(this.facilityButton);
+            this.Controls.Add(this.automatyButton);
+            this.Controls.Add(this.ekstruderButton);
+            this.Controls.Add(this.pakujaceButton);
+            this.Controls.Add(this.wtryskarkiButton);
+            this.Controls.Add(this.kontrollingButton);
             this.Controls.Add(this.employeeExample);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "Maintenance management";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -229,6 +386,18 @@
         private System.Windows.Forms.ToolStripMenuItem zleceniaWarsztatoweToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem harmonogramUrlopyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
+        private System.Windows.Forms.Button kontrollingButton;
+        private System.Windows.Forms.Button wtryskarkiButton;
+        private System.Windows.Forms.Button pakujaceButton;
+        private System.Windows.Forms.Button ekstruderButton;
+        private System.Windows.Forms.Button automatyButton;
+        private System.Windows.Forms.Button facilityButton;
+        private System.Windows.Forms.Button brygadaAButton;
+        private System.Windows.Forms.Button brygadaBButton;
+        private System.Windows.Forms.Button brygadaCButton;
+        private System.Windows.Forms.Button brygadaDButton;
+        private System.Windows.Forms.Button warsztatButton;
+        private System.Windows.Forms.Button infrastrukturaButton;
 
     }
 }

@@ -16,8 +16,6 @@ namespace MaintenanceManagement.UI
         public TaskEdit()
         {
             InitializeComponent();
-<<<<<<< HEAD
-=======
 
             taskDueDate.Value = DateTime.Now;
             taskEndDate.Value = DateTime.Now;
@@ -26,7 +24,6 @@ namespace MaintenanceManagement.UI
         protected override void OnLoad(EventArgs e)
         {
             taskAssignee.Enabled = UserContext.IsAdmin;
->>>>>>> 24f24c959e96966292ca5b5b25929cdbe79008bb
 
             taskStatus.LoadEnumAsDataSource(typeof(EmployeeTaskStatus));
 
@@ -43,13 +40,6 @@ namespace MaintenanceManagement.UI
 
                 taskArea.DataSource = context.Areas.ToList();
             }
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            taskAssignee.Enabled = UserContext.IsAdmin;
-
-            
 
             base.OnLoad(e);
         }
@@ -58,8 +48,6 @@ namespace MaintenanceManagement.UI
         {
             get
             {
-                int v;
-
                 return new EmployeeTask()
                 {
                     Subject = taskSubject.Text,
@@ -68,12 +56,8 @@ namespace MaintenanceManagement.UI
                     Assignee = (Employee)taskAssignee.SelectedItem,
                     Status = (EmployeeTaskStatus)taskStatus.SelectedValue,
                     Area = (Area)taskArea.SelectedItem,
-<<<<<<< HEAD
-                    Progress = int.TryParse(taskProgress.Text, out v) ? v : 0,
-=======
                     Progress = (int)taskProgress.Value,
                     ActualEndDate = taskStatus.SelectedValue.Equals(EmployeeTaskStatus.Done) ? taskEndDate.Value as DateTime? : null
->>>>>>> 24f24c959e96966292ca5b5b25929cdbe79008bb
 
                 };
             }

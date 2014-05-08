@@ -57,17 +57,23 @@
     <Compile Include="AreaEdit.Designer.cs">
       <DependentUpon>AreaEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="AreaEmployees.cs">
+    <Compile Include="AreaSummary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AreaEmployees.Designer.cs">
-      <DependentUpon>AreaEmployees.cs</DependentUpon>
+    <Compile Include="AreaSummary.Designer.cs">
+      <DependentUpon>AreaSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="AreasList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AreasList.Designer.cs">
       <DependentUpon>AreasList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AreaTasksList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreaTasksList.Designer.cs">
+      <DependentUpon>AreaTasksList.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\ComboBoxExtensions.cs" />
     <Compile Include="Core\BaseEditWindow.cs">
@@ -168,11 +174,14 @@
     <EmbeddedResource Include="AreaEdit.resx">
       <DependentUpon>AreaEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AreaEmployees.resx">
-      <DependentUpon>AreaEmployees.cs</DependentUpon>
+    <EmbeddedResource Include="AreaSummary.resx">
+      <DependentUpon>AreaSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AreasList.resx">
       <DependentUpon>AreasList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AreaTasksList.resx">
+      <DependentUpon>AreaTasksList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeDetails.resx">
       <DependentUpon>EmployeeDetails.cs</DependentUpon>

@@ -12,6 +12,7 @@ namespace MaintenanceManagement.UI
         public EmployeeTaskSummary()
         {
             InitializeComponent();
+            //UpdateData();
         }
 
         //-----------------------------------------------------------------------------
@@ -139,6 +140,15 @@ namespace MaintenanceManagement.UI
                 PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned && a.Assignee.Id == AssignedEmployee.Id);
                 DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done && a.Assignee.Id == AssignedEmployee.Id);
             } 
+        }
+
+        private void responsibleEmployee_Click(object sender, EventArgs e)
+        {
+            var form = new EmployeeDetails
+            {
+                Employee = responsibleEmployee.Tag as Employee,
+            };
+            form.Show();
         }
 
     }

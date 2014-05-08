@@ -72,6 +72,7 @@
             this.responsibleEmployee.ReadOnly = true;
             this.responsibleEmployee.Size = new System.Drawing.Size(159, 22);
             this.responsibleEmployee.TabIndex = 5;
+            this.responsibleEmployee.Click += new System.EventHandler(this.responsibleEmployee_Click);
             // 
             // label2
             // 
@@ -195,7 +196,7 @@
             this.Controls.Add(this.actualTasks);
             this.Controls.Add(this.plannedTasks);
             this.Name = "EmployeeTaskSummary";
-            this.Text = "Podsumowanie zadań pracownika";
+            this.Text = "Podsumowanie pracownika";
             this.ResumeLayout(false);
             this.PerformLayout();
 

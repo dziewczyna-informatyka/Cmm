@@ -37,8 +37,6 @@ namespace MaintenanceManagement.UI
                     {
                         r.DefaultCellStyle.BackColor = Color.LightCoral;
                     }
-
-
                 }
             }
         }
@@ -65,6 +63,8 @@ namespace MaintenanceManagement.UI
             }
         }
 
+        //-----------------------------------------------------------------------------
+
         public EmployeeTaskStatus? EmployeeTaskStatus
         {
             get { return (EmployeeTaskStatus?)tasksStatus.Tag; }
@@ -81,12 +81,16 @@ namespace MaintenanceManagement.UI
             set
             {
                 responsibleEmployee.Tag = value;
-                responsibleEmployee.Text = value.FullName;
+                responsibleEmployee.Text = value.Area.Name;
             }
         }
 
+        //-----------------------------------------------------------------------------
+
         private void editTask_Click(object sender, EventArgs eventArgs)
         {
+            if (employeeTasksGridView.CurrentRow == null) { return; }
+
             var form = new TaskEdit();
             var selected = employeeTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
             form.EmployeeTask = selected;
@@ -112,5 +116,6 @@ namespace MaintenanceManagement.UI
 
             UpdateEmployeeTasks();
         }
+
     }
 }

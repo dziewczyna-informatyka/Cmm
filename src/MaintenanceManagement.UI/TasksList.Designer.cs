@@ -52,6 +52,8 @@
             // 
             // taskListDataGrid
             // 
+            this.taskListDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.taskListDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.taskListDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.taskListDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AssigneeId,
@@ -125,48 +127,56 @@
             this.AssigneeId.DataPropertyName = "AssigneeName";
             this.AssigneeId.HeaderText = "Osoba odpowiedzialna";
             this.AssigneeId.Name = "AssigneeId";
+            this.AssigneeId.Width = 127;
             // 
             // AreaId
             // 
             this.AreaId.DataPropertyName = "AreaName";
             this.AreaId.HeaderText = "Obszar";
             this.AreaId.Name = "AreaId";
+            this.AreaId.Width = 65;
             // 
             // Subject
             // 
             this.Subject.DataPropertyName = "Subject";
             this.Subject.HeaderText = "Temat";
             this.Subject.Name = "Subject";
+            this.Subject.Width = 62;
             // 
             // Actions
             // 
             this.Actions.DataPropertyName = "Actions";
             this.Actions.HeaderText = "Czynności";
             this.Actions.Name = "Actions";
+            this.Actions.Width = 80;
             // 
             // Progress
             // 
             this.Progress.DataPropertyName = "Progress";
             this.Progress.HeaderText = "Wykonanie";
             this.Progress.Name = "Progress";
+            this.Progress.Width = 86;
             // 
             // DaysRemaining
             // 
             this.DaysRemaining.DataPropertyName = "DaysRemaining";
-            this.DaysRemaining.HeaderText = "Pozostalo Dni";
+            this.DaysRemaining.HeaderText = "Pozostało dni";
             this.DaysRemaining.Name = "DaysRemaining";
+            this.DaysRemaining.Width = 89;
             // 
             // DueDate
             // 
             this.DueDate.DataPropertyName = "DueDateText";
             this.DueDate.HeaderText = "Data zakończenia";
             this.DueDate.Name = "DueDate";
+            this.DueDate.Width = 108;
             // 
             // ActualendDateText
             // 
             this.ActualendDateText.DataPropertyName = "ActualendDateText";
-            this.ActualendDateText.HeaderText = "Faktyczne zakonczenie";
+            this.ActualendDateText.HeaderText = "Faktyczne zakończenie";
             this.ActualendDateText.Name = "ActualendDateText";
+            this.ActualendDateText.Width = 132;
             // 
             // TasksList
             // 
@@ -180,6 +190,7 @@
             this.Controls.Add(this.taskListDataGrid);
             this.Name = "TasksList";
             this.Text = "Lista zadań";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.taskListDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();

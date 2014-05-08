@@ -70,6 +70,8 @@ namespace MaintenanceManagement.UI
 
         private void editTool_Click(object sender, EventArgs eventArgs)
         {
+            if (toolsListDataGrid.CurrentRow == null) { return; }
+
             var selectedEmployeeTool = toolsListDataGrid.CurrentRow.DataBoundItem as EmployeeTool;
             var form = new ToolEdit { EmployeeTool = selectedEmployeeTool };
 
@@ -96,6 +98,7 @@ namespace MaintenanceManagement.UI
 
         private void deleteTool_Click(object sender, EventArgs e)
         {
+            if (toolsListDataGrid.CurrentRow == null) { return; }
             var item = toolsListDataGrid.CurrentRow.DataBoundItem as EmployeeTool;
 
             if (item != null)

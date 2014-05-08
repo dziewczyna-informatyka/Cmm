@@ -102,10 +102,7 @@ namespace MaintenanceManagement.UI
         {
             Employee emp = UserContext.User;
 
-            var form = new EmployeeTaskSummary
-            {
-                AssignedEmployee = emp
-            };
+            var form = new EmployeeTaskSummary { AssignedEmployee = emp };
 
             form.UpdateData();
 
@@ -115,14 +112,124 @@ namespace MaintenanceManagement.UI
             }
         }
 
+        //-----------------------------------------------------------------------------
+
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //-----------------------------------------------------------------------------
 
+        private void controllingButton_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(kontrollingButton.Text);
 
+            var form = new AreaSummary { AssignedArea = (Area)kontrollingButton.Tag};
 
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void wtryskarkiButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)wtryskarkiButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void pakujaceButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)pakujaceButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void ekstruderButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)ekstruderButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void automatyButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)automatyButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void facilityButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)facilityButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void brygadaAButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)brygadaAButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void brygadaBButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)brygadaBButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void brygadaCButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)brygadaCButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void brygadaDButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)brygadaDButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void warsztatButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)warsztatButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void infrastrukturaButton_Click(object sender, EventArgs e)
+        {
+            var form = new AreaSummary { AssignedArea = (Area)infrastrukturaButton.Tag };
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
 
     }
 }
