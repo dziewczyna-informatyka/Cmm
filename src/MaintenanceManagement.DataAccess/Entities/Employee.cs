@@ -34,7 +34,7 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public WorkSchedule? WorkSchedule { get; set; }
        
-        public virtual Area Area { get; set; }
+        public Area Area { get; set; }
 
         public Team Team { get; set; }
 

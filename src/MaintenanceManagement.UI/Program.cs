@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
@@ -27,7 +28,7 @@ namespace MaintenanceManagement.UI
                 {
                     var hash = HashHelper.GetHash(loginWindow.Password);
                     UserContext.User =
-                        context.Employees.SingleOrDefault(
+                        context.Employees.Include(e => e.Area).SingleOrDefault(
                             e =>
                                 e.Login == loginWindow.Login &&
                                 e.PasswordHash == hash);
