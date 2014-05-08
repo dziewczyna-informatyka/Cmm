@@ -19,13 +19,17 @@ namespace MaintenanceManagement.UI
         public AreaTasksList()
         {
             InitializeComponent();
-            UpdateAreaTasks();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            UpdateAreaTasks();
+            base.OnLoad(e);
+        }
 
         public EmployeeTaskStatus? TaskStatus
         {
-            get { return (EmployeeTaskStatus?) tasksStatus.Tag; }
+            get { return (EmployeeTaskStatus?)tasksStatus.Tag; }
             set
             {
                 tasksStatus.Tag = value;
@@ -35,7 +39,7 @@ namespace MaintenanceManagement.UI
 
         public Area AssignedArea
         {
-            get { return (Area) assignedArea.Tag; }
+            get { return (Area)assignedArea.Tag; }
             set
             {
                 assignedArea.Tag = value;
@@ -54,7 +58,7 @@ namespace MaintenanceManagement.UI
                         .Include(e => e.Assignee)
                         .Include(e => e.Area)
                         .OrderBy(e => e.Progress)
-                        .Where(t => (t.Status == TaskStatus || TaskStatus == null))// && AssignedArea.Id == t.Area.Id)
+                        .Where(t => (t.Status == TaskStatus || TaskStatus == null) && AssignedArea.Id == t.Area.Id)
                         .ToList();
             }
         }

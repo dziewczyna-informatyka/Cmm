@@ -20,11 +20,11 @@ namespace MaintenanceManagement.UI
                 employeeSurname.Text = value.Surname;
                 employeePersonalNr.Text = value.PersonalNumber.ToString();
                 employeeAdress.Text = value.Address;
-                employeeEmploymentStart.Text = value.EmploymentStart.GetValueOrDefault().ToString();
+                employeeEmploymentStart.Text = value.EmploymentStart.GetValueOrDefault().ToShortDateString();
                 employeeEmploymentType.Text = value.EmploymentType.ToString();
                 employeeMobilePhone.Text = value.MobilePhone;
                 employeePhone.Text = value.HomePhone;
-                //employeeArea.Text = value.Area.ToString();
+                employeeArea.Text = value.Area.ToString();
                 employeeTeam.Text = value.Team.EnumToString();
             }
         }

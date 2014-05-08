@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {
@@ -37,7 +38,7 @@ namespace MaintenanceManagement.UI
                     MobilePhone = employeeMobilePhone.Text,
                     HomePhone = employeePhone.Text,
                     Area = (Area)employeeArea.SelectedItem,
-                    Team = (Team)employeeTeam.SelectedItem,
+                    Team = (Team)employeeTeam.SelectedValue,
                     PasswordHash = txtPassword.Text
                 };
             }
@@ -58,15 +59,13 @@ namespace MaintenanceManagement.UI
                 employeeMobilePhone.Text = value.MobilePhone;
                 employeePhone.Text = value.HomePhone;
                 employeeArea.SelectedItem = value.Area;
-                employeeTeam.SelectedItem = value.Team;
+                employeeTeam.SelectedValue = value.Team;
             }
         }
 
         private void LoadTeams()
-        {
-            employeeTeam.Items.Clear();
-
-            employeeTeam.DataSource = Enum.GetValues(typeof(Team));
+        {            
+            employeeTeam.LoadEnumAsDataSource(typeof(Team));
         }
 
         private void LoadEmploymentTypes()

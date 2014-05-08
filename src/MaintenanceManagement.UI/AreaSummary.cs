@@ -24,11 +24,11 @@ namespace MaintenanceManagement.UI
         {
             using (var context = new MainContext())
             {
-                employeesDataGridView.DataSource = context.Employees.Include(e => e.Area).OrderBy(e => e.Surname).ToList();
+                employeesDataGridView.DataSource = context.Employees.Include(e => e.Area).OrderBy(e => e.Surname).Where(e => e.Area.Id == AssignedArea.Id).ToList();
                 TasksAmount = context.EmployeeTasks.Count(a => a.Area.Id == AssignedArea.Id);
-                //ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress && a.Area.Id == AssignedArea.Id);
-                //PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned && a.Area.Id == AssignedArea.Id);
-                //DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done && a.Area.Id == AssignedArea.Id);
+                ActualTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.InProgress && a.Area.Id == AssignedArea.Id);
+                PlannedTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Planned && a.Area.Id == AssignedArea.Id);
+                DoneTasksAmount = context.EmployeeTasks.Count(a => a.Status == EmployeeTaskStatus.Done && a.Area.Id == AssignedArea.Id);
             }
         }
 
@@ -48,14 +48,14 @@ namespace MaintenanceManagement.UI
             {
                 return;
             }
-            
+
             var form = new EmployeeTaskSummary();
             var selected = employeesDataGridView.CurrentRow.DataBoundItem as Employee;
             form.AssignedEmployee = selected;
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
         }
         //-----------------------------------------------------------------------------
@@ -87,7 +87,7 @@ namespace MaintenanceManagement.UI
 
         private void plannedTasks_Click(object sender, EventArgs e)
         {
-            var form = new AreaTasksList { TaskStatus = EmployeeTaskStatus.Planned };//, AssignedArea = AssignedArea };
+            var form = new AreaTasksList { TaskStatus = EmployeeTaskStatus.Planned, AssignedArea = AssignedArea };
 
             form.ShowDialog();
 
@@ -96,7 +96,7 @@ namespace MaintenanceManagement.UI
 
         private void actualTasks_Click(object sender, EventArgs e)
         {
-            var form = new AreaTasksList { TaskStatus = EmployeeTaskStatus.InProgress };//, AssignedArea = AssignedArea };
+            var form = new AreaTasksList { TaskStatus = EmployeeTaskStatus.InProgress, AssignedArea = AssignedArea };
 
             form.ShowDialog();
 
@@ -105,7 +105,7 @@ namespace MaintenanceManagement.UI
 
         private void doneTasks_Click(object sender, EventArgs e)
         {
-            var form = new AreaTasksList { TaskStatus = EmployeeTaskStatus.Done };//, AssignedArea = AssignedArea };
+            var form = new AreaTasksList { TaskStatus = EmployeeTaskStatus.Done, AssignedArea = AssignedArea };
 
             form.ShowDialog();
 
@@ -114,7 +114,7 @@ namespace MaintenanceManagement.UI
 
         private void allTasks_Click(object sender, EventArgs e)
         {
-            var form = new AreaTasksList();//, AssignedArea = AssignedArea };
+            var form = new AreaTasksList { AssignedArea = AssignedArea };
 
             form.ShowDialog();
 
@@ -144,5 +144,5 @@ namespace MaintenanceManagement.UI
         }
 
 
-       }
+    }
 }

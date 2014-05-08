@@ -12,7 +12,13 @@ namespace MaintenanceManagement.UI
         public EmployeeTaskSummary()
         {
             InitializeComponent();
-            //UpdateData();
+        }
+
+
+        protected override void OnLoad(EventArgs e)
+        {
+            UpdateData();
+            base.OnLoad(e);
         }
 
         //-----------------------------------------------------------------------------
