@@ -50,6 +50,7 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActualendDateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tasksListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -85,7 +86,8 @@
             this.Actions,
             this.Status,
             this.Progress,
-            this.DueDate});
+            this.DueDate,
+            this.ActualendDateText});
             this.tasksListDataGrid.Location = new System.Drawing.Point(12, 48);
             this.tasksListDataGrid.Name = "tasksListDataGrid";
             this.tasksListDataGrid.Size = new System.Drawing.Size(858, 452);
@@ -215,9 +217,15 @@
             // 
             // DueDate
             // 
-            this.DueDate.DataPropertyName = "DueDate";
+            this.DueDate.DataPropertyName = "DueDateText";
             this.DueDate.HeaderText = "Data zakończenia";
             this.DueDate.Name = "DueDate";
+            // 
+            // ActualendDateText
+            // 
+            this.ActualendDateText.DataPropertyName = "ActualendDateText";
+            this.ActualendDateText.HeaderText = "Faktyczne zakonczenie";
+            this.ActualendDateText.Name = "ActualendDateText";
             // 
             // TasksSummaryList
             // 
@@ -268,5 +276,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Progress;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActualendDateText;
     }
 }

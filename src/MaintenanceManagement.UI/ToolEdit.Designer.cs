@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.toolQuantity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +44,8 @@
             this.toolTypeComboBox = new System.Windows.Forms.ComboBox();
             this.toolEndReason = new System.Windows.Forms.ComboBox();
             this.cbToolReturned = new System.Windows.Forms.CheckBox();
+            this.toolQuantity = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.toolQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,13 +74,6 @@
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Ilość";
-            // 
-            // toolQuantity
-            // 
-            this.toolQuantity.Location = new System.Drawing.Point(109, 68);
-            this.toolQuantity.Name = "toolQuantity";
-            this.toolQuantity.Size = new System.Drawing.Size(163, 20);
-            this.toolQuantity.TabIndex = 4;
             // 
             // label4
             // 
@@ -143,7 +137,7 @@
             this.toolEndDate.Name = "toolEndDate";
             this.toolEndDate.Size = new System.Drawing.Size(163, 20);
             this.toolEndDate.TabIndex = 15;
-            this.toolEndDate.Value = new System.DateTime(2014, 4, 25, 0, 0, 0, 0);
+            this.toolEndDate.Value = new System.DateTime(2014, 5, 7, 0, 0, 0, 0);
             // 
             // button1
             // 
@@ -201,11 +195,19 @@
             this.cbToolReturned.UseVisualStyleBackColor = true;
             this.cbToolReturned.CheckedChanged += new System.EventHandler(this.cbToolReturned_CheckedChanged);
             // 
+            // toolQuantity
+            // 
+            this.toolQuantity.Location = new System.Drawing.Point(108, 69);
+            this.toolQuantity.Name = "toolQuantity";
+            this.toolQuantity.Size = new System.Drawing.Size(163, 20);
+            this.toolQuantity.TabIndex = 23;
+            // 
             // ToolEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 337);
+            this.Controls.Add(this.toolQuantity);
             this.Controls.Add(this.cbToolReturned);
             this.Controls.Add(this.toolEndReason);
             this.Controls.Add(this.toolTypeComboBox);
@@ -220,11 +222,11 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.toolQuantity);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ToolEdit";
             this.Text = "Narzędzie";
+            ((System.ComponentModel.ISupportInitialize)(this.toolQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +237,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox toolQuantity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -249,5 +250,6 @@
         private System.Windows.Forms.ComboBox toolTypeComboBox;
         private System.Windows.Forms.ComboBox toolEndReason;
         private System.Windows.Forms.CheckBox cbToolReturned;
+        private System.Windows.Forms.NumericUpDown toolQuantity;
     }
 }

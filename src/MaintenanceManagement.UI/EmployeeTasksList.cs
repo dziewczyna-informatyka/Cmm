@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -15,6 +17,30 @@ namespace MaintenanceManagement.UI
         public EmployeeTasksList()
         {
             InitializeComponent();
+
+            employeeTasksGridView.DataBindingComplete += employeeTasksGridView_DataBindingComplete;
+        }
+
+        void employeeTasksGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (e.ListChangedType != ListChangedType.ItemDeleted)
+            {
+                foreach (DataGridViewRow r in employeeTasksGridView.Rows)
+                {
+                    var task = r.DataBoundItem as EmployeeTask;
+
+                    if (task.IsDueDateWarning)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.LightYellow;
+                    }
+                    else if (task.IsDueDateError)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.LightCoral;
+                    }
+
+
+                }
+            }
         }
 
         protected override void OnLoad(EventArgs e)
@@ -72,10 +98,14 @@ namespace MaintenanceManagement.UI
                     var task = form.EmployeeTask;
                     task.Id = selected.Id;
 
-                    task.Area = context.Areas.SingleOrDefault(a => a.Id == task.Area.Id);
-                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == task.Assignee.Id);
+                    var areaId = task.Area.Id;
+                    var assigneeId = task.Assignee.Id;
 
-                    context.UpdateDetached(task);
+                    task = context.UpdateDetached(task);
+
+                    task.Area = context.Areas.SingleOrDefault(a => a.Id == areaId);
+                    task.Assignee = context.Employees.SingleOrDefault(e => e.Id == assigneeId);
+
                     context.SaveChanges();
                 }
             }

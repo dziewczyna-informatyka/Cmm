@@ -108,6 +108,7 @@
             this.deleteTool.TabIndex = 3;
             this.deleteTool.Text = "Usuń";
             this.deleteTool.UseVisualStyleBackColor = true;
+            this.deleteTool.Click += new System.EventHandler(this.deleteTool_Click);
             // 
             // button5
             // 
@@ -162,13 +163,13 @@
             // 
             // StartDate
             // 
-            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.DataPropertyName = "StartDateText";
             this.StartDate.HeaderText = "Data wydania";
             this.StartDate.Name = "StartDate";
             // 
             // EndDate
             // 
-            this.EndDate.DataPropertyName = "EndDate";
+            this.EndDate.DataPropertyName = "EndDateText";
             this.EndDate.HeaderText = "Data zwrotu";
             this.EndDate.Name = "EndDate";
             // 

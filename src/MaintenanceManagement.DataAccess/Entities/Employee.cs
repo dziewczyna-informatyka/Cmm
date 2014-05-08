@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaintenanceManagement.DataAccess.Entities
@@ -32,8 +33,8 @@ namespace MaintenanceManagement.DataAccess.Entities
         public string PasswordHash { get; set; }
 
         public WorkSchedule? WorkSchedule { get; set; }
-
-        public Area Area { get; set; }
+       
+        public virtual Area Area { get; set; }
 
         public Team Team { get; set; }
 

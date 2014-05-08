@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -14,6 +16,30 @@ namespace MaintenanceManagement.UI
         public TasksSummaryList()
         {
             InitializeComponent();
+
+            tasksListDataGrid.DataBindingComplete += employeeTasksGridView_DataBindingComplete;
+        }
+
+        void employeeTasksGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (e.ListChangedType != ListChangedType.ItemDeleted)
+            {
+                foreach (DataGridViewRow r in tasksListDataGrid.Rows)
+                {
+                    var task = r.DataBoundItem as EmployeeTask;
+
+                    if (task.IsDueDateWarning)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.LightYellow;
+                    }
+                    else if (task.IsDueDateError)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.LightCoral;
+                    }
+
+
+                }
+            }
         }
 
         protected override void OnLoad(EventArgs e)
@@ -28,7 +54,11 @@ namespace MaintenanceManagement.UI
 
             using (var context = new MainContext())
             {
-                tasksListDataGrid.DataSource = context.EmployeeTasks.Include(e=>e.Assignee).OrderBy(e => e.Progress).ToList();
+                tasksListDataGrid.DataSource =
+                    context.EmployeeTasks.Include(e => e.Assignee)
+                        .Include(e => e.Area)
+                        .OrderBy(e => e.Progress)
+                        .ToList();
             }
         }
 

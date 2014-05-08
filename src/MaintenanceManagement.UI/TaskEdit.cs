@@ -16,6 +16,17 @@ namespace MaintenanceManagement.UI
         public TaskEdit()
         {
             InitializeComponent();
+<<<<<<< HEAD
+=======
+
+            taskDueDate.Value = DateTime.Now;
+            taskEndDate.Value = DateTime.Now;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            taskAssignee.Enabled = UserContext.IsAdmin;
+>>>>>>> 24f24c959e96966292ca5b5b25929cdbe79008bb
 
             taskStatus.LoadEnumAsDataSource(typeof(EmployeeTaskStatus));
 
@@ -57,7 +68,12 @@ namespace MaintenanceManagement.UI
                     Assignee = (Employee)taskAssignee.SelectedItem,
                     Status = (EmployeeTaskStatus)taskStatus.SelectedValue,
                     Area = (Area)taskArea.SelectedItem,
+<<<<<<< HEAD
                     Progress = int.TryParse(taskProgress.Text, out v) ? v : 0,
+=======
+                    Progress = (int)taskProgress.Value,
+                    ActualEndDate = taskStatus.SelectedValue.Equals(EmployeeTaskStatus.Done) ? taskEndDate.Value as DateTime? : null
+>>>>>>> 24f24c959e96966292ca5b5b25929cdbe79008bb
 
                 };
             }
@@ -70,7 +86,7 @@ namespace MaintenanceManagement.UI
                 taskAssignee.SelectedItem = value.Assignee;
                 taskStatus.SelectedItem = value.Status;
                 taskArea.SelectedItem = value.Area;
-                taskProgress.Text = value.Progress.ToString();
+                taskProgress.Value = (decimal)value.Progress;
 
             }
         }
@@ -81,6 +97,11 @@ namespace MaintenanceManagement.UI
             {
 
             }
+        }
+
+        private void taskStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label8.Visible = taskEndDate.Visible = taskStatus.SelectedValue.Equals(EmployeeTaskStatus.Done);
         }
     }
 }

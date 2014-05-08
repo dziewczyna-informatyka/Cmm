@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Xml.Schema;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {
@@ -13,6 +14,8 @@ namespace MaintenanceManagement.UI
         public EmployeeToolsList()
         {
             InitializeComponent();
+
+            deleteTool.Enabled = UserContext.IsAdmin;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -85,6 +88,22 @@ namespace MaintenanceManagement.UI
                     databaseEntity.ToolType = context.ToolTypes.Single(t => t.Id == tool.ToolType.Id);
 
                     context.SaveChanges();
+                }
+            }
+
+            UpdateTools();
+        }
+
+        private void deleteTool_Click(object sender, EventArgs e)
+        {
+            var item = toolsListDataGrid.CurrentRow.DataBoundItem as EmployeeTool;
+
+            if (item != null)
+            {
+                using (var ctx = new MainContext())
+                {
+                    ctx.EmployeeTools.Remove(ctx.EmployeeTools.Single(t => t.Id == item.Id));
+                    ctx.SaveChanges();
                 }
             }
 
