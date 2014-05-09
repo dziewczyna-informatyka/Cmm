@@ -45,7 +45,6 @@
             this.obszaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zleceniaWarsztatoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.harmonogramUrlopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeExample = new System.Windows.Forms.Button();
             this.kontrollingButton = new System.Windows.Forms.Button();
             this.wtryskarkiButton = new System.Windows.Forms.Button();
             this.pakujaceButton = new System.Windows.Forms.Button();
@@ -191,16 +190,6 @@
             this.harmonogramUrlopyToolStripMenuItem.Size = new System.Drawing.Size(138, 20);
             this.harmonogramUrlopyToolStripMenuItem.Text = "Harmonogram/Urlopy";
             this.harmonogramUrlopyToolStripMenuItem.Visible = false;
-            // 
-            // employeeExample
-            // 
-            this.employeeExample.Location = new System.Drawing.Point(744, 450);
-            this.employeeExample.Name = "employeeExample";
-            this.employeeExample.Size = new System.Drawing.Size(78, 50);
-            this.employeeExample.TabIndex = 17;
-            this.employeeExample.Text = "Przykładowy pracownik";
-            this.employeeExample.UseVisualStyleBackColor = true;
-            this.employeeExample.Click += new System.EventHandler(this.employeeExample_Click);
             // 
             // kontrollingButton
             // 
@@ -352,7 +341,6 @@
             this.Controls.Add(this.pakujaceButton);
             this.Controls.Add(this.wtryskarkiButton);
             this.Controls.Add(this.kontrollingButton);
-            this.Controls.Add(this.employeeExample);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -379,7 +367,6 @@
         private System.Windows.Forms.ToolStripMenuItem zrealizowaneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pracownicyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem narzedziaToolStripMenuItem;
-        private System.Windows.Forms.Button employeeExample;
 
         private System.Windows.Forms.ToolStripMenuItem zestawienieZbiorczeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obszaryToolStripMenuItem;

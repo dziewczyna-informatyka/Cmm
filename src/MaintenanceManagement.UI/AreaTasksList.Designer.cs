@@ -54,6 +54,7 @@
             this.editTask.TabIndex = 18;
             this.editTask.Text = "Edytuj";
             this.editTask.UseVisualStyleBackColor = true;
+            this.editTask.Click += new System.EventHandler(this.editTask_Click);
             // 
             // assignedArea
             // 
