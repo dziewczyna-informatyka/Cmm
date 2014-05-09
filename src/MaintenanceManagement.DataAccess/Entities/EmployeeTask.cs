@@ -32,13 +32,20 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public bool IsDueDateWarning
         {
-            get { return Status != EmployeeTaskStatus.Done && !IsDueDateError && DueDate.Subtract(DateTime.Now).TotalDays < 3; }
+            get { return Status != EmployeeTaskStatus.Done && !IsDueDateError && DueDate.Subtract(DateTime.Now).TotalDays < 5; }
         }
 
         public bool IsDueDateError
         {
             get { return Status != EmployeeTaskStatus.Done && DueDate.Subtract(DateTime.Now).TotalDays <= 0; }
         }
+
+        public bool IsDone
+        {
+            get { return Status == EmployeeTaskStatus.Done; }
+        }
+
+
 
         public DateTime? ActualEndDate { get; set; }
 

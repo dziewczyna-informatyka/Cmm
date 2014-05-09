@@ -31,11 +31,15 @@ namespace MaintenanceManagement.UI
 
                     if (task.IsDueDateWarning)
                     {
-                        r.DefaultCellStyle.BackColor = Color.LightYellow;
+                        r.DefaultCellStyle.BackColor = Color.Yellow;
                     }
                     else if (task.IsDueDateError)
                     {
-                        r.DefaultCellStyle.BackColor = Color.LightCoral;
+                        r.DefaultCellStyle.BackColor = Color.OrangeRed;
+                    }
+                    if (task.IsDone)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.ForestGreen;
                     }
                 }
             }

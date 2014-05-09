@@ -32,11 +32,15 @@ namespace MaintenanceManagement.UI
 
                     if (task.IsDueDateWarning)
                     {
-                        r.DefaultCellStyle.BackColor = Color.LightYellow;
+                        r.DefaultCellStyle.BackColor = Color.Yellow;
                     }
                     else if (task.IsDueDateError)
                     {
-                        r.DefaultCellStyle.BackColor = Color.LightCoral;
+                        r.DefaultCellStyle.BackColor = Color.OrangeRed;
+                    }
+                    if (task.IsDone)
+                    {
+                        r.DefaultCellStyle.BackColor = Color.ForestGreen;
                     }
                 }
             }
@@ -91,7 +95,7 @@ namespace MaintenanceManagement.UI
             var form = new TaskEdit();
             var selected = areaTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
             form.EmployeeTask = selected;
-
+            
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
