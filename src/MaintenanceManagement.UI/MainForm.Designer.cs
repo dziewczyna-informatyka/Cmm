@@ -57,9 +57,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.kierownictwoButton = new System.Windows.Forms.Button();
             this.bialaButton = new System.Windows.Forms.Button();
             this.szaraButton = new System.Windows.Forms.Button();
+            this.kierownictwoButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -298,6 +298,7 @@
             this.ekstruderButton.TabIndex = 22;
             this.ekstruderButton.Text = "Ekstruder";
             this.ekstruderButton.UseVisualStyleBackColor = true;
+            this.ekstruderButton.Click += new System.EventHandler(this.ekstruderButton_Click_1);
             // 
             // panel7
             // 
@@ -349,17 +350,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(937, 438);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
-            // kierownictwoButton
-            // 
-            this.kierownictwoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kierownictwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kierownictwoButton.Location = new System.Drawing.Point(22, 50);
-            this.kierownictwoButton.Name = "kierownictwoButton";
-            this.kierownictwoButton.Size = new System.Drawing.Size(106, 49);
-            this.kierownictwoButton.TabIndex = 35;
-            this.kierownictwoButton.Text = "Kierownictwo";
-            this.kierownictwoButton.UseVisualStyleBackColor = true;
-            // 
             // bialaButton
             // 
             this.bialaButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -370,6 +360,7 @@
             this.bialaButton.TabIndex = 36;
             this.bialaButton.Text = "Strefa biała";
             this.bialaButton.UseVisualStyleBackColor = true;
+            this.bialaButton.Click += new System.EventHandler(this.bialaButton_Click);
             // 
             // szaraButton
             // 
@@ -381,6 +372,19 @@
             this.szaraButton.TabIndex = 37;
             this.szaraButton.Text = "Strefa szara";
             this.szaraButton.UseVisualStyleBackColor = true;
+            this.szaraButton.Click += new System.EventHandler(this.szaraButton_Click);
+            // 
+            // kierownictwoButton
+            // 
+            this.kierownictwoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kierownictwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kierownictwoButton.Location = new System.Drawing.Point(22, 50);
+            this.kierownictwoButton.Name = "kierownictwoButton";
+            this.kierownictwoButton.Size = new System.Drawing.Size(106, 49);
+            this.kierownictwoButton.TabIndex = 35;
+            this.kierownictwoButton.Text = "Kierownictwo";
+            this.kierownictwoButton.UseVisualStyleBackColor = true;
+            this.kierownictwoButton.Click += new System.EventHandler(this.kierownictwoButton_Click);
             // 
             // panel1
             // 

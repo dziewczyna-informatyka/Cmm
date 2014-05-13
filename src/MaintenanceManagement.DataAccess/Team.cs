@@ -6,7 +6,7 @@ namespace MaintenanceManagement.DataAccess
     public enum Team
     {
         [Display(ResourceType = typeof(Common), Name = "Team_NA")]
-        NA = 4,
+        NA = 6,
 
         [Display(ResourceType = typeof(Common), Name = "Team_A")]
         A = 0,
@@ -19,5 +19,11 @@ namespace MaintenanceManagement.DataAccess
 
         [Display(ResourceType = typeof(Common), Name = "Team_D")]
         D = 3,
+
+        [Display(ResourceType = typeof(Common), Name = "Team_Infrastructure")]
+        Infrastruktura = 4,
+
+        [Display(ResourceType = typeof(Common), Name = "Team_Workshop")]
+        Warsztat = 5,
     }
 }

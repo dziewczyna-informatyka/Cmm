@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
-using MaintenanceManagement.DataAccess.Migrations;
 using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI

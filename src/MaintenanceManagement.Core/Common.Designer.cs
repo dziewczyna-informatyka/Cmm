@@ -232,11 +232,29 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Infrastruktura.
+        /// </summary>
+        public static string Team_Infrastructure {
+            get {
+                return ResourceManager.GetString("Team_Infrastructure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nie dotyczy.
         /// </summary>
         public static string Team_NA {
             get {
                 return ResourceManager.GetString("Team_NA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warsztat.
+        /// </summary>
+        public static string Team_Workshop {
+            get {
+                return ResourceManager.GetString("Team_Workshop", resourceCulture);
             }
         }
         

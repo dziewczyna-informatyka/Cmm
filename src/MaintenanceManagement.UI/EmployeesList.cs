@@ -45,7 +45,7 @@ namespace MaintenanceManagement.UI
                 using (var context = new MainContext())
                 {
                     var employee = form.Employee;
-                    employee.Area = context.Areas.SingleOrDefault(a => a.Id == form.Employee.Id);
+                    employee.Area = context.Areas.SingleOrDefault(a => a.Id == form.Employee.Area.Id);
                     employee.PasswordHash = HashHelper.GetHash(employee.PasswordHash);
                     context.Employees.Add(employee);
                     context.SaveChanges();

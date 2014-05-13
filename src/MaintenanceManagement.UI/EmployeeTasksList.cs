@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
@@ -28,6 +27,8 @@ namespace MaintenanceManagement.UI
                 foreach (DataGridViewRow r in employeeTasksGridView.Rows)
                 {
                     var task = r.DataBoundItem as EmployeeTask;
+
+                    if (task == null) { return; }
 
                     if (task.IsDueDateWarning)
                     {
@@ -104,6 +105,7 @@ namespace MaintenanceManagement.UI
                 using (var context = new MainContext())
                 {
                     var task = form.EmployeeTask;
+                    if (selected == null) { return; }
                     task.Id = selected.Id;
 
                     var areaId = task.Area.Id;

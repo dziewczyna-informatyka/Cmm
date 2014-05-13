@@ -46,8 +46,6 @@
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personalNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AreaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeamId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -141,9 +139,7 @@
             this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surnameDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.personalNumberDataGridViewTextBoxColumn,
-            this.AreaId,
-            this.TeamId});
+            this.personalNumberDataGridViewTextBoxColumn});
             this.employeesDataGridView.DataSource = this.employeesBindingSource;
             this.employeesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeesDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -235,18 +231,6 @@
             this.personalNumberDataGridViewTextBoxColumn.Name = "personalNumberDataGridViewTextBoxColumn";
             this.personalNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // AreaId
-            // 
-            this.AreaId.HeaderText = "Obszar";
-            this.AreaId.Name = "AreaId";
-            this.AreaId.ReadOnly = true;
-            // 
-            // TeamId
-            // 
-            this.TeamId.HeaderText = "Brygada";
-            this.TeamId.Name = "TeamId";
-            this.TeamId.ReadOnly = true;
-            // 
             // EmployeesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,8 +270,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AreaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TeamId;
 
     }
 }

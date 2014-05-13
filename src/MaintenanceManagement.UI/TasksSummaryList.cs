@@ -4,8 +4,6 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 

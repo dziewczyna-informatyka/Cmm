@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
@@ -121,11 +119,6 @@ namespace MaintenanceManagement.UI
 
         //-----------------------------------------------------------------------------
 
-        private void controllingButton_Click(object sender, EventArgs e)
-        {
-            ShowAreaSummary(sender);
-        }
-
         private static void ShowAreaSummary(object sender)
         {
             Area area;
@@ -146,6 +139,13 @@ namespace MaintenanceManagement.UI
                 form.ShowDialog();
             }
 
+        }
+
+        //-----------------------------------------------------------------------------
+
+        private void controllingButton_Click(object sender, EventArgs e)
+        {
+            ShowAreaSummary(sender);
         }
 
         private void wtryskarkiButton_Click(object sender, EventArgs e)
@@ -173,51 +173,27 @@ namespace MaintenanceManagement.UI
             ShowAreaSummary(sender);
         }
 
-      /*  private void brygadaAButton_Click(object sender, EventArgs e)
-        {
-            var form = new AreaSummary { AssignedArea = (Area)brygadaAButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
-        }
-
-        private void brygadaBButton_Click(object sender, EventArgs e)
-        {
-            var form = new AreaSummary { AssignedArea = (Area)brygadaBButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
-        }
-
-        private void brygadaCButton_Click(object sender, EventArgs e)
-        {
-            var form = new AreaSummary { AssignedArea = (Area)brygadaCButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
-        }
-
-        private void brygadaDButton_Click(object sender, EventArgs e)
-        {
-            var form = new AreaSummary { AssignedArea = (Area)brygadaDButton.Tag };
-
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
-        }
-
-        private void warsztatButton_Click(object sender, EventArgs e)
+        private void kierownictwoButton_Click(object sender, EventArgs e)
         {
             ShowAreaSummary(sender);
         }
 
-        private void infrastrukturaButton_Click(object sender, EventArgs e)
+        private void bialaButton_Click(object sender, EventArgs e)
         {
             ShowAreaSummary(sender);
-        }*/
+        }
+
+        private void szaraButton_Click(object sender, EventArgs e)
+        {
+            ShowAreaSummary(sender);
+        }
+
+        private void ekstruderButton_Click_1(object sender, EventArgs e)
+        {
+            ShowAreaSummary(sender);
+        }
+
+
 
     }
 }

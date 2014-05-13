@@ -81,14 +81,14 @@
             this.employeeMobilePhone.Location = new System.Drawing.Point(104, 261);
             this.employeeMobilePhone.Name = "employeeMobilePhone";
             this.employeeMobilePhone.Size = new System.Drawing.Size(166, 20);
-            this.employeeMobilePhone.TabIndex = 42;
+            this.employeeMobilePhone.TabIndex = 10;
             // 
             // employeePhone
             // 
             this.employeePhone.Location = new System.Drawing.Point(104, 235);
             this.employeePhone.Name = "employeePhone";
             this.employeePhone.Size = new System.Drawing.Size(166, 20);
-            this.employeePhone.TabIndex = 41;
+            this.employeePhone.TabIndex = 9;
             // 
             // employeeAdress
             // 
@@ -96,7 +96,7 @@
             this.employeeAdress.Multiline = true;
             this.employeeAdress.Name = "employeeAdress";
             this.employeeAdress.Size = new System.Drawing.Size(166, 46);
-            this.employeeAdress.TabIndex = 40;
+            this.employeeAdress.TabIndex = 8;
             // 
             // label10
             // 
@@ -193,14 +193,14 @@
             this.employeeSurname.Location = new System.Drawing.Point(104, 3);
             this.employeeSurname.Name = "employeeSurname";
             this.employeeSurname.Size = new System.Drawing.Size(166, 20);
-            this.employeeSurname.TabIndex = 24;
+            this.employeeSurname.TabIndex = 1;
             // 
             // employeeName
             // 
             this.employeeName.Location = new System.Drawing.Point(104, 28);
             this.employeeName.Name = "employeeName";
             this.employeeName.Size = new System.Drawing.Size(166, 20);
-            this.employeeName.TabIndex = 23;
+            this.employeeName.TabIndex = 2;
             // 
             // employeeEmploymentStart
             // 
@@ -210,7 +210,7 @@
             this.employeeEmploymentStart.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.employeeEmploymentStart.Name = "employeeEmploymentStart";
             this.employeeEmploymentStart.Size = new System.Drawing.Size(166, 20);
-            this.employeeEmploymentStart.TabIndex = 46;
+            this.employeeEmploymentStart.TabIndex = 6;
             this.employeeEmploymentStart.Value = new System.DateTime(2014, 4, 25, 0, 0, 0, 0);
             // 
             // employeeEmploymentType
@@ -219,7 +219,7 @@
             this.employeeEmploymentType.Location = new System.Drawing.Point(104, 156);
             this.employeeEmploymentType.Name = "employeeEmploymentType";
             this.employeeEmploymentType.Size = new System.Drawing.Size(166, 21);
-            this.employeeEmploymentType.TabIndex = 47;
+            this.employeeEmploymentType.TabIndex = 7;
             // 
             // employeePersonalNr
             // 
@@ -227,7 +227,7 @@
             this.employeePersonalNr.Mask = "0000";
             this.employeePersonalNr.Name = "employeePersonalNr";
             this.employeePersonalNr.Size = new System.Drawing.Size(166, 20);
-            this.employeePersonalNr.TabIndex = 48;
+            this.employeePersonalNr.TabIndex = 3;
             this.employeePersonalNr.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // panel1
@@ -265,7 +265,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(166, 20);
-            this.txtPassword.TabIndex = 52;
+            this.txtPassword.TabIndex = 11;
             // 
             // label11
             // 
@@ -282,7 +282,7 @@
             this.employeeTeam.Location = new System.Drawing.Point(104, 104);
             this.employeeTeam.Name = "employeeTeam";
             this.employeeTeam.Size = new System.Drawing.Size(166, 21);
-            this.employeeTeam.TabIndex = 50;
+            this.employeeTeam.TabIndex = 5;
             // 
             // employeeArea
             // 
@@ -290,7 +290,7 @@
             this.employeeArea.Location = new System.Drawing.Point(105, 79);
             this.employeeArea.Name = "employeeArea";
             this.employeeArea.Size = new System.Drawing.Size(166, 21);
-            this.employeeArea.TabIndex = 49;
+            this.employeeArea.TabIndex = 4;
             // 
             // EmployeeEdit
             // 

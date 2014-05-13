@@ -174,8 +174,14 @@
   <data name="Team_D" xml:space="preserve">
     <value>D</value>
   </data>
+  <data name="Team_Infrastructure" xml:space="preserve">
+    <value>Infrastruktura</value>
+  </data>
   <data name="Team_NA" xml:space="preserve">
     <value>Nie dotyczy</value>
+  </data>
+  <data name="Team_Workshop" xml:space="preserve">
+    <value>Warsztat</value>
   </data>
   <data name="ToolEndReason_Damage" xml:space="preserve">
     <value>Uszkodzenie</value>

@@ -13,7 +13,7 @@ namespace MaintenanceManagement.UI
         }
 
         public Employee Employee
-        {            
+        {
             set
             {
                 employeeName.Text = value.Name;
@@ -26,12 +26,13 @@ namespace MaintenanceManagement.UI
                 employeePhone.Text = value.HomePhone;
                 employeeArea.Text = value.Area.ToString();
                 employeeTeam.Text = value.Team.EnumToString();
+
             }
         }
 
         private void ack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
