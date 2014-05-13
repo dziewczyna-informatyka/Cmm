@@ -43,6 +43,10 @@
             this.plannedTasks = new System.Windows.Forms.Button();
             this.totalTasksAmount = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AsigneeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +58,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.tasksListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Location = new System.Drawing.Point(714, 506);
+            this.button2.Location = new System.Drawing.Point(819, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -68,8 +77,9 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(795, 506);
+            this.button1.Location = new System.Drawing.Point(900, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -88,9 +98,10 @@
             this.Progress,
             this.DueDate,
             this.ActualendDateText});
-            this.tasksListDataGrid.Location = new System.Drawing.Point(12, 48);
+            this.tasksListDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tasksListDataGrid.Location = new System.Drawing.Point(0, 0);
             this.tasksListDataGrid.Name = "tasksListDataGrid";
-            this.tasksListDataGrid.Size = new System.Drawing.Size(858, 452);
+            this.tasksListDataGrid.Size = new System.Drawing.Size(978, 466);
             this.tasksListDataGrid.TabIndex = 3;
             // 
             // employeeTasksBindingSource
@@ -109,7 +120,7 @@
             // 
             // doneTasksAmount
             // 
-            this.doneTasksAmount.Location = new System.Drawing.Point(417, 12);
+            this.doneTasksAmount.Location = new System.Drawing.Point(408, 9);
             this.doneTasksAmount.Name = "doneTasksAmount";
             this.doneTasksAmount.ReadOnly = true;
             this.doneTasksAmount.Size = new System.Drawing.Size(36, 20);
@@ -117,7 +128,7 @@
             // 
             // actualTasksAmount
             // 
-            this.actualTasksAmount.Location = new System.Drawing.Point(260, 12);
+            this.actualTasksAmount.Location = new System.Drawing.Point(251, 9);
             this.actualTasksAmount.Name = "actualTasksAmount";
             this.actualTasksAmount.ReadOnly = true;
             this.actualTasksAmount.Size = new System.Drawing.Size(36, 20);
@@ -125,7 +136,7 @@
             // 
             // plannedTasksAmount
             // 
-            this.plannedTasksAmount.Location = new System.Drawing.Point(103, 12);
+            this.plannedTasksAmount.Location = new System.Drawing.Point(94, 9);
             this.plannedTasksAmount.Name = "plannedTasksAmount";
             this.plannedTasksAmount.ReadOnly = true;
             this.plannedTasksAmount.Size = new System.Drawing.Size(36, 20);
@@ -133,7 +144,7 @@
             // 
             // doneTasks
             // 
-            this.doneTasks.Location = new System.Drawing.Point(326, 10);
+            this.doneTasks.Location = new System.Drawing.Point(317, 7);
             this.doneTasks.Name = "doneTasks";
             this.doneTasks.Size = new System.Drawing.Size(85, 23);
             this.doneTasks.TabIndex = 21;
@@ -143,7 +154,7 @@
             // 
             // actualTasks
             // 
-            this.actualTasks.Location = new System.Drawing.Point(169, 10);
+            this.actualTasks.Location = new System.Drawing.Point(160, 7);
             this.actualTasks.Name = "actualTasks";
             this.actualTasks.Size = new System.Drawing.Size(85, 23);
             this.actualTasks.TabIndex = 20;
@@ -153,7 +164,7 @@
             // 
             // plannedTasks
             // 
-            this.plannedTasks.Location = new System.Drawing.Point(12, 10);
+            this.plannedTasks.Location = new System.Drawing.Point(3, 7);
             this.plannedTasks.Name = "plannedTasks";
             this.plannedTasks.Size = new System.Drawing.Size(85, 23);
             this.plannedTasks.TabIndex = 19;
@@ -163,7 +174,7 @@
             // 
             // totalTasksAmount
             // 
-            this.totalTasksAmount.Location = new System.Drawing.Point(574, 12);
+            this.totalTasksAmount.Location = new System.Drawing.Point(565, 9);
             this.totalTasksAmount.Name = "totalTasksAmount";
             this.totalTasksAmount.ReadOnly = true;
             this.totalTasksAmount.Size = new System.Drawing.Size(36, 20);
@@ -171,12 +182,64 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(492, 12);
+            this.textBox1.Location = new System.Drawing.Point(483, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(67, 20);
             this.textBox1.TabIndex = 27;
             this.textBox1.Text = "Sumarycznie";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tasksListDataGrid);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(978, 466);
+            this.panel1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.plannedTasks);
+            this.panel2.Controls.Add(this.actualTasks);
+            this.panel2.Controls.Add(this.doneTasks);
+            this.panel2.Controls.Add(this.totalTasksAmount);
+            this.panel2.Controls.Add(this.plannedTasksAmount);
+            this.panel2.Controls.Add(this.doneTasksAmount);
+            this.panel2.Controls.Add(this.actualTasksAmount);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(978, 34);
+            this.panel2.TabIndex = 29;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 515);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(978, 44);
+            this.panel3.TabIndex = 29;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 562);
+            this.tableLayoutPanel1.TabIndex = 30;
             // 
             // AsigneeId
             // 
@@ -224,32 +287,26 @@
             // ActualendDateText
             // 
             this.ActualendDateText.DataPropertyName = "ActualendDateText";
-            this.ActualendDateText.HeaderText = "Faktyczne zakonczenie";
+            this.ActualendDateText.HeaderText = "Faktyczne zakończenie";
             this.ActualendDateText.Name = "ActualendDateText";
             // 
             // TasksSummaryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 541);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.totalTasksAmount);
-            this.Controls.Add(this.doneTasksAmount);
-            this.Controls.Add(this.actualTasksAmount);
-            this.Controls.Add(this.plannedTasksAmount);
-            this.Controls.Add(this.doneTasks);
-            this.Controls.Add(this.actualTasks);
-            this.Controls.Add(this.plannedTasks);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.tasksListDataGrid);
+            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TasksSummaryList";
             this.Text = "Lista wszystkich zadań";
             ((System.ComponentModel.ISupportInitialize)(this.tasksListDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -269,6 +326,10 @@
         private System.Windows.Forms.Button plannedTasks;
         private System.Windows.Forms.TextBox totalTasksAmount;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn AsigneeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Area;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;

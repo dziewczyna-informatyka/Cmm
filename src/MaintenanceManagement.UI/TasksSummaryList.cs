@@ -97,18 +97,21 @@ namespace MaintenanceManagement.UI
         {
             var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Planned };
             form.ShowDialog();
+            this.Close();
         }
 
         private void actualTasks_Click(object sender, EventArgs e)
         {
             var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.InProgress };
             form.ShowDialog();
+            this.Close();
         }
 
         private void doneTasks_Click(object sender, EventArgs e)
         {
             var form = new TasksList { EmployeeTaskStatus = EmployeeTaskStatus.Done };
             form.ShowDialog();
+            this.Close();
         }
 
     }

@@ -36,20 +36,33 @@
             this.newEmployee = new System.Windows.Forms.Button();
             this.deleteEmployee = new System.Windows.Forms.Button();
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personalNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
             this.employeesTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personalNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AreaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeamId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // previewOfEmployee
             // 
-            this.previewOfEmployee.Location = new System.Drawing.Point(500, 79);
+            this.previewOfEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.previewOfEmployee.Location = new System.Drawing.Point(23, 118);
             this.previewOfEmployee.Name = "previewOfEmployee";
             this.previewOfEmployee.Size = new System.Drawing.Size(75, 23);
             this.previewOfEmployee.TabIndex = 2;
@@ -59,7 +72,10 @@
             // 
             // editEmployee
             // 
-            this.editEmployee.Location = new System.Drawing.Point(500, 108);
+            this.editEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editEmployee.Location = new System.Drawing.Point(23, 147);
             this.editEmployee.Name = "editEmployee";
             this.editEmployee.Size = new System.Drawing.Size(75, 23);
             this.editEmployee.TabIndex = 3;
@@ -69,8 +85,9 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button3.Location = new System.Drawing.Point(419, 355);
+            this.button3.Location = new System.Drawing.Point(396, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -79,8 +96,9 @@
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.Location = new System.Drawing.Point(500, 355);
+            this.button4.Location = new System.Drawing.Point(477, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
@@ -89,7 +107,10 @@
             // 
             // newEmployee
             // 
-            this.newEmployee.Location = new System.Drawing.Point(500, 11);
+            this.newEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.newEmployee.Location = new System.Drawing.Point(23, 50);
             this.newEmployee.Name = "newEmployee";
             this.newEmployee.Size = new System.Drawing.Size(75, 23);
             this.newEmployee.TabIndex = 6;
@@ -99,7 +120,10 @@
             // 
             // deleteEmployee
             // 
-            this.deleteEmployee.Location = new System.Drawing.Point(500, 137);
+            this.deleteEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteEmployee.Location = new System.Drawing.Point(23, 176);
             this.deleteEmployee.Name = "deleteEmployee";
             this.deleteEmployee.Size = new System.Drawing.Size(75, 23);
             this.deleteEmployee.TabIndex = 18;
@@ -117,14 +141,78 @@
             this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surnameDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.personalNumberDataGridViewTextBoxColumn});
+            this.personalNumberDataGridViewTextBoxColumn,
+            this.AreaId,
+            this.TeamId});
             this.employeesDataGridView.DataSource = this.employeesBindingSource;
-            this.employeesDataGridView.Location = new System.Drawing.Point(12, 11);
+            this.employeesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.employeesDataGridView.MultiSelect = false;
             this.employeesDataGridView.Name = "employeesDataGridView";
             this.employeesDataGridView.ReadOnly = true;
-            this.employeesDataGridView.Size = new System.Drawing.Size(482, 339);
+            this.employeesDataGridView.Size = new System.Drawing.Size(555, 506);
             this.employeesDataGridView.TabIndex = 19;
+            // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataMember = "Employees";
+            this.employeesBindingSource.DataSource = this.maintenanceManagementDataSet;
+            // 
+            // maintenanceManagementDataSet
+            // 
+            this.maintenanceManagementDataSet.DataSetName = "MaintenanceManagementDataSet";
+            this.maintenanceManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeesTableAdapter
+            // 
+            this.employeesTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(126, 515);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(555, 44);
+            this.panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.newEmployee);
+            this.panel2.Controls.Add(this.previewOfEmployee);
+            this.panel2.Controls.Add(this.editEmployee);
+            this.panel2.Controls.Add(this.deleteEmployee);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(117, 284);
+            this.panel2.TabIndex = 21;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.employeesDataGridView);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(126, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(555, 506);
+            this.panel3.TabIndex = 21;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(684, 562);
+            this.tableLayoutPanel1.TabIndex = 22;
             // 
             // surnameDataGridViewTextBoxColumn
             // 
@@ -147,38 +235,34 @@
             this.personalNumberDataGridViewTextBoxColumn.Name = "personalNumberDataGridViewTextBoxColumn";
             this.personalNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // employeesBindingSource
+            // AreaId
             // 
-            this.employeesBindingSource.DataMember = "Employees";
-            this.employeesBindingSource.DataSource = this.maintenanceManagementDataSet;
+            this.AreaId.HeaderText = "Obszar";
+            this.AreaId.Name = "AreaId";
+            this.AreaId.ReadOnly = true;
             // 
-            // maintenanceManagementDataSet
+            // TeamId
             // 
-            this.maintenanceManagementDataSet.DataSetName = "MaintenanceManagementDataSet";
-            this.maintenanceManagementDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.TeamId.HeaderText = "Brygada";
+            this.TeamId.Name = "TeamId";
+            this.TeamId.ReadOnly = true;
             // 
-            // employeesTableAdapter
-            // 
-            this.employeesTableAdapter.ClearBeforeFill = true;
-            // 
-            // ListOfEmployees
+            // EmployeesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 391);
-            this.Controls.Add(this.employeesDataGridView);
-            this.Controls.Add(this.deleteEmployee);
-            this.Controls.Add(this.newEmployee);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.editEmployee);
-            this.Controls.Add(this.previewOfEmployee);
-            this.Name = "ListOfEmployees";
+            this.ClientSize = new System.Drawing.Size(684, 562);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximizeBox = false;
+            this.Name = "EmployeesList";
             this.Text = "Lista pracowników";
-            //this.Load += new System.EventHandler(this.ListOfEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -195,9 +279,15 @@
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeesBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AreaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeamId;
 
     }
 }

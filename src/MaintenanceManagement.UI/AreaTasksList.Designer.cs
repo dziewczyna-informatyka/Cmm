@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.editTask = new System.Windows.Forms.Button();
-            this.assignedArea = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.editTask = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.areaTasksGridView = new System.Windows.Forms.DataGridView();
             this.Assignee_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,44 +41,24 @@
             this.DaysRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActualendDateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.assignedArea = new System.Windows.Forms.TextBox();
             this.tasksStatus = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.areaTasksGridView)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // editTask
-            // 
-            this.editTask.Location = new System.Drawing.Point(621, 299);
-            this.editTask.Name = "editTask";
-            this.editTask.Size = new System.Drawing.Size(75, 23);
-            this.editTask.TabIndex = 18;
-            this.editTask.Text = "Edytuj";
-            this.editTask.UseVisualStyleBackColor = true;
-            this.editTask.Click += new System.EventHandler(this.editTask_Click);
-            // 
-            // assignedArea
-            // 
-            this.assignedArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.assignedArea.Location = new System.Drawing.Point(88, 9);
-            this.assignedArea.Name = "assignedArea";
-            this.assignedArea.ReadOnly = true;
-            this.assignedArea.Size = new System.Drawing.Size(159, 22);
-            this.assignedArea.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(12, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Obszar";
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Location = new System.Drawing.Point(702, 299);
+            this.button2.Location = new System.Drawing.Point(819, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 13;
@@ -87,13 +67,45 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(783, 299);
+            this.button1.Location = new System.Drawing.Point(900, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
             this.button1.Text = "Anuluj";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // editTask
+            // 
+            this.editTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editTask.Location = new System.Drawing.Point(738, 12);
+            this.editTask.Name = "editTask";
+            this.editTask.Size = new System.Drawing.Size(75, 23);
+            this.editTask.TabIndex = 18;
+            this.editTask.Text = "Edytuj";
+            this.editTask.UseVisualStyleBackColor = true;
+            this.editTask.Click += new System.EventHandler(this.editTask_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.editTask);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 415);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(978, 44);
+            this.panel2.TabIndex = 20;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.areaTasksGridView);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(978, 366);
+            this.panel3.TabIndex = 21;
             // 
             // areaTasksGridView
             // 
@@ -108,9 +120,10 @@
             this.DaysRemaining,
             this.DueDate,
             this.ActualendDateText});
-            this.areaTasksGridView.Location = new System.Drawing.Point(12, 39);
+            this.areaTasksGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.areaTasksGridView.Location = new System.Drawing.Point(0, 0);
             this.areaTasksGridView.Name = "areaTasksGridView";
-            this.areaTasksGridView.Size = new System.Drawing.Size(846, 252);
+            this.areaTasksGridView.Size = new System.Drawing.Size(978, 366);
             this.areaTasksGridView.TabIndex = 11;
             // 
             // Assignee_Id
@@ -162,10 +175,41 @@
             this.ActualendDateText.Name = "ActualendDateText";
             this.ActualendDateText.Width = 132;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.assignedArea);
+            this.panel1.Controls.Add(this.tasksStatus);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(978, 34);
+            this.panel1.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(6, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Obszar";
+            // 
+            // assignedArea
+            // 
+            this.assignedArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.assignedArea.Location = new System.Drawing.Point(82, 8);
+            this.assignedArea.Name = "assignedArea";
+            this.assignedArea.ReadOnly = true;
+            this.assignedArea.Size = new System.Drawing.Size(159, 22);
+            this.assignedArea.TabIndex = 15;
+            // 
             // tasksStatus
             // 
             this.tasksStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tasksStatus.Location = new System.Drawing.Point(349, 9);
+            this.tasksStatus.Location = new System.Drawing.Point(343, 8);
             this.tasksStatus.Name = "tasksStatus";
             this.tasksStatus.ReadOnly = true;
             this.tasksStatus.Size = new System.Drawing.Size(159, 22);
@@ -175,40 +219,55 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(299, 12);
+            this.label1.Location = new System.Drawing.Point(293, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 16;
             this.label1.Text = "Status";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 462);
+            this.tableLayoutPanel1.TabIndex = 22;
+            // 
             // AreaTasksList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 329);
-            this.Controls.Add(this.editTask);
-            this.Controls.Add(this.tasksStatus);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.assignedArea);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.areaTasksGridView);
+            this.ClientSize = new System.Drawing.Size(984, 462);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AreaTasksList";
             this.Text = "Lista zadań w obszarze";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.areaTasksGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button editTask;
-        private System.Windows.Forms.TextBox assignedArea;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editTask;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView areaTasksGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Assignee_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
@@ -217,7 +276,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DaysRemaining;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActualendDateText;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox assignedArea;
         private System.Windows.Forms.TextBox tasksStatus;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+
     }
 }

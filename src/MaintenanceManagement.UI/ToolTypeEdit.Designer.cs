@@ -68,6 +68,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
             this.Name = "ToolTypeEdit";
             this.Text = "Edycja";
             this.ResumeLayout(false);

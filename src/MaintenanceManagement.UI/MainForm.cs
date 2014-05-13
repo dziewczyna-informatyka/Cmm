@@ -173,7 +173,7 @@ namespace MaintenanceManagement.UI
             ShowAreaSummary(sender);
         }
 
-        private void brygadaAButton_Click(object sender, EventArgs e)
+      /*  private void brygadaAButton_Click(object sender, EventArgs e)
         {
             var form = new AreaSummary { AssignedArea = (Area)brygadaAButton.Tag };
 
@@ -217,7 +217,7 @@ namespace MaintenanceManagement.UI
         private void infrastrukturaButton_Click(object sender, EventArgs e)
         {
             ShowAreaSummary(sender);
-        }
+        }*/
 
     }
 }

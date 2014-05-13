@@ -65,7 +65,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Location = new System.Drawing.Point(930, 12);
+            this.button2.Location = new System.Drawing.Point(819, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -76,7 +76,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(1011, 12);
+            this.button1.Location = new System.Drawing.Point(900, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -100,7 +100,7 @@
             this.employeeTasksGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeTasksGridView.Location = new System.Drawing.Point(0, 0);
             this.employeeTasksGridView.Name = "employeeTasksGridView";
-            this.employeeTasksGridView.Size = new System.Drawing.Size(1089, 406);
+            this.employeeTasksGridView.Size = new System.Drawing.Size(978, 366);
             this.employeeTasksGridView.TabIndex = 3;
             // 
             // Assignee_Id
@@ -214,7 +214,7 @@
             // editTask
             // 
             this.editTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editTask.Location = new System.Drawing.Point(849, 12);
+            this.editTask.Location = new System.Drawing.Point(738, 12);
             this.editTask.Name = "editTask";
             this.editTask.Size = new System.Drawing.Size(75, 23);
             this.editTask.TabIndex = 10;
@@ -236,7 +236,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1095, 502);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 462);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // panel1
@@ -248,7 +248,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1089, 34);
+            this.panel1.Size = new System.Drawing.Size(978, 34);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -257,7 +257,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1089, 406);
+            this.panel2.Size = new System.Drawing.Size(978, 366);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -266,16 +266,16 @@
             this.panel3.Controls.Add(this.editTask);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 455);
+            this.panel3.Location = new System.Drawing.Point(3, 415);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1089, 44);
+            this.panel3.Size = new System.Drawing.Size(978, 44);
             this.panel3.TabIndex = 2;
             // 
             // EmployeeTasksList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 502);
+            this.ClientSize = new System.Drawing.Size(984, 462);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EmployeeTasksList";
             this.Text = "Lista zadań pracownika";

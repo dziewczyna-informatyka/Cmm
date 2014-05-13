@@ -115,6 +115,7 @@
             this.Controls.Add(this.toolTypeList);
             this.Controls.Add(this.toolTypeName);
             this.Controls.Add(this.addNewTool);
+            this.MaximizeBox = false;
             this.Name = "ToolsList";
             this.Text = "Narzędzia";
             this.ResumeLayout(false);

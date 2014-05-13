@@ -258,6 +258,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.employeeSurname);
             this.Controls.Add(this.employeeName);
+            this.MaximizeBox = false;
             this.Name = "EmployeeDetails";
             this.Text = "Pracownik - podgląd";
             this.ResumeLayout(false);

@@ -101,6 +101,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.MinimizeBox = false;
             this.Name = "LoginWindow";
             this.Text = "Logowanie";
             this.ResumeLayout(false);

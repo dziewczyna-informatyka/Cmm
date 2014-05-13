@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,27 +47,29 @@
             this.kontrollingButton = new System.Windows.Forms.Button();
             this.wtryskarkiButton = new System.Windows.Forms.Button();
             this.pakujaceButton = new System.Windows.Forms.Button();
-            this.ekstruderButton = new System.Windows.Forms.Button();
             this.automatyButton = new System.Windows.Forms.Button();
             this.facilityButton = new System.Windows.Forms.Button();
-            this.brygadaAButton = new System.Windows.Forms.Button();
-            this.brygadaBButton = new System.Windows.Forms.Button();
-            this.brygadaCButton = new System.Windows.Forms.Button();
-            this.brygadaDButton = new System.Windows.Forms.Button();
-            this.warsztatButton = new System.Windows.Forms.Button();
-            this.infrastrukturaButton = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.ekstruderButton = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.kierownictwoButton = new System.Windows.Forms.Button();
+            this.bialaButton = new System.Windows.Forms.Button();
+            this.szaraButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(703, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(131, 60);
-            this.panel1.TabIndex = 14;
             // 
             // menuStrip1
             // 
@@ -80,7 +81,7 @@
             this.harmonogramUrlopyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(834, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(937, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -193,10 +194,11 @@
             // 
             // kontrollingButton
             // 
+            this.kontrollingButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.kontrollingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kontrollingButton.Location = new System.Drawing.Point(12, 150);
+            this.kontrollingButton.Location = new System.Drawing.Point(0, 0);
             this.kontrollingButton.Name = "kontrollingButton";
-            this.kontrollingButton.Size = new System.Drawing.Size(96, 49);
+            this.kontrollingButton.Size = new System.Drawing.Size(106, 49);
             this.kontrollingButton.TabIndex = 18;
             this.kontrollingButton.Text = "Kontrolling";
             this.kontrollingButton.UseVisualStyleBackColor = true;
@@ -204,10 +206,11 @@
             // 
             // wtryskarkiButton
             // 
+            this.wtryskarkiButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.wtryskarkiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wtryskarkiButton.Location = new System.Drawing.Point(150, 150);
+            this.wtryskarkiButton.Location = new System.Drawing.Point(0, 0);
             this.wtryskarkiButton.Name = "wtryskarkiButton";
-            this.wtryskarkiButton.Size = new System.Drawing.Size(96, 49);
+            this.wtryskarkiButton.Size = new System.Drawing.Size(106, 49);
             this.wtryskarkiButton.TabIndex = 19;
             this.wtryskarkiButton.Text = "Wtryskarki";
             this.wtryskarkiButton.UseVisualStyleBackColor = true;
@@ -215,32 +218,23 @@
             // 
             // pakujaceButton
             // 
+            this.pakujaceButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pakujaceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.pakujaceButton.Location = new System.Drawing.Point(288, 150);
+            this.pakujaceButton.Location = new System.Drawing.Point(0, 0);
             this.pakujaceButton.Name = "pakujaceButton";
-            this.pakujaceButton.Size = new System.Drawing.Size(96, 49);
+            this.pakujaceButton.Size = new System.Drawing.Size(106, 49);
             this.pakujaceButton.TabIndex = 20;
             this.pakujaceButton.Text = "Maszyny pakujące";
             this.pakujaceButton.UseVisualStyleBackColor = true;
             this.pakujaceButton.Click += new System.EventHandler(this.pakujaceButton_Click);
             // 
-            // ekstruderButton
-            // 
-            this.ekstruderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ekstruderButton.Location = new System.Drawing.Point(426, 150);
-            this.ekstruderButton.Name = "ekstruderButton";
-            this.ekstruderButton.Size = new System.Drawing.Size(96, 49);
-            this.ekstruderButton.TabIndex = 21;
-            this.ekstruderButton.Text = "Ekstruder";
-            this.ekstruderButton.UseVisualStyleBackColor = true;
-            this.ekstruderButton.Click += new System.EventHandler(this.ekstruderButton_Click);
-            // 
             // automatyButton
             // 
+            this.automatyButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.automatyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.automatyButton.Location = new System.Drawing.Point(564, 150);
+            this.automatyButton.Location = new System.Drawing.Point(0, 0);
             this.automatyButton.Name = "automatyButton";
-            this.automatyButton.Size = new System.Drawing.Size(96, 49);
+            this.automatyButton.Size = new System.Drawing.Size(106, 49);
             this.automatyButton.TabIndex = 22;
             this.automatyButton.Text = "Automaty";
             this.automatyButton.UseVisualStyleBackColor = true;
@@ -248,107 +242,176 @@
             // 
             // facilityButton
             // 
+            this.facilityButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.facilityButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.facilityButton.Location = new System.Drawing.Point(702, 150);
+            this.facilityButton.Location = new System.Drawing.Point(0, 0);
             this.facilityButton.Name = "facilityButton";
-            this.facilityButton.Size = new System.Drawing.Size(96, 49);
+            this.facilityButton.Size = new System.Drawing.Size(106, 49);
             this.facilityButton.TabIndex = 23;
             this.facilityButton.Text = "Facility";
             this.facilityButton.UseVisualStyleBackColor = true;
             this.facilityButton.Click += new System.EventHandler(this.facilityButton_Click);
             // 
-            // brygadaAButton
+            // panel3
             // 
-            this.brygadaAButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.brygadaAButton.Location = new System.Drawing.Point(12, 244);
-            this.brygadaAButton.Name = "brygadaAButton";
-            this.brygadaAButton.Size = new System.Drawing.Size(96, 49);
-            this.brygadaAButton.TabIndex = 24;
-            this.brygadaAButton.Text = "Brygada A";
-            this.brygadaAButton.UseVisualStyleBackColor = true;
-            this.brygadaAButton.Click += new System.EventHandler(this.brygadaAButton_Click);
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel3.Controls.Add(this.kontrollingButton);
+            this.panel3.Location = new System.Drawing.Point(22, 153);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(106, 49);
+            this.panel3.TabIndex = 31;
             // 
-            // brygadaBButton
+            // panel4
             // 
-            this.brygadaBButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.brygadaBButton.Location = new System.Drawing.Point(150, 244);
-            this.brygadaBButton.Name = "brygadaBButton";
-            this.brygadaBButton.Size = new System.Drawing.Size(96, 49);
-            this.brygadaBButton.TabIndex = 25;
-            this.brygadaBButton.Text = "Brygada B";
-            this.brygadaBButton.UseVisualStyleBackColor = true;
-            this.brygadaBButton.Click += new System.EventHandler(this.brygadaBButton_Click);
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel4.Controls.Add(this.wtryskarkiButton);
+            this.panel4.Location = new System.Drawing.Point(172, 153);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(106, 49);
+            this.panel4.TabIndex = 32;
             // 
-            // brygadaCButton
+            // panel5
             // 
-            this.brygadaCButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.brygadaCButton.Location = new System.Drawing.Point(288, 244);
-            this.brygadaCButton.Name = "brygadaCButton";
-            this.brygadaCButton.Size = new System.Drawing.Size(96, 49);
-            this.brygadaCButton.TabIndex = 26;
-            this.brygadaCButton.Text = "Brygada C";
-            this.brygadaCButton.UseVisualStyleBackColor = true;
-            this.brygadaCButton.Click += new System.EventHandler(this.brygadaCButton_Click);
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel5.Controls.Add(this.pakujaceButton);
+            this.panel5.Location = new System.Drawing.Point(322, 153);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(106, 49);
+            this.panel5.TabIndex = 32;
             // 
-            // brygadaDButton
+            // panel6
             // 
-            this.brygadaDButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.brygadaDButton.Location = new System.Drawing.Point(426, 244);
-            this.brygadaDButton.Name = "brygadaDButton";
-            this.brygadaDButton.Size = new System.Drawing.Size(96, 49);
-            this.brygadaDButton.TabIndex = 27;
-            this.brygadaDButton.Text = "Brygada D";
-            this.brygadaDButton.UseVisualStyleBackColor = true;
-            this.brygadaDButton.Click += new System.EventHandler(this.brygadaDButton_Click);
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel6.Controls.Add(this.ekstruderButton);
+            this.panel6.Location = new System.Drawing.Point(472, 153);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(106, 49);
+            this.panel6.TabIndex = 32;
             // 
-            // warsztatButton
+            // ekstruderButton
             // 
-            this.warsztatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.warsztatButton.Location = new System.Drawing.Point(564, 244);
-            this.warsztatButton.Name = "warsztatButton";
-            this.warsztatButton.Size = new System.Drawing.Size(96, 49);
-            this.warsztatButton.TabIndex = 28;
-            this.warsztatButton.Text = "Warsztat";
-            this.warsztatButton.UseVisualStyleBackColor = true;
-            this.warsztatButton.Click += new System.EventHandler(this.warsztatButton_Click);
+            this.ekstruderButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ekstruderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ekstruderButton.Location = new System.Drawing.Point(1, 0);
+            this.ekstruderButton.Name = "ekstruderButton";
+            this.ekstruderButton.Size = new System.Drawing.Size(106, 49);
+            this.ekstruderButton.TabIndex = 22;
+            this.ekstruderButton.Text = "Ekstruder";
+            this.ekstruderButton.UseVisualStyleBackColor = true;
             // 
-            // infrastrukturaButton
+            // panel7
             // 
-            this.infrastrukturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.infrastrukturaButton.Location = new System.Drawing.Point(702, 244);
-            this.infrastrukturaButton.Name = "infrastrukturaButton";
-            this.infrastrukturaButton.Size = new System.Drawing.Size(96, 49);
-            this.infrastrukturaButton.TabIndex = 29;
-            this.infrastrukturaButton.Text = "Infrastruktura";
-            this.infrastrukturaButton.UseVisualStyleBackColor = true;
-            this.infrastrukturaButton.Click += new System.EventHandler(this.infrastrukturaButton_Click);
+            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel7.Controls.Add(this.automatyButton);
+            this.panel7.Location = new System.Drawing.Point(622, 153);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(106, 49);
+            this.panel7.TabIndex = 33;
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel8.Controls.Add(this.facilityButton);
+            this.panel8.Location = new System.Drawing.Point(772, 153);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(106, 49);
+            this.panel8.TabIndex = 34;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.bialaButton, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.szaraButton, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.kierownictwoButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel8, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 5, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(937, 438);
+            this.tableLayoutPanel1.TabIndex = 36;
+            // 
+            // kierownictwoButton
+            // 
+            this.kierownictwoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kierownictwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kierownictwoButton.Location = new System.Drawing.Point(22, 50);
+            this.kierownictwoButton.Name = "kierownictwoButton";
+            this.kierownictwoButton.Size = new System.Drawing.Size(106, 49);
+            this.kierownictwoButton.TabIndex = 35;
+            this.kierownictwoButton.Text = "Kierownictwo";
+            this.kierownictwoButton.UseVisualStyleBackColor = true;
+            // 
+            // bialaButton
+            // 
+            this.bialaButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bialaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bialaButton.Location = new System.Drawing.Point(322, 303);
+            this.bialaButton.Name = "bialaButton";
+            this.bialaButton.Size = new System.Drawing.Size(106, 49);
+            this.bialaButton.TabIndex = 36;
+            this.bialaButton.Text = "Strefa biała";
+            this.bialaButton.UseVisualStyleBackColor = true;
+            // 
+            // szaraButton
+            // 
+            this.szaraButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.szaraButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.szaraButton.Location = new System.Drawing.Point(772, 303);
+            this.szaraButton.Name = "szaraButton";
+            this.szaraButton.Size = new System.Drawing.Size(106, 49);
+            this.szaraButton.TabIndex = 37;
+            this.szaraButton.Text = "Strefa szara";
+            this.szaraButton.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(753, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(144, 73);
+            this.panel1.TabIndex = 38;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(834, 512);
-            this.Controls.Add(this.infrastrukturaButton);
-            this.Controls.Add(this.warsztatButton);
-            this.Controls.Add(this.brygadaDButton);
-            this.Controls.Add(this.brygadaCButton);
-            this.Controls.Add(this.brygadaBButton);
-            this.Controls.Add(this.brygadaAButton);
-            this.Controls.Add(this.facilityButton);
-            this.Controls.Add(this.automatyButton);
-            this.Controls.Add(this.ekstruderButton);
-            this.Controls.Add(this.pakujaceButton);
-            this.Controls.Add(this.wtryskarkiButton);
-            this.Controls.Add(this.kontrollingButton);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(937, 462);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Maintenance management";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +419,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem programToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zadaniaToolStripMenuItem;
@@ -376,15 +438,20 @@
         private System.Windows.Forms.Button kontrollingButton;
         private System.Windows.Forms.Button wtryskarkiButton;
         private System.Windows.Forms.Button pakujaceButton;
-        private System.Windows.Forms.Button ekstruderButton;
         private System.Windows.Forms.Button automatyButton;
         private System.Windows.Forms.Button facilityButton;
-        private System.Windows.Forms.Button brygadaAButton;
-        private System.Windows.Forms.Button brygadaBButton;
-        private System.Windows.Forms.Button brygadaCButton;
-        private System.Windows.Forms.Button brygadaDButton;
-        private System.Windows.Forms.Button warsztatButton;
-        private System.Windows.Forms.Button infrastrukturaButton;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button ekstruderButton;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button kierownictwoButton;
+        private System.Windows.Forms.Button bialaButton;
+        private System.Windows.Forms.Button szaraButton;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }
