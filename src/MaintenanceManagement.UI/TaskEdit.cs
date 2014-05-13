@@ -15,10 +15,7 @@ namespace MaintenanceManagement.UI
 
             taskDueDate.Value = DateTime.Now;
             taskEndDate.Value = DateTime.Now;
-        }
 
-        protected override void OnLoad(EventArgs e)
-        {
             taskAssignee.Enabled = UserContext.IsAdmin;
 
             taskStatus.LoadEnumAsDataSource(typeof(EmployeeTaskStatus));
@@ -36,9 +33,7 @@ namespace MaintenanceManagement.UI
 
                 taskArea.DataSource = context.Areas.ToList();
             }
-
-            base.OnLoad(e);
-        }
+        }        
 
         public EmployeeTask EmployeeTask
         {
