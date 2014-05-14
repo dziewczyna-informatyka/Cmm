@@ -56,6 +56,11 @@
     <Compile Include="Entities\ToolType.cs" />
     <Compile Include="JobTitle.cs" />
     <Compile Include="MainContext.cs" />
+    <Compile Include="MaintenanceManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceManagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201404191451114_InitialTables.cs" />
     <Compile Include="Migrations\201404191451114_InitialTables.Designer.cs">
       <DependentUpon>201404191451114_InitialTables.cs</DependentUpon>
@@ -93,6 +98,11 @@
       <DependentUpon>201405072219330_ActualEndDate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToolEndReason.cs" />
@@ -101,7 +111,22 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="MaintenanceManagementDataSet.xsc">
+      <DependentUpon>MaintenanceManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MaintenanceManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaintenanceManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MaintenanceManagementDataSet.xss">
+      <DependentUpon>MaintenanceManagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MaintenanceManagement.Core\MaintenanceManagement.Core.csproj">

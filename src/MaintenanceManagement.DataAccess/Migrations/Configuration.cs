@@ -19,14 +19,21 @@ namespace MaintenanceManagement.DataAccess.Migrations
         {
             context.Areas.AddOrUpdate(
                 e => e.Id,
-                new Area { Id = 1, Name = "Controlling" },
-                new Area { Id = 2, Name = "Wtryskarki" });
+                new Area { Id = 1, Name = "Kierownictwo" },
+                new Area { Id = 2, Name = "Kontrolling" },
+                new Area { Id = 3, Name = "Wtryskarki" },
+                new Area { Id = 4, Name = "Maszyny pakuj¹ce" },
+                new Area { Id = 5, Name = "Ekstruder" },
+                new Area { Id = 6, Name = "Automaty" },
+                new Area { Id = 7, Name = "Facility" },
+                new Area { Id = 8, Name = "Strefa bia³a" },
+                new Area { Id = 9, Name = "Strefa szara" });
             context.SaveChanges();
 
             context.ToolTypes.AddOrUpdate(
                 e => e.Id,
-                new ToolType { Id = 1, Name = "Mlotek" },
-                new ToolType { Id = 2, Name = "Srubokret" });
+                new ToolType { Id = 1, Name = "Nó¿" },
+                new ToolType { Id = 2, Name = "Imbusy" });
             context.SaveChanges();
 
             context.Employees.AddOrUpdate(
@@ -34,10 +41,10 @@ namespace MaintenanceManagement.DataAccess.Migrations
                 new Employee
                 {
                     Id = 1,
-                    Area = context.Areas.Single(a => a.Id == 1),
+                    Area = context.Areas.Single(a => a.Id == 2),
                     EmploymentType = EmploymentType.Clinico,
                     Login = "marwol",
-                    PersonalNumber = 3554,
+                    PersonalNumber = 3425,
                     Surname = "Wolkowska",
                     Name = "Marta",
                     PasswordHash = HashHelper.GetHash("test"),
@@ -47,22 +54,37 @@ namespace MaintenanceManagement.DataAccess.Migrations
                 {
                     Id = 2,
                     Area = context.Areas.Single(a => a.Id == 1),
-                    EmploymentType = EmploymentType.Manpower,
-                    Login = "marmiel",
-                    PersonalNumber = 3333,
-                    Surname = "Mielnik",
-                    Name = "Mariusz",
-                    PasswordHash = HashHelper.GetHash("test")
+                    EmploymentType = EmploymentType.Clinico,
+                    Login = "lucjuz",
+                    PersonalNumber = 1389,
+                    Surname = "Juzyk-Ró¿añska",
+                    Name = "£ucja",
+                    PasswordHash = HashHelper.GetHash("test"),
+                    IsAdmin = true
                 },
                 new Employee
                 {
                     Id = 3,
-                    Area = context.Areas.Single(a => a.Id == 2),
+                    Area = context.Areas.Single(a => a.Id == 1),
                     EmploymentType = EmploymentType.Clinico,
-                    Login = "arkmul",
-                    PersonalNumber = 2222,
-                    Surname = "Mulak",
-                    Name = "Arkadiusz",
+                    Login = "jacroj",
+                    PersonalNumber = 1076,
+                    Surname = "Rojek",
+                    Name = "Jacek",
+                    PasswordHash = HashHelper.GetHash("test"),
+                    IsAdmin = true
+                },
+                new Employee
+                {
+                    Id = 4,
+                    Area = context.Areas.Single(a => a.Id == 1),
+                    EmploymentType = EmploymentType.Clinico,
+                    Login = "wojmis",
+                    PersonalNumber = 1166,
+                    Surname = "Miœkowski",
+                    Name = "Wojciech",
+                    PasswordHash = HashHelper.GetHash("test"),
+                    IsAdmin = true
                 });
 
             context.SaveChanges();
