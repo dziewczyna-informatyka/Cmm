@@ -29,18 +29,18 @@ namespace MaintenanceManagement.UI
                     var task = r.DataBoundItem as EmployeeTask;
 
                     if (task == null) { return; }
-
+                    
                     if (task.IsDueDateWarning)
                     {
-                        r.DefaultCellStyle.BackColor = Color.Yellow;
+                        r.Cells[4].Style.BackColor = Color.Yellow;
                     }
                     else if (task.IsDueDateError)
                     {
-                        r.DefaultCellStyle.BackColor = Color.OrangeRed;
+                        r.Cells[4].Style.BackColor = Color.OrangeRed;
                     }
                     if (task.IsDone)
                     {
-                        r.DefaultCellStyle.BackColor = Color.ForestGreen;
+                        r.Cells[4].Style.BackColor = Color.ForestGreen;
                     }
                 }
             }

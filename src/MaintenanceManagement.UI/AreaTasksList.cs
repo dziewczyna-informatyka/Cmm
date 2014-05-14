@@ -18,6 +18,18 @@ namespace MaintenanceManagement.UI
             areaTasksGridView.DataBindingComplete += employeeTasksGridView_DataBindingComplete;
         }
 
+        /*private void CustomizeCellsInThirdColumn()
+        {
+            int thirdColumn = 2;
+            DataGridViewColumn column =
+                dataGridView.Columns[thirdColumn];
+            DataGridViewCell cell = new DataGridViewTextBoxCell();
+
+            cell.Style.BackColor = Color.Wheat;
+            column.CellTemplate = cell;
+        }*/
+
+        
         void employeeTasksGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             if (e.ListChangedType != ListChangedType.ItemDeleted)
@@ -26,17 +38,19 @@ namespace MaintenanceManagement.UI
                 {
                     var task = r.DataBoundItem as EmployeeTask;
 
+                    if (task == null) { return; }
+
                     if (task.IsDueDateWarning)
                     {
-                        r.DefaultCellStyle.BackColor = Color.Yellow;
+                        r.Cells[4].Style.BackColor = Color.Yellow;
                     }
                     else if (task.IsDueDateError)
                     {
-                        r.DefaultCellStyle.BackColor = Color.OrangeRed;
+                        r.Cells[4].Style.BackColor = Color.OrangeRed;
                     }
                     if (task.IsDone)
                     {
-                        r.DefaultCellStyle.BackColor = Color.ForestGreen;
+                        r.Cells[4].Style.BackColor = Color.ForestGreen;
                     }
                 }
             }
@@ -91,7 +105,9 @@ namespace MaintenanceManagement.UI
             var form = new TaskEdit();
             var selected = areaTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
             form.EmployeeTask = selected;
-            
+
+            if (selected == null) { return; }
+
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
