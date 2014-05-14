@@ -27,6 +27,8 @@ namespace MaintenanceManagement.UI
                 {
                     var task = r.DataBoundItem as EmployeeTask;
 
+                    if (task == null) { return; }
+
                     if (task.IsDueDateWarning)
                     {
                         r.DefaultCellStyle.BackColor = Color.Yellow;
@@ -35,10 +37,7 @@ namespace MaintenanceManagement.UI
                     {
                         r.DefaultCellStyle.BackColor = Color.OrangeRed;
                     }
-                    if (task.IsDone)
-                    {
-                        r.DefaultCellStyle.BackColor = Color.ForestGreen;
-                    }
+
                 }
             }
         }
