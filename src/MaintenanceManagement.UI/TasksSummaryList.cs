@@ -30,15 +30,15 @@ namespace MaintenanceManagement.UI
 
                     if (task.IsDueDateWarning)
                     {
-                        r.Cells[4].Style.BackColor = Color.Yellow;
+                        r.Cells[6].Style.BackColor = Color.Yellow;
                     }
                     else if (task.IsDueDateError)
                     {
-                        r.Cells[4].Style.BackColor = Color.OrangeRed;
+                        r.Cells[6].Style.BackColor = Color.OrangeRed;
                     }
                     if (task.IsDone)
                     {
-                        r.Cells[4].Style.BackColor = Color.ForestGreen;
+                        r.Cells[5].Style.BackColor = Color.ForestGreen;
                     }
                 }
             }
