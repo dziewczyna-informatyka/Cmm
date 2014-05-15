@@ -37,6 +37,26 @@ namespace MaintenanceManagement.UI
                     {
                         r.Cells[5].Style.BackColor = Color.OrangeRed;
                     }
+                     if (task.IsNotStarted)
+                    {
+                        r.Cells[4].Style.BackColor = Color.DarkRed;
+                    }
+                    else if (task.Progress <= 25)
+                    {
+                        r.Cells[4].Style.BackColor = Color.Gold;
+                    }
+                    else if (task.Progress <= 50)
+                    {
+                        r.Cells[4].Style.BackColor = Color.YellowGreen;
+                    }
+                    else if (task.Progress <= 75)
+                    {
+                        r.Cells[4].Style.BackColor = Color.LightGreen;
+                    }
+                    else
+                    {
+                        r.Cells[4].Style.BackColor = Color.LimeGreen;
+                    }
                     
                 }
             }

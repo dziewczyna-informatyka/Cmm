@@ -32,15 +32,35 @@ namespace MaintenanceManagement.UI
                     
                     if (task.IsDueDateWarning)
                     {
-                        r.Cells[4].Style.BackColor = Color.Yellow;
+                        r.Cells[5].Style.BackColor = Color.Yellow;
                     }
                     else if (task.IsDueDateError)
                     {
-                        r.Cells[4].Style.BackColor = Color.OrangeRed;
+                        r.Cells[5].Style.BackColor = Color.OrangeRed;
                     }
                     if (task.IsDone)
                     {
-                        r.Cells[4].Style.BackColor = Color.ForestGreen;
+                        r.Cells[4].Style.BackColor = Color.DarkGreen;
+                    }
+                    else if (task.IsNotStarted)
+                    {
+                        r.Cells[4].Style.BackColor = Color.DarkRed;
+                    }
+                    else if (task.Progress <= 25)
+                    {
+                        r.Cells[4].Style.BackColor = Color.Gold;
+                    }
+                    else if (task.Progress <= 50)
+                    {
+                        r.Cells[4].Style.BackColor = Color.YellowGreen;
+                    }
+                    else if (task.Progress <= 75)
+                    {
+                        r.Cells[4].Style.BackColor = Color.LightGreen;
+                    }
+                    else
+                    {
+                        r.Cells[4].Style.BackColor = Color.LimeGreen;
                     }
                 }
             }

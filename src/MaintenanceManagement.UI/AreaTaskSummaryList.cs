@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
@@ -10,9 +14,9 @@ using MaintenanceManagement.DataAccess.Entities;
 
 namespace MaintenanceManagement.UI
 {
-    public partial class AreaTasksList : Form
+    public partial class AreaTaskSummaryList : Form
     {
-        public AreaTasksList()
+        public AreaTaskSummaryList()
         {
             InitializeComponent();
             areaTasksGridView.DataBindingComplete += employeeTasksGridView_DataBindingComplete;
@@ -30,35 +34,35 @@ namespace MaintenanceManagement.UI
 
                     if (task.IsDueDateWarning)
                     {
-                        r.Cells[4].Style.BackColor = Color.Yellow;
+                        r.Cells[5].Style.BackColor = Color.Yellow;
                     }
                     else if (task.IsDueDateError)
                     {
-                        r.Cells[4].Style.BackColor = Color.OrangeRed;
+                        r.Cells[5].Style.BackColor = Color.OrangeRed;
                     }
                     if (task.IsDone)
                     {
-                        r.Cells[3].Style.BackColor = Color.DarkGreen;
+                        r.Cells[4].Style.BackColor = Color.DarkGreen;
                     }
                     else if (task.IsNotStarted)
                     {
-                        r.Cells[3].Style.BackColor = Color.DarkRed;
+                        r.Cells[4].Style.BackColor = Color.DarkRed;
                     }
                     else if (task.Progress <= 25)
                     {
-                        r.Cells[3].Style.BackColor = Color.Gold;
+                        r.Cells[4].Style.BackColor = Color.Gold;
                     }
                     else if (task.Progress <= 50)
                     {
-                        r.Cells[3].Style.BackColor = Color.YellowGreen;
+                        r.Cells[4].Style.BackColor = Color.YellowGreen;
                     }
                     else if (task.Progress <= 75)
                     {
-                        r.Cells[3].Style.BackColor = Color.LightGreen;
+                        r.Cells[4].Style.BackColor = Color.LightGreen;
                     }
                     else
                     {
-                        r.Cells[3].Style.BackColor = Color.LimeGreen;
+                        r.Cells[4].Style.BackColor = Color.LimeGreen;
                     }
                 }
             }
@@ -68,16 +72,6 @@ namespace MaintenanceManagement.UI
         {
             UpdateAreaTasks();
             base.OnLoad(e);
-        }
-
-        public EmployeeTaskStatus? TaskStatus
-        {
-            get { return (EmployeeTaskStatus?)tasksStatus.Tag; }
-            set
-            {
-                tasksStatus.Tag = value;
-                tasksStatus.Text = value != null ? value.EnumToString() : string.Empty;
-            }
         }
 
         public Area AssignedArea
@@ -101,7 +95,7 @@ namespace MaintenanceManagement.UI
                         .Include(e => e.Assignee)
                         .Include(e => e.Area)
                         .OrderBy(e => e.Progress)
-                        .Where(t => (t.Status == TaskStatus || TaskStatus == null) && AssignedArea.Id == t.Area.Id)
+                        .Where(t => AssignedArea.Id == t.Area.Id)
                         .ToList();
             }
         }
@@ -137,7 +131,6 @@ namespace MaintenanceManagement.UI
 
             UpdateAreaTasks();
         }
-
 
     }
 }

@@ -45,7 +45,15 @@ namespace MaintenanceManagement.DataAccess.Entities
             get { return Status == EmployeeTaskStatus.Done; }
         }
 
+        public bool IsNotStarted
+        {
+            get { return Status == EmployeeTaskStatus.InProgress && Progress == 0; }
+        }
 
+        public bool IsPerformed
+        {
+            get { return Status == EmployeeTaskStatus.InProgress && Progress > 0 && Progress < 60; }
+        }
 
         public DateTime? ActualEndDate { get; set; }
 
@@ -63,7 +71,6 @@ namespace MaintenanceManagement.DataAccess.Entities
                     : string.Empty;
             }
         }
-
 
         public double Progress { get; set; }
 

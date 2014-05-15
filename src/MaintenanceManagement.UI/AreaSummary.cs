@@ -114,7 +114,7 @@ namespace MaintenanceManagement.UI
 
         private void allTasks_Click(object sender, EventArgs e)
         {
-            var form = new AreaTasksList { AssignedArea = AssignedArea };
+            var form = new AreaTaskSummaryList() { AssignedArea = AssignedArea };
 
             form.ShowDialog();
 
