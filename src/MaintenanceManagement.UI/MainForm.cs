@@ -188,12 +188,9 @@ namespace MaintenanceManagement.UI
             ShowAreaSummary(sender);
         }
 
-        private void ekstruderButton_Click_1(object sender, EventArgs e)
+        private void projektyButton_Click(object sender, EventArgs e)
         {
             ShowAreaSummary(sender);
         }
-
-
-
     }
 }

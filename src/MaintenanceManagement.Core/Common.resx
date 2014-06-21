@@ -135,8 +135,14 @@
   <data name="EmploymentType_Clinico" xml:space="preserve">
     <value>Clinico</value>
   </data>
+  <data name="EmploymentType_Gerendis" xml:space="preserve">
+    <value>Gerendis</value>
+  </data>
   <data name="EmploymentType_Manpower" xml:space="preserve">
     <value>Manpower</value>
+  </data>
+  <data name="EmploymentType_Randstad" xml:space="preserve">
+    <value>Randstad</value>
   </data>
   <data name="JobTitle_Area_Leader" xml:space="preserve">
     <value>Lider obszaru</value>

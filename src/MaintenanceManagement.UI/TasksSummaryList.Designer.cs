@@ -32,6 +32,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tasksListDataGrid = new System.Windows.Forms.DataGridView();
+            this.AsigneeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaysRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActualendDateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeTasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
             this.employeeTasksTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter();
@@ -47,15 +56,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.AsigneeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Progress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaysRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActualendDateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tasksListDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -105,6 +105,61 @@
             this.tasksListDataGrid.Name = "tasksListDataGrid";
             this.tasksListDataGrid.Size = new System.Drawing.Size(978, 466);
             this.tasksListDataGrid.TabIndex = 3;
+            // 
+            // AsigneeId
+            // 
+            this.AsigneeId.DataPropertyName = "AssigneeName";
+            this.AsigneeId.HeaderText = "Osoba odpowiedzialna";
+            this.AsigneeId.Name = "AsigneeId";
+            this.AsigneeId.ReadOnly = true;
+            // 
+            // Area
+            // 
+            this.Area.DataPropertyName = "AreaName";
+            this.Area.HeaderText = "Obszar";
+            this.Area.Name = "Area";
+            // 
+            // Subject
+            // 
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Temat";
+            this.Subject.Name = "Subject";
+            // 
+            // Actions
+            // 
+            this.Actions.DataPropertyName = "Actions";
+            this.Actions.HeaderText = "Czynności";
+            this.Actions.Name = "Actions";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "StatusName";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
+            // Progress
+            // 
+            this.Progress.DataPropertyName = "Progress";
+            this.Progress.HeaderText = "Wykonanie";
+            this.Progress.Name = "Progress";
+            // 
+            // DaysRemaining
+            // 
+            this.DaysRemaining.DataPropertyName = "DaysRemaining";
+            this.DaysRemaining.HeaderText = "Pozostało dni";
+            this.DaysRemaining.Name = "DaysRemaining";
+            // 
+            // DueDate
+            // 
+            this.DueDate.DataPropertyName = "DueDateText";
+            this.DueDate.HeaderText = "Data zakończenia";
+            this.DueDate.Name = "DueDate";
+            // 
+            // ActualendDateText
+            // 
+            this.ActualendDateText.DataPropertyName = "ActualendDateText";
+            this.ActualendDateText.HeaderText = "Faktyczne zakończenie";
+            this.ActualendDateText.Name = "ActualendDateText";
             // 
             // employeeTasksBindingSource
             // 
@@ -243,61 +298,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 562);
             this.tableLayoutPanel1.TabIndex = 30;
             // 
-            // AsigneeId
-            // 
-            this.AsigneeId.DataPropertyName = "AssigneeName";
-            this.AsigneeId.HeaderText = "Osoba odpowiedzialna";
-            this.AsigneeId.Name = "AsigneeId";
-            this.AsigneeId.ReadOnly = true;
-            // 
-            // Area
-            // 
-            this.Area.DataPropertyName = "AreaName";
-            this.Area.HeaderText = "Obszar";
-            this.Area.Name = "Area";
-            // 
-            // Subject
-            // 
-            this.Subject.DataPropertyName = "Subject";
-            this.Subject.HeaderText = "Temat";
-            this.Subject.Name = "Subject";
-            // 
-            // Actions
-            // 
-            this.Actions.DataPropertyName = "Actions";
-            this.Actions.HeaderText = "Czynności";
-            this.Actions.Name = "Actions";
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "StatusName";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            // 
-            // Progress
-            // 
-            this.Progress.DataPropertyName = "Progress";
-            this.Progress.HeaderText = "Wykonanie";
-            this.Progress.Name = "Progress";
-            // 
-            // DaysRemaining
-            // 
-            this.DaysRemaining.DataPropertyName = "DaysRemaining";
-            this.DaysRemaining.HeaderText = "Pozostało dni";
-            this.DaysRemaining.Name = "DaysRemaining";
-            // 
-            // DueDate
-            // 
-            this.DueDate.DataPropertyName = "DueDateText";
-            this.DueDate.HeaderText = "Data zakończenia";
-            this.DueDate.Name = "DueDate";
-            // 
-            // ActualendDateText
-            // 
-            this.ActualendDateText.DataPropertyName = "ActualendDateText";
-            this.ActualendDateText.HeaderText = "Faktyczne zakończenie";
-            this.ActualendDateText.Name = "ActualendDateText";
-            // 
             // TasksSummaryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +306,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TasksSummaryList";
             this.Text = "Lista wszystkich zadań";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.tasksListDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).EndInit();

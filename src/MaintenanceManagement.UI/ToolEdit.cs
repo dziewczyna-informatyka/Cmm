@@ -17,7 +17,7 @@ namespace MaintenanceManagement.UI
             {
                 if (UserContext.IsAdmin)
                 {
-                    toolOwner.DataSource = context.Employees.ToList();
+                    toolOwner.DataSource = context.Employees.OrderBy(e => e.Surname).ToList();
                 }
                 else
                 {

@@ -140,6 +140,23 @@ namespace MaintenanceManagement.UI
             UpdateEmployees();
         }
 
+        private void employeeTasksDetails_Click(object sender, EventArgs e)
+        {
+            if (employeesDataGridView.CurrentRow == null)
+            {
+                return;
+            }
+
+            var form = new EmployeeTaskSummary();
+            var selected = employeesDataGridView.CurrentRow.DataBoundItem as Employee;
+            form.AssignedEmployee = selected;
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
     }
 }
 

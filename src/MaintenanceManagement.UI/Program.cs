@@ -39,7 +39,7 @@ namespace MaintenanceManagement.UI
                 }
                 else
                 {
-                    MessageBox.Show("Zle haslo lub uzytkownik", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Złe hasło lub użytkownik", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

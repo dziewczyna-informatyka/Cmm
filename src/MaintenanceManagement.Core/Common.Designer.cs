@@ -115,11 +115,29 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gerendis.
+        /// </summary>
+        public static string EmploymentType_Gerendis {
+            get {
+                return ResourceManager.GetString("EmploymentType_Gerendis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manpower.
         /// </summary>
         public static string EmploymentType_Manpower {
             get {
                 return ResourceManager.GetString("EmploymentType_Manpower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Randstad.
+        /// </summary>
+        public static string EmploymentType_Randstad {
+            get {
+                return ResourceManager.GetString("EmploymentType_Randstad", resourceCulture);
             }
         }
         

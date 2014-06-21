@@ -24,7 +24,7 @@ namespace MaintenanceManagement.UI
             {
                 if (UserContext.IsAdmin)
                 {
-                    taskAssignee.DataSource = context.Employees.ToList();
+                    taskAssignee.DataSource = context.Employees.OrderBy(t => t.Surname).ToList();
                 }
                 else
                 {
@@ -33,7 +33,13 @@ namespace MaintenanceManagement.UI
 
                 taskArea.DataSource = context.Areas.ToList();
             }
-        }        
+        }
+
+        public Employee AssignedEmployee
+        {
+            get { return (Employee)taskAssignee.SelectedItem; }
+            set { taskAssignee.SelectedItem = value; }
+        }
 
         public EmployeeTask EmployeeTask
         {

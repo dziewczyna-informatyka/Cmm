@@ -125,7 +125,26 @@ namespace MaintenanceManagement.UI
 
         private void newTasksCreator_Click(object sender, EventArgs e)
         {
+
+            /* var form = new EmployeeTaskSummary();
+             var selected = employeesDataGridView.CurrentRow.DataBoundItem as Employee;
+             form.AssignedEmployee = selected;
+
+             if (form.ShowDialog() == DialogResult.OK)
+             {
+
+             }*/
+
+
+
             var form = new TaskEdit();
+
+            //  if (employeesDataGridView.CurrentRow != null)
+            //  {
+            //     var selected = employeesDataGridView.CurrentRow.DataBoundItem as Employee;
+            //      form.taskAssignee = 
+            //  }
+
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
@@ -142,7 +161,5 @@ namespace MaintenanceManagement.UI
 
             UpdateData();
         }
-
-
     }
 }

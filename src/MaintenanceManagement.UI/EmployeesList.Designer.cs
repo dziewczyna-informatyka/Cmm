@@ -44,6 +44,7 @@
             this.employeesTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.employeeTasksDetails = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
@@ -196,6 +197,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.employeeTasksDetails);
             this.panel2.Controls.Add(this.newEmployee);
             this.panel2.Controls.Add(this.previewOfEmployee);
             this.panel2.Controls.Add(this.editEmployee);
@@ -204,6 +206,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(117, 284);
             this.panel2.TabIndex = 21;
+            // 
+            // employeeTasksDetails
+            // 
+            this.employeeTasksDetails.Location = new System.Drawing.Point(18, 223);
+            this.employeeTasksDetails.Name = "employeeTasksDetails";
+            this.employeeTasksDetails.Size = new System.Drawing.Size(85, 48);
+            this.employeeTasksDetails.TabIndex = 24;
+            this.employeeTasksDetails.Text = "Szczegóły zadań pracownika";
+            this.employeeTasksDetails.UseVisualStyleBackColor = true;
+            this.employeeTasksDetails.Click += new System.EventHandler(this.employeeTasksDetails_Click);
             // 
             // panel3
             // 
@@ -270,6 +282,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button employeeTasksDetails;
 
     }
 }

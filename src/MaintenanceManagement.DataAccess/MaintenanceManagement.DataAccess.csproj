@@ -109,7 +109,9 @@
     <Compile Include="WorkSchedule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="MaintenanceManagementDataSet.xsc">
       <DependentUpon>MaintenanceManagementDataSet.xsd</DependentUpon>

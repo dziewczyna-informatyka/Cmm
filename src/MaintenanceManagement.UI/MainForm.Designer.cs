@@ -58,9 +58,11 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bialaButton = new System.Windows.Forms.Button();
-            this.szaraButton = new System.Windows.Forms.Button();
             this.kierownictwoButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.szaraButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.projektyButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -69,6 +71,7 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -81,7 +84,7 @@
             this.harmonogramUrlopyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(937, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1080, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -298,7 +301,7 @@
             this.ekstruderButton.TabIndex = 22;
             this.ekstruderButton.Text = "Ekstruder";
             this.ekstruderButton.UseVisualStyleBackColor = true;
-            this.ekstruderButton.Click += new System.EventHandler(this.ekstruderButton_Click_1);
+            this.ekstruderButton.Click += new System.EventHandler(this.ekstruderButton_Click);
             // 
             // panel7
             // 
@@ -313,7 +316,7 @@
             // 
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel8.Controls.Add(this.facilityButton);
-            this.panel8.Location = new System.Drawing.Point(772, 153);
+            this.panel8.Location = new System.Drawing.Point(922, 153);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(106, 49);
             this.panel8.TabIndex = 34;
@@ -321,7 +324,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnCount = 8;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
@@ -334,11 +338,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panel5, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.bialaButton, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.szaraButton, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.kierownictwoButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel8, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.szaraButton, 6, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.kierownictwoButton, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bialaButton, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
@@ -347,14 +352,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(937, 438);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 438);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
             // bialaButton
             // 
             this.bialaButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bialaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bialaButton.Location = new System.Drawing.Point(322, 303);
+            this.bialaButton.Location = new System.Drawing.Point(22, 303);
             this.bialaButton.Name = "bialaButton";
             this.bialaButton.Size = new System.Drawing.Size(106, 49);
             this.bialaButton.TabIndex = 36;
@@ -362,23 +367,11 @@
             this.bialaButton.UseVisualStyleBackColor = true;
             this.bialaButton.Click += new System.EventHandler(this.bialaButton_Click);
             // 
-            // szaraButton
-            // 
-            this.szaraButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.szaraButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.szaraButton.Location = new System.Drawing.Point(772, 303);
-            this.szaraButton.Name = "szaraButton";
-            this.szaraButton.Size = new System.Drawing.Size(106, 49);
-            this.szaraButton.TabIndex = 37;
-            this.szaraButton.Text = "Strefa szara";
-            this.szaraButton.UseVisualStyleBackColor = true;
-            this.szaraButton.Click += new System.EventHandler(this.szaraButton_Click);
-            // 
             // kierownictwoButton
             // 
             this.kierownictwoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.kierownictwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kierownictwoButton.Location = new System.Drawing.Point(22, 50);
+            this.kierownictwoButton.Location = new System.Drawing.Point(472, 50);
             this.kierownictwoButton.Name = "kierownictwoButton";
             this.kierownictwoButton.Size = new System.Drawing.Size(106, 49);
             this.kierownictwoButton.TabIndex = 35;
@@ -390,17 +383,48 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(753, 3);
+            this.panel1.Location = new System.Drawing.Point(903, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(144, 73);
             this.panel1.TabIndex = 38;
+            // 
+            // szaraButton
+            // 
+            this.szaraButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.szaraButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.szaraButton.Location = new System.Drawing.Point(922, 303);
+            this.szaraButton.Name = "szaraButton";
+            this.szaraButton.Size = new System.Drawing.Size(106, 49);
+            this.szaraButton.TabIndex = 37;
+            this.szaraButton.Text = "Strefa szara";
+            this.szaraButton.UseVisualStyleBackColor = true;
+            this.szaraButton.Click += new System.EventHandler(this.szaraButton_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Controls.Add(this.projektyButton);
+            this.panel2.Location = new System.Drawing.Point(772, 153);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(106, 49);
+            this.panel2.TabIndex = 34;
+            // 
+            // projektyButton
+            // 
+            this.projektyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.projektyButton.Location = new System.Drawing.Point(0, 0);
+            this.projektyButton.Name = "projektyButton";
+            this.projektyButton.Size = new System.Drawing.Size(106, 49);
+            this.projektyButton.TabIndex = 0;
+            this.projektyButton.Text = "Projekty";
+            this.projektyButton.Click += new System.EventHandler(this.projektyButton_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(937, 462);
+            this.ClientSize = new System.Drawing.Size(1080, 462);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -416,6 +440,7 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,6 +481,8 @@
         private System.Windows.Forms.Button bialaButton;
         private System.Windows.Forms.Button szaraButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button projektyButton;
 
     }
 }
