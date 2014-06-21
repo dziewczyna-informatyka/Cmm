@@ -29,7 +29,7 @@ namespace MaintenanceManagement.UI
                     var task = r.DataBoundItem as EmployeeTask;
 
                     if (task == null) { return; }
-                    
+
                     if (task.IsDueDateWarning)
                     {
                         r.Cells[5].Style.BackColor = Color.Yellow;
@@ -139,6 +139,27 @@ namespace MaintenanceManagement.UI
                     context.SaveChanges();
                 }
             }
+
+            UpdateEmployeeTasks();
+        }
+
+        private void deleteTask_Click(object sender, EventArgs e)
+        {
+            if (employeeTasksGridView.CurrentRow == null) { return; }
+
+            var form = new TaskEdit();
+            var selected = employeeTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
+            form.EmployeeTask = selected;
+
+            using (var context = new MainContext())
+            {
+
+                var taskToDelete = context.EmployeeTasks.Single(emp => emp.Id == selected.Id);
+                context.EmployeeTasks.Remove(taskToDelete);
+                context.SaveChanges();
+                         
+            }
+
 
             UpdateEmployeeTasks();
         }

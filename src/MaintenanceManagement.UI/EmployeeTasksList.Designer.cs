@@ -52,6 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteTask = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTasksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -262,6 +263,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.deleteTask);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.editTask);
             this.panel3.Controls.Add(this.button1);
@@ -270,6 +272,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(978, 44);
             this.panel3.TabIndex = 2;
+            // 
+            // deleteTask
+            // 
+            this.deleteTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteTask.Location = new System.Drawing.Point(657, 12);
+            this.deleteTask.Name = "deleteTask";
+            this.deleteTask.Size = new System.Drawing.Size(75, 23);
+            this.deleteTask.TabIndex = 11;
+            this.deleteTask.Text = "Usuń";
+            this.deleteTask.UseVisualStyleBackColor = true;
+            this.deleteTask.Click += new System.EventHandler(this.deleteTask_Click);
             // 
             // EmployeeTasksList
             // 
@@ -320,5 +333,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button deleteTask;
     }
 }
