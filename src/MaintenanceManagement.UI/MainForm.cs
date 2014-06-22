@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using System.Data.Entity;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
 using MaintenanceManagement.UI.Core;
+using MaintenanceManagement.Core;
 
 
 namespace MaintenanceManagement.UI
@@ -112,13 +114,6 @@ namespace MaintenanceManagement.UI
 
         //-----------------------------------------------------------------------------
 
-        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        //-----------------------------------------------------------------------------
-
         private static void ShowAreaSummary(object sender)
         {
             Area area;
@@ -192,5 +187,33 @@ namespace MaintenanceManagement.UI
         {
             ShowAreaSummary(sender);
         }
+
+        private void przelogujToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var loginWindow = new LoginWindow();
+
+            if (loginWindow.ShowDialog() == DialogResult.OK)
+            {
+                using (var context = new MainContext())
+                {
+                    var hash = HashHelper.GetHash(loginWindow.Password);
+                    UserContext.User =
+                        context.Employees.Include(emp => emp.Area).SingleOrDefault(
+                            emp =>
+                                emp.Login == loginWindow.Login &&
+                                emp.PasswordHash == hash);
+                }
+
+                
+            }
+        }
+
+        //-----------------------------------------------------------------------------
+
+        private void zamknijtoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Close();
+        }
+    
     }
 }

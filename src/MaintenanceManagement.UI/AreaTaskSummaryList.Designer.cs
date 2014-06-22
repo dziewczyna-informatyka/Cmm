@@ -31,13 +31,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.areaTasksGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.assignedArea = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.editTask = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Assignee_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +39,14 @@
             this.DaysRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActualendDateText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.assignedArea = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.editTask = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.deleteTask = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.areaTasksGridView)).BeginInit();
@@ -98,79 +99,6 @@
             this.areaTasksGridView.Name = "areaTasksGridView";
             this.areaTasksGridView.Size = new System.Drawing.Size(978, 366);
             this.areaTasksGridView.TabIndex = 11;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.assignedArea);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 34);
-            this.panel1.TabIndex = 19;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(6, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Obszar";
-            // 
-            // assignedArea
-            // 
-            this.assignedArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.assignedArea.Location = new System.Drawing.Point(82, 8);
-            this.assignedArea.Name = "assignedArea";
-            this.assignedArea.ReadOnly = true;
-            this.assignedArea.Size = new System.Drawing.Size(159, 22);
-            this.assignedArea.TabIndex = 15;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.editTask);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 415);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(978, 44);
-            this.panel2.TabIndex = 20;
-            // 
-            // editTask
-            // 
-            this.editTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.editTask.Location = new System.Drawing.Point(738, 12);
-            this.editTask.Name = "editTask";
-            this.editTask.Size = new System.Drawing.Size(75, 23);
-            this.editTask.TabIndex = 18;
-            this.editTask.Text = "Edytuj";
-            this.editTask.UseVisualStyleBackColor = true;
-            this.editTask.Click += new System.EventHandler(this.editTask_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(900, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Anuluj";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.Location = new System.Drawing.Point(819, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "OK";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Assignee_Id
             // 
@@ -228,6 +156,91 @@
             this.ActualendDateText.Name = "ActualendDateText";
             this.ActualendDateText.Width = 132;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.assignedArea);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(978, 34);
+            this.panel1.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(6, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Obszar";
+            // 
+            // assignedArea
+            // 
+            this.assignedArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.assignedArea.Location = new System.Drawing.Point(82, 8);
+            this.assignedArea.Name = "assignedArea";
+            this.assignedArea.ReadOnly = true;
+            this.assignedArea.Size = new System.Drawing.Size(159, 22);
+            this.assignedArea.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.deleteTask);
+            this.panel2.Controls.Add(this.editTask);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 415);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(978, 44);
+            this.panel2.TabIndex = 20;
+            // 
+            // editTask
+            // 
+            this.editTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editTask.Location = new System.Drawing.Point(738, 12);
+            this.editTask.Name = "editTask";
+            this.editTask.Size = new System.Drawing.Size(75, 23);
+            this.editTask.TabIndex = 18;
+            this.editTask.Text = "Edytuj";
+            this.editTask.UseVisualStyleBackColor = true;
+            this.editTask.Click += new System.EventHandler(this.editTask_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Location = new System.Drawing.Point(900, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Anuluj";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button2.Location = new System.Drawing.Point(819, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "OK";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // deleteTask
+            // 
+            this.deleteTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteTask.Location = new System.Drawing.Point(657, 12);
+            this.deleteTask.Name = "deleteTask";
+            this.deleteTask.Size = new System.Drawing.Size(75, 23);
+            this.deleteTask.TabIndex = 24;
+            this.deleteTask.Text = "Usuń";
+            this.deleteTask.UseVisualStyleBackColor = true;
+            this.deleteTask.Click += new System.EventHandler(this.deleteTask_Click);
+            // 
             // AreaTaskSummaryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,5 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DaysRemaining;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActualendDateText;
+        private System.Windows.Forms.Button deleteTask;
     }
 }

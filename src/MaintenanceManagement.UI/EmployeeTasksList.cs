@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 
 namespace MaintenanceManagement.UI
@@ -68,6 +69,8 @@ namespace MaintenanceManagement.UI
 
         protected override void OnLoad(EventArgs e)
         {
+            deleteTask.Visible = UserContext.IsAdmin || UserContext.User.Id == AssignedEmployee.Id;
+            editTask.Visible = UserContext.IsAdmin || UserContext.User.Id == AssignedEmployee.Id;
             UpdateEmployeeTasks();
             base.OnLoad(e);
         }

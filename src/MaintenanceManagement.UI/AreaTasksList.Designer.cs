@@ -47,6 +47,7 @@
             this.tasksStatus = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.deleteTask = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.areaTasksGridView)).BeginInit();
@@ -89,6 +90,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.deleteTask);
             this.panel2.Controls.Add(this.editTask);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
@@ -242,6 +244,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 462);
             this.tableLayoutPanel1.TabIndex = 22;
             // 
+            // deleteTask
+            // 
+            this.deleteTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteTask.Location = new System.Drawing.Point(657, 12);
+            this.deleteTask.Name = "deleteTask";
+            this.deleteTask.Size = new System.Drawing.Size(75, 23);
+            this.deleteTask.TabIndex = 19;
+            this.deleteTask.Text = "Usuń";
+            this.deleteTask.UseVisualStyleBackColor = true;
+            this.deleteTask.Click += new System.EventHandler(this.deleteTask_Click);
+            // 
             // AreaTasksList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +295,7 @@
         private System.Windows.Forms.TextBox tasksStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button deleteTask;
 
     }
 }

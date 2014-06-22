@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.przelogujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zamknijtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zadaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaplanowaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,12 +58,12 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.bialaButton = new System.Windows.Forms.Button();
-            this.kierownictwoButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.szaraButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.projektyButton = new System.Windows.Forms.Button();
+            this.kierownictwoButton = new System.Windows.Forms.Button();
+            this.bialaButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -91,17 +92,25 @@
             // programToolStripMenuItem
             // 
             this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zamknijToolStripMenuItem});
+            this.przelogujToolStripMenuItem,
+            this.zamknijtoolStripMenuItem});
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
             // 
-            // zamknijToolStripMenuItem
+            // przelogujToolStripMenuItem
             // 
-            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.zamknijToolStripMenuItem.Text = "Zamknij";
-            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
+            this.przelogujToolStripMenuItem.Name = "przelogujToolStripMenuItem";
+            this.przelogujToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.przelogujToolStripMenuItem.Text = "Przeloguj";
+            this.przelogujToolStripMenuItem.Click += new System.EventHandler(this.przelogujToolStripMenuItem_Click);
+            // 
+            // zamknijtoolStripMenuItem
+            // 
+            this.zamknijtoolStripMenuItem.Name = "zamknijtoolStripMenuItem";
+            this.zamknijtoolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zamknijtoolStripMenuItem.Text = "Zamknij";
+            this.zamknijtoolStripMenuItem.Click += new System.EventHandler(this.zamknijtoolStripMenuItem_Click);
             // 
             // zadaniaToolStripMenuItem
             // 
@@ -355,30 +364,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 438);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
-            // bialaButton
-            // 
-            this.bialaButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bialaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bialaButton.Location = new System.Drawing.Point(22, 303);
-            this.bialaButton.Name = "bialaButton";
-            this.bialaButton.Size = new System.Drawing.Size(106, 49);
-            this.bialaButton.TabIndex = 36;
-            this.bialaButton.Text = "Strefa biała";
-            this.bialaButton.UseVisualStyleBackColor = true;
-            this.bialaButton.Click += new System.EventHandler(this.bialaButton_Click);
-            // 
-            // kierownictwoButton
-            // 
-            this.kierownictwoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kierownictwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kierownictwoButton.Location = new System.Drawing.Point(472, 50);
-            this.kierownictwoButton.Name = "kierownictwoButton";
-            this.kierownictwoButton.Size = new System.Drawing.Size(106, 49);
-            this.kierownictwoButton.TabIndex = 35;
-            this.kierownictwoButton.Text = "Kierownictwo";
-            this.kierownictwoButton.UseVisualStyleBackColor = true;
-            this.kierownictwoButton.Click += new System.EventHandler(this.kierownictwoButton_Click);
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
@@ -418,6 +403,30 @@
             this.projektyButton.TabIndex = 0;
             this.projektyButton.Text = "Projekty";
             this.projektyButton.Click += new System.EventHandler(this.projektyButton_Click);
+            // 
+            // kierownictwoButton
+            // 
+            this.kierownictwoButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kierownictwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kierownictwoButton.Location = new System.Drawing.Point(472, 50);
+            this.kierownictwoButton.Name = "kierownictwoButton";
+            this.kierownictwoButton.Size = new System.Drawing.Size(106, 49);
+            this.kierownictwoButton.TabIndex = 35;
+            this.kierownictwoButton.Text = "Kierownictwo";
+            this.kierownictwoButton.UseVisualStyleBackColor = true;
+            this.kierownictwoButton.Click += new System.EventHandler(this.kierownictwoButton_Click);
+            // 
+            // bialaButton
+            // 
+            this.bialaButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bialaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bialaButton.Location = new System.Drawing.Point(22, 303);
+            this.bialaButton.Name = "bialaButton";
+            this.bialaButton.Size = new System.Drawing.Size(106, 49);
+            this.bialaButton.TabIndex = 36;
+            this.bialaButton.Text = "Strefa biała";
+            this.bialaButton.UseVisualStyleBackColor = true;
+            this.bialaButton.Click += new System.EventHandler(this.bialaButton_Click);
             // 
             // MainWindow
             // 
@@ -463,7 +472,6 @@
         private System.Windows.Forms.ToolStripMenuItem obszaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zleceniaWarsztatoweToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem harmonogramUrlopyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
         private System.Windows.Forms.Button kontrollingButton;
         private System.Windows.Forms.Button wtryskarkiButton;
         private System.Windows.Forms.Button pakujaceButton;
@@ -483,6 +491,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button projektyButton;
+        private System.Windows.Forms.ToolStripMenuItem przelogujToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zamknijtoolStripMenuItem;
 
     }
 }

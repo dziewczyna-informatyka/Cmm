@@ -55,6 +55,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceManagementDataSet)).BeginInit();
@@ -63,6 +64,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // employeesDataGridView
@@ -140,7 +142,7 @@
             // 
             // employeeTasksDetails
             // 
-            this.employeeTasksDetails.Location = new System.Drawing.Point(36, 261);
+            this.employeeTasksDetails.Location = new System.Drawing.Point(0, 62);
             this.employeeTasksDetails.Name = "employeeTasksDetails";
             this.employeeTasksDetails.Size = new System.Drawing.Size(85, 48);
             this.employeeTasksDetails.TabIndex = 23;
@@ -190,7 +192,7 @@
             // 
             // newTasksCreator
             // 
-            this.newTasksCreator.Location = new System.Drawing.Point(36, 209);
+            this.newTasksCreator.Location = new System.Drawing.Point(0, 3);
             this.newTasksCreator.Name = "newTasksCreator";
             this.newTasksCreator.Size = new System.Drawing.Size(85, 35);
             this.newTasksCreator.TabIndex = 32;
@@ -282,15 +284,14 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.plannedTasksAmount);
             this.panel4.Controls.Add(this.plannedTasks);
             this.panel4.Controls.Add(this.actualTasksAmount);
-            this.panel4.Controls.Add(this.employeeTasksDetails);
             this.panel4.Controls.Add(this.doneTasksAmount);
             this.panel4.Controls.Add(this.totalTasksAmount);
             this.panel4.Controls.Add(this.actualTasks);
             this.panel4.Controls.Add(this.doneTasks);
-            this.panel4.Controls.Add(this.newTasksCreator);
             this.panel4.Controls.Add(this.allTasks);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 43);
@@ -317,6 +318,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(684, 462);
             this.tableLayoutPanel1.TabIndex = 39;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.employeeTasksDetails);
+            this.panel5.Controls.Add(this.newTasksCreator);
+            this.panel5.Location = new System.Drawing.Point(36, 220);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(85, 114);
+            this.panel5.TabIndex = 21;
+            // 
             // AreaSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +345,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -367,5 +378,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel5;
     }
 }

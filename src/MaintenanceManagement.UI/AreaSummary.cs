@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {
@@ -16,6 +17,7 @@ namespace MaintenanceManagement.UI
 
         protected override void OnLoad(EventArgs e)
         {
+            panel5.Visible = UserContext.IsAdmin || UserContext.User.Area.Id == AssignedArea.Id;
             UpdateData();
             base.OnLoad(e);
         }

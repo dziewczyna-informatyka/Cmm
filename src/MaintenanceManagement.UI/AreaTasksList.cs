@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using MaintenanceManagement.Core;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 namespace MaintenanceManagement.UI
 {
@@ -66,6 +67,8 @@ namespace MaintenanceManagement.UI
 
         protected override void OnLoad(EventArgs e)
         {
+            deleteTask.Visible = UserContext.IsAdmin || UserContext.User.Area.Id == AssignedArea.Id;
+            editTask.Visible = UserContext.IsAdmin || UserContext.User.Area.Id == AssignedArea.Id;
             UpdateAreaTasks();
             base.OnLoad(e);
         }
@@ -138,6 +141,25 @@ namespace MaintenanceManagement.UI
             UpdateAreaTasks();
         }
 
+        private void deleteTask_Click(object sender, EventArgs e)
+        {
+            if (areaTasksGridView.CurrentRow == null) { return; }
+
+            var form = new TaskEdit();
+            var selected = areaTasksGridView.CurrentRow.DataBoundItem as EmployeeTask;
+            form.EmployeeTask = selected;
+
+            using (var context = new MainContext())
+            {
+
+                var taskToDelete = context.EmployeeTasks.Single(emp => emp.Id == selected.Id);
+                context.EmployeeTasks.Remove(taskToDelete);
+                context.SaveChanges();
+
+            }
+            
+            UpdateAreaTasks();
+        }
 
     }
 }

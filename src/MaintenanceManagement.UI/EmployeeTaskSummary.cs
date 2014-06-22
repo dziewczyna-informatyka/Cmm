@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MaintenanceManagement.DataAccess;
 using MaintenanceManagement.DataAccess.Entities;
+using MaintenanceManagement.UI.Core;
 
 
 namespace MaintenanceManagement.UI
@@ -17,6 +18,7 @@ namespace MaintenanceManagement.UI
 
         protected override void OnLoad(EventArgs e)
         {
+            newTasksCreator.Visible = UserContext.IsAdmin || UserContext.User.Id == AssignedEmployee.Id;
             UpdateData();
             base.OnLoad(e);
         }
