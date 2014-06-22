@@ -1,5 +1,7 @@
 ﻿namespace MaintenanceManagement.UI
 {
+    using MaintenanceManagement.UI.Core;
+
     partial class EmployeesList
     {
         /// <summary>
@@ -35,7 +37,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.newEmployee = new System.Windows.Forms.Button();
             this.deleteEmployee = new System.Windows.Forms.Button();
-            this.employeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.employeesDataGridView = new MmDataGrid();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personalNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -271,7 +273,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button newEmployee;
         private System.Windows.Forms.Button deleteEmployee;
-        private System.Windows.Forms.DataGridView employeesDataGridView;
+        private MmDataGrid employeesDataGridView;
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeesBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter;

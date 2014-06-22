@@ -1,5 +1,7 @@
 ﻿namespace MaintenanceManagement.UI
 {
+    using MaintenanceManagement.UI.Core;
+
     partial class TasksList
     {
         /// <summary>
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.taskListDataGrid = new System.Windows.Forms.DataGridView();
+            this.taskListDataGrid = new MmDataGrid();
             this.AssigneeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AreaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -257,7 +259,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView taskListDataGrid;
+        private MmDataGrid taskListDataGrid;
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeeTasksBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeTasksTableAdapter employeeTasksTableAdapter;
