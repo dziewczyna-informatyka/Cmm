@@ -1,5 +1,7 @@
 ﻿namespace MaintenanceManagement.UI
 {
+    using MaintenanceManagement.UI.Core;
+
     partial class AreaTaskSummaryList
     {
         /// <summary>
@@ -30,7 +32,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.areaTasksGridView = new System.Windows.Forms.DataGridView();
+
+            this.areaTasksGridView = new MmDataGrid();
             this.Assignee_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actions = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -263,7 +266,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView areaTasksGridView;
+        private MmDataGrid areaTasksGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox assignedArea;
