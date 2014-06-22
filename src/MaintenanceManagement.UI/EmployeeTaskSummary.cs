@@ -104,6 +104,10 @@ namespace MaintenanceManagement.UI
         private void newTasksCreator_Click(object sender, EventArgs eventArgs)
         {
             var form = new TaskEdit();
+            
+            form.AssignedEmployee = AssignedEmployee;
+            
+
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (var context = new MainContext())
