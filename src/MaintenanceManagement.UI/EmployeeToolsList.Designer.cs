@@ -1,5 +1,7 @@
 ﻿namespace MaintenanceManagement.UI
 {
+    using MaintenanceManagement.UI.Core;
+
     partial class EmployeeToolsList
     {
         /// <summary>
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.toolsListDataGrid = new System.Windows.Forms.DataGridView();
+            this.toolsListDataGrid = new MmDataGrid();
             this.employeeToolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceManagementDataSet = new MaintenanceManagement.UI.MaintenanceManagementDataSet();
             this.employeeToolsTableAdapter = new MaintenanceManagement.UI.MaintenanceManagementDataSetTableAdapters.EmployeeToolsTableAdapter();
@@ -285,7 +287,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView toolsListDataGrid;
+        private MmDataGrid toolsListDataGrid;
         private MaintenanceManagementDataSet maintenanceManagementDataSet;
         private System.Windows.Forms.BindingSource employeeToolsBindingSource;
         private MaintenanceManagementDataSetTableAdapters.EmployeeToolsTableAdapter employeeToolsTableAdapter;

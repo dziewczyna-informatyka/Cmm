@@ -85,6 +85,9 @@
     <Compile Include="Core\BaseEditWindow.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Core\MmDataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Core\UserContext.cs" />
     <Compile Include="EmployeeDetails.cs">
       <SubType>Form</SubType>
@@ -191,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AreaTaskSummaryList.resx">
       <DependentUpon>AreaTaskSummaryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\MmDataGrid.resx">
+      <DependentUpon>MmDataGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeDetails.resx">
       <DependentUpon>EmployeeDetails.cs</DependentUpon>
