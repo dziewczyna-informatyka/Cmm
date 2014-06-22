@@ -66,7 +66,8 @@ namespace MaintenanceManagement.UI.Core
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(dialog.FileName, ExportToCsv());
+                var text = this.ExportToCsv();
+                File.WriteAllText(dialog.FileName, Encoding.UTF8.GetString(Encoding.Default.GetBytes(text)));
             }
         }
 
