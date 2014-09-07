@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MaintenanceManagement.DataAccess.Entities
+﻿namespace MaintenanceManagement.DataAccess.Entities
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class ToolType : BaseEntity
     {
         [Index(IsUnique = true)]
@@ -11,7 +11,7 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public override string ToString()
         {
-            return Name;
+            return this.Name;
         }
     }
 }

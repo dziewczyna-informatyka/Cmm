@@ -1,9 +1,10 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using MaintenanceManagement.Core;
-
-namespace MaintenanceManagement.DataAccess.Entities
+﻿namespace MaintenanceManagement.DataAccess.Entities
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
+    using MaintenanceManagement.Core;
+
     public class EmployeeTask : BaseEntity
     {
         [Required]
@@ -20,54 +21,54 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public string StatusName
         {
-            get { return Status.EnumToString(); }
+            get { return this.Status.EnumToString(); }
         }
 
         public DateTime DueDate { get; set; }
 
         public string DueDateText
         {
-            get { return DueDate.ToShortDateString(); }
+            get { return this.DueDate.ToShortDateString(); }
         }
 
         public bool IsDueDateWarning
         {
-            get { return Status != EmployeeTaskStatus.Done && !IsDueDateError && DueDate.Subtract(DateTime.Now).TotalDays < 5; }
+            get { return this.Status != EmployeeTaskStatus.Done && !this.IsDueDateError && this.DueDate.Subtract(DateTime.Now).TotalDays < 5; }
         }
 
         public bool IsDueDateError
         {
-            get { return Status != EmployeeTaskStatus.Done && DueDate.Subtract(DateTime.Now).TotalDays <= 0; }
+            get { return this.Status != EmployeeTaskStatus.Done && this.DueDate.Subtract(DateTime.Now).TotalDays <= 0; }
         }
 
         public bool IsDone
         {
-            get { return Status == EmployeeTaskStatus.Done; }
+            get { return this.Status == EmployeeTaskStatus.Done; }
         }
 
         public bool IsNotStarted
         {
-            get { return Status == EmployeeTaskStatus.InProgress && Progress == 0; }
+            get { return this.Status == EmployeeTaskStatus.InProgress && this.Progress == 0; }
         }
 
         public bool IsPerformed
         {
-            get { return Status == EmployeeTaskStatus.InProgress && Progress > 0 && Progress < 60; }
+            get { return this.Status == EmployeeTaskStatus.InProgress && this.Progress > 0 && this.Progress < 60; }
         }
 
         public DateTime? ActualEndDate { get; set; }
 
         public string ActualEndDateText
         {
-            get { return ActualEndDate != null && Status == EmployeeTaskStatus.Done ? ActualEndDate.Value.ToShortDateString() : string.Empty; }
+            get { return this.ActualEndDate != null && this.Status == EmployeeTaskStatus.Done ? this.ActualEndDate.Value.ToShortDateString() : string.Empty; }
         }
 
         public string DaysRemaining
         {
             get
             {
-                return Status != EmployeeTaskStatus.Done
-                    ? Math.Floor(DueDate.Subtract(DateTime.Now).TotalDays).ToString()
+                return this.Status != EmployeeTaskStatus.Done
+                    ? Math.Floor(this.DueDate.Subtract(DateTime.Now).TotalDays).ToString()
                     : string.Empty;
             }
         }
@@ -78,7 +79,7 @@ namespace MaintenanceManagement.DataAccess.Entities
         {
             get
             {
-                return Assignee != null ? Assignee.FullName : string.Empty;
+                return this.Assignee != null ? this.Assignee.FullName : string.Empty;
             }
         }
 

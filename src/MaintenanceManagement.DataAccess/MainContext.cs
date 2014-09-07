@@ -1,10 +1,10 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.Migrations.Model;
-using System.Linq;
-using MaintenanceManagement.DataAccess.Entities;
-
-namespace MaintenanceManagement.DataAccess
+﻿namespace MaintenanceManagement.DataAccess
 {
+    using System.Data.Entity;
+    using System.Linq;
+
+    using MaintenanceManagement.DataAccess.Entities;
+
     /// <summary>
     /// Polaczenie z baza danych
     /// </summary>
@@ -13,7 +13,6 @@ namespace MaintenanceManagement.DataAccess
         public MainContext()
             : base("Name=MainConnectionString")
         {
-
         }
 
         public IDbSet<Area> Areas { get; set; }

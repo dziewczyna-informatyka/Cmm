@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MaintenanceManagement.DataAccess.Entities
+﻿namespace MaintenanceManagement.DataAccess.Entities
 {
+    using System;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     /// <summary>
     /// Klasa pracownik
     /// </summary>
@@ -42,12 +41,12 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public string FullName
         {
-            get { return string.Format("{0} {1}", Name, Surname); }
+            get { return string.Format("{0} {1}", this.Name, this.Surname); }
         }
 
         public override string ToString()
         {
-            return FullName;
+            return this.FullName;
         }
     }
 }

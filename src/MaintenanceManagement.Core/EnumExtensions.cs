@@ -1,12 +1,11 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Resources;
-
-namespace MaintenanceManagement.Core
+﻿namespace MaintenanceManagement.Core
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Reflection;
+    using System.Resources;
+
     public static class EnumExtensions
     {
         public static string EnumToString(this Enum e)

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Security.Cryptography;
-using System.Text;
-
-namespace MaintenanceManagement.Core
+﻿namespace MaintenanceManagement.Core
 {
+    using System;
+    using System.Security.Cryptography;
+    using System.Text;
+
     public static class HashHelper
     {
         public static string GetHash(string str)

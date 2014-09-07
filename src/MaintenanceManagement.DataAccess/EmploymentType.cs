@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using MaintenanceManagement.Core;
-
-namespace MaintenanceManagement.DataAccess
+﻿namespace MaintenanceManagement.DataAccess
 {
+    using System.ComponentModel.DataAnnotations;
+
+    using MaintenanceManagement.Core;
+
     public enum EmploymentType
     {
         [Display(ResourceType = typeof(Common), Name = "EmploymentType_Clinico")]

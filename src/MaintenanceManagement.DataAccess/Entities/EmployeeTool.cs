@@ -1,10 +1,10 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using MaintenanceManagement.Core;
-using Microsoft.SqlServer.Server;
-
-namespace MaintenanceManagement.DataAccess.Entities
+﻿namespace MaintenanceManagement.DataAccess.Entities
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
+    using MaintenanceManagement.Core;
+
     public class EmployeeTool : BaseEntity
     {
         public DateTime StartDate { get; set; }
@@ -25,24 +25,23 @@ namespace MaintenanceManagement.DataAccess.Entities
 
         public string EndReasonName
         {
-            get { return ToolEndReason == null ? string.Empty : ToolEndReason.Value.EnumToString(); }
+            get { return this.ToolEndReason == null ? string.Empty : this.ToolEndReason.Value.EnumToString(); }
         }
 
         public bool IsEnded
         {
-            get { return EndDate != null; }
+            get { return this.EndDate != null; }
         }
 
         public string StartDateText
         {
-            get { return StartDate.ToShortDateString(); }
+            get { return this.StartDate.ToShortDateString(); }
         }
 
         public string EndDateText
         {
-            get { return EndDate != null ? EndDate.Value.ToShortDateString() : string.Empty; }
+            get { return this.EndDate != null ? this.EndDate.Value.ToShortDateString() : string.Empty; }
         }
-
 
         public string ToolTypeName
         {

@@ -1,18 +1,16 @@
-using MaintenanceManagement.Core;
-using MaintenanceManagement.DataAccess.Entities;
-
 namespace MaintenanceManagement.DataAccess.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+
+    using MaintenanceManagement.Core;
+    using MaintenanceManagement.DataAccess.Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MainContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(MainContext context)

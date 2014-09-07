@@ -1,6 +1,4 @@
-﻿using System.Runtime.Remoting.Messaging;
-
-namespace MaintenanceManagement.DataAccess.Entities
+﻿namespace MaintenanceManagement.DataAccess.Entities
 {
     /// <summary>
     /// Encja bazowa
@@ -15,12 +13,12 @@ namespace MaintenanceManagement.DataAccess.Entities
         public override bool Equals(object obj)
         {
             var second = obj as BaseEntity;
-            return second != null && second.Id == Id;
+            return second != null && second.Id == this.Id;
         }
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            return this.Id.GetHashCode();
         }
     }
 }
