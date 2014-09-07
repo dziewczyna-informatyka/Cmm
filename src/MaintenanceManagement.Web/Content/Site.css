@@ -1,17 +1,20 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.body-content {
+    min-height: 600px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.login-form {
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.login-username {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
+}
+
+.login-password {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;   
 }

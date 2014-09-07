@@ -4,12 +4,11 @@
 
     using MaintenanceManagement.Web.Core;
 
-    public class HomeController : BaseController
+    public class AccountController : BaseController
     {
-        public ActionResult Index()
+        [AllowAnonymous]
+        public ActionResult LogIn()
         {
-            ViewBag.Title = "Home Page";
-
             return this.View();
         }
     }

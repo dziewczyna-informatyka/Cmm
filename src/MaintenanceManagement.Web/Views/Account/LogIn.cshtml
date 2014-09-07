@@ -1,0 +1,17 @@
+﻿@model AccountLogInModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="login-form">
+    @using (Html.BeginForm())
+    {
+        <h2>@WebCommon.PleaseLogIn</h2>
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Username, new { id = "username", placeholder = @WebCommon.Username, @class = "form-control login-username" })
+            @Html.PasswordFor(m => m.Password, new { id = "username", placeholder = @WebCommon.Password, @class = "form-control login-password" })
+        </div>
+        <button type="submit" class="btn btn-success btn-block">@WebCommon.LoginSubmit</button>
+    }
+</div>
