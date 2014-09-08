@@ -185,6 +185,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MaintenanceManagement.Core\MaintenanceManagement.Core.csproj">
+      <Project>{9A3DA4E2-3753-4341-BDB3-E2C1090F3CBD}</Project>
+      <Name>MaintenanceManagement.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MaintenanceManagement.DataAccess\MaintenanceManagement.DataAccess.csproj">
       <Project>{2E61B830-A3BD-4938-B138-6D6696DBE604}</Project>
       <Name>MaintenanceManagement.DataAccess</Name>
