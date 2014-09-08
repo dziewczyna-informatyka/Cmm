@@ -4,12 +4,18 @@
     using System.Linq;
 
     using MaintenanceManagement.DataAccess.Entities;
+    using MaintenanceManagement.DataAccess.Migrations;
 
     /// <summary>
     /// Polaczenie z baza danych
     /// </summary>
     public class MainContext : DbContext
     {
+        static MainContext()
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MainContext, Configuration>());
+        }
+
         public MainContext()
             : base("Name=MainConnectionString")
         {
