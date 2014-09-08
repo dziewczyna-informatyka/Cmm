@@ -123,8 +123,14 @@
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
   </data>
+  <data name="InvalidUserOrPassword" xml:space="preserve">
+    <value>Invalid username or password</value>
+  </data>
   <data name="LoginSubmit" xml:space="preserve">
     <value>Submit</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>

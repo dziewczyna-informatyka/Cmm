@@ -2,6 +2,23 @@
     min-height: 600px;
 }
 
+
+.validation-summary-errors {
+    border-radius: 5px;
+    padding: 15px 10px;
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+}
+
+    .validation-summary-errors ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+/* ---------------- Login Form -------------------*/
+
 .login-form {
     width: 300px;
     margin: auto;
@@ -16,5 +33,5 @@
 
 .login-password {
     border-top-left-radius: 0;
-    border-top-right-radius: 0;   
+    border-top-right-radius: 0;
 }
