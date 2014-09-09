@@ -1,4 +1,11 @@
-﻿.body-content {
+﻿@mainColorA: #54b4eb;
+@mainColorB: #2fa4e7;
+@mainColorC: #1d9ce5;
+@grey: #aaaaaa;
+@fontColor: #555555;
+
+
+.body-content {
     min-height: 600px;
 }
 
@@ -11,39 +18,56 @@
     border: 1px solid #ebccd1;
 }
 
-    .validation-summary-errors ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+.validation-summary-errors ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 
 /* ---------------- Grid -------------------------*/
 
-@mainColorA: #54b4eb;
-@mainColorB: #2fa4e7;
-@mainColorC: #1d9ce5;
-
-.cmm-grid {
-    width: 100%;   
+.cmm-grid table {
+    width: 100%;
 }
 
 .cmm-grid th, .cmm-grid td {
-    padding: 10px;    
-}
-
-.cmm-grid tr {
-    border: 1px solid #aaa;
+    padding: 10px;
+    border-left: 1px solid lighten(@grey, 20%);
+    border-right: 1px solid lighten(@grey, 20%);
 }
 
 .cmm-grid thead {
-    background-image: linear-gradient(@mainColorA, @mainColorB  60%, @mainColorC);
-    
-    color: #fff;
+    background-image: linear-gradient(lighten(@mainColorA, 30%), lighten(@mainColorB, 30%) 60%, lighten(@mainColorC, 30%));
 }
 
-.cmm-grid thead tr {
-    border: 1px solid #1d9ce5;
+
+.cmm-grid thead th {
+    border: 1px solid lighten(@mainColorC, 30%);
+}
+
+.cmm-grid tbody tr:nth-child(odd) {
+    background-color: lighten(@grey, 30%);
+}
+
+.cmm-grid tbody tr:nth-child(even) {
+    background-color: lighten(@grey, 35%);
+}
+
+.cmm-grid-footer {
+    padding: 5px 10px 5px 10px;
+    background-color: lighten(@mainColorA, 30%);
+    overflow: auto;
+    border: 1px solid lighten(@mainColorC, 30%);
+}
+
+.cmm-grid-footer .pagination {
+    margin: 0;
+    float: right;
+}
+
+.cmm-grid .cmm-grid-toolbox {
+    padding-bottom: 5px;
 }
 
 /* ---------------- Login Form -------------------*/
