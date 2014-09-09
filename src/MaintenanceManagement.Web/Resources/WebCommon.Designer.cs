@@ -70,6 +70,15 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new element.
+        /// </summary>
+        public static string AddNewTitle {
+            get {
+                return ResourceManager.GetString("AddNewTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CMM.
         /// </summary>
         public static string ApplicationName {
@@ -84,6 +93,15 @@ namespace MaintenanceManagement.Web.Resources {
         public static string AreasPageTitle {
             get {
                 return ResourceManager.GetString("AreasPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit this element.
+        /// </summary>
+        public static string EditTitle {
+            get {
+                return ResourceManager.GetString("EditTitle", resourceCulture);
             }
         }
         
@@ -138,6 +156,15 @@ namespace MaintenanceManagement.Web.Resources {
         public static string PleaseLogIn {
             get {
                 return ResourceManager.GetString("PleaseLogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove this element.
+        /// </summary>
+        public static string RemoveTitle {
+            get {
+                return ResourceManager.GetString("RemoveTitle", resourceCulture);
             }
         }
         

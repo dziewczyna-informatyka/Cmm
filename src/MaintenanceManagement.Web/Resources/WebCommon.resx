@@ -120,11 +120,17 @@
   <data name="AddNew" xml:space="preserve">
     <value>Add ...</value>
   </data>
+  <data name="AddNewTitle" xml:space="preserve">
+    <value>Add new element</value>
+  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>CMM</value>
   </data>
   <data name="AreasPageTitle" xml:space="preserve">
     <value>Areas</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Edit this element</value>
   </data>
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
@@ -143,6 +149,9 @@
   </data>
   <data name="PleaseLogIn" xml:space="preserve">
     <value>Please log in</value>
+  </data>
+  <data name="RemoveTitle" xml:space="preserve">
+    <value>Remove this element</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>Username</value>

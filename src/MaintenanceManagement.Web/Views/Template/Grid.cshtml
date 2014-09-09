@@ -4,7 +4,7 @@
 
 <div class="cmm-grid">
     <div class="cmm-grid-toolbox">
-        <button class="btn btn-default"><i class="fa fa-plus"></i> @WebCommon.AddNew</button>
+        <button class="btn btn-default" title="@WebCommon.AddNewTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-plus"></i> @WebCommon.AddNew</button>
     </div>
     <table>
         <thead>
@@ -15,31 +15,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Name</td>
-                <td>Value</td>
-                <td>Value</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Value</td>
-                <td>Value</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Value</td>
-                <td>Value</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Value</td>
-                <td>Value</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>Value</td>
-                <td>Value</td>
-            </tr>
+            @for (var i = 0; i < 10; i++)
+            {
+                <tr>
+                    <td>Name</td>
+                    <td>Value</td>
+                    <td style="width: 90px;">
+                        <button class="btn btn-default btn-sm" title="@WebCommon.EditTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-default btn-sm" title="@WebCommon.RemoveTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-close"></i></button>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
     <div class="cmm-grid-footer">
