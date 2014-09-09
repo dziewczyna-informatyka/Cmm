@@ -22,8 +22,8 @@
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
                       "~/Content/bootstrap.css"));
 
-            bundles.Add(new StyleBundle("~/Content/custom").Include(
-                     "~/Content/site.css"));
+            bundles.Add(new LessBundle("~/Content/custom").Include(
+                     "~/Content/*.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app/cmmApp.js",
