@@ -1,13 +1,13 @@
 ﻿namespace MaintenanceManagement.Web.Core
 {
-    using System.Web.Mvc;
+    using System.Web.Http;
 
     using MaintenanceManagement.DataAccess;
 
     [Authorize]
-    public abstract class BaseController : Controller
+    public abstract class BaseApiController : ApiController
     {
-        protected BaseController()
+        protected BaseApiController()
         {
             MainContext = new MainContext();
         }
