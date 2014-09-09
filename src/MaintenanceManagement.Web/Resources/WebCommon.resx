@@ -120,6 +120,9 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>CMM</value>
   </data>
+  <data name="AreasPageTitle" xml:space="preserve">
+    <value>Areas</value>
+  </data>
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
   </data>

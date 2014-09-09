@@ -9,6 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace MaintenanceManagement.Web.Resources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -63,6 +66,15 @@ namespace MaintenanceManagement.Web.Resources {
         public static string ApplicationName {
             get {
                 return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Areas.
+        /// </summary>
+        public static string AreasPageTitle {
+            get {
+                return ResourceManager.GetString("AreasPageTitle", resourceCulture);
             }
         }
         

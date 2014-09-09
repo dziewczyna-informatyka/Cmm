@@ -127,7 +127,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\AreasController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Core\BaseApiController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Global.asax.cs">
@@ -149,6 +151,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\cmmApp.js" />
+    <Content Include="Scripts\app\cmmGrid.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -173,6 +176,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\LogIn.cshtml" />
+    <Content Include="Views\Template\Grid.cshtml" />
+    <Content Include="Views\Area\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\WebCommon.resx">
