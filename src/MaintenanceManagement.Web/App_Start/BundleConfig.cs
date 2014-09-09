@@ -20,7 +20,8 @@
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
-                      "~/Content/bootstrap.css"));
+                      "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.css"));
 
             bundles.Add(new LessBundle("~/Content/custom").Include(
                      "~/Content/*.less"));
