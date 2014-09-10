@@ -16,7 +16,7 @@ namespace MaintenanceManagement.DataAccess.Migrations
         protected override void Seed(MainContext context)
         {
             context.Areas.AddOrUpdate(
-                e => e.Id,
+                e => e.Name,
                 new Area { Id = 1, Name = "Kierownictwo" },
                 new Area { Id = 2, Name = "Kontrolling" },
                 new Area { Id = 3, Name = "Wtryskarki" },
@@ -29,13 +29,13 @@ namespace MaintenanceManagement.DataAccess.Migrations
             context.SaveChanges();
 
             context.ToolTypes.AddOrUpdate(
-                e => e.Id,
+                e => e.Name,
                 new ToolType { Id = 1, Name = "Nó¿" },
                 new ToolType { Id = 2, Name = "Imbusy" });
             context.SaveChanges();
 
             context.Employees.AddOrUpdate(
-                e => e.Id,
+                e => e.Login,
                 new Employee
                 {
                     Id = 1,
