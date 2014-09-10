@@ -97,6 +97,15 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete this element.
+        /// </summary>
+        public static string DeleteTitle {
+            get {
+                return ResourceManager.GetString("DeleteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit this element.
         /// </summary>
         public static string EditTitle {
@@ -156,15 +165,6 @@ namespace MaintenanceManagement.Web.Resources {
         public static string PleaseLogIn {
             get {
                 return ResourceManager.GetString("PleaseLogIn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remove this element.
-        /// </summary>
-        public static string RemoveTitle {
-            get {
-                return ResourceManager.GetString("RemoveTitle", resourceCulture);
             }
         }
         

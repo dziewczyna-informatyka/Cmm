@@ -129,6 +129,9 @@
   <data name="AreasPageTitle" xml:space="preserve">
     <value>Areas</value>
   </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Delete this element</value>
+  </data>
   <data name="EditTitle" xml:space="preserve">
     <value>Edit this element</value>
   </data>
@@ -149,9 +152,6 @@
   </data>
   <data name="PleaseLogIn" xml:space="preserve">
     <value>Please log in</value>
-  </data>
-  <data name="RemoveTitle" xml:space="preserve">
-    <value>Remove this element</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>Username</value>

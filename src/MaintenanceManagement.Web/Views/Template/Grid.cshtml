@@ -4,7 +4,7 @@
 
 <div class="cmm-grid">
     <div class="cmm-grid-toolbox">
-        <button class="btn btn-default" title="@WebCommon.AddNewTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-plus"></i> @WebCommon.AddNew</button>
+        <button ng-click="onAddClick()" class="btn btn-default" title="@WebCommon.AddNewTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-plus"></i> @WebCommon.AddNew</button>
     </div>
     <table>
         <thead>
@@ -18,7 +18,7 @@
                 <td ng-repeat="s in schema">{{e[s.field]}}</td>                
                 <td style="width: 90px;">
                     <button ng-click="onEditClick(e)" class="btn btn-default btn-sm" title="@WebCommon.EditTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-pencil"></i></button>
-                    <button ng-click="onRemoveClick(e)" class="btn btn-default btn-sm" title="@WebCommon.RemoveTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-close"></i></button>
+                    <button ng-click="onDeleteClick(e)" class="btn btn-default btn-sm" title="@WebCommon.DeleteTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-close"></i></button>
                 </td>
             </tr>
         </tbody>
