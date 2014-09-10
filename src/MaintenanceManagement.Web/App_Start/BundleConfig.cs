@@ -27,7 +27,9 @@
                      "~/Content/*.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                      "~/Scripts/app/*.js"));
+                      "~/Scripts/app/cmmApp.js",
+                      "~/Scripts/app/apiClient.js",
+                      "~/Scripts/app/cmmGrid.js"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

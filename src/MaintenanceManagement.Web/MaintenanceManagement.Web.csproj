@@ -161,6 +161,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\cmmApp.js" />
     <Content Include="Scripts\app\cmmGrid.js" />
+    <Content Include="Scripts\app\apiClient.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
