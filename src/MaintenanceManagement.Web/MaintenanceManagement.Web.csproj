@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Resource\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Controllers\Api\AreasController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Core\BaseApiController.cs" />
     <Compile Include="Core\BaseController.cs" />
@@ -197,6 +199,7 @@
     <EmbeddedResource Include="Resources\WebCommon.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>WebCommon.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

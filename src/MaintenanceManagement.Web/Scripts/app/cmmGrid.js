@@ -15,7 +15,7 @@
                 };
 
                 scope.onDeleteClick = function(entity) {
-                    if (confirm('are you sure')) {
+                    if (confirm(WebCommon.ConfirmDelete)) {
                         apiClient.delete(scope.resource, entity.id).then(function() {
                             scope.dataSource.splice(scope.dataSource.indexOf(entity), 1);
                         });
