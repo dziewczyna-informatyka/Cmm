@@ -2,7 +2,9 @@
 {
     using System.Web.Mvc;
 
-    public class AreaController : Controller
+    using MaintenanceManagement.Web.Core;
+
+    public class AreaController : BaseController
     {
         // GET: Area
         public ActionResult Index()
