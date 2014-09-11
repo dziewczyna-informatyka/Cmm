@@ -4,9 +4,11 @@
     cmmApp.directive('cmmGrid', ['apiClient', function (apiClient) {
         return {
             link: function (scope, element, attrs) {
-                var openEditor = function () {
-                    $(element).find('#editor').modal({ show: true });
-                };
+                var modal = $(element).find('#editor'),
+                    openEditor = function (title) {
+                        modal.find('.modal-title').text(title);
+                        modal.modal({ show: true });
+                    };
 
                 apiClient.read(scope.resource).then(function (data) {
                     scope.dataSource = data;
@@ -14,7 +16,7 @@
 
 
                 scope.onEditClick = function (entity) {
-                    openEditor();
+                    openEditor(WebCommon.Edit);
                 };
 
                 scope.onDeleteClick = function (entity) {
@@ -26,8 +28,8 @@
                 };
 
                 scope.onAddClick = function (entity) {
-                    openEditor();
-                };               
+                    openEditor(WebCommon.Add);
+                };
             },
             scope: {
                 resource: '=resource',
