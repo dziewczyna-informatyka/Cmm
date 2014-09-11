@@ -22,7 +22,7 @@
                 };
 
                 scope.onEditClick = function (entity) {
-                    scope.currentEntity = entity;
+                    scope.currentEntity = $.extend({}, entity, true);
                     openEditor(WebCommon.Edit);
                 };
 
@@ -33,6 +33,26 @@
                         });
                     }
                 };
+
+                scope.onSaveClick = function () {
+                    if (scope.currentEntity.id) {                        
+                        var e = null;
+
+                        for (var i in scope.dataSource) {
+                            if (scope.dataSource[i].id == scope.currentEntity.id) {
+                                e = scope.dataSource[i];
+                            }
+                        }
+                        
+                        $.extend(e, scope.currentEntity, true);
+
+                        // api update
+                    } else {
+                        // api insert
+
+                        scope.dataSource.push(scope.currentEntity);
+                    }
+                }
             },
             scope: {
                 resource: '=resource',
