@@ -3,8 +3,7 @@
 
     cmmApp.directive('cmmEditor', function () {
         return {
-            link: function (scope, element, attrs) {
-                console.log(scope.schema);
+            link: function (scope, element, attrs) {               
             },
             scope: {
                 model: '=',

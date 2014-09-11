@@ -10,12 +10,19 @@
                         modal.modal({ show: true });
                     };
 
+                scope.currentEntity = null;
+
                 apiClient.read(scope.resource).then(function (data) {
                     scope.dataSource = data;
                 });
 
+                scope.onAddClick = function () {
+                    scope.currentEntity = {};
+                    openEditor(WebCommon.Add);
+                };
 
                 scope.onEditClick = function (entity) {
+                    scope.currentEntity = entity;
                     openEditor(WebCommon.Edit);
                 };
 
@@ -25,10 +32,6 @@
                             scope.dataSource.splice(scope.dataSource.indexOf(entity), 1);
                         });
                     }
-                };
-
-                scope.onAddClick = function (entity) {
-                    openEditor(WebCommon.Add);
                 };
             },
             scope: {
