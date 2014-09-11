@@ -4,12 +4,13 @@
     cmmApp.directive('cmmEditor', function () {
         return {
             link: function (scope, element, attrs) {
-
+                console.log(scope.schema);
             },
             scope: {
-                model: '=model',
-                schema: '=schema'
+                model: '=',
+                schema: '='
             },
+            restrict: 'E',
             templateUrl: '/Template/Editor'
         };
     });
