@@ -10,5 +10,10 @@
         {
             return this.View();
         }
+
+        public ActionResult Editor()
+        {
+            return this.View();
+        }
     }
 }

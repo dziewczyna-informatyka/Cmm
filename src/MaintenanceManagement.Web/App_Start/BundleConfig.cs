@@ -29,6 +29,7 @@
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app/cmmApp.js",
                       "~/Scripts/app/apiClient.js",
+                      "~/Scripts/app/cmmEditor.js",
                       "~/Scripts/app/cmmGrid.js"));
 
             // Set EnableOptimizations to false for debugging. For more information,
