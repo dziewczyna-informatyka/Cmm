@@ -2,6 +2,24 @@
     Layout = null;
 }
 
+<div class="modal fade" id="editor">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <cmm-editor />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">@WebCommon.Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">@WebCommon.Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div class="cmm-grid">
     <div class="cmm-grid-toolbox">
         <button ng-click="onAddClick()" class="btn btn-default" title="@WebCommon.AddNewTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-plus"></i> @WebCommon.AddNew</button>
