@@ -3,9 +3,7 @@
 
     cmmApp.directive('cmmButton', [function () {
         return {
-            link: function (scope, element, attrs) {
-                console.log(scope.icon);
-
+            link: function (scope, element, attrs) {               
                 element.ready(function () {
                     $(element).find("button").attr('title', scope.tooltip).tooltip();
                 });
