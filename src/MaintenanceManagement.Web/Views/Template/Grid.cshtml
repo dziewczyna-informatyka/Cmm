@@ -10,7 +10,7 @@
                 <h4 class="modal-title">Modal title</h4>
             </div>
             <div class="modal-body">
-                <cmm-editor />
+                <cmm-editor ></cmm-editor>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">@WebCommon.Save</button>
@@ -22,21 +22,21 @@
 
 <div class="cmm-grid">
     <div class="cmm-grid-toolbox">
-        <button ng-click="onAddClick()" class="btn btn-default" title="@WebCommon.AddNewTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-plus"></i> @WebCommon.AddNew</button>
+        <cmm-button ng-click="onAddClick()" tooltip="@WebCommon.AddNewTitle" text="@WebCommon.AddNew" icon="plus" />
     </div>
     <table>
         <thead>
             <tr>
-                <th ng-repeat="s in schema">{{s.title}}</th>                
-                <th>Action</th>
+                <th ng-repeat="s in schema">{{s.title}}</th>
+                <th style="width: 90px;">Action</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="e in dataSource">
-                <td ng-repeat="s in schema">{{e[s.field]}}</td>                
-                <td style="width: 90px;">
-                    <button ng-click="onEditClick(e)" class="btn btn-default btn-sm" title="@WebCommon.EditTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-pencil"></i></button>
-                    <button ng-click="onDeleteClick(e)" class="btn btn-default btn-sm" title="@WebCommon.DeleteTitle" data-toggle="tooltip" data-placement="top" data-rel="tooltip"><i class="fa fa-close"></i></button>
+                <td ng-repeat="s in schema">{{e[s.field]}}</td>
+                <td>
+                    <cmm-button ng-click="onEditClick(e)" extra-class="btn-sm" tooltip="@WebCommon.EditTitle" icon="pencil" ></cmm-button>
+                    <cmm-button ng-click="onDeleteClick(e)" extra-class="btn-sm" tooltip="@WebCommon.DeleteTitle" icon="close" ></cmm-button>
                 </td>
             </tr>
         </tbody>

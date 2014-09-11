@@ -162,6 +162,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\cmmApp.js" />
+    <Content Include="Scripts\app\cmmButton.js" />
     <Content Include="Scripts\app\cmmEditor.js" />
     <Content Include="Scripts\app\cmmGrid.js" />
     <Content Include="Scripts\app\apiClient.js" />

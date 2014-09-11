@@ -27,12 +27,7 @@
 
                 scope.onAddClick = function (entity) {
                     openEditor();
-                };
-
-                element.ready(function () {
-                    element.find("[data-rel='tooltip']").tooltip();
-                });
-
+                };               
             },
             scope: {
                 resource: '=resource',
