@@ -27,13 +27,13 @@
     <table>
         <thead>
             <tr>
-                <th ng-repeat="s in schema">{{s.title}}</th>
+                <th ng-repeat="s in schema | filter: columnFilter">{{s.title}}</th>
                 <th style="width: 90px;">@WebCommon.Action</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="e in dataSource">
-                <td ng-repeat="s in schema">{{resolveField(e, s.field)}}</td>
+                <td ng-repeat="s in schema | filter: columnFilter">{{resolveField(e, s.field)}}</td>
                 <td>
                     <cmm-button ng-click="onEditClick(e)" extra-class="btn-sm" tooltip="@WebCommon.EditTitle" icon="pencil" ></cmm-button>
                     <cmm-button ng-click="onDeleteClick(e)" extra-class="btn-sm" tooltip="@WebCommon.DeleteTitle" icon="close" ></cmm-button>

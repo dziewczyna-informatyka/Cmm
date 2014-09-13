@@ -18,9 +18,13 @@
 
                 // Methods definitions
 
-                scope.resolveField = function (model, field) {
+                scope.columnFilter = function(v, i) {
+                    return !v.isHidden;
+                };
+
+                scope.resolveField = function(model, field) {
                     return scope.$eval('m.' + field, { m: model });
-                }
+                };
 
                 scope.onAddClick = function () {
                     scope.currentEntity = {};

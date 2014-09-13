@@ -148,7 +148,7 @@
     <value>Rodzaj zatrudnienia</value>
   </data>
   <data name="Employee_HomePhone" xml:space="preserve">
-    <value>telefon domowy</value>
+    <value>Telefon domowy</value>
   </data>
   <data name="Employee_IsAdmin" xml:space="preserve">
     <value>Administrator</value>
