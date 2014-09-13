@@ -13,7 +13,7 @@
                     </div>
                     
                     <div ng-if="getFieldType(s).type == 'date'">
-                        <input id="f-{{s.field}}" type="text" cmm-date-picker class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
+                        <cmm-date-picker model="model" schema="s"></cmm-date-picker>
                     </div>
                     
                     <div ng-if="getFieldType(s).type == 'dropdown'">

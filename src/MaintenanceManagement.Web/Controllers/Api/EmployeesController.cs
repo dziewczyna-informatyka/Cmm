@@ -26,7 +26,7 @@
                             Surname = a.Surname,
                             Address = a.Address,
                             Area = new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
-                            EmploymentStart = a.EmploymentStart,
+                            EmploymentStart = a.EmploymentStart.ToCmmDate(),
                             EmploymentType = a.EmploymentType.ToIdNamePair(),
                             HomePhone = a.HomePhone,
                             IsAdmin = a.IsAdmin,
@@ -48,7 +48,7 @@
                     e.Name = m.Name;
                     e.Address = m.Address;
                     e.Area = MainContext.Areas.Single(a => a.Id == m.Area.Id);
-                    e.EmploymentStart = m.EmploymentStart;
+                    e.EmploymentStart = m.EmploymentStart.ParseDateTime();
                     e.EmploymentType = EnumExtensions.FromIdNamePair<EmploymentType>(m.EmploymentType);
                     e.HomePhone = m.HomePhone;
                     e.IsAdmin = m.IsAdmin;
@@ -74,7 +74,7 @@
                     {
                         Address = model.Address,
                         Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
-                        EmploymentStart = model.EmploymentStart,
+                        EmploymentStart = model.EmploymentStart.ParseDateTime(),
                         EmploymentType = EnumExtensions.FromIdNamePair<EmploymentType>(model.EmploymentType),
                         HomePhone = model.HomePhone,
                         IsAdmin = model.IsAdmin,

@@ -2,6 +2,6 @@
     Layout = null;
 }
 
-<select class="form-control">
+<select id="f-{{s.field}}" class="form-control">
     <option ng-repeat="i in dataSource" ng-value="i.id">{{i.name}}</option>
 </select>

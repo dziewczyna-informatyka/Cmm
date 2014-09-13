@@ -12,7 +12,7 @@
 
         public string Surname { get; set; }
 
-        public DateTime? EmploymentStart { get; set; }
+        public string EmploymentStart { get; set; }
 
         public string Address { get; set; }
 

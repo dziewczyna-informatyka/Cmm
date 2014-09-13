@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="IdNamePair.cs" />
     <Compile Include="IIdNamePair.cs" />
     <Compile Include="Resources\Common.Designer.cs">
