@@ -6,15 +6,14 @@
             link: function (scope, element, attrs) {
                 scope.getFieldType = function(e) {
                     if (!e.dataType) {
-                        return 'text';
+                        return { type: 'text' };
                     }
 
                     if (typeof e.dataType == 'string') {
-                        return e.dataType;
+                        return { type: e.dataType };
                     }
 
-                    scope.resource = e.resource;
-                    return 'dropDown';
+                    return { type: 'dropdown', resource: e.dataType.resource };
                 };
             },
             scope: {

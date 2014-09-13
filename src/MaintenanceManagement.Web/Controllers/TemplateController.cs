@@ -15,5 +15,10 @@
         {
             return this.View();
         }
+
+        public ActionResult DropDown()
+        {
+            return this.View();
+        }
     }
 }

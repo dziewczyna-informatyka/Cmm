@@ -5,7 +5,7 @@
         '$http', function ($http) {
 
             return {
-                read: function (resource) {
+                get: function (resource) {
                     return $http.get('/api-v1/' + resource).then(function (result) {
                         return result.data;
                     });

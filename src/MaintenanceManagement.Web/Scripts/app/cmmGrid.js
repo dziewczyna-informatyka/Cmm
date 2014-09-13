@@ -12,7 +12,7 @@
 
                 scope.currentEntity = null;
 
-                apiClient.read(scope.resource).then(function (data) {
+                apiClient.get(scope.resource).then(function (data) {
                     scope.dataSource = data;
                 });
 
@@ -22,8 +22,8 @@
                     return !v.isHidden;
                 };
 
-                scope.resolveField = function(model, field) {
-                    return scope.$eval('m.' + field, { m: model });
+                scope.resolveField = function(model, s) {
+                    return scope.$eval('m.' + (s.displayField || s.field), { m: model });
                 };
 
                 scope.onAddClick = function () {

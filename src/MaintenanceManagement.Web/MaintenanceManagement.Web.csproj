@@ -186,6 +186,7 @@
     <Content Include="Scripts\app\cmmApp.js" />
     <Content Include="Scripts\app\cmmButton.js" />
     <Content Include="Scripts\app\cmmDatePicker.js" />
+    <Content Include="Scripts\app\cmmDropDown.js" />
     <Content Include="Scripts\app\cmmEditor.js" />
     <Content Include="Scripts\app\cmmGrid.js" />
     <Content Include="Scripts\app\apiClient.js" />
@@ -223,6 +224,7 @@
     <Content Include="Views\Template\Editor.cshtml" />
     <Content Include="Views\ToolType\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Template\DropDown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\WebCommon.pl-PL.resx">

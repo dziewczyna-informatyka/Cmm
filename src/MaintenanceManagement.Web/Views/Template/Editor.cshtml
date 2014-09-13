@@ -8,16 +8,16 @@
             <div class="form-group" ng-repeat="s in schema">
                 <label for="f-{{s.field}}" class="col-md-3 control-label">{{s.title}}</label>
                 <div class="col-md-9">
-                    <div ng-if="getFieldType(s) == 'text'">
+                    <div ng-if="getFieldType(s).type == 'text'">
                         <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
                     </div>
                     
-                    <div ng-if="getFieldType(s) == 'date'">
+                    <div ng-if="getFieldType(s).type == 'date'">
                         <input id="f-{{s.field}}" type="text" cmm-date-picker class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
                     </div>
                     
-                    <div ng-if="getFieldType(s) == 'dropDown'">
-                        <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
+                    <div ng-if="getFieldType(s).type == 'dropdown'">
+                        <cmm-drop-down model="model[s.field]" resource="getFieldType(s).resource"></cmm-drop-down>
                     </div>
                 </div>
             </div>

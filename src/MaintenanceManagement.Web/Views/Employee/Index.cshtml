@@ -18,12 +18,12 @@
         schema += "{ field: 'address', title: '" + Common.Employee_Address + "', isHidden: 'true'},";
         schema += "{ field: 'mobilePhone', title: '" + Common.Employee_MobilePhone + "'},";
         schema += "{ field: 'homePhone', title: '" + Common.Employee_HomePhone + "'},";
-        schema += "{ field: 'jobTitle.name', title: '" + Common.Employee_JobTitle + "', dataType: { resource: 'JobTitles' } },";
-        schema += "{ field: 'employmentType.name', title: '" + Common.Employee_EmploymentType + "', isHidden: 'true', dataType: { resource: 'EmploymentTypes' }},";
+        schema += "{ field: 'jobTitle', displayField: 'jobTitle.name', title: '" + Common.Employee_JobTitle + "', dataType: { resource: 'JobTitles' } },";
+        schema += "{ field: 'employmentType', displayField: 'employmentType.name', title: '" + Common.Employee_EmploymentType + "', isHidden: 'true', dataType: { resource: 'EmploymentTypes' }},";
         schema += "{ field: 'login', title: '" + Common.Employee_Login + "'},";
-        schema += "{ field: 'workSchedule.name', title: '" + Common.Employee_WorkSchedule + "', isHidden: 'true', dataType: { resource: 'WorkSchedules' }},";
-        schema += "{ field: 'area.name', title: '" + Common.Employee_Area + "', dataType: { resource: 'Areas' }},";
-        schema += "{ field: 'team.name', title: '" + Common.Employee_Team + "', dataType: { resource: 'Teams' }},";
+        schema += "{ field: 'workSchedule', displayField: 'workSchedule.name', title: '" + Common.Employee_WorkSchedule + "', isHidden: 'true', dataType: { resource: 'WorkSchedules' }},";
+        schema += "{ field: 'area', displayField: 'area.name', title: '" + Common.Employee_Area + "', dataType: { resource: 'Areas' }},";
+        schema += "{ field: 'team', displayField: 'team.name', title: '" + Common.Employee_Team + "', dataType: { resource: 'Teams' }},";
         schema += "{ field: 'isAdmin', title: '" + Common.Employee_IsAdmin + "', isHidden: 'true', dataType: 'bool'}";
         schema += "]";
       
