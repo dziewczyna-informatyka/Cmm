@@ -56,8 +56,8 @@
                 }
             },
             scope: {
-                resource: '=resource',
-                schema: '=schema'
+                resource: '@',
+                schema: '='
             },
             restrict: 'E',
             templateUrl: '/Template/Grid'
