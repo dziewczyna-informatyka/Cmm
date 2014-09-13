@@ -16,6 +16,12 @@
                     scope.dataSource = data;
                 });
 
+                // Methods definitions
+
+                scope.resolveField = function (model, field) {
+                    return scope.$eval('m.' + field, { m: model });
+                }
+
                 scope.onAddClick = function () {
                     scope.currentEntity = {};
                     openEditor(WebCommon.Add);
