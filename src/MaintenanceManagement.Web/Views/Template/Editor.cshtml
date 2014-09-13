@@ -17,7 +17,7 @@
                     </div>
                     
                     <div ng-if="getFieldType(s).type == 'dropdown'">
-                        <cmm-drop-down model="model[s.field]" resource="getFieldType(s).resource"></cmm-drop-down>
+                        <cmm-drop-down model="model" field="s.field" resource="getFieldType(s).resource"></cmm-drop-down>
                     </div>
                 </div>
             </div>
