@@ -1,7 +1,5 @@
 ﻿namespace MaintenanceManagement.Web.Models.Api
 {
-    using System;
-
     using MaintenanceManagement.Core;
 
     public class EmployeeGetModel

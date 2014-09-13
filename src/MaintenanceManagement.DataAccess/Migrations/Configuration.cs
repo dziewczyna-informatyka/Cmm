@@ -1,10 +1,6 @@
 namespace MaintenanceManagement.DataAccess.Migrations
 {
     using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    using MaintenanceManagement.Core;
-    using MaintenanceManagement.DataAccess.Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MainContext>
     {
