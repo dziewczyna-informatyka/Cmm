@@ -19,7 +19,7 @@
                 select.on('change', function(e) {
                     for (var i in scope.dataSource) {
                         if (scope.dataSource[i].id == select.val()) {
-                            scope.model = scope.dataSource[i];
+                            scope.model = $.extend({}, scope.dataSource[i], true);
                         }
                     }
                 });
