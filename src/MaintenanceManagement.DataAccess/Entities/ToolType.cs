@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
 
     using MaintenanceManagement.Core;
+    using MaintenanceManagement.Core.Resources;
 
     public class ToolType : BaseEntity
     {

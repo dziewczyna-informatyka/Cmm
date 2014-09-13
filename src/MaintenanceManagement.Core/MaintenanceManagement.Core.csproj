@@ -40,12 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common.Designer.cs">
+    <Compile Include="Resources\Common.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
-    <Compile Include="Common.pl-PL.Designer.cs">
+    <Compile Include="Resources\Common.pl-PL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.pl-PL.resx</DependentUpon>
@@ -56,11 +56,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Common.pl-PL.resx">
+    <EmbeddedResource Include="Resources\Common.pl-PL.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.pl-PL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common.resx">
+    <EmbeddedResource Include="Resources\Common.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.Designer.cs</LastGenOutput>
     </EmbeddedResource>
