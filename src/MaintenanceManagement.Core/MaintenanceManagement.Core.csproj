@@ -47,6 +47,7 @@
     </Compile>
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="HashHelper.cs" />
+    <Compile Include="IIdentifiable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

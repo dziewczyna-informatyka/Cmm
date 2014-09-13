@@ -1,8 +1,11 @@
 ﻿namespace MaintenanceManagement.DataAccess
 {
+    using System;
     using System.Data.Entity;
     using System.Linq;
+    using System.Threading.Tasks;
 
+    using MaintenanceManagement.Core;
     using MaintenanceManagement.DataAccess.Entities;
     using MaintenanceManagement.DataAccess.Migrations;
 
@@ -31,13 +34,30 @@
 
         public IDbSet<ToolType> ToolTypes { get; set; }
 
-        public T UpdateDetached<T>(T entity) where T : BaseEntity
+        public async Task<int> Insert<TEntity>(TEntity entity) where TEntity : BaseEntity
         {
-            var databaseEntity = Set<T>().Single(e => e.Id == entity.Id);
-            var entry = ChangeTracker.Entries<T>().Single(e => e.Entity.Id == entity.Id);
-            entry.CurrentValues.SetValues(entity);
+            this.Set<TEntity>().Add(entity);
+            await this.SaveChangesAsync();
 
-            return databaseEntity;
+            return entity.Id;
+        }
+
+        public async Task DeleteById<TEntity>(int id) where TEntity : BaseEntity
+        {
+            var entity = await this.Set<TEntity>().SingleOrDefaultAsync(e => e.Id == id);
+            this.Set<TEntity>().Remove(entity);
+            await this.SaveChangesAsync();
+        }
+
+        public async Task Update<TEntity, TModel>(TModel model, Action<TModel, TEntity> mapper)
+            where TEntity : BaseEntity
+            where TModel : IIdentifiable
+        {
+            var entity = await this.Set<TEntity>().SingleOrDefaultAsync(e => e.Id == model.Id);
+
+            mapper(model, entity);
+
+            await this.SaveChangesAsync();
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿namespace MaintenanceManagement.Web.Models.Api
 {
-    public class AreaPutModel
+    using MaintenanceManagement.Core;
+
+    public class AreaPutModel : IIdentifiable
     {
         public int Id { get; set; }
 

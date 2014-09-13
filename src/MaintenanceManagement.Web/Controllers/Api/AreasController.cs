@@ -9,6 +9,8 @@
     using MaintenanceManagement.Web.Core;
     using MaintenanceManagement.Web.Models.Api;
 
+    using WebGrease.Css;
+
     public class AreasController : BaseApiController
     {
         public IEnumerable<AreaGetModel> Get()
@@ -19,29 +21,20 @@
 
         public async Task<BasePutResponse> Put(AreaPutModel model)
         {
-            var entity = await MainContext.Areas.SingleOrDefaultAsync(e => e.Id == model.Id);
-
-            entity.Name = model.Name;
-
-            await MainContext.SaveChangesAsync();
+            await MainContext.Update<Area, AreaPutModel>(model, (m, e) => e.Name = m.Name);
 
             return new BasePutResponse();
         }
 
         public async Task<BasePostResponse> Post(AreaPostModel model)
         {
-            var entity = MainContext.Areas.Add(new Area { Name = model.Name });
-            await MainContext.SaveChangesAsync();
-
-            return new BasePostResponse { Id = entity.Id };
+            var id = await MainContext.Insert(new Area { Name = model.Name });
+            return new BasePostResponse { Id = id };
         }
 
         public async Task<BaseDeleteResponse> Delete(int id)
         {
-            var entity = await MainContext.Areas.SingleOrDefaultAsync(e => e.Id == id);
-            MainContext.Areas.Remove(entity);
-            await MainContext.SaveChangesAsync();
-
+            await MainContext.DeleteById<Area>(id);
             return new BaseDeleteResponse();
         }
     }
