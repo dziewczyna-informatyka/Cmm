@@ -8,7 +8,17 @@
             <div class="form-group" ng-repeat="s in schema">
                 <label for="f-{{s.field}}" class="col-md-3 control-label">{{s.title}}</label>
                 <div class="col-md-9">
-                    <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
+                    <div ng-if="getFieldType(s) == 'text'">
+                        <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
+                    </div>
+                    
+                    <div ng-if="getFieldType(s) == 'date'">
+                        <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
+                    </div>
+                    
+                    <div ng-if="getFieldType(s) == 'dropDown'">
+                        <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
+                    </div>
                 </div>
             </div>
         </form>

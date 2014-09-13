@@ -1,6 +1,8 @@
 ﻿namespace MaintenanceManagement.Core
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Reflection;
@@ -21,6 +23,11 @@
             return e == null
                        ? new IdNamePair { Id = -1, Name = string.Empty }
                        : new IdNamePair { Id = Convert.ToInt32(e), Name = e.EnumToString() };
+        }
+
+        public static IEnumerable<IdNamePair> GetAllIdNamePairs<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<Enum>().Select(t => t.ToIdNamePair()).ToList();
         }
     }
 }

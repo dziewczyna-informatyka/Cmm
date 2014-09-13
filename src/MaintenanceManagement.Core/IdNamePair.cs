@@ -1,6 +1,6 @@
 ﻿namespace MaintenanceManagement.Core
 {
-    public class IdNamePair
+    public class IdNamePair : IIdNamePair
     {       
         public int Id { get; set; }
 

@@ -1,6 +1,8 @@
 ﻿namespace MaintenanceManagement.Web.Models.Api
 {
-    public class AreaGetModel
+    using MaintenanceManagement.Core;
+
+    public class AreaGetModel : IIdNamePair
     {
         public int Id { get; set; }
 
