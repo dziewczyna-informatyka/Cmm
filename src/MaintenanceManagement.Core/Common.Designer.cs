@@ -61,7 +61,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nazwa obszaru.
+        ///   Looks up a localized string similar to Area Name.
         /// </summary>
         public static string Area_Name {
             get {
@@ -70,7 +70,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anulowane.
+        ///   Looks up a localized string similar to Canceled.
         /// </summary>
         public static string EmployeeTaskStatus_Canceled {
             get {
@@ -79,7 +79,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zakończone.
+        ///   Looks up a localized string similar to Done.
         /// </summary>
         public static string EmployeeTaskStatus_Done {
             get {
@@ -88,7 +88,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to W realizacji.
+        ///   Looks up a localized string similar to In Progress.
         /// </summary>
         public static string EmployeeTaskStatus_InProgress {
             get {
@@ -97,7 +97,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zaplanowane.
+        ///   Looks up a localized string similar to Planned.
         /// </summary>
         public static string EmployeeTaskStatus_Planned {
             get {
@@ -106,7 +106,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Propozycja.
+        ///   Looks up a localized string similar to Suggestion.
         /// </summary>
         public static string EmployeeTaskStatus_Suggestion {
             get {
@@ -151,7 +151,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lider obszaru.
+        ///   Looks up a localized string similar to Area Leader.
         /// </summary>
         public static string JobTitle_Area_Leader {
             get {
@@ -160,7 +160,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pracownik kontrollingu.
+        ///   Looks up a localized string similar to Controlling Worker.
         /// </summary>
         public static string JobTitle_Controlling_Worker {
             get {
@@ -169,7 +169,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Elektryk.
+        ///   Looks up a localized string similar to Electricial.
         /// </summary>
         public static string JobTitle_Electrician {
             get {
@@ -178,7 +178,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pracownik infrastruktóry.
+        ///   Looks up a localized string similar to Facility Worker.
         /// </summary>
         public static string JobTitle_Facility_Worker {
             get {
@@ -187,7 +187,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kierownik.
+        ///   Looks up a localized string similar to Manager.
         /// </summary>
         public static string JobTitle_Manager {
             get {
@@ -196,7 +196,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mechanik.
+        ///   Looks up a localized string similar to Mechanic.
         /// </summary>
         public static string JobTitle_Mechanic {
             get {
@@ -205,7 +205,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Szef zmiany.
+        ///   Looks up a localized string similar to Shift Leader.
         /// </summary>
         public static string JobTitle_Shift_Leader {
             get {
@@ -214,7 +214,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pracownik warsztatu.
+        ///   Looks up a localized string similar to Workshop Worker.
         /// </summary>
         public static string JobTitle_Workshop_Worker {
             get {
@@ -259,7 +259,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Infrastruktura.
+        ///   Looks up a localized string similar to Infrastructure.
         /// </summary>
         public static string Team_Infrastructure {
             get {
@@ -268,7 +268,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nie dotyczy.
+        ///   Looks up a localized string similar to Not Available.
         /// </summary>
         public static string Team_NA {
             get {
@@ -277,7 +277,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warsztat.
+        ///   Looks up a localized string similar to Workshop.
         /// </summary>
         public static string Team_Workshop {
             get {
@@ -286,7 +286,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uszkodzenie.
+        ///   Looks up a localized string similar to Damaged.
         /// </summary>
         public static string ToolEndReason_Damage {
             get {
@@ -295,7 +295,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wymiana.
+        ///   Looks up a localized string similar to Exchange.
         /// </summary>
         public static string ToolEndReason_Exchange {
             get {
@@ -304,7 +304,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nazwa narzedzia.
+        ///   Looks up a localized string similar to Tool Name.
         /// </summary>
         public static string ToolType_Name {
             get {
@@ -313,7 +313,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Czterobrygadówka.
+        ///   Looks up a localized string similar to Continous.
         /// </summary>
         public static string WorkSchedule_Continuous {
             get {
@@ -322,7 +322,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Jedna zmiana.
+        ///   Looks up a localized string similar to Regular.
         /// </summary>
         public static string WorkSchedule_Regular {
             get {
@@ -331,7 +331,7 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dwie zmiany.
+        ///   Looks up a localized string similar to Two Shifts.
         /// </summary>
         public static string WorkSchedule_TwoShifts {
             get {

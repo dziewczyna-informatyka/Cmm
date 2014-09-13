@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Area_Name" xml:space="preserve">
-    <value>Area Name</value>
+    <value>Nazwa obszaru</value>
   </data>
   <data name="EmployeeTaskStatus_Canceled" xml:space="preserve">
-    <value>Canceled</value>
+    <value>Anulowane</value>
   </data>
   <data name="EmployeeTaskStatus_Done" xml:space="preserve">
-    <value>Done</value>
+    <value>Zakończone</value>
   </data>
   <data name="EmployeeTaskStatus_InProgress" xml:space="preserve">
-    <value>In Progress</value>
+    <value>W realizacji</value>
   </data>
   <data name="EmployeeTaskStatus_Planned" xml:space="preserve">
-    <value>Planned</value>
+    <value>Zaplanowane</value>
   </data>
   <data name="EmployeeTaskStatus_Suggestion" xml:space="preserve">
-    <value>Suggestion</value>
+    <value>Propozycja</value>
   </data>
   <data name="EmploymentType_Clinico" xml:space="preserve">
     <value>Clinico</value>
@@ -148,28 +148,28 @@
     <value>Randstad</value>
   </data>
   <data name="JobTitle_Area_Leader" xml:space="preserve">
-    <value>Area Leader</value>
+    <value>Lider obszaru</value>
   </data>
   <data name="JobTitle_Controlling_Worker" xml:space="preserve">
-    <value>Controlling Worker</value>
+    <value>Pracownik kontrollingu</value>
   </data>
   <data name="JobTitle_Electrician" xml:space="preserve">
-    <value>Electricial</value>
+    <value>Elektryk</value>
   </data>
   <data name="JobTitle_Facility_Worker" xml:space="preserve">
-    <value>Facility Worker</value>
+    <value>Pracownik infrastruktóry</value>
   </data>
   <data name="JobTitle_Manager" xml:space="preserve">
-    <value>Manager</value>
+    <value>Kierownik</value>
   </data>
   <data name="JobTitle_Mechanic" xml:space="preserve">
-    <value>Mechanic</value>
+    <value>Mechanik</value>
   </data>
   <data name="JobTitle_Shift_Leader" xml:space="preserve">
-    <value>Shift Leader</value>
+    <value>Szef zmiany</value>
   </data>
   <data name="JobTitle_Workshop_Worker" xml:space="preserve">
-    <value>Workshop Worker</value>
+    <value>Pracownik warsztatu</value>
   </data>
   <data name="Team_A" xml:space="preserve">
     <value>A</value>
@@ -184,30 +184,30 @@
     <value>D</value>
   </data>
   <data name="Team_Infrastructure" xml:space="preserve">
-    <value>Infrastructure</value>
+    <value>Infrastruktura</value>
   </data>
   <data name="Team_NA" xml:space="preserve">
-    <value>Not Available</value>
+    <value>Nie dotyczy</value>
   </data>
   <data name="Team_Workshop" xml:space="preserve">
-    <value>Workshop</value>
+    <value>Warsztat</value>
   </data>
   <data name="ToolEndReason_Damage" xml:space="preserve">
-    <value>Damaged</value>
+    <value>Uszkodzenie</value>
   </data>
   <data name="ToolEndReason_Exchange" xml:space="preserve">
-    <value>Exchange</value>
+    <value>Wymiana</value>
   </data>
   <data name="ToolType_Name" xml:space="preserve">
-    <value>Tool Name</value>
+    <value>Nazwa narzedzia</value>
   </data>
   <data name="WorkSchedule_Continuous" xml:space="preserve">
-    <value>Continous</value>
+    <value>Czterobrygadówka</value>
   </data>
   <data name="WorkSchedule_Regular" xml:space="preserve">
-    <value>Regular</value>
+    <value>Jedna zmiana</value>
   </data>
   <data name="WorkSchedule_TwoShifts" xml:space="preserve">
-    <value>Two Shifts</value>
+    <value>Dwie zmiany</value>
   </data>
 </root>
