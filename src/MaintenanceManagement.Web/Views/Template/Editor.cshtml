@@ -16,6 +16,15 @@
                         <textarea id="f-{{s.field}}" class="form-control" rows="5" ng-model="model[s.field]"></textarea>                      
                     </div>
                     
+                    <div ng-if="getFieldType(s).type == 'bool'">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="f-{{s.field}}" ng-model="model[s.field]" />
+                                {{s.title}}
+                            </label>
+                        </div>
+                    </div>
+                    
                     <div ng-if="getFieldType(s).type == 'date'">
                         <cmm-date-picker model="model" schema="s"></cmm-date-picker>
                     </div>
