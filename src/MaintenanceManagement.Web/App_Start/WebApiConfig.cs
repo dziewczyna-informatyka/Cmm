@@ -16,7 +16,6 @@
             settings.Formatting = Formatting.Indented;
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-
             // Web API routes
             config.MapHttpAttributeRoutes();
 

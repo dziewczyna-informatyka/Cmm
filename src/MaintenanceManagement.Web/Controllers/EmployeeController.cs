@@ -4,7 +4,7 @@
 
     using MaintenanceManagement.Web.Core;
 
-    public class ToolTypeController : BaseController
+    public class EmployeeController : BaseController
     {
         // GET: ToolType
         public ActionResult Index()

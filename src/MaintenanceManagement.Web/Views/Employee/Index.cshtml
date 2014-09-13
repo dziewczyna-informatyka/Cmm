@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = WebCommon.EmployeePageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@WebCommon.EmployeePageTitle</h2>
+
+<div>
+    <cmm-grid resource="Employees" schema="[{ field: 'name', title: '@Common.Employee_Name' }]"></cmm-grid>
+</div>

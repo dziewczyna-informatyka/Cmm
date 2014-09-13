@@ -150,6 +150,9 @@
   <data name="EditTitle" xml:space="preserve">
     <value>Edytuj element</value>
   </data>
+  <data name="EmployeePageTitle" xml:space="preserve">
+    <value>Pracownicy</value>
+  </data>
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
   </data>

@@ -135,6 +135,9 @@
   <data name="EmployeeTaskStatus_Suggestion" xml:space="preserve">
     <value>Propozycja</value>
   </data>
+  <data name="Employee_Name" xml:space="preserve">
+    <value>Imię</value>
+  </data>
   <data name="EmploymentType_Clinico" xml:space="preserve">
     <value>Clinico</value>
   </data>

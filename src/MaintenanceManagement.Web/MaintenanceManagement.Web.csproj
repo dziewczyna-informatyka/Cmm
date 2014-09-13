@@ -133,12 +133,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\EmployeesController.cs" />
     <Compile Include="Controllers\Api\ToolTypesController.cs" />
     <Compile Include="Controllers\Api\AreasController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ToolTypeController.cs" />
     <Compile Include="Core\BaseApiController.cs" />
     <Compile Include="Core\BaseController.cs" />
@@ -146,10 +148,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountLogInModel.cs" />
+    <Compile Include="Models\Api\EmployeeGetModel.cs" />
     <Compile Include="Models\Api\ToolTypeGetModel.cs" />
     <Compile Include="Models\Api\AreaGetModel.cs" />
+    <Compile Include="Models\Api\EmployeePostModel.cs" />
     <Compile Include="Models\Api\ToolTypePostModel.cs" />
     <Compile Include="Models\Api\AreaPostModel.cs" />
+    <Compile Include="Models\Api\EmployeePutModel.cs" />
     <Compile Include="Models\Api\ToolTypePutModel.cs" />
     <Compile Include="Models\Api\AreaPutModel.cs" />
     <Compile Include="Models\Api\BaseDeleteResponse.cs" />
@@ -213,6 +218,7 @@
     <Content Include="Views\Area\Index.cshtml" />
     <Content Include="Views\Template\Editor.cshtml" />
     <Content Include="Views\ToolType\Index.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\WebCommon.pl-PL.resx">

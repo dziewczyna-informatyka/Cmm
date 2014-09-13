@@ -1,7 +1,11 @@
 ﻿namespace MaintenanceManagement.DataAccess.Entities
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq.Expressions;
+
+    using MaintenanceManagement.Core.Resources;
 
     /// <summary>
     /// Klasa pracownik
@@ -11,6 +15,7 @@
         [Index(IsUnique = true)]
         public int? PersonalNumber { get; set; }
 
+          [Display(ResourceType = typeof(Common), Name = "Employee_Name")]
         public string Name { get; set; }
 
         public string Surname { get; set; }
@@ -32,21 +37,16 @@
         public string PasswordHash { get; set; }
 
         public WorkSchedule? WorkSchedule { get; set; }
-       
+
         public Area Area { get; set; }
 
         public Team Team { get; set; }
 
         public bool IsAdmin { get; set; }
 
-        public string FullName
+        public Func<Employee, string> FullName
         {
-            get { return string.Format("{0} {1}", this.Name, this.Surname); }
-        }
-
-        public override string ToString()
-        {
-            return this.FullName;
+            get { return e => e.Name + " " + e.Surname; }
         }
     }
 }

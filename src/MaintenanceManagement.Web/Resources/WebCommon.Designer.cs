@@ -160,6 +160,15 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string EmployeePageTitle {
+            get {
+                return ResourceManager.GetString("EmployeePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clinico Maintenance Management.
         /// </summary>
         public static string FooterText {

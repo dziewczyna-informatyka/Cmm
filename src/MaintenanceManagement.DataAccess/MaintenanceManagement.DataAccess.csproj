@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrudHelper.cs" />
     <Compile Include="EmployeeTaskStatus.cs" />
     <Compile Include="EmploymentType.cs" />
     <Compile Include="Entities\Area.cs" />

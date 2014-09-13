@@ -79,7 +79,7 @@
         {
             get
             {
-                return this.Assignee != null ? this.Assignee.FullName : string.Empty;
+                return this.Assignee != null ? this.Assignee.FullName(this.Assignee) : string.Empty;
             }
         }
 
