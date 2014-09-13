@@ -2,7 +2,9 @@
 {
     using System.Web.Mvc;
 
-    public class ToolTypeController : Controller
+    using MaintenanceManagement.Web.Core;
+
+    public class ToolTypeController : BaseController
     {
         // GET: ToolType
         public ActionResult Index()
