@@ -135,8 +135,44 @@
   <data name="EmployeeTaskStatus_Suggestion" xml:space="preserve">
     <value>Suggestion</value>
   </data>
+  <data name="Employee_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Employee_Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="Employee_EmploymentStart" xml:space="preserve">
+    <value>Employment Start</value>
+  </data>
+  <data name="Employee_EmploymentType" xml:space="preserve">
+    <value>Employment Type</value>
+  </data>
+  <data name="Employee_HomePhone" xml:space="preserve">
+    <value>Home Phone</value>
+  </data>
+  <data name="Employee_IsAdmin" xml:space="preserve">
+    <value>Is Administrator</value>
+  </data>
+  <data name="Employee_JobTitle" xml:space="preserve">
+    <value>Job Title</value>
+  </data>
+  <data name="Employee_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Employee_MobilePhone" xml:space="preserve">
+    <value>Mobile Phone</value>
+  </data>
   <data name="Employee_Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="Employee_Surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="Employee_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="Employee_WorkSchedule" xml:space="preserve">
+    <value>Work Schedule</value>
   </data>
   <data name="EmploymentType_Clinico" xml:space="preserve">
     <value>Clinico</value>

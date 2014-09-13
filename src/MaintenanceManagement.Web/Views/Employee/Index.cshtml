@@ -6,5 +6,29 @@
 <h2>@WebCommon.EmployeePageTitle</h2>
 
 <div>
-    <cmm-grid resource="Employees" schema="[{ field: 'name', title: '@Common.Employee_Name' }]"></cmm-grid>
+
+    @{
+        var schema = string.Empty;
+
+
+        schema += "[";
+        schema += "{ field: 'name', title: '" + Common.Employee_Name + "'},";
+        schema += "{ field: 'surname', title: '" + Common.Employee_Surname + "'},";
+        schema += "{ field: 'employmentStart', title: '" + Common.Employee_EmploymentStart + "'},";
+        schema += "{ field: 'address', title: '" + Common.Employee_Address + "'},";
+        schema += "{ field: 'mobilePhone', title: '" + Common.Employee_MobilePhone + "'},";
+        schema += "{ field: 'homePhone', title: '" + Common.Employee_HomePhone + "'},";
+        schema += "{ field: 'jobTitle.name', title: '" + Common.Employee_JobTitle + "'},";
+        schema += "{ field: 'employmentType.name', title: '" + Common.Employee_EmploymentType + "'},";
+        schema += "{ field: 'login', title: '" + Common.Employee_Login + "'},";
+        schema += "{ field: 'workSchedule.name', title: '" + Common.Employee_WorkSchedule + "'},";
+        schema += "{ field: 'area.name', title: '" + Common.Employee_Area + "'},";
+        schema += "{ field: 'team.name', title: '" + Common.Employee_Team + "'},";
+        schema += "{ field: 'isAdmin', title: '" + Common.Employee_IsAdmin + "'}";
+        schema += "]";
+      
+
+    }
+
+    <cmm-grid resource="Employees" schema="@Html.Raw(schema)"></cmm-grid>
 </div>

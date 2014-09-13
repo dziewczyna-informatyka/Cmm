@@ -13,7 +13,14 @@
             var info = e.GetType().GetMember(e.ToString()).First();
             var attr = info.GetCustomAttribute<DisplayAttribute>();
 
-            return new ResourceManager(attr.ResourceType).GetString(attr.Name);            
+            return new ResourceManager(attr.ResourceType).GetString(attr.Name);
+        }
+
+        public static IdNamePair ToIdNamePair(this Enum e)
+        {
+            return e == null
+                       ? new IdNamePair { Id = -1, Name = string.Empty }
+                       : new IdNamePair { Id = Convert.ToInt32(e), Name = e.EnumToString() };
         }
     }
 }

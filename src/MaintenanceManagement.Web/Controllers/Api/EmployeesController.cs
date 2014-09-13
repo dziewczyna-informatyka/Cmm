@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using MaintenanceManagement.Core;
     using MaintenanceManagement.DataAccess.Entities;
     using MaintenanceManagement.Web.Core;
     using MaintenanceManagement.Web.Models.Api;
@@ -16,7 +17,28 @@
         public IEnumerable<EmployeeGetModel> Get()
         {
             return
-                MainContext.Employees.OrderBy(a => a.Surname).Select(a => new EmployeeGetModel { Id = a.Id, Name = a.Name }).ToList();
+                MainContext.Employees.OrderBy(a => a.Surname)
+                    .ToList()
+                    .Select(
+                        a =>
+                        new EmployeeGetModel
+                        {
+                            Id = a.Id,
+                            Name = a.Name,
+                            Surname = a.Surname,
+                            Address = a.Address,
+                            Area = new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
+                            EmploymentStart = a.EmploymentStart,
+                            EmploymentType = a.EmploymentType.ToIdNamePair(),
+                            HomePhone = a.HomePhone,
+                            IsAdmin = a.IsAdmin,
+                            JobTitle = a.JobTitle.ToIdNamePair(),
+                            Login = a.Login,
+                            MobilePhone = a.MobilePhone,
+                            PersonalNumber = a.PersonalNumber,
+                            Team = a.Team.ToIdNamePair(),
+                            WorkSchedule = a.WorkSchedule.ToIdNamePair()
+                        });
         }
 
         public async Task<BasePutResponse> Put(EmployeePutModel model)

@@ -70,11 +70,119 @@ namespace MaintenanceManagement.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Employee_Address {
+            get {
+                return ResourceManager.GetString("Employee_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Area.
+        /// </summary>
+        public static string Employee_Area {
+            get {
+                return ResourceManager.GetString("Employee_Area", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employment Start.
+        /// </summary>
+        public static string Employee_EmploymentStart {
+            get {
+                return ResourceManager.GetString("Employee_EmploymentStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employment Type.
+        /// </summary>
+        public static string Employee_EmploymentType {
+            get {
+                return ResourceManager.GetString("Employee_EmploymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home Phone.
+        /// </summary>
+        public static string Employee_HomePhone {
+            get {
+                return ResourceManager.GetString("Employee_HomePhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Administrator.
+        /// </summary>
+        public static string Employee_IsAdmin {
+            get {
+                return ResourceManager.GetString("Employee_IsAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job Title.
+        /// </summary>
+        public static string Employee_JobTitle {
+            get {
+                return ResourceManager.GetString("Employee_JobTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Employee_Login {
+            get {
+                return ResourceManager.GetString("Employee_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile Phone.
+        /// </summary>
+        public static string Employee_MobilePhone {
+            get {
+                return ResourceManager.GetString("Employee_MobilePhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Employee_Name {
             get {
                 return ResourceManager.GetString("Employee_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surname.
+        /// </summary>
+        public static string Employee_Surname {
+            get {
+                return ResourceManager.GetString("Employee_Surname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Team.
+        /// </summary>
+        public static string Employee_Team {
+            get {
+                return ResourceManager.GetString("Employee_Team", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Schedule.
+        /// </summary>
+        public static string Employee_WorkSchedule {
+            get {
+                return ResourceManager.GetString("Employee_WorkSchedule", resourceCulture);
             }
         }
         
