@@ -17,28 +17,32 @@
                 MainContext.Areas.OrderBy(a => a.Name).Select(a => new AreaGetModel { Id = a.Id, Name = a.Name }).ToList();
         }
 
-        public async Task Put(AreaPutModel model)
+        public async Task<BasePutResponse> Put(AreaPutModel model)
         {
             var entity = await MainContext.Areas.SingleOrDefaultAsync(e => e.Id == model.Id);
 
             entity.Name = model.Name;
 
             await MainContext.SaveChangesAsync();
+
+            return new BasePutResponse();
         }
 
-        public async Task<int> Post(AreaPostModel model)
+        public async Task<BasePostResponse> Post(AreaPostModel model)
         {
             var entity = MainContext.Areas.Add(new Area { Name = model.Name });
             await MainContext.SaveChangesAsync();
 
-            return entity.Id;
+            return new BasePostResponse { Id = entity.Id };
         }
 
-        public async Task Delete(int id)
+        public async Task<BaseDeleteResponse> Delete(int id)
         {
             var entity = await MainContext.Areas.SingleOrDefaultAsync(e => e.Id == id);
             MainContext.Areas.Remove(entity);
             await MainContext.SaveChangesAsync();
+
+            return new BaseDeleteResponse();
         }
     }
 }

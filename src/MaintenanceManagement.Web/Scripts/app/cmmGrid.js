@@ -48,9 +48,10 @@
                             $.extend(e, scope.currentEntity, true);
                         });
                     } else {
-                        // api insert
-
-                        scope.dataSource.push(scope.currentEntity);
+                        apiClient.post(scope.resource, scope.currentEntity).then(function(data) {
+                            scope.currentEntity.id = data.id;
+                            scope.dataSource.push(scope.currentEntity);
+                        });
                     }
                 }
             },
