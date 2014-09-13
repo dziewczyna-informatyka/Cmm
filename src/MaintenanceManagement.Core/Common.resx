@@ -198,6 +198,9 @@
   <data name="ToolEndReason_Exchange" xml:space="preserve">
     <value>Wymiana</value>
   </data>
+  <data name="ToolType_Name" xml:space="preserve">
+    <value>Nazwa narzedzia</value>
+  </data>
   <data name="WorkSchedule_Continuous" xml:space="preserve">
     <value>Czterobrygadówka</value>
   </data>

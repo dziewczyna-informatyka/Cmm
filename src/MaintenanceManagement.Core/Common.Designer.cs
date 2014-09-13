@@ -304,6 +304,15 @@ namespace MaintenanceManagement.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nazwa narzedzia.
+        /// </summary>
+        public static string ToolType_Name {
+            get {
+                return ResourceManager.GetString("ToolType_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Czterobrygadówka.
         /// </summary>
         public static string WorkSchedule_Continuous {
