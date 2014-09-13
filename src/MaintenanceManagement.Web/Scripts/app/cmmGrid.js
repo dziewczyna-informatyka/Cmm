@@ -35,18 +35,18 @@
                 };
 
                 scope.onSaveClick = function () {
-                    if (scope.currentEntity.id) {                        
-                        var e = null;
+                    if (scope.currentEntity.id) {
+                        apiClient.put(scope.resource, scope.currentEntity).then(function() {
+                            var e = null;
 
-                        for (var i in scope.dataSource) {
-                            if (scope.dataSource[i].id == scope.currentEntity.id) {
-                                e = scope.dataSource[i];
+                            for (var i in scope.dataSource) {
+                                if (scope.dataSource[i].id == scope.currentEntity.id) {
+                                    e = scope.dataSource[i];
+                                }
                             }
-                        }
-                        
-                        $.extend(e, scope.currentEntity, true);
 
-                        // api update
+                            $.extend(e, scope.currentEntity, true);
+                        });
                     } else {
                         // api insert
 

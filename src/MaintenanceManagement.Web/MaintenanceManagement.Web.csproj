@@ -144,7 +144,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountLogInModel.cs" />
-    <Compile Include="Models\AreaModel.cs" />
+    <Compile Include="Models\Api\AreaGetModel.cs" />
+    <Compile Include="Models\Api\AreaPostModel.cs" />
+    <Compile Include="Models\Api\AreaPutModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\WebCommon.Designer.cs">
       <AutoGen>True</AutoGen>

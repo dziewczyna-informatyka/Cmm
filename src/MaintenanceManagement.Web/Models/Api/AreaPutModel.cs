@@ -1,6 +1,6 @@
-﻿namespace MaintenanceManagement.Web.Models
+﻿namespace MaintenanceManagement.Web.Models.Api
 {
-    public class AreaModel
+    public class AreaPutModel
     {
         public int Id { get; set; }
 
