@@ -2,7 +2,6 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using MaintenanceManagement.Core;
     using MaintenanceManagement.Core.Resources;
 
     public enum JobTitle

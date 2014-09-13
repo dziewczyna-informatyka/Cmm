@@ -3,7 +3,6 @@
     using System;
 
     using MaintenanceManagement.Core;
-    using MaintenanceManagement.DataAccess;
 
     public class EmployeePostModel
     {
