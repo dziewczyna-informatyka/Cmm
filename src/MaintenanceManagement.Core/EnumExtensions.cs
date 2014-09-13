@@ -19,14 +19,17 @@
 
         public static IdNamePair ToIdNamePair(this Enum e)
         {
-            return e == null
-                       ? new IdNamePair { Id = -1, Name = string.Empty }
-                       : new IdNamePair { Id = Convert.ToInt32(e), Name = e.EnumToString() };
+            return e == null ? null : new IdNamePair { Id = Convert.ToInt32(e), Name = e.EnumToString() };
         }
 
         public static IEnumerable<IdNamePair> GetAllIdNamePairs<T>()
         {
             return Enum.GetValues(typeof(T)).Cast<Enum>().Select(t => t.ToIdNamePair()).ToList();
+        }
+
+        public static T? FromIdNamePair<T>(IdNamePair pair) where T : struct
+        {
+            return pair == null ? null : Enum.ToObject(typeof(T), pair.Id) as T?;
         }
     }
 }

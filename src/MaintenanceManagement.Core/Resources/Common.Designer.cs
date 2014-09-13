@@ -9,6 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace MaintenanceManagement.Core.Resources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -153,6 +156,15 @@ namespace MaintenanceManagement.Core.Resources {
         public static string Employee_Name {
             get {
                 return ResourceManager.GetString("Employee_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal ID.
+        /// </summary>
+        public static string Employee_PersonalNumber {
+            get {
+                return ResourceManager.GetString("Employee_PersonalNumber", resourceCulture);
             }
         }
         

@@ -12,6 +12,7 @@
     public class Employee : BaseEntity
     {
         [Index(IsUnique = true)]
+        [Display(ResourceType = typeof(Common), Name = "Employee_PersonalNumber")]
         public int? PersonalNumber { get; set; }
 
         [Display(ResourceType = typeof(Common), Name = "Employee_Name")]

@@ -165,6 +165,9 @@
   <data name="Employee_Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="Employee_PersonalNumber" xml:space="preserve">
+    <value>Personal ID</value>
+  </data>
   <data name="Employee_Surname" xml:space="preserve">
     <value>Surname</value>
   </data>
