@@ -17,16 +17,19 @@
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootstrap-datepicker.js"));
 
-            bundles.Add(new StyleBundle("~/Content/font-awesome").Include(                   
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/datepicker.css",
                       "~/Content/font-awesome.css"));
 
             bundles.Add(new LessBundle("~/Content/custom").Include(
-                     "~/Content/*.less"));
+                     "~/Content/Site.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app/cmmApp.js",
+                      "~/Scripts/app/cmmDatePicker.js",
                       "~/Scripts/app/apiClient.js",
                       "~/Scripts/app/cmmButton.js",
                       "~/Scripts/app/cmmEditor.js",
