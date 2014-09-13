@@ -16,7 +16,7 @@
         schema += "{ field: 'name', title: '" + Common.Employee_Name + "'},";
         schema += "{ field: 'surname', title: '" + Common.Employee_Surname + "'},";
         schema += "{ field: 'employmentStart', title: '" + Common.Employee_EmploymentStart + "', isHidden: 'true', dataType: 'date' },";
-        schema += "{ field: 'address', title: '" + Common.Employee_Address + "', isHidden: 'true'},";
+        schema += "{ field: 'address', title: '" + Common.Employee_Address + "', isHidden: 'true', dataType: 'text-multiline' },";
         schema += "{ field: 'mobilePhone', title: '" + Common.Employee_MobilePhone + "'},";
         schema += "{ field: 'homePhone', title: '" + Common.Employee_HomePhone + "'},";
         schema += "{ field: 'jobTitle', displayField: 'jobTitle.name', title: '" + Common.Employee_JobTitle + "', dataType: { resource: 'JobTitles' } },";
