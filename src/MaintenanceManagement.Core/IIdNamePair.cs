@@ -1,9 +1,7 @@
 ﻿namespace MaintenanceManagement.Core
 {
-    public interface IIdNamePair
-    {
-        int Id { get; }
-
+    public interface IIdNamePair : IIdentifiable
+    {        
         string Name { get; }
     }
 }

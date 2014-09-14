@@ -5,6 +5,11 @@
 
     public static class DateTimeExtensions
     {
+        public static string ToCmmDate(this DateTime dateTime)
+        {
+            return (dateTime as DateTime?).ToCmmDate();
+        }
+
         public static string ToCmmDate(this DateTime? dateTime)
         {
             return dateTime == null ? string.Empty : dateTime.Value.ToString("dd-MM-yyyy");

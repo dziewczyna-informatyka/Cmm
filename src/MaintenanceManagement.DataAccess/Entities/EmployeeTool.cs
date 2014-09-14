@@ -18,7 +18,7 @@
         public ToolEndReason? ToolEndReason { get; set; }
 
         [Required]
-        public Employee Owner { get; set; }
+        public virtual Employee Owner { get; set; }
 
         [Required]
         public virtual ToolType ToolType { get; set; }

@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\EmployeeTasksController.cs" />
     <Compile Include="Controllers\Api\EmploymentTypesController.cs" />
     <Compile Include="Controllers\Api\WorkSchedulesController.cs" />
     <Compile Include="Controllers\Api\JobTitlesController.cs" />
@@ -153,7 +154,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountLogInModel.cs" />
+    <Compile Include="Models\Api\EmployeeTaskGetModel.cs" />
     <Compile Include="Models\Api\EmployeeGetModel.cs" />
+    <Compile Include="Models\Api\EmployeeTaskPostModel.cs" />
+    <Compile Include="Models\Api\EmployeeTaskPutModel.cs" />
     <Compile Include="Models\Api\ToolTypeGetModel.cs" />
     <Compile Include="Models\Api\AreaGetModel.cs" />
     <Compile Include="Models\Api\EmployeePostModel.cs" />
