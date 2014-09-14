@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using MaintenanceManagement.Core;
-
-namespace MaintenanceManagement.DataAccess
+﻿namespace MaintenanceManagement.DataAccess
 {
+    using System.ComponentModel.DataAnnotations;
+
+    using MaintenanceManagement.Core.Resources;
+
     public enum Team
     {
         [Display(ResourceType = typeof(Common), Name = "Team_NA")]

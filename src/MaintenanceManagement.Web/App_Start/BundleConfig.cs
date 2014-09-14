@@ -1,0 +1,44 @@
+﻿namespace MaintenanceManagement.Web
+{
+    using System.Web.Optimization;
+
+    public class BundleConfig
+    {
+        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
+        public static void RegisterBundles(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery-{version}.js"));
+
+            // Use the development version of Modernizr to develop with and learn from. Then, when you're
+            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
+            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                        "~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootstrap-datepicker.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/datepicker.css",
+                      "~/Content/font-awesome.css"));
+
+            bundles.Add(new LessBundle("~/Content/custom").Include(
+                     "~/Content/Site.less"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                      "~/Scripts/app/cmmApp.js",
+                      "~/Scripts/app/apiClient.js",
+                      "~/Scripts/app/cmmDatePicker.js",
+                      "~/Scripts/app/cmmDropDown.js",                      
+                      "~/Scripts/app/cmmButton.js",
+                      "~/Scripts/app/cmmEditor.js",
+                      "~/Scripts/app/cmmGrid.js"));
+
+            // Set EnableOptimizations to false for debugging. For more information,
+            // visit http://go.microsoft.com/fwlink/?LinkId=301862
+            BundleTable.EnableOptimizations = true;
+        }
+    }
+}

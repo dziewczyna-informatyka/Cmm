@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="cmmApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/cerulean/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/custom")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(WebCommon.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(WebCommon.EmployeePageTitle, "Index", "Employee", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink(WebCommon.ToolTypePageTitle, "Index", "ToolType", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink(WebCommon.AreasPageTitle, "Index", "Area", new { area = "" }, null)</li>
+                </ul>
+                <div class="navbar-form navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a href="@Url.Action("Logout", "Account")" class="btn btn-default">@WebCommon.Logout</a>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <hr />
+    <footer class="container">
+        <p>&copy; @DateTime.Now.Year - @WebCommon.FooterText</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.js"></script>
+    <script src="/Resource/WebCommon"></script>
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

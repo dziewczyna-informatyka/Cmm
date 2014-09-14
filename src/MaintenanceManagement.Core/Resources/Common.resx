@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Area_Name" xml:space="preserve">
+    <value>Area Name</value>
+  </data>
+  <data name="EmployeeTaskStatus_Canceled" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="EmployeeTaskStatus_Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="EmployeeTaskStatus_InProgress" xml:space="preserve">
+    <value>In Progress</value>
+  </data>
+  <data name="EmployeeTaskStatus_Planned" xml:space="preserve">
+    <value>Planned</value>
+  </data>
+  <data name="EmployeeTaskStatus_Suggestion" xml:space="preserve">
+    <value>Suggestion</value>
+  </data>
+  <data name="Employee_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Employee_Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="Employee_EmploymentStart" xml:space="preserve">
+    <value>Employment Start</value>
+  </data>
+  <data name="Employee_EmploymentType" xml:space="preserve">
+    <value>Employment Type</value>
+  </data>
+  <data name="Employee_HomePhone" xml:space="preserve">
+    <value>Home Phone</value>
+  </data>
+  <data name="Employee_IsAdmin" xml:space="preserve">
+    <value>Is Administrator</value>
+  </data>
+  <data name="Employee_JobTitle" xml:space="preserve">
+    <value>Job Title</value>
+  </data>
+  <data name="Employee_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Employee_MobilePhone" xml:space="preserve">
+    <value>Mobile Phone</value>
+  </data>
+  <data name="Employee_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Employee_PersonalNumber" xml:space="preserve">
+    <value>Personal ID</value>
+  </data>
+  <data name="Employee_Surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="Employee_Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="Employee_WorkSchedule" xml:space="preserve">
+    <value>Work Schedule</value>
+  </data>
+  <data name="EmploymentType_Clinico" xml:space="preserve">
+    <value>Clinico</value>
+  </data>
+  <data name="EmploymentType_Gerendis" xml:space="preserve">
+    <value>Gerendis</value>
+  </data>
+  <data name="EmploymentType_Manpower" xml:space="preserve">
+    <value>Manpower</value>
+  </data>
+  <data name="EmploymentType_Randstad" xml:space="preserve">
+    <value>Randstad</value>
+  </data>
+  <data name="JobTitle_Area_Leader" xml:space="preserve">
+    <value>Area Leader</value>
+  </data>
+  <data name="JobTitle_Controlling_Worker" xml:space="preserve">
+    <value>Controlling Worker</value>
+  </data>
+  <data name="JobTitle_Electrician" xml:space="preserve">
+    <value>Electricial</value>
+  </data>
+  <data name="JobTitle_Facility_Worker" xml:space="preserve">
+    <value>Facility Worker</value>
+  </data>
+  <data name="JobTitle_Manager" xml:space="preserve">
+    <value>Manager</value>
+  </data>
+  <data name="JobTitle_Mechanic" xml:space="preserve">
+    <value>Mechanic</value>
+  </data>
+  <data name="JobTitle_Shift_Leader" xml:space="preserve">
+    <value>Shift Leader</value>
+  </data>
+  <data name="JobTitle_Workshop_Worker" xml:space="preserve">
+    <value>Workshop Worker</value>
+  </data>
+  <data name="Team_A" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="Team_B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="Team_C" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Team_D" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="Team_Infrastructure" xml:space="preserve">
+    <value>Infrastructure</value>
+  </data>
+  <data name="Team_NA" xml:space="preserve">
+    <value>Not Available</value>
+  </data>
+  <data name="Team_Workshop" xml:space="preserve">
+    <value>Workshop</value>
+  </data>
+  <data name="ToolEndReason_Damage" xml:space="preserve">
+    <value>Damaged</value>
+  </data>
+  <data name="ToolEndReason_Exchange" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="ToolType_Name" xml:space="preserve">
+    <value>Tool Name</value>
+  </data>
+  <data name="WorkSchedule_Continuous" xml:space="preserve">
+    <value>Continous</value>
+  </data>
+  <data name="WorkSchedule_Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="WorkSchedule_TwoShifts" xml:space="preserve">
+    <value>Two Shifts</value>
+  </data>
+</root>

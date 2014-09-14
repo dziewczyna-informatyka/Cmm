@@ -1,13 +1,12 @@
 namespace MaintenanceManagement.DataAccess.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     
     public partial class InitialTables : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
+            this.CreateTable(
                 "dbo.Areas",
                 c => new
                     {
@@ -15,8 +14,8 @@ namespace MaintenanceManagement.DataAccess.Migrations
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.Employees",
                 c => new
                     {
@@ -35,8 +34,8 @@ namespace MaintenanceManagement.DataAccess.Migrations
                         WorkSchedule = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.EmployeeTasks",
                 c => new
                     {
@@ -54,8 +53,8 @@ namespace MaintenanceManagement.DataAccess.Migrations
                 .ForeignKey("dbo.Employees", t => t.Assignee_Id)
                 .Index(t => t.Area_Id)
                 .Index(t => t.Assignee_Id);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.EmployeeTools",
                 c => new
                     {
@@ -73,33 +72,32 @@ namespace MaintenanceManagement.DataAccess.Migrations
                 .ForeignKey("dbo.ToolTypes", t => t.ToolType_Id)
                 .Index(t => t.Employee_Id)
                 .Index(t => t.ToolType_Id);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ToolTypes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
-            
+                .PrimaryKey(t => t.Id);            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.EmployeeTools", "ToolType_Id", "dbo.ToolTypes");
-            DropForeignKey("dbo.EmployeeTools", "Employee_Id", "dbo.Employees");
-            DropForeignKey("dbo.EmployeeTasks", "Assignee_Id", "dbo.Employees");
-            DropForeignKey("dbo.EmployeeTasks", "Area_Id", "dbo.Areas");
-            DropIndex("dbo.EmployeeTools", new[] { "ToolType_Id" });
-            DropIndex("dbo.EmployeeTools", new[] { "Employee_Id" });
-            DropIndex("dbo.EmployeeTasks", new[] { "Assignee_Id" });
-            DropIndex("dbo.EmployeeTasks", new[] { "Area_Id" });
-            DropTable("dbo.ToolTypes");
-            DropTable("dbo.EmployeeTools");
-            DropTable("dbo.EmployeeTasks");
-            DropTable("dbo.Employees");
-            DropTable("dbo.Areas");
+            this.DropForeignKey("dbo.EmployeeTools", "ToolType_Id", "dbo.ToolTypes");
+            this.DropForeignKey("dbo.EmployeeTools", "Employee_Id", "dbo.Employees");
+            this.DropForeignKey("dbo.EmployeeTasks", "Assignee_Id", "dbo.Employees");
+            this.DropForeignKey("dbo.EmployeeTasks", "Area_Id", "dbo.Areas");
+            this.DropIndex("dbo.EmployeeTools", new[] { "ToolType_Id" });
+            this.DropIndex("dbo.EmployeeTools", new[] { "Employee_Id" });
+            this.DropIndex("dbo.EmployeeTasks", new[] { "Assignee_Id" });
+            this.DropIndex("dbo.EmployeeTasks", new[] { "Area_Id" });
+            this.DropTable("dbo.ToolTypes");
+            this.DropTable("dbo.EmployeeTools");
+            this.DropTable("dbo.EmployeeTasks");
+            this.DropTable("dbo.Employees");
+            this.DropTable("dbo.Areas");
         }
     }
 }
