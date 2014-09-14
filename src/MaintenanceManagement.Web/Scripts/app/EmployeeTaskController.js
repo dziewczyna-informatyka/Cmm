@@ -39,15 +39,15 @@
             $scope.statusesCount = $scope.dataSource.length;
 
             
-            apiClient.get('EmployeeTasks').then(function (tasks) {                
+            apiClient.get('EmployeeTasks').then(function (tasks) {
+                for (var i in $scope.dataSource) {
+                    $scope.dataSource[i].tasks = [];
+                }
+
                 for (var i in tasks) {
                     var task = tasks[i],
                         status = Cmm.getById($scope.dataSource, task.status.id);                                   
-
-                    if (!status.tasks) {
-                        status.tasks = [];
-                    }
-
+                   
                     status.tasks.push(task);
                 }                                
             });
