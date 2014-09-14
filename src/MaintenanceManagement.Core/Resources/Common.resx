@@ -237,6 +237,12 @@
   <data name="JobTitle_Workshop_Worker" xml:space="preserve">
     <value>Workshop Worker</value>
   </data>
+  <data name="Project_DueDate" xml:space="preserve">
+    <value>Due Date</value>
+  </data>
+  <data name="Project_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="Team_A" xml:space="preserve">
     <value>A</value>
   </data>

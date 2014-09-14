@@ -53,6 +53,7 @@
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\EmployeeTask.cs" />
     <Compile Include="Entities\EmployeeTool.cs" />
+    <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\ToolType.cs" />
     <Compile Include="JobTitle.cs" />
     <Compile Include="MainContext.cs" />
@@ -95,6 +96,10 @@
     <Compile Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.cs" />
     <Compile Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.Designer.cs">
       <DependentUpon>201409141326048_EmployeeNameRenamedToFirstName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409141748546_AddedProject.cs" />
+    <Compile Include="Migrations\201409141748546_AddedProject.Designer.cs">
+      <DependentUpon>201409141748546_AddedProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -153,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.resx">
       <DependentUpon>201409141326048_EmployeeNameRenamedToFirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409141748546_AddedProject.resx">
+      <DependentUpon>201409141748546_AddedProject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
