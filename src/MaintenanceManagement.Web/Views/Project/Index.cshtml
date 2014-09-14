@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = WebCommon.ProjectPageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@WebCommon.ProjectPageTitle</h2>
+
+<div>
+
+    @{
+        var schema = string.Empty;
+
+
+        schema += "[";
+        schema += "{ field: 'name', title: '" + Common.Project_Name + "'},";
+        schema += "{ field: 'dueDate', title: '" + Common.Project_DueDate + "', dataType: 'date' },";
+        schema += "{ field: 'progress', title: '" + Common.Project_Progress + "', isEditable: false }";      
+        schema += "]";
+    }
+
+    <cmm-grid resource="Projects" schema="@Html.Raw(schema)"></cmm-grid>
+</div>

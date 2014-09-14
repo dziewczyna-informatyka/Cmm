@@ -5,17 +5,17 @@
 <div class="row">
     <div class="col-md-12">
         <form class="form-horizontal" role="form">
-            <div class="form-group" ng-repeat="s in schema">
+            <div class="form-group" ng-repeat="s in schema | filter: isEditable">
                 <label for="f-{{s.field}}" class="col-md-3 control-label">{{s.title}}</label>
                 <div class="col-md-9">
                     <div ng-if="getFieldType(s).type == 'text'">
                         <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
                     </div>
-                    
+
                     <div ng-if="getFieldType(s).type == 'text-multiline'">
-                        <textarea id="f-{{s.field}}" class="form-control" rows="5" ng-model="model[s.field]"></textarea>                      
+                        <textarea id="f-{{s.field}}" class="form-control" rows="5" ng-model="model[s.field]"></textarea>
                     </div>
-                    
+
                     <div ng-if="getFieldType(s).type == 'bool'">
                         <div class="checkbox">
                             <label>
@@ -24,11 +24,11 @@
                             </label>
                         </div>
                     </div>
-                    
+
                     <div ng-if="getFieldType(s).type == 'date'">
                         <cmm-date-picker model="model" schema="s"></cmm-date-picker>
                     </div>
-                    
+
                     <div ng-if="getFieldType(s).type == 'dropdown'">
                         <cmm-drop-down model="model" field="s.field" resource="getFieldType(s).resource"></cmm-drop-down>
                     </div>

@@ -439,6 +439,15 @@ namespace MaintenanceManagement.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Progress.
+        /// </summary>
+        public static string Project_Progress {
+            get {
+                return ResourceManager.GetString("Project_Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A.
         /// </summary>
         public static string Team_A {

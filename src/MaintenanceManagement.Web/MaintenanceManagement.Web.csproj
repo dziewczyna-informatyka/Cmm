@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ProjectsController.cs" />
     <Compile Include="Controllers\Api\EmployeeTasksController.cs" />
     <Compile Include="Controllers\Api\EmploymentTypesController.cs" />
     <Compile Include="Controllers\Api\EmployeeTaskStatusesController.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Controllers\Api\ToolTypesController.cs" />
     <Compile Include="Controllers\Api\AreasController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\EmployeeTaskController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
@@ -159,12 +161,15 @@
     <Compile Include="Models\Api\EmployeeGetModel.cs" />
     <Compile Include="Models\Api\EmployeeTaskPostModel.cs" />
     <Compile Include="Models\Api\EmployeeTaskPutModel.cs" />
+    <Compile Include="Models\Api\ProjectGetModel.cs" />
     <Compile Include="Models\Api\ToolTypeGetModel.cs" />
     <Compile Include="Models\Api\AreaGetModel.cs" />
     <Compile Include="Models\Api\EmployeePostModel.cs" />
+    <Compile Include="Models\Api\ProjectPostModel.cs" />
     <Compile Include="Models\Api\ToolTypePostModel.cs" />
     <Compile Include="Models\Api\AreaPostModel.cs" />
     <Compile Include="Models\Api\EmployeePutModel.cs" />
+    <Compile Include="Models\Api\ProjectPutModel.cs" />
     <Compile Include="Models\Api\ToolTypePutModel.cs" />
     <Compile Include="Models\Api\AreaPutModel.cs" />
     <Compile Include="Models\Api\BaseDeleteResponse.cs" />
@@ -275,6 +280,7 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Template\DropDown.cshtml" />
     <Content Include="Views\EmployeeTask\Index.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\WebCommon.pl-PL.resx">
