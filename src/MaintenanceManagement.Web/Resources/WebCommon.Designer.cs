@@ -88,6 +88,24 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Task ....
+        /// </summary>
+        public static string AddNewTask {
+            get {
+                return ResourceManager.GetString("AddNewTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add New Task.
+        /// </summary>
+        public static string AddNewTaskTitle {
+            get {
+                return ResourceManager.GetString("AddNewTaskTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add new element.
         /// </summary>
         public static string AddNewTitle {
@@ -133,6 +151,15 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete task.
+        /// </summary>
+        public static string DeleteTaskTitle {
+            get {
+                return ResourceManager.GetString("DeleteTaskTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete this element.
         /// </summary>
         public static string DeleteTitle {
@@ -147,6 +174,15 @@ namespace MaintenanceManagement.Web.Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit task.
+        /// </summary>
+        public static string EditTaskTitle {
+            get {
+                return ResourceManager.GetString("EditTaskTitle", resourceCulture);
             }
         }
         
@@ -237,6 +273,33 @@ namespace MaintenanceManagement.Web.Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        public static string TasksDone {
+            get {
+                return ResourceManager.GetString("TasksDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In Progress.
+        /// </summary>
+        public static string TasksInProgress {
+            get {
+                return ResourceManager.GetString("TasksInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TODO.
+        /// </summary>
+        public static string TasksPlanned {
+            get {
+                return ResourceManager.GetString("TasksPlanned", resourceCulture);
             }
         }
         

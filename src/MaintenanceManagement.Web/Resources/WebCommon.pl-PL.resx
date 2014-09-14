@@ -126,6 +126,12 @@
   <data name="AddNew" xml:space="preserve">
     <value>Nowy ...</value>
   </data>
+  <data name="AddNewTask" xml:space="preserve">
+    <value>Dodaj zadanie ...</value>
+  </data>
+  <data name="AddNewTaskTitle" xml:space="preserve">
+    <value>Dodaj nowe zadanie</value>
+  </data>
   <data name="AddNewTitle" xml:space="preserve">
     <value>Dodaj nowy element</value>
   </data>
@@ -141,11 +147,17 @@
   <data name="ConfirmDelete" xml:space="preserve">
     <value>Na pewno chcesz usunąć ten element?</value>
   </data>
+  <data name="DeleteTaskTitle" xml:space="preserve">
+    <value>Usuń zadanie</value>
+  </data>
   <data name="DeleteTitle" xml:space="preserve">
     <value>Usuń element</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edycja</value>
+  </data>
+  <data name="EditTaskTitle" xml:space="preserve">
+    <value>Edytuj zadanie</value>
   </data>
   <data name="EditTitle" xml:space="preserve">
     <value>Edytuj element</value>
@@ -176,6 +188,15 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Zapisz</value>
+  </data>
+  <data name="TasksDone" xml:space="preserve">
+    <value>Zrobione</value>
+  </data>
+  <data name="TasksInProgress" xml:space="preserve">
+    <value>Aktualne</value>
+  </data>
+  <data name="TasksPlanned" xml:space="preserve">
+    <value>Zaplanowane</value>
   </data>
   <data name="ToolTypePageTitle" xml:space="preserve">
     <value>Narzędzia</value>

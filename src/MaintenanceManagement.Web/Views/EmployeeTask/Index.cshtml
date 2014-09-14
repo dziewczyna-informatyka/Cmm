@@ -3,4 +3,69 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@WebCommon.EmployeeTaskPageTitle</h2>
+<div class="employee-tasks">
+    <cmm-button icon="plus" text="@WebCommon.AddNewTask" tooltip="@WebCommon.AddNewTaskTitle"></cmm-button>
+    <div class="row">
+        <div class="col-md-4">
+            <h4 class="text-center">@WebCommon.TasksPlanned</h4>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff 
+                        <cmm-button extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>
+                        <cmm-button extra-class="btn-xs pull-right" icon="pencil" tooltip="@WebCommon.EditTaskTitle"></cmm-button>
+                       
+                        
+                        
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"><h4 class="text-center">@WebCommon.TasksInProgress</h4>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+            </div></div>
+        <div class="col-md-4"><h4 class="text-center">@WebCommon.TasksDone</h4>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="#23">#23</a> - Presenting stuff
+                    </div>
+                </div>
+            </div></div>
+    </div>
+</div>
