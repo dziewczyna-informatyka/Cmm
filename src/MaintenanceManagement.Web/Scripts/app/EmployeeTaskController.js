@@ -10,17 +10,40 @@
       
         $scope.statusesCount = 1;
         $scope.expandedTasks = [];
+        $scope.sortableOptions = {
+            connectWith: '.board-tasks',
+            receive: function (e, ui) {
+                var taskId = ui.item.attr('data-task-id'),
+                    statusId = $(e.target).attr('data-status-id');
 
-        apiClient.get('EmployeeTaskStatuses').then(function (data) {
-            $scope.dataSource = { statuses: data };
-            $scope.statusesCount = $scope.dataSource.statuses.length;
+                $scope.$apply(function() {
+                    var status = Cmm.getById($scope.dataSource, statusId),
+                        task = Cmm.getById($scope.tasks, taskId);
 
-            apiClient.get('EmployeeTasks').then(function (data) {
-                $scope.dataSource.tasks = data;
+                    task.status = { id: status.id };
+                    apiClient.put('EmployeeTasks', task);
+                });                           
+            }
+        };
+        
+        apiClient.get('EmployeeTaskStatuses').then(function (statuses) {
+            $scope.dataSource = statuses;
+            $scope.statusesCount = $scope.dataSource.length;
 
-                $('.board-tasks').sortable({
-                    connectWith: '.board-tasks'
-                }).disableSelection();
+            
+            apiClient.get('EmployeeTasks').then(function (tasks) {
+                $scope.tasks = tasks;
+
+                for (var i in tasks) {
+                    var task = tasks[i],
+                        status = Cmm.getById($scope.dataSource, task.status.id);                                   
+
+                    if (!status.tasks) {
+                        status.tasks = [];
+                    }
+
+                    status.tasks.push(task);
+                }                                
             });
         });
 
@@ -36,12 +59,13 @@
             }
         };
 
-        $scope.onDeleteClick = function(t) {            
-            EditorHelper.remove(apiClient, 'EmployeeTasks', t, $scope.dataSource.tasks);
+        $scope.onDeleteClick = function (t) {
+            var s = Cmm.getById($scope.dataSource, t.status.id);
+            EditorHelper.remove(apiClient, 'EmployeeTasks', t, s.tasks);
         }
 
         $scope.onAddClick = function () {
-            $scope.currentTask = {};
+            $scope.currentTask = { status: { id: $scope.dataSource[0].id } };
             openEditor(WebCommon.Add);
         };
 
@@ -51,19 +75,8 @@
         };
 
         $scope.onSaveClick = function () {
-            EditorHelper.save(apiClient, 'EmployeeTasks', $scope.currentTask, $scope.dataSource.tasks).then(function(data) {
-                if (!$scope.currentTask.status) {
-                    var e = null;
-
-                    for (var i in $scope.dataSource.tasks) {
-                        if ($scope.dataSource.tasks[i].id == $scope.currentTask.id) {
-                            e = $scope.dataSource.tasks[i];
-                        }
-                    }
-
-                    e.status = $.extend({}, $scope.dataSource.statuses[0], true);
-                }
-            });
+            var s = Cmm.getById($scope.dataSource, $scope.currentTask.status.id);
+            EditorHelper.save(apiClient, 'EmployeeTasks', $scope.currentTask, s.tasks);
         }
     }]);
 }());

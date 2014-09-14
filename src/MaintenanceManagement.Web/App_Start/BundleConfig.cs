@@ -16,10 +16,11 @@
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/libs").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Scripts/bootstrap-datepicker.js"));
+                      "~/Scripts/bootstrap-datepicker.js",
+                      "~/Scripts/angular.ui.sortable.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/themes/base/*.css",
@@ -30,9 +31,10 @@
                      "~/Content/Site.less"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                      "~/Scripts/app/ArrayHelper.js",
                       "~/Scripts/app/cmmApp.js",
                       "~/Scripts/app/apiClient.js",
-                      "~/Scripts/app/EditorHelper.js",
+                      "~/Scripts/app/EditorHelper.js",                     
                       "~/Scripts/app/cmmDatePicker.js",
                       "~/Scripts/app/cmmDropDown.js",                      
                       "~/Scripts/app/cmmButton.js",

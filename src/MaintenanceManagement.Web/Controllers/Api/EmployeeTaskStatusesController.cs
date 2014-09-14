@@ -1,6 +1,7 @@
 ﻿namespace MaintenanceManagement.Web.Controllers.Api
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using MaintenanceManagement.Core;
     using MaintenanceManagement.DataAccess;
@@ -10,7 +11,7 @@
     {
         public IEnumerable<IdNamePair> Get()
         {
-            return EnumExtensions.GetAllIdNamePairs<EmployeeTaskStatus>();
+            return EnumExtensions.GetAllIdNamePairs<EmployeeTaskStatus>().OrderBy(x => x.Id).ToList();
         }
     }
 }

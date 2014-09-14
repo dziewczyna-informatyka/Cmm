@@ -38,10 +38,10 @@
 
     <cmm-button icon="plus" ng-click="onAddClick()" text="@WebCommon.AddNewTask" tooltip="@WebCommon.AddNewTaskTitle"></cmm-button>
     <div class="row">
-        <div ng-class="'col-md-' + 12 / statusesCount" ng-repeat="s in dataSource.statuses">
+        <div ng-class="'col-md-' + 12 / statusesCount" ng-repeat="s in dataSource">
             <h4 class="text-center">{{s.name}}</h4>
-            <ul class="board-tasks">
-                <li ng-repeat="t in dataSource.tasks | filter: { status: { id: s.id } }">
+            <ul class="board-tasks" data-status-id="{{s.id}}" ui-sortable="sortableOptions" ng-model="s.tasks">
+                <li data-task-id="{{t.id}}" ng-repeat="t in s.tasks">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <a ng-click="onExpandClick(t)">#{{t.id}}</a> - {{t.subject}}
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                </li>              
+                </li>
             </ul>
         </div>      
     </div>

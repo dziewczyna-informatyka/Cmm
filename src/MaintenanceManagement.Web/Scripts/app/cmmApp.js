@@ -1,1 +1,1 @@
-﻿var cmmApp = angular.module('cmmApp', []);
+﻿var cmmApp = angular.module('cmmApp', ['ui.sortable']);
