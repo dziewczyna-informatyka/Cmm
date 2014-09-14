@@ -277,33 +277,6 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Done.
-        /// </summary>
-        public static string TasksDone {
-            get {
-                return ResourceManager.GetString("TasksDone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to In Progress.
-        /// </summary>
-        public static string TasksInProgress {
-            get {
-                return ResourceManager.GetString("TasksInProgress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TODO.
-        /// </summary>
-        public static string TasksPlanned {
-            get {
-                return ResourceManager.GetString("TasksPlanned", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Tools.
         /// </summary>
         public static string ToolTypePageTitle {

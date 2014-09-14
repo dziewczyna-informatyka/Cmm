@@ -189,15 +189,6 @@
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="TasksDone" xml:space="preserve">
-    <value>Done</value>
-  </data>
-  <data name="TasksInProgress" xml:space="preserve">
-    <value>In Progress</value>
-  </data>
-  <data name="TasksPlanned" xml:space="preserve">
-    <value>TODO</value>
-  </data>
   <data name="ToolTypePageTitle" xml:space="preserve">
     <value>Tools</value>
   </data>

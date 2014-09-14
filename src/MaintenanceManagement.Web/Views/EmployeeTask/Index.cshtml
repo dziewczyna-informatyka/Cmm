@@ -6,66 +6,39 @@
 <div class="employee-tasks" ng-controller="EmployeeTaskController">
     <cmm-button icon="plus" text="@WebCommon.AddNewTask" tooltip="@WebCommon.AddNewTaskTitle"></cmm-button>
     <div class="row">
-        <div class="col-md-4">
-            <h4 class="text-center">@WebCommon.TasksPlanned</h4>
+        <div ng-class="'col-md-' + 12 / statusesCount" ng-repeat="s in dataSource.statuses">
+            <h4 class="text-center">{{s.name}}</h4>
             <div>
-                <div class="panel panel-default">
+                <div class="panel panel-default" ng-repeat="t in dataSource.tasks | filter: { status: { id: s.id } }">
                     <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff 
+                        <a ng-click="onExpandClick(t)">#{{t.id}}</a> - {{t.subject}} 
                         <cmm-button extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>
-                        <cmm-button extra-class="btn-xs pull-right" icon="pencil" tooltip="@WebCommon.EditTaskTitle"></cmm-button>
-                       
-                        
-                        
+                        <cmm-button extra-class="btn-xs pull-right" icon="pencil" tooltip="@WebCommon.EditTaskTitle"></cmm-button>                                                                       
                     </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
+                    <div class="panel-body" ng-show="isExpanded(t)">                        
+                        <div>
+                            <label class="task-field-name">@Common.EmployeeTask_Assignee</label>
+                            <span>{{t.assignee.name}}</span>
+                        </div>
+                        <div>
+                            <label class="task-field-name">@Common.EmployeeTask_Area</label>
+                            <span>{{t.area.name}}</span>
+                        </div>
+                        <div>
+                            <label class="task-field-name">@Common.EmployeeTask_DueDate</label>
+                            <span>{{t.dueDate}}</span>
+                        </div>
+                        <div>
+                            <label class="task-field-name">@Common.EmployeeTask_Progress</label>
+                            <span>{{t.progress}}%</span>
+                        </div>
+                        <div>
+                            <label class="task-field-name">@Common.EmployeeTask_Actions</label>
+                            <p>{{t.actions}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
-                    </div>
-                </div>
+                </div>               
             </div>
-        </div>
-        <div class="col-md-4"><h4 class="text-center">@WebCommon.TasksInProgress</h4>
-            <div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
-                    </div>
-                </div>
-            </div></div>
-        <div class="col-md-4"><h4 class="text-center">@WebCommon.TasksDone</h4>
-            <div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a href="#23">#23</a> - Presenting stuff
-                    </div>
-                </div>
-            </div></div>
+        </div>      
     </div>
 </div>

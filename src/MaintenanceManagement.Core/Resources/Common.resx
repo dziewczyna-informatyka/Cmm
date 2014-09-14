@@ -135,6 +135,30 @@
   <data name="EmployeeTaskStatus_Suggestion" xml:space="preserve">
     <value>Suggestion</value>
   </data>
+  <data name="EmployeeTask_Actions" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EmployeeTask_ActualEndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="EmployeeTask_Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="EmployeeTask_Assignee" xml:space="preserve">
+    <value>Assignee</value>
+  </data>
+  <data name="EmployeeTask_DueDate" xml:space="preserve">
+    <value>Due Date</value>
+  </data>
+  <data name="EmployeeTask_Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="EmployeeTask_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="EmployeeTask_Subject" xml:space="preserve">
+    <value>Summary</value>
+  </data>
   <data name="Employee_Address" xml:space="preserve">
     <value>Address</value>
   </data>

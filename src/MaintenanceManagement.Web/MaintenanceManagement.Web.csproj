@@ -135,6 +135,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\EmployeeTasksController.cs" />
     <Compile Include="Controllers\Api\EmploymentTypesController.cs" />
+    <Compile Include="Controllers\Api\EmployeeTaskStatusesController.cs" />
     <Compile Include="Controllers\Api\WorkSchedulesController.cs" />
     <Compile Include="Controllers\Api\JobTitlesController.cs" />
     <Compile Include="Controllers\Api\TeamsController.cs" />

@@ -9,6 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace MaintenanceManagement.Core.Resources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -189,6 +192,78 @@ namespace MaintenanceManagement.Core.Resources {
         public static string Employee_WorkSchedule {
             get {
                 return ResourceManager.GetString("Employee_WorkSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string EmployeeTask_Actions {
+            get {
+                return ResourceManager.GetString("EmployeeTask_Actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End Date.
+        /// </summary>
+        public static string EmployeeTask_ActualEndDate {
+            get {
+                return ResourceManager.GetString("EmployeeTask_ActualEndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Area.
+        /// </summary>
+        public static string EmployeeTask_Area {
+            get {
+                return ResourceManager.GetString("EmployeeTask_Area", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignee.
+        /// </summary>
+        public static string EmployeeTask_Assignee {
+            get {
+                return ResourceManager.GetString("EmployeeTask_Assignee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Due Date.
+        /// </summary>
+        public static string EmployeeTask_DueDate {
+            get {
+                return ResourceManager.GetString("EmployeeTask_DueDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Progress.
+        /// </summary>
+        public static string EmployeeTask_Progress {
+            get {
+                return ResourceManager.GetString("EmployeeTask_Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string EmployeeTask_Status {
+            get {
+                return ResourceManager.GetString("EmployeeTask_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summary.
+        /// </summary>
+        public static string EmployeeTask_Subject {
+            get {
+                return ResourceManager.GetString("EmployeeTask_Subject", resourceCulture);
             }
         }
         

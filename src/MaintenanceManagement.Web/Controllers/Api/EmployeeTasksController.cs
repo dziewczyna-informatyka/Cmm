@@ -25,7 +25,7 @@
                             Id = a.Id,
                             Area = new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
                             Actions = a.Actions,
-                            Assignee = new IdNamePair { Id = a.Assignee.Id, Name = a.Assignee.Name },
+                            Assignee = new IdNamePair { Id = a.Assignee.Id, Name = a.Assignee.FullName(a.Assignee) },
                             DueDate = a.DueDate.ToCmmDate(),
                             Progress = a.Progress,
                             Status = a.Status.ToIdNamePair(),
