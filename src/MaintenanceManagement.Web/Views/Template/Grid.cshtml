@@ -28,15 +28,16 @@
         <thead>
             <tr>
                 <th ng-repeat="s in schema | filter: columnFilter">{{s.title}}</th>
-                <th style="width: 90px;">@WebCommon.Action</th>
+                <th style="{{'width: ' +  (90 + customActionsCount * 45) + 'px;'}}">@WebCommon.Action</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="e in dataSource">
                 <td ng-repeat="s in schema | filter: columnFilter">{{resolveField(e, s)}}</td>
                 <td>
+                    <cmm-button ng-repeat="a in customActions" extra-class="btn-sm" tooltip="{{a.tooltip}}" icon="{{a.icon}}" ng-click="invokeCustomAction(a, e)"></cmm-button>
                     <cmm-button ng-click="onEditClick(e)" extra-class="btn-sm" tooltip="@WebCommon.EditTitle" icon="pencil" ></cmm-button>
-                    <cmm-button ng-click="onDeleteClick(e)" extra-class="btn-sm" tooltip="@WebCommon.DeleteTitle" icon="close" ></cmm-button>
+                    <cmm-button ng-click="onDeleteClick(e)" extra-class="btn-sm" tooltip="@WebCommon.DeleteTitle" icon="close" ></cmm-button>                   
                 </td>
             </tr>
         </tbody>

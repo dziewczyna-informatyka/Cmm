@@ -186,6 +186,9 @@
   <data name="PleaseLogIn" xml:space="preserve">
     <value>Logowanie</value>
   </data>
+  <data name="ProjectDetails" xml:space="preserve">
+    <value>Szczegoly</value>
+  </data>
   <data name="ProjectPageTitle" xml:space="preserve">
     <value>Projekty</value>
   </data>

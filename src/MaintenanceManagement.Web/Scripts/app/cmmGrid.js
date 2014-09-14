@@ -10,6 +10,7 @@
                         modal.modal({ show: true });
                     };
 
+                scope.customActionsCount = (scope.customActions || []).length;
                 scope.currentEntity = null;
 
                 apiClient.get(scope.resource).then(function (data) {
@@ -43,10 +44,17 @@
                 scope.onSaveClick = function() {
                     EditorHelper.save(apiClient, scope.resource, scope.currentEntity, scope.dataSource);
                 };
+
+                scope.invokeCustomAction = function(action, entity) {
+                    if (action.redirect) {
+                        window.location = action.redirect.replace('{id}', entity.id);
+                    }
+                };
             },
             scope: {
                 resource: '@',
-                schema: '='
+                schema: '=',
+                customActions: '='
             },
             restrict: 'E',
             templateUrl: '/Template/Grid'
