@@ -15,8 +15,8 @@
         [Display(ResourceType = typeof(Common), Name = "Employee_PersonalNumber")]
         public int? PersonalNumber { get; set; }
 
-        [Display(ResourceType = typeof(Common), Name = "Employee_Name")]
-        public string Name { get; set; }
+        [Display(ResourceType = typeof(Common), Name = "Employee_FirstName")]
+        public string FirstName { get; set; }
 
         [Display(ResourceType = typeof(Common), Name = "Employee_Surname")]
         public string Surname { get; set; }
@@ -58,7 +58,7 @@
 
         public Func<Employee, string> FullName
         {
-            get { return e => e.Name + " " + e.Surname; }
+            get { return e => e.FirstName + " " + e.Surname; }
         }
     }
 }

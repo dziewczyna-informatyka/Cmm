@@ -171,6 +171,9 @@
   <data name="Employee_EmploymentType" xml:space="preserve">
     <value>Employment Type</value>
   </data>
+  <data name="Employee_FirstName" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="Employee_HomePhone" xml:space="preserve">
     <value>Home Phone</value>
   </data>
@@ -185,9 +188,6 @@
   </data>
   <data name="Employee_MobilePhone" xml:space="preserve">
     <value>Mobile Phone</value>
-  </data>
-  <data name="Employee_Name" xml:space="preserve">
-    <value>Name</value>
   </data>
   <data name="Employee_PersonalNumber" xml:space="preserve">
     <value>Personal ID</value>

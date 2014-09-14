@@ -22,7 +22,7 @@
                         new EmployeeGetModel
                         {
                             Id = a.Id,
-                            Name = a.Name,
+                            FirstName = a.FirstName,
                             Surname = a.Surname,
                             Address = a.Address,
                             Area = new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
@@ -45,7 +45,7 @@
                 model,
                 (m, e) =>
                 {
-                    e.Name = m.Name;
+                    e.FirstName = m.FirstName;
                     e.Address = m.Address;
                     e.Area = MainContext.Areas.Single(a => a.Id == m.Area.Id);
                     e.EmploymentStart = m.EmploymentStart.ParseDateTime();
@@ -55,7 +55,7 @@
                     e.JobTitle = EnumExtensions.FromIdNamePair<JobTitle>(m.JobTitle);
                     e.Login = m.Login;
                     e.MobilePhone = m.MobilePhone;
-                    e.Name = m.Name;
+                    e.FirstName = m.FirstName;
                     e.PersonalNumber = m.PersonalNumber;
                     e.Surname = m.Surname;
                     e.Team = EnumExtensions.FromIdNamePair<Team>(m.Team).GetValueOrDefault();
@@ -81,7 +81,7 @@
                         JobTitle = EnumExtensions.FromIdNamePair<JobTitle>(model.JobTitle),
                         Login = model.Login,
                         MobilePhone = model.MobilePhone,
-                        Name = model.Name,
+                        FirstName = model.FirstName,
                         PersonalNumber = model.PersonalNumber,
                         Surname = model.Surname,
                         Team = EnumExtensions.FromIdNamePair<Team>(model.Team).GetValueOrDefault(),

@@ -106,6 +106,15 @@ namespace MaintenanceManagement.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Employee_FirstName {
+            get {
+                return ResourceManager.GetString("Employee_FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home Phone.
         /// </summary>
         public static string Employee_HomePhone {
@@ -147,15 +156,6 @@ namespace MaintenanceManagement.Core.Resources {
         public static string Employee_MobilePhone {
             get {
                 return ResourceManager.GetString("Employee_MobilePhone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name.
-        /// </summary>
-        public static string Employee_Name {
-            get {
-                return ResourceManager.GetString("Employee_Name", resourceCulture);
             }
         }
         

@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201405072219330_ActualEndDate.Designer.cs">
       <DependentUpon>201405072219330_ActualEndDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.cs" />
+    <Compile Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.Designer.cs">
+      <DependentUpon>201409141326048_EmployeeNameRenamedToFirstName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405072219330_ActualEndDate.resx">
       <DependentUpon>201405072219330_ActualEndDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.resx">
+      <DependentUpon>201409141326048_EmployeeNameRenamedToFirstName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
