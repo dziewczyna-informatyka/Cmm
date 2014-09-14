@@ -40,37 +40,39 @@
     <div class="row">
         <div ng-class="'col-md-' + 12 / statusesCount" ng-repeat="s in dataSource.statuses">
             <h4 class="text-center">{{s.name}}</h4>
-            <div>
-                <div class="panel panel-default" ng-repeat="t in dataSource.tasks | filter: { status: { id: s.id } }">
-                    <div class="panel-heading">
-                        <a ng-click="onExpandClick(t)">#{{t.id}}</a> - {{t.subject}} 
-                        <cmm-button ng-click="onDeleteClick(t)" extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>
-                        <cmm-button ng-click="onEditClick(t)" extra-class="btn-xs pull-right" icon="pencil" tooltip="@WebCommon.EditTaskTitle"></cmm-button>                                                                       
+            <ul class="board-tasks">
+                <li ng-repeat="t in dataSource.tasks | filter: { status: { id: s.id } }">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a ng-click="onExpandClick(t)">#{{t.id}}</a> - {{t.subject}}
+                            <cmm-button ng-click="onDeleteClick(t)" extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>
+                            <cmm-button ng-click="onEditClick(t)" extra-class="btn-xs pull-right" icon="pencil" tooltip="@WebCommon.EditTaskTitle"></cmm-button>
+                        </div>
+                        <div class="panel-body" ng-show="isExpanded(t)">
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Assignee</label>
+                                <span>{{t.assignee.name}}</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Area</label>
+                                <span>{{t.area.name}}</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_DueDate</label>
+                                <span>{{t.dueDate}}</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Progress</label>
+                                <span>{{t.progress}}%</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Actions</label>
+                                <p>{{t.actions}}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-body" ng-show="isExpanded(t)">                        
-                        <div>
-                            <label class="task-field-name">@Common.EmployeeTask_Assignee</label>
-                            <span>{{t.assignee.name}}</span>
-                        </div>
-                        <div>
-                            <label class="task-field-name">@Common.EmployeeTask_Area</label>
-                            <span>{{t.area.name}}</span>
-                        </div>
-                        <div>
-                            <label class="task-field-name">@Common.EmployeeTask_DueDate</label>
-                            <span>{{t.dueDate}}</span>
-                        </div>
-                        <div>
-                            <label class="task-field-name">@Common.EmployeeTask_Progress</label>
-                            <span>{{t.progress}}%</span>
-                        </div>
-                        <div>
-                            <label class="task-field-name">@Common.EmployeeTask_Actions</label>
-                            <p>{{t.actions}}</p>
-                        </div>
-                    </div>
-                </div>               
-            </div>
+                </li>              
+            </ul>
         </div>      
     </div>
 </div>

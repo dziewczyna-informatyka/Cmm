@@ -7,7 +7,7 @@
                 modal.find('.modal-title').text(title);
                 modal.modal({ show: true });
             };
-
+      
         $scope.statusesCount = 1;
         $scope.expandedTasks = [];
 
@@ -17,6 +17,10 @@
 
             apiClient.get('EmployeeTasks').then(function (data) {
                 $scope.dataSource.tasks = data;
+
+                $('.board-tasks').sortable({
+                    connectWith: '.board-tasks'
+                }).disableSelection();
             });
         });
 
