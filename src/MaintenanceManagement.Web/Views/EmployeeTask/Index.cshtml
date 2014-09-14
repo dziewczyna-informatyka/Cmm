@@ -5,6 +5,19 @@
 
 <div class="employee-tasks" ng-controller="EmployeeTaskController">
     
+    @{
+        var schema = string.Empty;
+
+        schema += "[";
+        schema += "{ field: 'subject', title: '" + Common.EmployeeTask_Subject + "' },";
+        schema += "{ field: 'actions', title: '" + Common.EmployeeTask_Actions + "', dataType: 'text-multiline'},";
+        schema += "{ field: 'assignee', title: '" + Common.EmployeeTask_Assignee + "', dataType: { resource: 'Employees' }},";
+        schema += "{ field: 'area', title: '" + Common.EmployeeTask_Area + "', dataType: { resource: 'Areas' } },";
+        schema += "{ field: 'dueDate', title: '" + Common.EmployeeTask_DueDate + "', dataType: 'date' },";
+        schema += "{ field: 'progress', title: '" + Common.EmployeeTask_Progress + "'}";       
+        schema += "]";
+    }
+
     <div class="modal fade" id="editor">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -13,7 +26,7 @@
                     <h4 class="modal-title">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    <cmm-editor schema="schema" model="currentEntity"></cmm-editor>
+                    <cmm-editor schema="@Html.Raw(schema)" model="currentTask"></cmm-editor>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" ng-click="onSaveClick()" data-dismiss="modal">@WebCommon.Save</button>

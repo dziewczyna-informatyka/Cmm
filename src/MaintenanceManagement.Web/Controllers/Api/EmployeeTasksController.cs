@@ -42,13 +42,19 @@
                         e.Actions = m.Actions;
                         e.Area = MainContext.Areas.Single(a => a.Id == m.Area.Id);
                         e.DueDate = m.DueDate.ParseDateTime().GetValueOrDefault();
-                        e.Progress = m.Progress;
-                        e.Status = EnumExtensions.FromIdNamePair<EmployeeTaskStatus>(m.Status).GetValueOrDefault();
+                        e.Progress = m.Progress;                        
                         e.Subject = m.Subject;
 
                         // TODO: Roles
-                        e.Assignee = MainContext.Employees.Single(x => x.Id == m.Assignee.Id);
-                        e.ActualEndDate = e.Status == EmployeeTaskStatus.Done ? DateTime.Now : e.ActualEndDate;
+                        e.Assignee = MainContext.Employees.Single(x => x.Id == m.Assignee.Id);                       
+
+                        var newStatus = EnumExtensions.FromIdNamePair<EmployeeTaskStatus>(m.Status);
+                        e.Status = newStatus == null ? e.Status : newStatus.Value;
+
+                        if (newStatus != null && e.Status == EmployeeTaskStatus.Done)
+                        {
+                            e.ActualEndDate = DateTime.Now;
+                        }
                     });
 
             return new BasePutResponse();

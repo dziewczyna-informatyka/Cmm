@@ -11,7 +11,7 @@
         },
         save: function(apiClient, resource, editedEntity, dataSource) {
             if (editedEntity.id) {
-                apiClient.put(resource, editedEntity).then(function() {
+                return apiClient.put(resource, editedEntity).then(function() {
                     var e = null;
 
                     for (var i in dataSource) {
@@ -23,7 +23,7 @@
                     $.extend(e, editedEntity, true);
                 });
             } else {
-                apiClient.post(resource, editedEntity).then(function(data) {
+                return apiClient.post(resource, editedEntity).then(function(data) {
                     editedEntity.id = data.id;
                     dataSource.push(editedEntity);
                 });

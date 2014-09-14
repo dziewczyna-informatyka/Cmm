@@ -2,7 +2,7 @@
 {
     using MaintenanceManagement.Core;
 
-    public class EmployeeGetModel
+    public class EmployeeGetModel : IIdNamePair
     {
         public int Id { get; set; }
 

@@ -47,8 +47,19 @@
         };
 
         $scope.onSaveClick = function () {
-            EditorHelper.save(apiClient, 'EployeeTasks', $scope.currentTask, $scope.dataSource.tasks);
-        }
+            EditorHelper.save(apiClient, 'EmployeeTasks', $scope.currentTask, $scope.dataSource.tasks).then(function(data) {
+                if (!$scope.currentTask.status) {
+                    var e = null;
 
+                    for (var i in $scope.dataSource.tasks) {
+                        if ($scope.dataSource.tasks[i].id == $scope.currentTask.id) {
+                            e = $scope.dataSource.tasks[i];
+                        }
+                    }
+
+                    e.status = $.extend({}, $scope.dataSource.statuses[0], true);
+                }
+            });
+        }
     }]);
 }());
