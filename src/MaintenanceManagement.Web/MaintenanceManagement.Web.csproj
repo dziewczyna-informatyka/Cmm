@@ -141,6 +141,7 @@
     <Compile Include="Controllers\Api\ToolTypesController.cs" />
     <Compile Include="Controllers\Api\AreasController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\EmployeeTaskController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
@@ -229,6 +230,7 @@
     <Content Include="Views\ToolType\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Template\DropDown.cshtml" />
+    <Content Include="Views\EmployeeTask\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\WebCommon.pl-PL.resx">

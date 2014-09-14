@@ -153,6 +153,9 @@
   <data name="EmployeePageTitle" xml:space="preserve">
     <value>Pracownicy</value>
   </data>
+  <data name="EmployeeTaskPageTitle" xml:space="preserve">
+    <value>Zadania</value>
+  </data>
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
   </data>

@@ -19,12 +19,11 @@
 
         public EmployeeTaskStatus Status { get; set; }
 
-        public string StatusName
-        {
-            get { return this.Status.EnumToString(); }
-        }
-
         public DateTime DueDate { get; set; }
+
+        public DateTime? ActualEndDate { get; set; }
+
+        public double Progress { get; set; }
 
         public string DueDateText
         {
@@ -56,8 +55,6 @@
             get { return this.Status == EmployeeTaskStatus.InProgress && this.Progress > 0 && this.Progress < 60; }
         }
 
-        public DateTime? ActualEndDate { get; set; }
-
         public string ActualEndDateText
         {
             get { return this.ActualEndDate != null && this.Status == EmployeeTaskStatus.Done ? this.ActualEndDate.Value.ToShortDateString() : string.Empty; }
@@ -72,8 +69,6 @@
                     : string.Empty;
             }
         }
-
-        public double Progress { get; set; }
 
         public string AssigneeName
         {
