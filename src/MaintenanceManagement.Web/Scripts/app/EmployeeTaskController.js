@@ -12,14 +12,22 @@
         $scope.expandedTasks = [];
         $scope.sortableOptions = {
             connectWith: '.board-tasks',
-            receive: function (e, ui) {
+            out: function (e, ui) {
                 var taskId = ui.item.attr('data-task-id'),
                     statusId = $(e.target).attr('data-status-id');
 
-                $scope.$apply(function() {
-                    var status = Cmm.getById($scope.dataSource, statusId),
-                        task = Cmm.getById($scope.tasks, taskId);
+                $scope.$apply(function () {
+                    var allTasks = [],
+                        status,
+                        task;
 
+                    for (var i in $scope.dataSource) {
+                        allTasks = allTasks.concat($scope.dataSource[i].tasks);
+                    }
+                                       
+                    status = Cmm.getById($scope.dataSource, statusId);
+                    task = Cmm.getById(allTasks, taskId);
+                   
                     task.status = { id: status.id };
                     apiClient.put('EmployeeTasks', task);
                 });                           
@@ -31,9 +39,7 @@
             $scope.statusesCount = $scope.dataSource.length;
 
             
-            apiClient.get('EmployeeTasks').then(function (tasks) {
-                $scope.tasks = tasks;
-
+            apiClient.get('EmployeeTasks').then(function (tasks) {                
                 for (var i in tasks) {
                     var task = tasks[i],
                         status = Cmm.getById($scope.dataSource, task.status.id);                                   
