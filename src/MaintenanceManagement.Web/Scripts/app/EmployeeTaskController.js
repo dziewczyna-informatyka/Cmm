@@ -2,6 +2,12 @@
     'use strict';
 
     cmmApp.controller('EmployeeTaskController', ['apiClient', '$scope', function (apiClient, $scope) {
+        var modal = $(".employee-tasks").find('#editor'),
+            openEditor = function(title) {
+                modal.find('.modal-title').text(title);
+                modal.modal({ show: true });
+            };
+
         $scope.statusesCount = 1;
         $scope.expandedTasks = [];
 
@@ -26,12 +32,22 @@
             }
         };
 
-        $scope.onDeleteClick = function(t) {
-            if (confirm(WebCommon.ConfirmDelete)) {
-                apiClient.delete('EmployeeTasks', t.id).then(function() {
-                    $scope.dataSource.tasks.splice($scope.dataSource.tasks.indexOf(t), 1);
-                });
-            }
+        $scope.onDeleteClick = function(t) {            
+            EditorHelper.remove(apiClient, 'EmployeeTasks', t, $scope.dataSource.tasks);
+        }
+
+        $scope.onAddClick = function () {
+            $scope.currentTask = {};
+            openEditor(WebCommon.Add);
+        };
+
+        $scope.onEditClick = function(t) {
+            $scope.currentTask = $.extend({}, t, true);
+            openEditor(WebCommon.Edit);
+        };
+
+        $scope.onSaveClick = function () {
+            EditorHelper.save(apiClient, 'EployeeTasks', $scope.currentTask, $scope.dataSource.tasks);
         }
 
     }]);

@@ -200,6 +200,7 @@
     <Content Include="Scripts\app\cmmEditor.js" />
     <Content Include="Scripts\app\cmmGrid.js" />
     <Content Include="Scripts\app\apiClient.js" />
+    <Content Include="Scripts\app\EditorHelper.js" />
     <Content Include="Scripts\app\EmployeeTaskController.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />

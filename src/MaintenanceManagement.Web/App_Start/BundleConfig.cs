@@ -30,6 +30,7 @@
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app/cmmApp.js",
                       "~/Scripts/app/apiClient.js",
+                      "~/Scripts/app/EditorHelper.js",
                       "~/Scripts/app/cmmDatePicker.js",
                       "~/Scripts/app/cmmDropDown.js",                      
                       "~/Scripts/app/cmmButton.js",

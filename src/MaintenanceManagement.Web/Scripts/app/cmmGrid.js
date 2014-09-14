@@ -36,34 +36,13 @@
                     openEditor(WebCommon.Edit);
                 };
 
-                scope.onDeleteClick = function (entity) {
-                    if (confirm(WebCommon.ConfirmDelete)) {
-                        apiClient.delete(scope.resource, entity.id).then(function () {
-                            scope.dataSource.splice(scope.dataSource.indexOf(entity), 1);
-                        });
-                    }
+                scope.onDeleteClick = function (entity) {                    
+                    EditorHelper.remove(apiClient, scope.resource, entity, scope.dataSource);
                 };
 
-                scope.onSaveClick = function () {
-                    if (scope.currentEntity.id) {
-                        apiClient.put(scope.resource, scope.currentEntity).then(function() {
-                            var e = null;
-
-                            for (var i in scope.dataSource) {
-                                if (scope.dataSource[i].id == scope.currentEntity.id) {
-                                    e = scope.dataSource[i];
-                                }
-                            }
-
-                            $.extend(e, scope.currentEntity, true);
-                        });
-                    } else {
-                        apiClient.post(scope.resource, scope.currentEntity).then(function(data) {
-                            scope.currentEntity.id = data.id;
-                            scope.dataSource.push(scope.currentEntity);
-                        });
-                    }
-                }
+                scope.onSaveClick = function() {
+                    EditorHelper.save(apiClient, scope.resource, scope.currentEntity, scope.dataSource);
+                };
             },
             scope: {
                 resource: '@',
