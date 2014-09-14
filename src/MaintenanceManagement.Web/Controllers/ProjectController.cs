@@ -3,6 +3,7 @@
     using System.Web.Mvc;
 
     using MaintenanceManagement.Web.Core;
+    using MaintenanceManagement.Web.Models;
 
     public class ProjectController : BaseController
     {
@@ -10,6 +11,11 @@
         public ActionResult Index()
         {
             return this.View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            return this.View(new ProjectDetailsViewModel { ProjectId = id });
         }
     }
 }

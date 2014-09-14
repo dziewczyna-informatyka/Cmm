@@ -189,6 +189,9 @@
   <data name="ProjectDetails" xml:space="preserve">
     <value>Szczegoly</value>
   </data>
+  <data name="ProjectDetailsPageTitle" xml:space="preserve">
+    <value>Szczegoly</value>
+  </data>
   <data name="ProjectPageTitle" xml:space="preserve">
     <value>Projekty</value>
   </data>

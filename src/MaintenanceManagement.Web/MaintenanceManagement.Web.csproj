@@ -175,6 +175,7 @@
     <Compile Include="Models\Api\BaseDeleteResponse.cs" />
     <Compile Include="Models\Api\BasePostResponse.cs" />
     <Compile Include="Models\Api\BasePutResponse.cs" />
+    <Compile Include="Models\ProjectDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\WebCommon.pl-PL.Designer.cs">
       <DependentUpon>WebCommon.pl-PL.resx</DependentUpon>
@@ -281,6 +282,7 @@
     <Content Include="Views\Template\DropDown.cshtml" />
     <Content Include="Views\EmployeeTask\Index.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\WebCommon.pl-PL.resx">
