@@ -12,7 +12,7 @@
                 <div class="panel panel-default" ng-repeat="t in dataSource.tasks | filter: { status: { id: s.id } }">
                     <div class="panel-heading">
                         <a ng-click="onExpandClick(t)">#{{t.id}}</a> - {{t.subject}} 
-                        <cmm-button extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>
+                        <cmm-button ng-click="onDeleteClick(t)" extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>
                         <cmm-button extra-class="btn-xs pull-right" icon="pencil" tooltip="@WebCommon.EditTaskTitle"></cmm-button>                                                                       
                     </div>
                     <div class="panel-body" ng-show="isExpanded(t)">                        

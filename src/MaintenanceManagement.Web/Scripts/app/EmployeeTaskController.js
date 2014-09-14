@@ -26,5 +26,13 @@
             }
         };
 
+        $scope.onDeleteClick = function(t) {
+            if (confirm(WebCommon.ConfirmDelete)) {
+                apiClient.delete('EmployeeTasks', t.id).then(function() {
+                    $scope.dataSource.tasks.splice($scope.dataSource.tasks.indexOf(t), 1);
+                });
+            }
+        }
+
     }]);
 }());
