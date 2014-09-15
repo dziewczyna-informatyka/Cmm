@@ -117,100 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Action" xml:space="preserve">
-    <value>Akcja</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="Add" xml:space="preserve">
-    <value>Dodaj</value>
-  </data>
-  <data name="AddNew" xml:space="preserve">
-    <value>Nowy ...</value>
-  </data>
-  <data name="AddNewTask" xml:space="preserve">
-    <value>Dodaj zadanie ...</value>
-  </data>
-  <data name="AddNewTaskTitle" xml:space="preserve">
-    <value>Dodaj nowe zadanie</value>
-  </data>
-  <data name="AddNewTitle" xml:space="preserve">
-    <value>Dodaj nowy element</value>
-  </data>
-  <data name="ApplicationName" xml:space="preserve">
-    <value>CMM</value>
-  </data>
-  <data name="AreasPageTitle" xml:space="preserve">
-    <value>Obszary</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Anuluj</value>
-  </data>
-  <data name="ConfirmDelete" xml:space="preserve">
-    <value>Na pewno chcesz usunąć ten element?</value>
-  </data>
-  <data name="DeleteTaskTitle" xml:space="preserve">
-    <value>Usuń zadanie</value>
-  </data>
-  <data name="DeleteTitle" xml:space="preserve">
-    <value>Usuń element</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Edycja</value>
-  </data>
-  <data name="EditTaskTitle" xml:space="preserve">
-    <value>Edytuj zadanie</value>
-  </data>
-  <data name="EditTitle" xml:space="preserve">
-    <value>Edytuj element</value>
-  </data>
-  <data name="EmployeePageTitle" xml:space="preserve">
-    <value>Pracownicy</value>
-  </data>
-  <data name="EmployeeTaskPageTitle" xml:space="preserve">
-    <value>Zadania</value>
-  </data>
-  <data name="FooterText" xml:space="preserve">
-    <value>Clinico Maintenance Management</value>
-  </data>
-  <data name="InvalidUserOrPassword" xml:space="preserve">
-    <value>Nieprawidłowy użytkownik lub hasło</value>
-  </data>
-  <data name="LoginSubmit" xml:space="preserve">
-    <value>Zaloguj</value>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Wyloguj</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Hasło</value>
-  </data>
-  <data name="PleaseLogIn" xml:space="preserve">
-    <value>Logowanie</value>
-  </data>
-  <data name="ProjectDetails" xml:space="preserve">
-    <value>Szczegoly</value>
-  </data>
-  <data name="ProjectDetailsPageTitle" xml:space="preserve">
-    <value>Szczegoly</value>
-  </data>
-  <data name="ProjectPageTitle" xml:space="preserve">
-    <value>Projekty</value>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>Zapisz</value>
-  </data>
-  <data name="TaskBoardA_Name" xml:space="preserve">
-    <value>Ocena projektu</value>
-  </data>
-  <data name="TaskBoardB_Name" xml:space="preserve">
-    <value>Planowanie</value>
-  </data>
-  <data name="TaskBoardC_Name" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ToolTypePageTitle" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="Username" xml:space="preserve">
-    <value>Użytkownik</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

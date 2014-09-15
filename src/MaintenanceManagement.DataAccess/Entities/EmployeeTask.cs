@@ -32,5 +32,7 @@
 
         [Display(ResourceType = typeof(Common), Name = "EmployeeTask_Progress")]
         public double Progress { get; set; }
+
+        public virtual TaskBoard Board { get; set; }
     }
 }

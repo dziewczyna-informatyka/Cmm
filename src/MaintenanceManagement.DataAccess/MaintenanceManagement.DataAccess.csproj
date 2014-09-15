@@ -54,6 +54,7 @@
     <Compile Include="Entities\EmployeeTask.cs" />
     <Compile Include="Entities\EmployeeTool.cs" />
     <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\TaskBoard.cs" />
     <Compile Include="Entities\ToolType.cs" />
     <Compile Include="JobTitle.cs" />
     <Compile Include="MainContext.cs" />
@@ -104,6 +105,10 @@
     <Compile Include="Migrations\201409151925554_ExtendedProject.cs" />
     <Compile Include="Migrations\201409151925554_ExtendedProject.Designer.cs">
       <DependentUpon>201409151925554_ExtendedProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409152006002_AddedTaskBoard.cs" />
+    <Compile Include="Migrations\201409152006002_AddedTaskBoard.Designer.cs">
+      <DependentUpon>201409152006002_AddedTaskBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -168,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409151925554_ExtendedProject.resx">
       <DependentUpon>201409151925554_ExtendedProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409152006002_AddedTaskBoard.resx">
+      <DependentUpon>201409152006002_AddedTaskBoard.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

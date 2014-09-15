@@ -26,5 +26,11 @@
 
         [Display(ResourceType = typeof(Common), Name = "Project_Area")]      
         public virtual Area Area { get; set; }
+
+        public virtual TaskBoard BoardA { get; set; }
+
+        public virtual TaskBoard BoardB { get; set; }
+
+        public virtual TaskBoard BoardC { get; set; }
     }
 }

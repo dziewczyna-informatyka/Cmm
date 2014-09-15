@@ -198,6 +198,15 @@
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="TaskBoardA_Name" xml:space="preserve">
+    <value>Project Evaluation</value>
+  </data>
+  <data name="TaskBoardB_Name" xml:space="preserve">
+    <value>Planning</value>
+  </data>
+  <data name="TaskBoardC_Name" xml:space="preserve">
+    <value />
+  </data>
   <data name="ToolTypePageTitle" xml:space="preserve">
     <value>Tools</value>
   </data>

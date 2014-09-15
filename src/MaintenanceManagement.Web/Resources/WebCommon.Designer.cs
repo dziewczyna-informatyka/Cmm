@@ -304,6 +304,33 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Project Evaluation.
+        /// </summary>
+        public static string TaskBoardA_Name {
+            get {
+                return ResourceManager.GetString("TaskBoardA_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planning.
+        /// </summary>
+        public static string TaskBoardB_Name {
+            get {
+                return ResourceManager.GetString("TaskBoardB_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string TaskBoardC_Name {
+            get {
+                return ResourceManager.GetString("TaskBoardC_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tools.
         /// </summary>
         public static string ToolTypePageTitle {

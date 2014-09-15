@@ -35,6 +35,8 @@
 
         public IDbSet<Project> Projects { get; set; }
 
+        public IDbSet<TaskBoard> TaskBoards { get; set; }
+
         public async Task<int> Insert<TEntity>(TEntity entity) where TEntity : BaseEntity
         {
             this.Set<TEntity>().Add(entity);

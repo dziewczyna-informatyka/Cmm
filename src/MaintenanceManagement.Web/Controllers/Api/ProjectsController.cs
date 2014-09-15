@@ -9,6 +9,7 @@
     using MaintenanceManagement.DataAccess.Entities;
     using MaintenanceManagement.Web.Core;
     using MaintenanceManagement.Web.Models.Api;
+    using MaintenanceManagement.Web.Resources;
 
     public class ProjectsController : BaseApiController
     {
@@ -27,7 +28,10 @@
                             Progress = "2",
                             Area = a.Area == null ? null : new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
                             Owner = a.Owner == null ? null : new IdNamePair { Id = a.Owner.Id, Name = a.Owner.FullName(a.Owner) },
-                            ProjectNumber = a.ProjectNumber
+                            ProjectNumber = a.ProjectNumber,
+                            BoardA = a.BoardA == null ? null : new IdNamePair { Id = a.BoardA.Id, Name = WebCommon.TaskBoardA_Name },
+                            BoardB = a.BoardB == null ? null : new IdNamePair { Id = a.BoardB.Id, Name = WebCommon.TaskBoardB_Name },
+                            BoardC = a.BoardC == null ? null : new IdNamePair { Id = a.BoardC.Id, Name = WebCommon.TaskBoardC_Name },
                         })
                     .ToList();
         }
@@ -59,7 +63,10 @@
                         DueDate = model.DueDate.ParseDateTime().GetValueOrDefault(),
                         Name = model.Name,
                         Owner = MainContext.Employees.Single(x => x.Id == model.Owner.Id),
-                        ProjectNumber = model.ProjectNumber
+                        ProjectNumber = model.ProjectNumber,
+                        BoardA = new TaskBoard(),
+                        BoardB = new TaskBoard(),
+                        BoardC = new TaskBoard()
                     });
 
             return new BasePostResponse { Id = id };
