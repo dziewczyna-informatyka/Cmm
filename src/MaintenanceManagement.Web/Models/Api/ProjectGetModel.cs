@@ -1,5 +1,5 @@
 ﻿namespace MaintenanceManagement.Web.Models.Api
-{
+{    
     using MaintenanceManagement.Core;
 
     public class ProjectGetModel
@@ -15,13 +15,7 @@
         public IdNamePair Owner { get; set; }
 
         public IdNamePair Area { get; set; }
-
-        public IdNamePair BoardA { get; set; }
-
-        public IdNamePair BoardB { get; set; }
-
-        public IdNamePair BoardC { get; set; }
-
+       
         public string Progress { get; set; }
     }
 }

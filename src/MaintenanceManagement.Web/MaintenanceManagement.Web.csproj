@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\TaskBoardsController.cs" />
     <Compile Include="Controllers\Api\ProjectsController.cs" />
     <Compile Include="Controllers\Api\EmployeeTasksController.cs" />
     <Compile Include="Controllers\Api\EmploymentTypesController.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Models\Api\EmployeeGetModel.cs" />
     <Compile Include="Models\Api\EmployeeTaskPostModel.cs" />
     <Compile Include="Models\Api\EmployeeTaskPutModel.cs" />
+    <Compile Include="Models\Api\TaskBoardGetModel.cs" />
     <Compile Include="Models\Api\ProjectGetModel.cs" />
     <Compile Include="Models\Api\ToolTypeGetModel.cs" />
     <Compile Include="Models\Api\AreaGetModel.cs" />
@@ -242,6 +244,7 @@
     <Content Include="Scripts\app\apiClient.js" />
     <Content Include="Scripts\app\EditorHelper.js" />
     <Content Include="Scripts\app\cmmTaskBoard.js" />
+    <Content Include="Scripts\app\ProjectDetailsController.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

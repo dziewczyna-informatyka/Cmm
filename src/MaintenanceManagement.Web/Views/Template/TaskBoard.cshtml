@@ -42,7 +42,7 @@
             <h4 class="text-center">{{s.name}}</h4>
             <ul class="board-tasks" data-status-id="{{s.id}}" ui-sortable="sortableOptions" ng-model="s.tasks">
                 <li data-task-id="{{t.id}}" ng-repeat="t in s.tasks">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default task">
                         <div class="panel-heading">
                             <a ng-click="onExpandClick(t)">#{{t.id}}</a> - {{t.subject}}
                             <cmm-button ng-click="onDeleteClick(t)" extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>

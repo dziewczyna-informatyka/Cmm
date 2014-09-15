@@ -27,11 +27,11 @@
                             DueDate = a.DueDate.ToCmmDate(),
                             Progress = "2",
                             Area = a.Area == null ? null : new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
-                            Owner = a.Owner == null ? null : new IdNamePair { Id = a.Owner.Id, Name = a.Owner.FullName(a.Owner) },
+                            Owner =
+                                a.Owner == null
+                                    ? null
+                                    : new IdNamePair { Id = a.Owner.Id, Name = a.Owner.FullName(a.Owner) },
                             ProjectNumber = a.ProjectNumber,
-                            BoardA = a.BoardA == null ? null : new IdNamePair { Id = a.BoardA.Id, Name = WebCommon.TaskBoardA_Name },
-                            BoardB = a.BoardB == null ? null : new IdNamePair { Id = a.BoardB.Id, Name = WebCommon.TaskBoardB_Name },
-                            BoardC = a.BoardC == null ? null : new IdNamePair { Id = a.BoardC.Id, Name = WebCommon.TaskBoardC_Name },
                         })
                     .ToList();
         }
