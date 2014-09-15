@@ -421,6 +421,15 @@ namespace MaintenanceManagement.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Area.
+        /// </summary>
+        public static string Project_Area {
+            get {
+                return ResourceManager.GetString("Project_Area", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Due Date.
         /// </summary>
         public static string Project_DueDate {
@@ -439,11 +448,29 @@ namespace MaintenanceManagement.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Owner.
+        /// </summary>
+        public static string Project_Owner {
+            get {
+                return ResourceManager.GetString("Project_Owner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Progress.
         /// </summary>
         public static string Project_Progress {
             get {
                 return ResourceManager.GetString("Project_Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project Number.
+        /// </summary>
+        public static string Project_ProjectNumber {
+            get {
+                return ResourceManager.GetString("Project_ProjectNumber", resourceCulture);
             }
         }
         

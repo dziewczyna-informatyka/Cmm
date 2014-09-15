@@ -237,14 +237,23 @@
   <data name="JobTitle_Workshop_Worker" xml:space="preserve">
     <value>Pracownik warsztatu</value>
   </data>
+  <data name="Project_Area" xml:space="preserve">
+    <value>Obszar</value>
+  </data>
   <data name="Project_DueDate" xml:space="preserve">
     <value>Planowana data zakonczenia</value>
   </data>
   <data name="Project_Name" xml:space="preserve">
     <value>Nazwa</value>
   </data>
+  <data name="Project_Owner" xml:space="preserve">
+    <value>Osoba odpowiedzialna</value>
+  </data>
   <data name="Project_Progress" xml:space="preserve">
     <value>Postep</value>
+  </data>
+  <data name="Project_ProjectNumber" xml:space="preserve">
+    <value>Numer projektu</value>
   </data>
   <data name="Team_A" xml:space="preserve">
     <value>A</value>

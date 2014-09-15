@@ -24,8 +24,12 @@
                             Id = a.Id,
                             Name = a.Name,
                             DueDate = a.DueDate.ToCmmDate(),
-                            Progress = "2"
-                        });
+                            Progress = "2",
+                            Area = a.Area == null ? null : new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
+                            Owner = a.Owner == null ? null : new IdNamePair { Id = a.Owner.Id, Name = a.Owner.FullName(a.Owner) },
+                            ProjectNumber = a.ProjectNumber
+                        })
+                    .ToList();
         }
 
         public async Task<BasePutResponse> Put(ProjectPutModel model)
@@ -33,10 +37,13 @@
             await MainContext.Update<Project, ProjectPutModel>(
                 model,
                 (m, e) =>
-                    {
-                        e.DueDate = model.DueDate.ParseDateTime().GetValueOrDefault();
-                        e.Name = model.Name;
-                    });
+                {
+                    e.Area = MainContext.Areas.Single(a => a.Id == model.Area.Id);
+                    e.DueDate = model.DueDate.ParseDateTime().GetValueOrDefault();
+                    e.Name = model.Name;
+                    e.Owner = MainContext.Employees.Single(x => x.Id == model.Owner.Id);
+                    e.ProjectNumber = model.ProjectNumber;
+                });
 
             return new BasePutResponse();
         }
@@ -46,7 +53,14 @@
             var id =
                 await
                 MainContext.Insert(
-                    new Project { DueDate = model.DueDate.ParseDateTime().GetValueOrDefault(), Name = model.Name });
+                    new Project
+                    {
+                        Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
+                        DueDate = model.DueDate.ParseDateTime().GetValueOrDefault(),
+                        Name = model.Name,
+                        Owner = MainContext.Employees.Single(x => x.Id == model.Owner.Id),
+                        ProjectNumber = model.ProjectNumber
+                    });
 
             return new BasePostResponse { Id = id };
         }

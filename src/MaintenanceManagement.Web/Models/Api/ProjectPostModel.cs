@@ -1,11 +1,17 @@
 ﻿namespace MaintenanceManagement.Web.Models.Api
 {
+    using MaintenanceManagement.Core;
+
     public class ProjectPostModel
     {
+        public string ProjectNumber { get; set; }
+
         public string Name { get; set; }
 
         public string DueDate { get; set; }
 
-        public string Progress { get; set; }
+        public IdNamePair Owner { get; set; }
+
+        public IdNamePair Area { get; set; }
     }
 }
