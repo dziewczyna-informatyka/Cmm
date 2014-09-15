@@ -13,10 +13,11 @@
 
     public class EmployeeTasksController : BaseApiController
     {
-        public IEnumerable<EmployeeTaskGetModel> Get()
+        public IEnumerable<EmployeeTaskGetModel> Get(int? boardId = null)
         {
             return
                 MainContext.EmployeeTasks.OrderByDescending(a => a.DueDate)
+                    .Where(t => t.Board.Id == boardId || (t.Board == null && boardId == null))
                     .ToList()
                     .Select(
                         a =>
