@@ -11,10 +11,10 @@
     <input type="hidden" value="@Model.ProjectId" id="project-id" />
     <div ng-repeat="b in boards">
         <div class="panel panel-default stage">
-            <div class="panel-heading">
+            <div class="panel-heading" ng-click="b.isCollapsed = !b.isCollapsed">
                 {{b.name}}
             </div>
-            <div class="panel-body">
+            <div class="panel-body" ng-hide="b.isCollapsed">
                 <cmm-task-board board-id="b.id"></cmm-task-board>
             </div>
         </div>
