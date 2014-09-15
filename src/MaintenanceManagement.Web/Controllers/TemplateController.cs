@@ -20,5 +20,10 @@
         {
             return this.View();
         }
+
+        public ActionResult TaskBoard()
+        {
+            return this.View();
+        }
     }
 }

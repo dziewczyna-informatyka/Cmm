@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+
+<div class="task-board">
+
+    @{
+        var schema = string.Empty;
+
+        schema += "[";
+        schema += "{ field: 'subject', title: '" + Common.EmployeeTask_Subject + "' },";
+        schema += "{ field: 'actions', title: '" + Common.EmployeeTask_Actions + "', dataType: 'text-multiline'},";
+        schema += "{ field: 'assignee', title: '" + Common.EmployeeTask_Assignee + "', dataType: { resource: 'Employees' }},";
+        schema += "{ field: 'area', title: '" + Common.EmployeeTask_Area + "', dataType: { resource: 'Areas' } },";
+        schema += "{ field: 'dueDate', title: '" + Common.EmployeeTask_DueDate + "', dataType: 'date' },";
+        schema += "{ field: 'progress', title: '" + Common.EmployeeTask_Progress + "'}";
+        schema += "]";
+    }
+
+    <div class="modal fade" id="editor">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <cmm-editor schema="@Html.Raw(schema)" model="currentTask"></cmm-editor>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="onSaveClick()" data-dismiss="modal">@WebCommon.Save</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">@WebCommon.Cancel</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <cmm-button icon="plus" ng-click="onAddClick()" text="@WebCommon.AddNewTask" tooltip="@WebCommon.AddNewTaskTitle"></cmm-button>
+    <div class="row">
+        <div ng-class="'col-md-' + 12 / statusesCount" ng-repeat="s in dataSource">
+            <h4 class="text-center">{{s.name}}</h4>
+            <ul class="board-tasks" data-status-id="{{s.id}}" ui-sortable="sortableOptions" ng-model="s.tasks">
+                <li data-task-id="{{t.id}}" ng-repeat="t in s.tasks">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a ng-click="onExpandClick(t)">#{{t.id}}</a> - {{t.subject}}
+                            <cmm-button ng-click="onDeleteClick(t)" extra-class="btn-xs pull-right margin-left-sm" icon="times" tooltip="@WebCommon.DeleteTaskTitle"></cmm-button>
+                            <cmm-button ng-click="onEditClick(t)" extra-class="btn-xs pull-right" icon="pencil" tooltip="@WebCommon.EditTaskTitle"></cmm-button>
+                        </div>
+                        <div class="panel-body" ng-show="isExpanded(t)">
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Assignee</label>
+                                <span>{{t.assignee.name}}</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Area</label>
+                                <span>{{t.area.name}}</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_DueDate</label>
+                                <span>{{t.dueDate}}</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Progress</label>
+                                <span>{{t.progress}}%</span>
+                            </div>
+                            <div>
+                                <label class="task-field-name">@Common.EmployeeTask_Actions</label>
+                                <p>{{t.actions}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -10,10 +10,12 @@
 
         public string Subject { get; set; }
 
-        public string Actions { get; set; }        
+        public string Actions { get; set; }
 
         public string DueDate { get; set; }
 
         public double Progress { get; set; }
+
+        public IdNamePair Board { get; set; }
     }
 }
