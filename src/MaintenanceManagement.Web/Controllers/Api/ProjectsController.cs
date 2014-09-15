@@ -54,20 +54,36 @@
 
         public async Task<BasePostResponse> Post(ProjectPostModel model)
         {
-            var id =
-                await
-                MainContext.Insert(
-                    new Project
-                    {
-                        Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
-                        DueDate = model.DueDate.ParseDateTime().GetValueOrDefault(),
-                        Name = model.Name,
-                        Owner = MainContext.Employees.Single(x => x.Id == model.Owner.Id),
-                        ProjectNumber = model.ProjectNumber,
-                        BoardA = new TaskBoard(),
-                        BoardB = new TaskBoard(),
-                        BoardC = new TaskBoard()
-                    });
+            var project = new Project
+            {
+                Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
+                DueDate = model.DueDate.ParseDateTime().GetValueOrDefault(),
+                Name = model.Name,
+                Owner = MainContext.Employees.Single(x => x.Id == model.Owner.Id),
+                ProjectNumber = model.ProjectNumber,
+                BoardA = new TaskBoard(),
+                BoardB = new TaskBoard(),
+                BoardC = new TaskBoard()
+            };
+
+            var id = await MainContext.Insert(project);
+
+            this.AddTaskToBoard(project, project.BoardA, "AA 09-47-Vorl 1 Startup of project evaluation");
+            this.AddTaskToBoard(project, project.BoardA, "AA 09-47-Vorl 1 Close of project evaluation");
+
+            this.AddTaskToBoard(project, project.BoardB, "AA 09-47-Vorl 3 Project Order");
+            this.AddTaskToBoard(project, project.BoardB, "URS");
+            this.AddTaskToBoard(project, project.BoardB, "Oferty");
+            this.AddTaskToBoard(project, project.BoardB, "CRF");
+            this.AddTaskToBoard(project, project.BoardB, "FMEA");
+
+            this.AddTaskToBoard(project, project.BoardC, "FAT");
+            this.AddTaskToBoard(project, project.BoardC, "SAT");
+            this.AddTaskToBoard(project, project.BoardC, "kwalifikacja/walidacja");
+            this.AddTaskToBoard(project, project.BoardC, "CRF - close out");
+            this.AddTaskToBoard(project, project.BoardC, "AA 09-47-Vorl 4 Project Close out");
+
+            await MainContext.SaveChangesAsync();
 
             return new BasePostResponse { Id = id };
         }
@@ -76,6 +92,21 @@
         {
             await MainContext.DeleteById<Project>(id);
             return new BaseDeleteResponse();
+        }
+
+        private void AddTaskToBoard(Project project, TaskBoard board, string taskName)
+        {
+            MainContext.EmployeeTasks.Add(
+                new EmployeeTask
+                {
+                    Area = project.Area,
+                    Assignee = project.Owner,
+                    Board = board,
+                    DueDate = project.DueDate,
+                    Progress = 0,
+                    Status = EmployeeTaskStatus.Planned,
+                    Subject = taskName
+                });
         }
     }
 }
