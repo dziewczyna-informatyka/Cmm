@@ -199,13 +199,13 @@
     <value>Save</value>
   </data>
   <data name="TaskBoardA_Name" xml:space="preserve">
-    <value>Project Evaluation</value>
+    <value>Phase I - Project Evaluation</value>
   </data>
   <data name="TaskBoardB_Name" xml:space="preserve">
-    <value>Planning</value>
+    <value>Phase II - Planning</value>
   </data>
   <data name="TaskBoardC_Name" xml:space="preserve">
-    <value />
+    <value>Phase III</value>
   </data>
   <data name="ToolTypePageTitle" xml:space="preserve">
     <value>Tools</value>

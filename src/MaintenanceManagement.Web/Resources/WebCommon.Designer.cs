@@ -304,7 +304,7 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Project Evaluation.
+        ///   Looks up a localized string similar to Phase I - Project Evaluation.
         /// </summary>
         public static string TaskBoardA_Name {
             get {
@@ -313,7 +313,7 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Planning.
+        ///   Looks up a localized string similar to Phase II - Planning.
         /// </summary>
         public static string TaskBoardB_Name {
             get {
@@ -322,7 +322,7 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Phase III.
         /// </summary>
         public static string TaskBoardC_Name {
             get {

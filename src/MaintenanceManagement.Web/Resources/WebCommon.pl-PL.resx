@@ -199,13 +199,13 @@
     <value>Zapisz</value>
   </data>
   <data name="TaskBoardA_Name" xml:space="preserve">
-    <value>Ocena projektu</value>
+    <value>Faza I - Ocena projektu</value>
   </data>
   <data name="TaskBoardB_Name" xml:space="preserve">
-    <value>Planowanie</value>
+    <value>Faza II -Planowanie</value>
   </data>
   <data name="TaskBoardC_Name" xml:space="preserve">
-    <value />
+    <value>Faza III</value>
   </data>
   <data name="ToolTypePageTitle" xml:space="preserve">
     <value>Narzędzia</value>
