@@ -52,7 +52,7 @@
             await this.SaveChangesAsync();
         }
 
-        public async Task Update<TEntity, TModel>(TModel model, Action<TModel, TEntity> mapper)
+        public async Task<TEntity> Update<TEntity, TModel>(TModel model, Action<TModel, TEntity> mapper)
             where TEntity : BaseEntity
             where TModel : IIdentifiable
         {
@@ -61,6 +61,8 @@
             mapper(model, entity);
 
             await this.SaveChangesAsync();
+
+            return entity;
         }
     }
 }

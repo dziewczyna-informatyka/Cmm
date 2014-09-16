@@ -25,6 +25,8 @@
         schema += "{ field: 'workSchedule', displayField: 'workSchedule.name', title: '" + Common.Employee_WorkSchedule + "', isHidden: 'true', dataType: { resource: 'WorkSchedules' }},";
         schema += "{ field: 'area', displayField: 'area.name', title: '" + Common.Employee_Area + "', dataType: { resource: 'Areas' }},";
         schema += "{ field: 'team', displayField: 'team.name', title: '" + Common.Employee_Team + "', dataType: { resource: 'Teams' }},";
+        schema += "{ field: 'password', title: '" + WebCommon.EmployeePostModel_Password + "', dataType: 'password' , isHidden: 'true'},";
+        schema += "{ field: 'confirmPassword', title: '" + WebCommon.EmployeePostModel_ConfirmPassword + "', dataType: 'password' , isHidden: 'true'},";        
         schema += "{ field: 'isAdmin', title: '" + Common.Employee_IsAdmin + "', isHidden: 'true', dataType: 'bool'}";
         schema += "]";
       

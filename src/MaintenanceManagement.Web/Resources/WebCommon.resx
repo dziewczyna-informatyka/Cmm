@@ -165,11 +165,20 @@
   <data name="EmployeePageTitle" xml:space="preserve">
     <value>Employees</value>
   </data>
+  <data name="EmployeePostModel_ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="EmployeePostModel_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="EmployeeTaskPageTitle" xml:space="preserve">
     <value>Tasks</value>
   </data>
   <data name="ErrorDialogMessage" xml:space="preserve">
     <value>An Error occurred. If you are removing an item please check if this item is not referenced by anything.</value>
+  </data>
+  <data name="ErrorDialogOK" xml:space="preserve">
+    <value>Cool, I can live with that</value>
   </data>
   <data name="ErrorDialogTitle" xml:space="preserve">
     <value>Ops, something went wrong ...</value>
@@ -185,9 +194,6 @@
   </data>
   <data name="Logout" xml:space="preserve">
     <value>Logout</value>
-  </data>
-  <data name="OK" xml:space="preserve">
-    <value>Cool, I can live with that</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>

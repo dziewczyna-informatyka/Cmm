@@ -41,7 +41,7 @@
 
         public async Task<BasePutResponse> Put(EmployeePutModel model)
         {
-            await MainContext.Update<Employee, EmployeePutModel>(
+            var employee = await MainContext.Update<Employee, EmployeePutModel>(
                 model,
                 (m, e) =>
                 {
@@ -62,31 +62,38 @@
                     e.WorkSchedule = EnumExtensions.FromIdNamePair<WorkSchedule>(m.WorkSchedule);
                 });
 
+            this.UpdatePassword(employee, model.Password, model.ConfirmPassword);
+
+            await MainContext.SaveChangesAsync();
+
             return new BasePutResponse();
         }
 
         public async Task<BasePostResponse> Post(EmployeePostModel model)
         {
-            var id =
-                await
-                MainContext.Insert(
-                    new Employee
-                    {
-                        Address = model.Address,
-                        Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
-                        EmploymentStart = model.EmploymentStart.ParseDateTime(),
-                        EmploymentType = EnumExtensions.FromIdNamePair<EmploymentType>(model.EmploymentType),
-                        HomePhone = model.HomePhone,
-                        IsAdmin = model.IsAdmin,
-                        JobTitle = EnumExtensions.FromIdNamePair<JobTitle>(model.JobTitle),
-                        Login = model.Login,
-                        MobilePhone = model.MobilePhone,
-                        FirstName = model.FirstName,
-                        PersonalNumber = model.PersonalNumber,
-                        Surname = model.Surname,
-                        Team = EnumExtensions.FromIdNamePair<Team>(model.Team).GetValueOrDefault(),
-                        WorkSchedule = EnumExtensions.FromIdNamePair<WorkSchedule>(model.WorkSchedule)
-                    });
+            var employee = new Employee
+            {
+                Address = model.Address,
+                Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
+                EmploymentStart = model.EmploymentStart.ParseDateTime(),
+                EmploymentType = EnumExtensions.FromIdNamePair<EmploymentType>(model.EmploymentType),
+                HomePhone = model.HomePhone,
+                IsAdmin = model.IsAdmin,
+                JobTitle = EnumExtensions.FromIdNamePair<JobTitle>(model.JobTitle),
+                Login = model.Login,
+                MobilePhone = model.MobilePhone,
+                FirstName = model.FirstName,
+                PersonalNumber = model.PersonalNumber,
+                Surname = model.Surname,
+                Team = EnumExtensions.FromIdNamePair<Team>(model.Team).GetValueOrDefault(),
+                WorkSchedule = EnumExtensions.FromIdNamePair<WorkSchedule>(model.WorkSchedule)
+            };
+
+            var id = await MainContext.Insert(employee);
+            
+            this.UpdatePassword(employee, model.Password, model.ConfirmPassword);
+            
+            await MainContext.SaveChangesAsync();
 
             return new BasePostResponse { Id = id };
         }
@@ -95,6 +102,16 @@
         {
             await MainContext.DeleteById<Employee>(id);
             return new BaseDeleteResponse();
+        }
+
+        private void UpdatePassword(Employee employee, string password, string confirmPassword)
+        {
+            if (string.IsNullOrWhiteSpace(password) || password != confirmPassword)
+            {
+                return;
+            }
+
+            employee.PasswordHash = HashHelper.GetHash(password);
         }
     }
 }

@@ -205,6 +205,24 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm Password.
+        /// </summary>
+        public static string EmployeePostModel_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("EmployeePostModel_ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string EmployeePostModel_Password {
+            get {
+                return ResourceManager.GetString("EmployeePostModel_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tasks.
         /// </summary>
         public static string EmployeeTaskPageTitle {
@@ -219,6 +237,15 @@ namespace MaintenanceManagement.Web.Resources {
         public static string ErrorDialogMessage {
             get {
                 return ResourceManager.GetString("ErrorDialogMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cool, I can live with that.
+        /// </summary>
+        public static string ErrorDialogOK {
+            get {
+                return ResourceManager.GetString("ErrorDialogOK", resourceCulture);
             }
         }
         
@@ -264,15 +291,6 @@ namespace MaintenanceManagement.Web.Resources {
         public static string Logout {
             get {
                 return ResourceManager.GetString("Logout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cool, I can live with that.
-        /// </summary>
-        public static string OK {
-            get {
-                return ResourceManager.GetString("OK", resourceCulture);
             }
         }
         

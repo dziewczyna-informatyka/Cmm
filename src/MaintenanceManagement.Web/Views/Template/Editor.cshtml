@@ -11,6 +11,10 @@
                     <div ng-if="getFieldType(s).type == 'text'">
                         <input id="f-{{s.field}}" type="text" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
                     </div>
+                    
+                    <div ng-if="getFieldType(s).type == 'password'">
+                        <input id="f-{{s.field}}" type="password" class="form-control" ng-model="model[s.field]" placeholder="{{s.title}}" />
+                    </div>
 
                     <div ng-if="getFieldType(s).type == 'text-multiline'">
                         <textarea id="f-{{s.field}}" class="form-control" rows="5" ng-model="model[s.field]"></textarea>
