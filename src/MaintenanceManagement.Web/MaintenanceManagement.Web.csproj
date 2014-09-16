@@ -246,6 +246,8 @@
     <Content Include="Scripts\app\apiClient.js" />
     <Content Include="Scripts\app\EditorHelper.js" />
     <Content Include="Scripts\app\cmmTaskBoard.js" />
+    <Content Include="Scripts\app\errorInterceptor.js" />
+    <Content Include="Scripts\app\interceptorsConfig.js" />
     <Content Include="Scripts\app\ProjectDetailsController.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />

@@ -214,6 +214,24 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An Error occurred. If you are removing an item please check if this item is not referenced by anything..
+        /// </summary>
+        public static string ErrorDialogMessage {
+            get {
+                return ResourceManager.GetString("ErrorDialogMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ops, something went wrong ....
+        /// </summary>
+        public static string ErrorDialogTitle {
+            get {
+                return ResourceManager.GetString("ErrorDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clinico Maintenance Management.
         /// </summary>
         public static string FooterText {
@@ -246,6 +264,15 @@ namespace MaintenanceManagement.Web.Resources {
         public static string Logout {
             get {
                 return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cool, I can live with that.
+        /// </summary>
+        public static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
             }
         }
         

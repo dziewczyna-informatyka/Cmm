@@ -35,6 +35,8 @@
                       "~/Scripts/app/ArrayHelper.js",
                       "~/Scripts/app/cmmApp.js",
                       "~/Scripts/app/blockuiInterceptor.js",
+                      "~/Scripts/app/errorInterceptor.js",
+                      "~/Scripts/app/interceptorsConfig.js",
                       "~/Scripts/app/apiClient.js",
                       "~/Scripts/app/EditorHelper.js",                     
                       "~/Scripts/app/cmmDatePicker.js",

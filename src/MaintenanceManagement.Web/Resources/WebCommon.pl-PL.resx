@@ -168,6 +168,12 @@
   <data name="EmployeeTaskPageTitle" xml:space="preserve">
     <value>Zadania</value>
   </data>
+  <data name="ErrorDialogMessage" xml:space="preserve">
+    <value>Wystapil blad. Jesli probujesz usunac element, sprawdz prosze czy ten element nie jest powiazany z zadnym innym</value>
+  </data>
+  <data name="ErrorDialogTitle" xml:space="preserve">
+    <value>Ups, operacja sie nie udali ...</value>
+  </data>
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
   </data>
@@ -179,6 +185,9 @@
   </data>
   <data name="Logout" xml:space="preserve">
     <value>Wyloguj</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Luzik, jakos przezyje</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Hasło</value>
