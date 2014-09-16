@@ -196,7 +196,7 @@
     <value>Nazwisko</value>
   </data>
   <data name="Employee_Team" xml:space="preserve">
-    <value>Drużyna</value>
+    <value>Brygada</value>
   </data>
   <data name="Employee_WorkSchedule" xml:space="preserve">
     <value>Plan pracy</value>
