@@ -29,6 +29,8 @@
                 scope.expandedTasks = [];
                 scope.sortableOptions = {
                     connectWith: '.board-tasks',
+                    cursor: 'move',
+                    handle: '.task-handle',
                     out: function(e, ui) {
                         var taskId = ui.item.attr('data-task-id'),
                             statusId = $(e.target).attr('data-status-id');
