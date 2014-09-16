@@ -74,7 +74,7 @@
             var id = await MainContext.Insert(project);
 
             this.AddTaskToBoard(project, project.BoardA, "AA 09-47-Vorl 1 Startup of project evaluation");
-            this.AddTaskToBoard(project, project.BoardA, "AA 09-47-Vorl 1 Close of project evaluation");
+            this.AddTaskToBoard(project, project.BoardA, "AA 09-47-Vorl 2 Close out of project evaluation");
 
             this.AddTaskToBoard(project, project.BoardB, "AA 09-47-Vorl 3 Project Order");
             this.AddTaskToBoard(project, project.BoardB, "URS");
