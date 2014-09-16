@@ -28,12 +28,14 @@
                     }
                 }, true);
 
-                select.on('change', function(e) {
-                    for (var i in scope.dataSource) {
-                        if (scope.dataSource[i].id == select.val()) {
-                            setValue(i);
+                select.on('change', function (e) {
+                    scope.$apply(function() {
+                        for (var i in scope.dataSource) {
+                            if (scope.dataSource[i].id == select.val()) {
+                                setValue(i);
+                            }
                         }
-                    }
+                    });
                 });
             },
             restrict: 'E',
