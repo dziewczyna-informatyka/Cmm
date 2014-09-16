@@ -11,7 +11,7 @@
     <input type="hidden" value="@Model.ProjectId" id="project-id" />
     <div ng-repeat="b in boards">
         <div class="panel stage" ng-class="{'panel-default': b.open, 'panel-success': b.done, 'panel-primary': b.inProgress}">
-            <div class="panel-heading" ng-click="b.isCollapsed = !b.isCollapsed">
+            <div class="panel-heading stage-heading" ng-click="b.isCollapsed = !b.isCollapsed">
                 {{b.name}}
             </div>
             <div class="panel-body" ng-hide="b.isCollapsed">
