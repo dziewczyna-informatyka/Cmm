@@ -11,7 +11,16 @@
 
                         setTimeout(function() {
                             if (count == 1) {
-                                $.blockUI({ message: 'loading' });
+                                $.blockUI({
+                                    css: {
+                                        border: 'none',
+                                        padding: '15px',                                       
+                                        '-webkit-border-radius': '10px',
+                                        '-moz-border-radius': '10px',
+                                        opacity: .7,                                       
+                                    },
+                                    message: "<img src='/Content/img/ajax-loader.gif' />"
+                                });
                             }
                         }, 50);
                     }                    
