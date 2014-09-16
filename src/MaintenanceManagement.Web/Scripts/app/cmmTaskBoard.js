@@ -9,6 +9,20 @@
                     openEditor = function(title) {
                         modal.find('.modal-title').text(title);
                         modal.modal({ show: true });
+                    },
+                    raiseOnChange = function () {                       
+                        if (scope.onChange) {
+                            var eventData = {
+                                tasksCount: [],
+                                boardId: scope.boardId
+                            };
+
+                            for (var i in scope.dataSource) {
+                                eventData.tasksCount.push(scope.dataSource[i].tasks.length);
+                            }
+
+                            scope.onChange(eventData);
+                        }
                     };
 
                 scope.statusesCount = 1;
@@ -32,7 +46,9 @@
                             task = Cmm.getById(allTasks, taskId);
 
                             task.status = { id: status.id };
-                            apiClient.put('EmployeeTasks', task);
+                            apiClient.put('EmployeeTasks', task).then(function() {
+                                raiseOnChange();
+                            });
                         });
                     }
                 };
@@ -52,6 +68,8 @@
 
                             status.tasks.push(task);
                         }
+
+                        raiseOnChange();
                     });
                 });
 
@@ -69,7 +87,13 @@
 
                 scope.onDeleteClick = function (t) {
                     var s = Cmm.getById(scope.dataSource, t.status.id);
-                    EditorHelper.remove(apiClient, 'EmployeeTasks', t, s.tasks);
+                    var p = EditorHelper.remove(apiClient, 'EmployeeTasks', t, s.tasks);
+
+                    if (p) {
+                        p.then(function () {
+                            raiseOnChange();
+                        });
+                    }
                 }
 
                 scope.onAddClick = function () {
@@ -89,11 +113,14 @@
 
                 scope.onSaveClick = function () {
                     var s = Cmm.getById(scope.dataSource, scope.currentTask.status.id);
-                    EditorHelper.save(apiClient, 'EmployeeTasks', scope.currentTask, s.tasks);
+                    EditorHelper.save(apiClient, 'EmployeeTasks', scope.currentTask, s.tasks).then(function() {
+                        raiseOnChange();
+                    });
                 }
             },
             scope: {
-                boardId: '='
+                boardId: '=',
+                onChange: '='
             },
             restrict: 'E',
             templateUrl: '/Template/TaskBoard'

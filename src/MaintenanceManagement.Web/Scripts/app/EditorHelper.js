@@ -4,7 +4,7 @@
     return {        
         remove: function(apiClient, resource, entity, dataSource) {
             if (confirm(WebCommon.ConfirmDelete)) {
-                apiClient.delete(resource, entity.id).then(function() {
+                return apiClient.delete(resource, entity.id).then(function() {
                     dataSource.splice(dataSource.indexOf(entity), 1);
                 });
             }

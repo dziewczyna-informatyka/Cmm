@@ -10,12 +10,12 @@
 <div class="project-details" ng-controller="ProjectDetailsController">
     <input type="hidden" value="@Model.ProjectId" id="project-id" />
     <div ng-repeat="b in boards">
-        <div class="panel panel-default stage">
+        <div class="panel stage" ng-class="{'panel-default': b.open, 'panel-success': b.done, 'panel-primary': b.inProgress}">
             <div class="panel-heading" ng-click="b.isCollapsed = !b.isCollapsed">
                 {{b.name}}
             </div>
             <div class="panel-body" ng-hide="b.isCollapsed">
-                <cmm-task-board board-id="b.id"></cmm-task-board>
+                <cmm-task-board board-id="b.id" on-change="onChange"></cmm-task-board>
             </div>
         </div>
         <div class="text-center" ng-hide="boards.indexOf(b) == boards.length - 1">
