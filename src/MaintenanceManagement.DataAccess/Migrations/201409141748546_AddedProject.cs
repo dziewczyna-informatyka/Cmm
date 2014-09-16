@@ -17,7 +17,6 @@ namespace MaintenanceManagement.DataAccess.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true);
-
         }
 
         public override void Down()

@@ -1,10 +1,12 @@
 ﻿namespace MaintenanceManagement.Web.Controllers.Api
 {
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
     using System.Threading.Tasks;
 
     using MaintenanceManagement.Core;
+    using MaintenanceManagement.Core.Resources;
     using MaintenanceManagement.DataAccess;
     using MaintenanceManagement.DataAccess.Entities;
     using MaintenanceManagement.Web.Core;
@@ -16,7 +18,10 @@
         public IEnumerable<ProjectGetModel> Get()
         {
             return
-                MainContext.Projects.OrderBy(a => a.Name)
+                MainContext.Projects.Include(p => p.BoardA.Tasks)
+                    .Include(p => p.BoardB.Tasks)
+                    .Include(p => p.BoardC.Tasks)
+                    .OrderBy(a => a.Name)
                     .ToList()
                     .Select(
                         a =>
@@ -25,7 +30,7 @@
                             Id = a.Id,
                             Name = a.Name,
                             DueDate = a.DueDate.ToCmmDate(),
-                            Progress = "2",
+                            Progress = this.GetProjectProgress(a),
                             Area = a.Area == null ? null : new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
                             Owner =
                                 a.Owner == null
@@ -107,6 +112,17 @@
                     Status = EmployeeTaskStatus.Planned,
                     Subject = taskName
                 });
+        }
+
+        private string GetProjectProgress(Project project)
+        {
+            return project.BoardC != null && project.BoardC.IsInProgress
+                       ? WebCommon.TaskBoardC_Name
+                       : project.BoardB != null && project.BoardB.IsInProgress
+                             ? WebCommon.TaskBoardB_Name
+                             : project.BoardA != null && project.BoardA.IsInProgress
+                                   ? WebCommon.TaskBoardA_Name
+                                   : string.Empty;
         }
     }
 }
