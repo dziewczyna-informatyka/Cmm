@@ -20,7 +20,8 @@
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
                       "~/Scripts/bootstrap-datepicker.js",
-                      "~/Scripts/angular.ui.sortable.js"));
+                      "~/Scripts/angular.ui.sortable.js",
+                      "~/Scripts/jquery.BlockUI.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/themes/base/*.css",
@@ -33,6 +34,7 @@
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app/ArrayHelper.js",
                       "~/Scripts/app/cmmApp.js",
+                      "~/Scripts/app/blockuiInterceptor.js",
                       "~/Scripts/app/apiClient.js",
                       "~/Scripts/app/EditorHelper.js",                     
                       "~/Scripts/app/cmmDatePicker.js",

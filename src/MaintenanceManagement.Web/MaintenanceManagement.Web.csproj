@@ -236,6 +236,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\ArrayHelper.js" />
     <Content Include="Scripts\app\cmmApp.js" />
+    <Content Include="Scripts\app\blockuiInterceptor.js" />
     <Content Include="Scripts\app\cmmButton.js" />
     <Content Include="Scripts\app\cmmDatePicker.js" />
     <Content Include="Scripts\app\cmmDropDown.js" />
@@ -258,6 +259,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.1.js" />
     <Content Include="Scripts\jquery-ui.min-1.11.1.js" />
+    <Content Include="Scripts\jquery.BlockUI.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
