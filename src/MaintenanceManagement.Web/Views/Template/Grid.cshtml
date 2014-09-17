@@ -22,7 +22,7 @@
 
 <div class="cmm-grid">
     <div class="cmm-grid-toolbox">
-        <cmm-button ng-click="onAddClick()" tooltip="@WebCommon.AddNewTitle" text="@WebCommon.AddNew" icon="plus" />
+        <cmm-button ng-show="checkPermission('add')" ng-click="onAddClick()" tooltip="@WebCommon.AddNewTitle" text="@WebCommon.AddNew" icon="plus" />
     </div>
     <table>
         <thead>
@@ -35,9 +35,9 @@
             <tr ng-repeat="e in dataSource">
                 <td ng-repeat="s in schema | filter: columnFilter">{{resolveField(e, s)}}</td>
                 <td>
-                    <cmm-button ng-repeat="a in customActions" extra-class="btn-sm" tooltip="{{a.tooltip}}" icon="{{a.icon}}" ng-click="invokeCustomAction(a, e)"></cmm-button>
-                    <cmm-button ng-click="onEditClick(e)" extra-class="btn-sm" tooltip="@WebCommon.EditTitle" icon="pencil" ></cmm-button>
-                    <cmm-button ng-click="onDeleteClick(e)" extra-class="btn-sm" tooltip="@WebCommon.DeleteTitle" icon="close" ></cmm-button>                   
+                    <cmm-button ng-show="checkPermission(a.permission)" ng-repeat="a in customActions" extra-class="btn-sm" tooltip="{{a.tooltip}}" icon="{{a.icon}}" ng-click="invokeCustomAction(a, e)"></cmm-button>
+                    <cmm-button ng-show="checkPermission('edit')" ng-click="onEditClick(e)" extra-class="btn-sm" tooltip="@WebCommon.EditTitle" icon="pencil"></cmm-button>
+                    <cmm-button ng-show="checkPermission('delete')" ng-click="onDeleteClick(e)" extra-class="btn-sm" tooltip="@WebCommon.DeleteTitle" icon="close"></cmm-button>                   
                 </td>
             </tr>
         </tbody>

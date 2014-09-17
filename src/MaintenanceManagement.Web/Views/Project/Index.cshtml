@@ -22,5 +22,5 @@
         schema += "]";
     }       
 
-    <cmm-grid resource="Projects" schema="@Html.Raw(schema)" custom-actions="[{ tooltip: '@WebCommon.ProjectDetails', icon: 'file', redirect: '/Project/Details/{id}' }]"></cmm-grid>
+    <cmm-grid resource="Projects" edit-role="Administrator" schema="@Html.Raw(schema)" custom-actions="[{ tooltip: '@WebCommon.ProjectDetails', icon: 'file', redirect: '/Project/Details/{id}' }]"></cmm-grid>
 </div>

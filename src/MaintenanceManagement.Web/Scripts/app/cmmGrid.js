@@ -19,6 +19,10 @@
 
                 // Methods definitions
 
+                scope.checkPermission = function (level) {                    
+                    return !level || !scope.editRole || CmmAuth.roles.indexOf(scope.editRole) != -1;
+                };
+
                 scope.columnFilter = function(v, i) {
                     return !v.isHidden;
                 };
@@ -54,7 +58,8 @@
             scope: {
                 resource: '@',
                 schema: '=',
-                customActions: '='
+                customActions: '=',
+                editRole: '@'
             },
             restrict: 'E',
             templateUrl: '/Template/Grid'
