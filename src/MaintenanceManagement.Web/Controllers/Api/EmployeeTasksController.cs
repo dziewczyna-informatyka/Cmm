@@ -2,8 +2,12 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
+    using System.Net;
+    using System.Net.Http;
     using System.Threading.Tasks;
+    using System.Web.Http;
 
     using MaintenanceManagement.Core;
     using MaintenanceManagement.DataAccess;
@@ -15,8 +19,11 @@
     {
         public IEnumerable<EmployeeTaskGetModel> Get(int? boardId = null)
         {
+            var isAdmin = User.IsInRole(CmmRoles.Administrator);
+
             return
-                MainContext.EmployeeTasks.OrderByDescending(a => a.DueDate)
+                MainContext.EmployeeTasks.Where(t => isAdmin || t.Assignee.Login == User.Identity.Name)
+                    .OrderByDescending(a => a.DueDate)
                     .Where(t => t.Board.Id == boardId || (t.Board == null && boardId == null))
                     .ToList()
                     .Select(
@@ -36,6 +43,8 @@
 
         public async Task<BasePutResponse> Put(EmployeeTaskPutModel model)
         {
+            await this.CheckAssignee(model.Assignee);
+
             await MainContext.Update<EmployeeTask, EmployeeTaskPutModel>(
                 model,
                 (m, e) =>
@@ -45,8 +54,6 @@
                     e.DueDate = m.DueDate.ParseDateTime().GetValueOrDefault();
                     e.Progress = m.Progress;
                     e.Subject = m.Subject;
-
-                    // TODO: Roles
                     e.Assignee = MainContext.Employees.Single(x => x.Id == m.Assignee.Id);
 
                     var newStatus = EnumExtensions.FromIdNamePair<EmployeeTaskStatus>(m.Status);
@@ -63,6 +70,8 @@
 
         public async Task<BasePostResponse> Post(EmployeeTaskPostModel model)
         {
+            await this.CheckAssignee(model.Assignee);
+
             var id =
                 await
                 MainContext.Insert(
@@ -75,9 +84,10 @@
                         Status = EmployeeTaskStatus.Planned,
                         Subject = model.Subject,
                         Board = model.Board == null ? null : MainContext.TaskBoards.Single(b => b.Id == model.Board.Id),
-
-                        // TODO: Roles
-                        Assignee = MainContext.Employees.Single(x => x.Id == model.Assignee.Id)
+                        Assignee =
+                            this.User.IsInRole(CmmRoles.Administrator)
+                                ? this.MainContext.Employees.Single(x => x.Id == model.Assignee.Id)
+                                : this.MainContext.Employees.Single(x => x.Login == this.User.Identity.Name)
                     });
 
             return new BasePostResponse { Id = id };
@@ -87,6 +97,17 @@
         {
             await MainContext.DeleteById<EmployeeTask>(id);
             return new BaseDeleteResponse();
+        }
+
+        private async Task CheckAssignee(IdNamePair assignee)
+        {
+            var currentUser = await MainContext.Employees.SingleAsync(x => x.Login == User.Identity.Name);
+
+            if (!User.IsInRole(CmmRoles.Administrator)
+                && (assignee == null || assignee.Id != currentUser.Id))
+            {
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            }
         }
     }
 }

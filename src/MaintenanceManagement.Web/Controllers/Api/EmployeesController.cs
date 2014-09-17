@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.Web.Http;
 
     using MaintenanceManagement.Core;
     using MaintenanceManagement.DataAccess;
@@ -14,8 +15,11 @@
     {
         public IEnumerable<EmployeeGetModel> Get()
         {
+            var isAdmin = User.IsInRole(CmmRoles.Administrator);
+
             return
                 MainContext.Employees.OrderBy(a => a.Surname)
+                    .Where(e => isAdmin || e.Login == User.Identity.Name)
                     .ToList()
                     .Select(
                         a =>
@@ -39,6 +43,7 @@
                         });
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BasePutResponse> Put(EmployeePutModel model)
         {
             var employee = await MainContext.Update<Employee, EmployeePutModel>(
@@ -69,6 +74,7 @@
             return new BasePutResponse();
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BasePostResponse> Post(EmployeePostModel model)
         {
             var employee = new Employee
@@ -90,14 +96,15 @@
             };
 
             var id = await MainContext.Insert(employee);
-            
+
             this.UpdatePassword(employee, model.Password, model.ConfirmPassword);
-            
+
             await MainContext.SaveChangesAsync();
 
             return new BasePostResponse { Id = id };
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BaseDeleteResponse> Delete(int id)
         {
             await MainContext.DeleteById<Employee>(id);

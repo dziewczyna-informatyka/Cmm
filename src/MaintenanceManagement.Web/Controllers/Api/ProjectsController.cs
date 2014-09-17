@@ -4,6 +4,7 @@
     using System.Data.Entity;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.Web.Http;
 
     using MaintenanceManagement.Core;
     using MaintenanceManagement.Core.Resources;
@@ -17,11 +18,14 @@
     {
         public IEnumerable<ProjectGetModel> Get()
         {
+            var isAdmin = User.IsInRole(CmmRoles.Administrator);
+
             return
                 MainContext.Projects.Include(p => p.BoardA.Tasks)
                     .Include(p => p.BoardB.Tasks)
                     .Include(p => p.BoardC.Tasks)
                     .OrderBy(a => a.Name)
+                    .Where(p => isAdmin || p.Owner.Login == User.Identity.Name)
                     .ToList()
                     .Select(
                         a =>
@@ -42,6 +46,7 @@
                     .ToList();
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BasePutResponse> Put(ProjectPutModel model)
         {
             await MainContext.Update<Project, ProjectPutModel>(
@@ -59,6 +64,7 @@
             return new BasePutResponse();
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BasePostResponse> Post(ProjectPostModel model)
         {
             var project = new Project
@@ -96,6 +102,7 @@
             return new BasePostResponse { Id = id };
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BaseDeleteResponse> Delete(int id)
         {
             await MainContext.DeleteById<Project>(id);
