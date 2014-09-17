@@ -157,6 +157,7 @@
     <Compile Include="Core\BaseApiController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Core\CmmRoleProvider.cs" />
+    <Compile Include="Core\MenuHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
