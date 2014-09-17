@@ -11,6 +11,8 @@
     <AssemblyName>MaintenanceManagement.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,6 +55,8 @@
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\EmployeeTask.cs" />
     <Compile Include="Entities\EmployeeTool.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\TaskBoard.cs" />
     <Compile Include="Entities\ToolType.cs" />
     <Compile Include="JobTitle.cs" />
     <Compile Include="MainContext.cs" />
@@ -91,6 +95,26 @@
     <Compile Include="Migrations\201405072219330_ActualEndDate.cs" />
     <Compile Include="Migrations\201405072219330_ActualEndDate.Designer.cs">
       <DependentUpon>201405072219330_ActualEndDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.cs" />
+    <Compile Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.Designer.cs">
+      <DependentUpon>201409141326048_EmployeeNameRenamedToFirstName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409141748546_AddedProject.cs" />
+    <Compile Include="Migrations\201409141748546_AddedProject.Designer.cs">
+      <DependentUpon>201409141748546_AddedProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409151925554_ExtendedProject.cs" />
+    <Compile Include="Migrations\201409151925554_ExtendedProject.Designer.cs">
+      <DependentUpon>201409151925554_ExtendedProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409152006002_AddedTaskBoard.cs" />
+    <Compile Include="Migrations\201409152006002_AddedTaskBoard.Designer.cs">
+      <DependentUpon>201409152006002_AddedTaskBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409171850284_AddedProjectDescription.cs" />
+    <Compile Include="Migrations\201409171850284_AddedProjectDescription.Designer.cs">
+      <DependentUpon>201409171850284_AddedProjectDescription.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -147,8 +171,30 @@
     <EmbeddedResource Include="Migrations\201405072219330_ActualEndDate.resx">
       <DependentUpon>201405072219330_ActualEndDate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409141326048_EmployeeNameRenamedToFirstName.resx">
+      <DependentUpon>201409141326048_EmployeeNameRenamedToFirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409141748546_AddedProject.resx">
+      <DependentUpon>201409141748546_AddedProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409151925554_ExtendedProject.resx">
+      <DependentUpon>201409151925554_ExtendedProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409152006002_AddedTaskBoard.resx">
+      <DependentUpon>201409152006002_AddedTaskBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409171850284_AddedProjectDescription.resx">
+      <DependentUpon>201409171850284_AddedProjectDescription.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -135,6 +135,30 @@
   <data name="EmployeeTaskStatus_Suggestion" xml:space="preserve">
     <value>Propozycja</value>
   </data>
+  <data name="EmployeeTask_Actions" xml:space="preserve">
+    <value>Czynnosci</value>
+  </data>
+  <data name="EmployeeTask_ActualEndDate" xml:space="preserve">
+    <value>Data zakonczenia</value>
+  </data>
+  <data name="EmployeeTask_Area" xml:space="preserve">
+    <value>Obszar</value>
+  </data>
+  <data name="EmployeeTask_Assignee" xml:space="preserve">
+    <value>Pracownik</value>
+  </data>
+  <data name="EmployeeTask_DueDate" xml:space="preserve">
+    <value>Planowana data zakonczenia</value>
+  </data>
+  <data name="EmployeeTask_Progress" xml:space="preserve">
+    <value>Postep</value>
+  </data>
+  <data name="EmployeeTask_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="EmployeeTask_Subject" xml:space="preserve">
+    <value>Opis</value>
+  </data>
   <data name="Employee_Address" xml:space="preserve">
     <value>Adres</value>
   </data>
@@ -146,6 +170,9 @@
   </data>
   <data name="Employee_EmploymentType" xml:space="preserve">
     <value>Rodzaj zatrudnienia</value>
+  </data>
+  <data name="Employee_FirstName" xml:space="preserve">
+    <value>Imię</value>
   </data>
   <data name="Employee_HomePhone" xml:space="preserve">
     <value>Telefon domowy</value>
@@ -162,9 +189,6 @@
   <data name="Employee_MobilePhone" xml:space="preserve">
     <value>Telefon komórkowy</value>
   </data>
-  <data name="Employee_Name" xml:space="preserve">
-    <value>Imię</value>
-  </data>
   <data name="Employee_PersonalNumber" xml:space="preserve">
     <value>Numer personalny</value>
   </data>
@@ -172,7 +196,7 @@
     <value>Nazwisko</value>
   </data>
   <data name="Employee_Team" xml:space="preserve">
-    <value>Drużyna</value>
+    <value>Brygada</value>
   </data>
   <data name="Employee_WorkSchedule" xml:space="preserve">
     <value>Plan pracy</value>
@@ -212,6 +236,27 @@
   </data>
   <data name="JobTitle_Workshop_Worker" xml:space="preserve">
     <value>Pracownik warsztatu</value>
+  </data>
+  <data name="Project_Area" xml:space="preserve">
+    <value>Obszar</value>
+  </data>
+  <data name="Project_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Project_DueDate" xml:space="preserve">
+    <value>Planowana data zakonczenia</value>
+  </data>
+  <data name="Project_Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="Project_Owner" xml:space="preserve">
+    <value>Osoba odpowiedzialna</value>
+  </data>
+  <data name="Project_Progress" xml:space="preserve">
+    <value>Postep</value>
+  </data>
+  <data name="Project_ProjectNumber" xml:space="preserve">
+    <value>Numer projektu</value>
   </data>
   <data name="Team_A" xml:space="preserve">
     <value>A</value>

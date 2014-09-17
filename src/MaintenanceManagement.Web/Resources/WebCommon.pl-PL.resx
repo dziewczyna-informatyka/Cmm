@@ -126,6 +126,12 @@
   <data name="AddNew" xml:space="preserve">
     <value>Nowy ...</value>
   </data>
+  <data name="AddNewTask" xml:space="preserve">
+    <value>Dodaj zadanie ...</value>
+  </data>
+  <data name="AddNewTaskTitle" xml:space="preserve">
+    <value>Dodaj nowe zadanie</value>
+  </data>
   <data name="AddNewTitle" xml:space="preserve">
     <value>Dodaj nowy element</value>
   </data>
@@ -141,17 +147,41 @@
   <data name="ConfirmDelete" xml:space="preserve">
     <value>Na pewno chcesz usunąć ten element?</value>
   </data>
+  <data name="DeleteTaskTitle" xml:space="preserve">
+    <value>Usuń zadanie</value>
+  </data>
   <data name="DeleteTitle" xml:space="preserve">
     <value>Usuń element</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edycja</value>
   </data>
+  <data name="EditTaskTitle" xml:space="preserve">
+    <value>Edytuj zadanie</value>
+  </data>
   <data name="EditTitle" xml:space="preserve">
     <value>Edytuj element</value>
   </data>
   <data name="EmployeePageTitle" xml:space="preserve">
     <value>Pracownicy</value>
+  </data>
+  <data name="EmployeePostModel_ConfirmPassword" xml:space="preserve">
+    <value>Potwierdz haslo</value>
+  </data>
+  <data name="EmployeePostModel_Password" xml:space="preserve">
+    <value>Haslo</value>
+  </data>
+  <data name="EmployeeTaskPageTitle" xml:space="preserve">
+    <value>Zadania</value>
+  </data>
+  <data name="ErrorDialogMessage" xml:space="preserve">
+    <value>Wystapil blad. Jesli probujesz usunac element, sprawdz prosze czy ten element nie jest powiazany z zadnym innym</value>
+  </data>
+  <data name="ErrorDialogOK" xml:space="preserve">
+    <value>Luzik, jakos przezyje</value>
+  </data>
+  <data name="ErrorDialogTitle" xml:space="preserve">
+    <value>Ups, operacja sie nie udali ...</value>
   </data>
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
@@ -171,8 +201,26 @@
   <data name="PleaseLogIn" xml:space="preserve">
     <value>Logowanie</value>
   </data>
+  <data name="ProjectDetails" xml:space="preserve">
+    <value>Szczegoly</value>
+  </data>
+  <data name="ProjectDetailsPageTitle" xml:space="preserve">
+    <value>Szczegoly</value>
+  </data>
+  <data name="ProjectPageTitle" xml:space="preserve">
+    <value>Projekty</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Zapisz</value>
+  </data>
+  <data name="TaskBoardA_Name" xml:space="preserve">
+    <value>Faza I - Ocena projektu</value>
+  </data>
+  <data name="TaskBoardB_Name" xml:space="preserve">
+    <value>Faza II -Planowanie</value>
+  </data>
+  <data name="TaskBoardC_Name" xml:space="preserve">
+    <value>Faza III</value>
   </data>
   <data name="ToolTypePageTitle" xml:space="preserve">
     <value>Narzędzia</value>

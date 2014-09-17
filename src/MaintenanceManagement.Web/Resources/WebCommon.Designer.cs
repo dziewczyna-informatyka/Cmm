@@ -9,6 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace MaintenanceManagement.Web.Resources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -85,6 +88,24 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Task ....
+        /// </summary>
+        public static string AddNewTask {
+            get {
+                return ResourceManager.GetString("AddNewTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add New Task.
+        /// </summary>
+        public static string AddNewTaskTitle {
+            get {
+                return ResourceManager.GetString("AddNewTaskTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add new element.
         /// </summary>
         public static string AddNewTitle {
@@ -130,6 +151,15 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete task.
+        /// </summary>
+        public static string DeleteTaskTitle {
+            get {
+                return ResourceManager.GetString("DeleteTaskTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete this element.
         /// </summary>
         public static string DeleteTitle {
@@ -148,6 +178,15 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit task.
+        /// </summary>
+        public static string EditTaskTitle {
+            get {
+                return ResourceManager.GetString("EditTaskTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit this element.
         /// </summary>
         public static string EditTitle {
@@ -162,6 +201,60 @@ namespace MaintenanceManagement.Web.Resources {
         public static string EmployeePageTitle {
             get {
                 return ResourceManager.GetString("EmployeePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Password.
+        /// </summary>
+        public static string EmployeePostModel_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("EmployeePostModel_ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string EmployeePostModel_Password {
+            get {
+                return ResourceManager.GetString("EmployeePostModel_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks.
+        /// </summary>
+        public static string EmployeeTaskPageTitle {
+            get {
+                return ResourceManager.GetString("EmployeeTaskPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An Error occurred. If you are removing an item please check if this item is not referenced by anything..
+        /// </summary>
+        public static string ErrorDialogMessage {
+            get {
+                return ResourceManager.GetString("ErrorDialogMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cool, I can live with that.
+        /// </summary>
+        public static string ErrorDialogOK {
+            get {
+                return ResourceManager.GetString("ErrorDialogOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ops, something went wrong ....
+        /// </summary>
+        public static string ErrorDialogTitle {
+            get {
+                return ResourceManager.GetString("ErrorDialogTitle", resourceCulture);
             }
         }
         
@@ -220,11 +313,65 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string ProjectDetails {
+            get {
+                return ResourceManager.GetString("ProjectDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string ProjectDetailsPageTitle {
+            get {
+                return ResourceManager.GetString("ProjectDetailsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projects.
+        /// </summary>
+        public static string ProjectPageTitle {
+            get {
+                return ResourceManager.GetString("ProjectPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phase I - Project Evaluation.
+        /// </summary>
+        public static string TaskBoardA_Name {
+            get {
+                return ResourceManager.GetString("TaskBoardA_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phase II - Planning.
+        /// </summary>
+        public static string TaskBoardB_Name {
+            get {
+                return ResourceManager.GetString("TaskBoardB_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phase III.
+        /// </summary>
+        public static string TaskBoardC_Name {
+            get {
+                return ResourceManager.GetString("TaskBoardC_Name", resourceCulture);
             }
         }
         

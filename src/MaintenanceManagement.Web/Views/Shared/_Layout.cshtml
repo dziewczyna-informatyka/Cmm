@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>@ViewBag.Title</title>
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/cerulean/bootstrap.min.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
@@ -13,6 +14,7 @@
 <body>
     <div class="navbar navbar-default">
         <div class="container">
+            <a href="@Url.Action("Index", "Home")" class="cmm-banner"></a>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -23,9 +25,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(WebCommon.EmployeePageTitle, "Index", "Employee", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink(WebCommon.ToolTypePageTitle, "Index", "ToolType", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink(WebCommon.AreasPageTitle, "Index", "Area", new { area = "" }, null)</li>
+                    @Html.CmmMenuItems()
                 </ul>
                 <div class="navbar-form navbar-right">
                     @if (User.Identity.IsAuthenticated)
@@ -37,17 +37,40 @@
 
         </div>
     </div>
+    <div class="modal fade" id="error-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title"><i class="fa fa-times-circle"></i> @WebCommon.ErrorDialogTitle </h4>
+                </div>
+                <div class="modal-body">
+                    @WebCommon.ErrorDialogMessage
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@WebCommon.ErrorDialogOK</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <div class="container body-content">
         @RenderBody()
     </div>
     <hr />
     <footer class="container">
-        <p>&copy; @DateTime.Now.Year - @WebCommon.FooterText</p>
+        <p>
+            &copy; @DateTime.Now.Year - @WebCommon.FooterText
+            <span class="pull-right">
+                @Html.ActionLink("PL", "Polish", "Language")
+                |
+                @Html.ActionLink("EN", "English", "Language")
+            </span>
+        </p>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.js"></script>
+    @Scripts.Render("~/bundles/libs")
     <script src="/Resource/WebCommon"></script>
     @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)

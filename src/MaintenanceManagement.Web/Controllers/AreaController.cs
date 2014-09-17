@@ -2,8 +2,10 @@
 {
     using System.Web.Mvc;
 
+    using MaintenanceManagement.Core;
     using MaintenanceManagement.Web.Core;
 
+    [Authorize(Roles = CmmRoles.Administrator)]
     public class AreaController : BaseController
     {
         // GET: Area

@@ -10,6 +10,7 @@
                         modal.modal({ show: true });
                     };
 
+                scope.customActionsCount = (scope.customActions || []).length;
                 scope.currentEntity = null;
 
                 apiClient.get(scope.resource).then(function (data) {
@@ -17,6 +18,10 @@
                 });
 
                 // Methods definitions
+
+                scope.checkPermission = function (level) {                    
+                    return !level || !scope.editRole || CmmAuth.roles.indexOf(scope.editRole) != -1;
+                };
 
                 scope.columnFilter = function(v, i) {
                     return !v.isHidden;
@@ -36,38 +41,25 @@
                     openEditor(WebCommon.Edit);
                 };
 
-                scope.onDeleteClick = function (entity) {
-                    if (confirm(WebCommon.ConfirmDelete)) {
-                        apiClient.delete(scope.resource, entity.id).then(function () {
-                            scope.dataSource.splice(scope.dataSource.indexOf(entity), 1);
-                        });
-                    }
+                scope.onDeleteClick = function (entity) {                    
+                    EditorHelper.remove(apiClient, scope.resource, entity, scope.dataSource);
                 };
 
-                scope.onSaveClick = function () {
-                    if (scope.currentEntity.id) {
-                        apiClient.put(scope.resource, scope.currentEntity).then(function() {
-                            var e = null;
+                scope.onSaveClick = function() {
+                    EditorHelper.save(apiClient, scope.resource, scope.currentEntity, scope.dataSource);
+                };
 
-                            for (var i in scope.dataSource) {
-                                if (scope.dataSource[i].id == scope.currentEntity.id) {
-                                    e = scope.dataSource[i];
-                                }
-                            }
-
-                            $.extend(e, scope.currentEntity, true);
-                        });
-                    } else {
-                        apiClient.post(scope.resource, scope.currentEntity).then(function(data) {
-                            scope.currentEntity.id = data.id;
-                            scope.dataSource.push(scope.currentEntity);
-                        });
+                scope.invokeCustomAction = function(action, entity) {
+                    if (action.redirect) {
+                        window.location = action.redirect.replace('{id}', entity.id);
                     }
-                }
+                };
             },
             scope: {
                 resource: '@',
-                schema: '='
+                schema: '=',
+                customActions: '=',
+                editRole: '@'
             },
             restrict: 'E',
             templateUrl: '/Template/Grid'

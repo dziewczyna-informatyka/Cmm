@@ -17,7 +17,9 @@
                 datePicker.on('changeDate', function () {
                     datePicker.datepicker('hide');
 
-                    scope.model[scope.schema.field] = input.val();
+                    scope.$apply(function() {
+                        scope.model[scope.schema.field] = input.val();
+                    });                   
                 });
             },
             scope: {

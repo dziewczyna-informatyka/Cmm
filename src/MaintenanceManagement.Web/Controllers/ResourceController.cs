@@ -2,7 +2,9 @@
 {
     using System.Linq;
     using System.Web.Mvc;
+    using System.Web.Security;
 
+    using MaintenanceManagement.Core;
     using MaintenanceManagement.Web.Core;
     using MaintenanceManagement.Web.Resources;
 
@@ -16,9 +18,13 @@
                     .Where(pi => pi.PropertyType == typeof(string))
                     .Select(pi => string.Format("{0}: '{1}'", pi.Name, pi.GetValue(null)));
 
-            var script = string.Format("var WebCommon = {{ {0} }};", string.Join(",", properties));
+            var webCommonScript = string.Format("var WebCommon = {{ {0} }};", string.Join(",", properties));
+            var authScript = string.Format(
+                "var CmmAuth = {{ roles: [{0}], login: '{1}' }};",
+                string.Join(",", Roles.GetRolesForUser(User.Identity.Name).Select(v => string.Format("'{0}'", v))),
+                User.Identity.Name);
 
-            return this.JavaScript(script);
+            return this.JavaScript(string.Join(" ", webCommonScript, authScript));
         }
     }
 }

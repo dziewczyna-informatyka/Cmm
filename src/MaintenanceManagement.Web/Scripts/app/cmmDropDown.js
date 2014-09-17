@@ -7,10 +7,15 @@
                 var select = $(element).find('select'),
                     getValue = function() {
                         return scope.$eval('m.' + scope.field, { m: scope.model });
+                    },
+                    setValue = function (i) {
+                        if (scope.model && scope.dataSource) {
+                            scope.model[scope.field] = $.extend({}, scope.dataSource[i], true);
+                        }
                     }
 
                 apiClient.get(scope.resource).then(function(data) {
-                    scope.dataSource = data;
+                    scope.dataSource = data;                   
                 });
                 
                 scope.$watch('model', function () {
@@ -18,15 +23,19 @@
                    
                     if (v) {
                         select.val(v.id);
+                    } else {
+                        setValue(0);
                     }
                 }, true);
 
-                select.on('change', function(e) {
-                    for (var i in scope.dataSource) {
-                        if (scope.dataSource[i].id == select.val()) {
-                            scope.model[scope.field] = $.extend({}, scope.dataSource[i], true);
+                select.on('change', function (e) {
+                    scope.$apply(function() {
+                        for (var i in scope.dataSource) {
+                            if (scope.dataSource[i].id == select.val()) {
+                                setValue(i);
+                            }
                         }
-                    }
+                    });
                 });
             },
             restrict: 'E',

@@ -4,11 +4,31 @@
 @grey: #aaaaaa;
 @fontColor: #555555;
 
+.margin-left-sm {
+    margin-left: 5px;
+}
 
 .body-content {
     min-height: 600px;
 }
 
+a {
+    cursor: pointer;
+}
+
+#error-modal .modal-title {
+    color: #e12b31;
+}
+
+.cmm-banner {
+    float: left;
+    width: 104px;
+    height: 46px;
+    display: block;
+    background-image: url(/Content/img/logo-icon.jpg);
+    margin: 3px 10px 3px 0;
+    border-radius: 3px;
+}
 
 .validation-summary-errors {
     border-radius: 5px;
@@ -94,4 +114,40 @@
 
 .datepicker {
     z-index: 2000;
+}
+
+
+/* -----------------Employee Tasks ---------------*/
+
+.task-board .task {
+    margin-bottom: 5px;
+}
+
+.task-board .task-field-name {
+    width: 33%;
+}
+
+.task-board .board-tasks {
+    padding: 0;
+    list-style: none;
+    min-height: 200px;
+}
+
+.task-board .task-subject {
+    margin-right: 30px;
+    color: #555555;
+}
+
+.task-board .task-handle {
+    overflow: auto;
+}
+
+/* --------------- Project Details ----------------------*/
+
+.project-details .stage {
+    margin: 0;
+}
+
+.project-details .stage-heading {
+    cursor: pointer;
 }

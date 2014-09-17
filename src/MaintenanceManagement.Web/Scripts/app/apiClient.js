@@ -5,8 +5,16 @@
         '$http', function ($http) {
 
             return {
-                get: function (resource) {
-                    return $http.get('/api-v1/' + resource).then(function (result) {
+                get: function (resource, params) {
+                    var paramsString = "?";
+
+                    if (params) {
+                        for (var i in params) {
+                            paramsString += i + "=" + params[i] + "&";
+                        } 
+                    }
+
+                    return $http.get('/api-v1/' + resource + paramsString).then(function (result) {
                         return result.data;
                     });
                 },

@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.Web.Http;
 
     using MaintenanceManagement.Core;
     using MaintenanceManagement.DataAccess;
@@ -14,15 +15,18 @@
     {
         public IEnumerable<EmployeeGetModel> Get()
         {
+            var isAdmin = User.IsInRole(CmmRoles.Administrator);
+
             return
                 MainContext.Employees.OrderBy(a => a.Surname)
+                    .Where(e => isAdmin || e.Login == User.Identity.Name)
                     .ToList()
                     .Select(
                         a =>
                         new EmployeeGetModel
                         {
                             Id = a.Id,
-                            Name = a.Name,
+                            FirstName = a.FirstName,
                             Surname = a.Surname,
                             Address = a.Address,
                             Area = new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
@@ -39,13 +43,14 @@
                         });
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BasePutResponse> Put(EmployeePutModel model)
         {
-            await MainContext.Update<Employee, EmployeePutModel>(
+            var employee = await MainContext.Update<Employee, EmployeePutModel>(
                 model,
                 (m, e) =>
                 {
-                    e.Name = m.Name;
+                    e.FirstName = m.FirstName;
                     e.Address = m.Address;
                     e.Area = MainContext.Areas.Single(a => a.Id == m.Area.Id);
                     e.EmploymentStart = m.EmploymentStart.ParseDateTime();
@@ -55,46 +60,65 @@
                     e.JobTitle = EnumExtensions.FromIdNamePair<JobTitle>(m.JobTitle);
                     e.Login = m.Login;
                     e.MobilePhone = m.MobilePhone;
-                    e.Name = m.Name;
+                    e.FirstName = m.FirstName;
                     e.PersonalNumber = m.PersonalNumber;
                     e.Surname = m.Surname;
                     e.Team = EnumExtensions.FromIdNamePair<Team>(m.Team).GetValueOrDefault();
                     e.WorkSchedule = EnumExtensions.FromIdNamePair<WorkSchedule>(m.WorkSchedule);
                 });
 
+            this.UpdatePassword(employee, model.Password, model.ConfirmPassword);
+
+            await MainContext.SaveChangesAsync();
+
             return new BasePutResponse();
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BasePostResponse> Post(EmployeePostModel model)
         {
-            var id =
-                await
-                MainContext.Insert(
-                    new Employee
-                    {
-                        Address = model.Address,
-                        Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
-                        EmploymentStart = model.EmploymentStart.ParseDateTime(),
-                        EmploymentType = EnumExtensions.FromIdNamePair<EmploymentType>(model.EmploymentType),
-                        HomePhone = model.HomePhone,
-                        IsAdmin = model.IsAdmin,
-                        JobTitle = EnumExtensions.FromIdNamePair<JobTitle>(model.JobTitle),
-                        Login = model.Login,
-                        MobilePhone = model.MobilePhone,
-                        Name = model.Name,
-                        PersonalNumber = model.PersonalNumber,
-                        Surname = model.Surname,
-                        Team = EnumExtensions.FromIdNamePair<Team>(model.Team).GetValueOrDefault(),
-                        WorkSchedule = EnumExtensions.FromIdNamePair<WorkSchedule>(model.WorkSchedule)
-                    });
+            var employee = new Employee
+            {
+                Address = model.Address,
+                Area = MainContext.Areas.Single(a => a.Id == model.Area.Id),
+                EmploymentStart = model.EmploymentStart.ParseDateTime(),
+                EmploymentType = EnumExtensions.FromIdNamePair<EmploymentType>(model.EmploymentType),
+                HomePhone = model.HomePhone,
+                IsAdmin = model.IsAdmin,
+                JobTitle = EnumExtensions.FromIdNamePair<JobTitle>(model.JobTitle),
+                Login = model.Login,
+                MobilePhone = model.MobilePhone,
+                FirstName = model.FirstName,
+                PersonalNumber = model.PersonalNumber,
+                Surname = model.Surname,
+                Team = EnumExtensions.FromIdNamePair<Team>(model.Team).GetValueOrDefault(),
+                WorkSchedule = EnumExtensions.FromIdNamePair<WorkSchedule>(model.WorkSchedule)
+            };
+
+            var id = await MainContext.Insert(employee);
+
+            this.UpdatePassword(employee, model.Password, model.ConfirmPassword);
+
+            await MainContext.SaveChangesAsync();
 
             return new BasePostResponse { Id = id };
         }
 
+        [Authorize(Roles = CmmRoles.Administrator)]
         public async Task<BaseDeleteResponse> Delete(int id)
         {
             await MainContext.DeleteById<Employee>(id);
             return new BaseDeleteResponse();
+        }
+
+        private void UpdatePassword(Employee employee, string password, string confirmPassword)
+        {
+            if (string.IsNullOrWhiteSpace(password) || password != confirmPassword)
+            {
+                return;
+            }
+
+            employee.PasswordHash = HashHelper.GetHash(password);
         }
     }
 }

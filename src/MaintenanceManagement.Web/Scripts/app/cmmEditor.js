@@ -15,6 +15,10 @@
 
                     return { type: 'dropdown', resource: e.dataType.resource };
                 };
+
+                scope.isEditable = function(s) {
+                    return s.isEditable == undefined || s.isEditable == true;
+                };
             },
             scope: {
                 model: '=',

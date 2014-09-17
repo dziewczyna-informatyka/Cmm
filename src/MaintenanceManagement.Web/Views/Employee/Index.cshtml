@@ -13,7 +13,7 @@
 
         schema += "[";
         schema += "{ field: 'personalNumber', title: '" + Common.Employee_PersonalNumber + "'},";
-        schema += "{ field: 'name', title: '" + Common.Employee_Name + "'},";
+        schema += "{ field: 'firstName', title: '" + Common.Employee_FirstName + "'},";
         schema += "{ field: 'surname', title: '" + Common.Employee_Surname + "'},";
         schema += "{ field: 'employmentStart', title: '" + Common.Employee_EmploymentStart + "', isHidden: 'true', dataType: 'date' },";
         schema += "{ field: 'address', title: '" + Common.Employee_Address + "', isHidden: 'true', dataType: 'text-multiline' },";
@@ -25,11 +25,13 @@
         schema += "{ field: 'workSchedule', displayField: 'workSchedule.name', title: '" + Common.Employee_WorkSchedule + "', isHidden: 'true', dataType: { resource: 'WorkSchedules' }},";
         schema += "{ field: 'area', displayField: 'area.name', title: '" + Common.Employee_Area + "', dataType: { resource: 'Areas' }},";
         schema += "{ field: 'team', displayField: 'team.name', title: '" + Common.Employee_Team + "', dataType: { resource: 'Teams' }},";
+        schema += "{ field: 'password', title: '" + WebCommon.EmployeePostModel_Password + "', dataType: 'password' , isHidden: 'true'},";
+        schema += "{ field: 'confirmPassword', title: '" + WebCommon.EmployeePostModel_ConfirmPassword + "', dataType: 'password' , isHidden: 'true'},";        
         schema += "{ field: 'isAdmin', title: '" + Common.Employee_IsAdmin + "', isHidden: 'true', dataType: 'bool'}";
         schema += "]";
       
 
     }
     
-    <cmm-grid resource="Employees" schema="@Html.Raw(schema)"></cmm-grid>
+    <cmm-grid resource="Employees" edit-role="Administrator" schema="@Html.Raw(schema)"></cmm-grid>
 </div>

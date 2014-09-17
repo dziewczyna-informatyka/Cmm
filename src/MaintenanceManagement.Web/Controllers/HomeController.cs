@@ -8,9 +8,7 @@
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return this.View();
+            return this.RedirectToAction("Index", "Project");
         }
     }
 }

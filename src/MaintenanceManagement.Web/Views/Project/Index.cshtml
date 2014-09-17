@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = WebCommon.ProjectPageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@WebCommon.ProjectPageTitle</h2>
+
+<div>
+
+    @{
+        var schema = string.Empty;
+
+
+        schema += "[";
+        schema += "{ field: 'projectNumber', title: '" + Common.Project_ProjectNumber + "'},";
+        schema += "{ field: 'name', title: '" + Common.Project_Name + "'},";
+        schema += "{ field: 'description', title: '" + Common.Project_Description + "', dataType: 'text-multiline' },";
+        schema += "{ field: 'dueDate', title: '" + Common.Project_DueDate + "', dataType: 'date' },";
+        schema += "{ field: 'owner', displayField: 'owner.name', title: '" + Common.Project_Owner + "', dataType: { resource: 'Employees' } },";
+        schema += "{ field: 'area',  displayField: 'area.name', title: '" + Common.Project_Area + "', dataType: { resource: 'Areas' } },";
+        schema += "{ field: 'progress', title: '" + Common.Project_Progress + "', isEditable: false }";      
+        schema += "]";
+    }       
+
+    <cmm-grid resource="Projects" edit-role="Administrator" schema="@Html.Raw(schema)" custom-actions="[{ tooltip: '@WebCommon.ProjectDetails', icon: 'file', redirect: '/Project/Details/{id}' }]"></cmm-grid>
+</div>
