@@ -18,8 +18,7 @@
 
         protected override void Initialize(HttpControllerContext controllerContext)
         {
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pl-PL");
-            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+            LanguageHelper.LoadLanguage();
 
             base.Initialize(controllerContext);
         }

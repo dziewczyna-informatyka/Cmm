@@ -18,8 +18,7 @@
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pl-PL");
-            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+            LanguageHelper.LoadLanguage();
 
             return base.BeginExecuteCore(callback, state);
         }
