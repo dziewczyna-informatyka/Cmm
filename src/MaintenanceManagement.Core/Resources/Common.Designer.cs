@@ -430,6 +430,15 @@ namespace MaintenanceManagement.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Project_Description {
+            get {
+                return ResourceManager.GetString("Project_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Due Date.
         /// </summary>
         public static string Project_DueDate {

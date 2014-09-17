@@ -8,6 +8,8 @@
 
         public string Name { get; set; }
 
+        public string Description { get; set; }
+
         public string DueDate { get; set; }
 
         public IdNamePair Owner { get; set; }

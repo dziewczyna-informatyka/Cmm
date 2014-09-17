@@ -112,6 +112,10 @@
     <Compile Include="Migrations\201409152006002_AddedTaskBoard.Designer.cs">
       <DependentUpon>201409152006002_AddedTaskBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409171850284_AddedProjectDescription.cs" />
+    <Compile Include="Migrations\201409171850284_AddedProjectDescription.Designer.cs">
+      <DependentUpon>201409171850284_AddedProjectDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -178,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409152006002_AddedTaskBoard.resx">
       <DependentUpon>201409152006002_AddedTaskBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409171850284_AddedProjectDescription.resx">
+      <DependentUpon>201409171850284_AddedProjectDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

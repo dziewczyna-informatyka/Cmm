@@ -18,6 +18,9 @@
         [Display(ResourceType = typeof(Common), Name = "Project_Name")]
         public string Name { get; set; }
 
+        [Display(ResourceType = typeof(Common), Name = "Project_Description")]
+        public string Description { get; set; }
+
         [Display(ResourceType = typeof(Common), Name = "Project_DueDate")]
         public DateTime DueDate { get; set; }
 

@@ -32,6 +32,7 @@
                             DueDate = a.DueDate.ToCmmDate(),
                             Progress = this.GetProjectProgress(a),
                             Area = a.Area == null ? null : new IdNamePair { Id = a.Area.Id, Name = a.Area.Name },
+                            Description = a.Description,
                             Owner =
                                 a.Owner == null
                                     ? null
@@ -52,6 +53,7 @@
                     e.Name = model.Name;
                     e.Owner = MainContext.Employees.Single(x => x.Id == model.Owner.Id);
                     e.ProjectNumber = model.ProjectNumber;
+                    e.Description = model.Description;
                 });
 
             return new BasePutResponse();
@@ -68,7 +70,8 @@
                 ProjectNumber = model.ProjectNumber,
                 BoardA = new TaskBoard(),
                 BoardB = new TaskBoard(),
-                BoardC = new TaskBoard()
+                BoardC = new TaskBoard(),
+                Description = model.Description
             };
 
             var id = await MainContext.Insert(project);

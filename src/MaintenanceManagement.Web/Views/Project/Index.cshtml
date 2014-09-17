@@ -14,6 +14,7 @@
         schema += "[";
         schema += "{ field: 'projectNumber', title: '" + Common.Project_ProjectNumber + "'},";
         schema += "{ field: 'name', title: '" + Common.Project_Name + "'},";
+        schema += "{ field: 'description', title: '" + Common.Project_Description + "', dataType: 'text-multiline' },";
         schema += "{ field: 'dueDate', title: '" + Common.Project_DueDate + "', dataType: 'date' },";
         schema += "{ field: 'owner', displayField: 'owner.name', title: '" + Common.Project_Owner + "', dataType: { resource: 'Employees' } },";
         schema += "{ field: 'area',  displayField: 'area.name', title: '" + Common.Project_Area + "', dataType: { resource: 'Areas' } },";
