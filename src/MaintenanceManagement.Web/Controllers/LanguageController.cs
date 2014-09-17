@@ -7,6 +7,7 @@
     public class LanguageController : BaseController
     {
         // GET: EmployeeTask
+        [AllowAnonymous]
         public ActionResult Polish()
         {
             LanguageHelper.SetLanguage("pl-PL");
@@ -14,6 +15,7 @@
         }
 
         // GET: EmployeeTask
+        [AllowAnonymous]
         public ActionResult English()
         {
             LanguageHelper.SetLanguage("en-GB");

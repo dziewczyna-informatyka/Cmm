@@ -31,7 +31,6 @@
                            controller,
                            title,
                            helper.ViewContext.RouteData.Values["controller"].ToString() == controller ? "active" : string.Empty);
-
         }
     }
 }
