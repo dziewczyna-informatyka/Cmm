@@ -48,7 +48,9 @@
                             task = Cmm.getById(allTasks, taskId);
 
                             task.status = { id: status.id };
-                            apiClient.put('EmployeeTasks', task).then(function() {
+                            apiClient.put('EmployeeTasks', task).then(function (result) {
+                                task.progress = result.progress;
+
                                 raiseOnChange();
                             });
                         });

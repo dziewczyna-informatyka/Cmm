@@ -168,6 +168,7 @@
     <Compile Include="Models\Api\EmployeeGetModel.cs" />
     <Compile Include="Models\Api\EmployeeTaskPostModel.cs" />
     <Compile Include="Models\Api\EmployeeTaskPutModel.cs" />
+    <Compile Include="Models\Api\EmployeeTaskPutResponseModel.cs" />
     <Compile Include="Models\Api\TaskBoardGetModel.cs" />
     <Compile Include="Models\Api\ProjectGetModel.cs" />
     <Compile Include="Models\Api\ToolTypeGetModel.cs" />
