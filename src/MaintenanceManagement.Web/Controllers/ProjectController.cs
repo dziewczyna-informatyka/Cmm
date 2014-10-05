@@ -1,5 +1,6 @@
 ﻿namespace MaintenanceManagement.Web.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
 
     using MaintenanceManagement.Web.Core;
@@ -15,7 +16,16 @@
 
         public ActionResult Details(int id)
         {
-            return this.View(new ProjectDetailsViewModel { ProjectId = id });
+            var project = this.MainContext.Projects.Single(x => x.Id == id);
+
+            return
+                this.View(
+                    new ProjectDetailsViewModel
+                    {
+                        ProjectId = id,
+                        ProjectNumber = project.ProjectNumber,
+                        ProjectName = project.Name
+                    });
         }
     }
 }
