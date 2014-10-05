@@ -178,10 +178,10 @@
     <value>Wystapil blad. Jesli probujesz usunac element, sprawdz prosze czy ten element nie jest powiazany z zadnym innym</value>
   </data>
   <data name="ErrorDialogOK" xml:space="preserve">
-    <value>Luzik, jakos przezyje</value>
+    <value>OK</value>
   </data>
   <data name="ErrorDialogTitle" xml:space="preserve">
-    <value>Ups, operacja sie nie udali ...</value>
+    <value>Ups, operacja sie nie udala ...</value>
   </data>
   <data name="FooterText" xml:space="preserve">
     <value>Clinico Maintenance Management</value>
@@ -206,6 +206,9 @@
   </data>
   <data name="ProjectDetailsPageTitle" xml:space="preserve">
     <value>Szczegoly</value>
+  </data>
+  <data name="ProjectFinished" xml:space="preserve">
+    <value>Projekt Zakonczony</value>
   </data>
   <data name="ProjectPageTitle" xml:space="preserve">
     <value>Projekty</value>

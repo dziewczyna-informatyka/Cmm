@@ -126,13 +126,20 @@
 
         private string GetProjectProgress(Project project)
         {
-            return project.BoardC != null && project.BoardC.IsInProgress
-                       ? WebCommon.TaskBoardC_Name
-                       : project.BoardB != null && project.BoardB.IsInProgress
-                             ? WebCommon.TaskBoardB_Name
-                             : project.BoardA != null && project.BoardA.IsInProgress
-                                   ? WebCommon.TaskBoardA_Name
-                                   : string.Empty;
+            var result = string.Empty;
+
+            if (project.BoardA != null && project.BoardB != null && project.BoardC != null)
+            {
+                result = project.BoardA.IsFinished && project.BoardB.IsFinished && project.BoardC.IsFinished
+                             ? WebCommon.ProjectFinished
+                             : project.BoardC.IsInProgress
+                                   ? WebCommon.TaskBoardC_Name
+                                   : project.BoardB.IsInProgress
+                                         ? WebCommon.TaskBoardB_Name
+                                         : project.BoardA.IsInProgress ? WebCommon.TaskBoardA_Name : string.Empty;
+            }
+
+            return result;
         }
     }
 }

@@ -207,6 +207,9 @@
   <data name="ProjectDetailsPageTitle" xml:space="preserve">
     <value>Details</value>
   </data>
+  <data name="ProjectFinished" xml:space="preserve">
+    <value>Project Finished</value>
+  </data>
   <data name="ProjectPageTitle" xml:space="preserve">
     <value>Projects</value>
   </data>

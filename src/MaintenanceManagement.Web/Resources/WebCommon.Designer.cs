@@ -331,6 +331,15 @@ namespace MaintenanceManagement.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Project Finished.
+        /// </summary>
+        public static string ProjectFinished {
+            get {
+                return ResourceManager.GetString("ProjectFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Projects.
         /// </summary>
         public static string ProjectPageTitle {
