@@ -369,11 +369,11 @@
 				navStep: 10
 		}],
 		dates:{
-			days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-			daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-			daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
-			months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-			monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+		    days: [DP.Sunday, DP.Monday, DP.Tuesday, DP.Wednesday, DP.Thursday, DP.Friday, DP.Saturday, DP.Sunday],
+		    daysShort: [DP.Sun, DP.Mon, DP.Tue, DP.Wed, DP.Thu, DP.Fri, DP.Sat, DP.Sun],
+		    daysMin: [DP.Su, DP.Mo, DP.Tu, DP.We, DP.Th, DP.Fr, DP.Sa, DP.Su],
+		    months: [DP.January, DP.February, DP.March, DP.April, DP.May, DP.June, DP.July, DP.August, DP.September, DP.October, DP.November, DP.December],
+		    monthsShort: [DP.Jan, DP.Feb, DP.Mar, DP.Apr, DP.May, DP.Jun, DP.Jul, DP.Aug, DP.Sep, DP.Oct, DP.Nov, DP.Dec]
 		},
 		isLeapYear: function (year) {
 			return (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0))

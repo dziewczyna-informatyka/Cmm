@@ -15,5 +15,13 @@
                 return this.Tasks != null && this.Tasks.Any(t => t.Status != EmployeeTaskStatus.Planned);
             }
         }
+
+        public bool IsFinished
+        {
+            get
+            {
+                return this.Tasks != null && this.Tasks.All(t => t.Status == EmployeeTaskStatus.Done);
+            }
+        }
     }
 }

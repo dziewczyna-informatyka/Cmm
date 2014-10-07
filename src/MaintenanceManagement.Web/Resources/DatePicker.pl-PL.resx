@@ -117,118 +117,136 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Action" xml:space="preserve">
-    <value>Action</value>
+  <data name="Apr" xml:space="preserve">
+    <value>Kw</value>
   </data>
-  <data name="Add" xml:space="preserve">
-    <value>Add</value>
+  <data name="April" xml:space="preserve">
+    <value>Kwiecien</value>
   </data>
-  <data name="AddNew" xml:space="preserve">
-    <value>Add ...</value>
+  <data name="Aug" xml:space="preserve">
+    <value>Sie</value>
   </data>
-  <data name="AddNewTask" xml:space="preserve">
-    <value>Add Task ...</value>
+  <data name="August" xml:space="preserve">
+    <value>Sierpien</value>
   </data>
-  <data name="AddNewTaskTitle" xml:space="preserve">
-    <value>Add New Task</value>
+  <data name="Dec" xml:space="preserve">
+    <value>Gru</value>
   </data>
-  <data name="AddNewTitle" xml:space="preserve">
-    <value>Add new element</value>
+  <data name="December" xml:space="preserve">
+    <value>Grudzien</value>
   </data>
-  <data name="ApplicationName" xml:space="preserve">
-    <value>CMM</value>
+  <data name="Feb" xml:space="preserve">
+    <value>Luty</value>
   </data>
-  <data name="AreasPageTitle" xml:space="preserve">
-    <value>Areas</value>
+  <data name="February" xml:space="preserve">
+    <value>Luty</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="Fr" xml:space="preserve">
+    <value>Pt</value>
   </data>
-  <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete this item?</value>
+  <data name="Fri" xml:space="preserve">
+    <value>PT</value>
   </data>
-  <data name="DeleteTaskTitle" xml:space="preserve">
-    <value>Delete task</value>
+  <data name="Friday" xml:space="preserve">
+    <value>Piatek</value>
   </data>
-  <data name="DeleteTitle" xml:space="preserve">
-    <value>Delete this element</value>
+  <data name="Jan" xml:space="preserve">
+    <value>Sty</value>
   </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
+  <data name="January" xml:space="preserve">
+    <value>Styczen</value>
   </data>
-  <data name="EditTaskTitle" xml:space="preserve">
-    <value>Edit task</value>
+  <data name="Jul" xml:space="preserve">
+    <value>Lip</value>
   </data>
-  <data name="EditTitle" xml:space="preserve">
-    <value>Edit this element</value>
+  <data name="July" xml:space="preserve">
+    <value>Lipiec</value>
   </data>
-  <data name="EmployeePageTitle" xml:space="preserve">
-    <value>Employees</value>
+  <data name="Jun" xml:space="preserve">
+    <value>Cze</value>
   </data>
-  <data name="EmployeePostModel_ConfirmPassword" xml:space="preserve">
-    <value>Confirm Password</value>
+  <data name="June" xml:space="preserve">
+    <value>Czerwiec</value>
   </data>
-  <data name="EmployeePostModel_Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="Mar" xml:space="preserve">
+    <value>Mar</value>
   </data>
-  <data name="EmployeeTaskPageTitle" xml:space="preserve">
-    <value>Tasks</value>
+  <data name="March" xml:space="preserve">
+    <value>Marzec</value>
   </data>
-  <data name="ErrorDialogMessage" xml:space="preserve">
-    <value>An Error occurred. If you are removing an item please check if this item is not referenced by anything.</value>
+  <data name="May" xml:space="preserve">
+    <value>Maj</value>
   </data>
-  <data name="ErrorDialogOK" xml:space="preserve">
-    <value>Cool, I can live with that</value>
+  <data name="Mo" xml:space="preserve">
+    <value>Pn</value>
   </data>
-  <data name="ErrorDialogTitle" xml:space="preserve">
-    <value>Ops, something went wrong ...</value>
+  <data name="Mon" xml:space="preserve">
+    <value>Pon</value>
   </data>
-  <data name="FooterText" xml:space="preserve">
-    <value>Clinico Maintenance Management</value>
+  <data name="Monday" xml:space="preserve">
+    <value>Poniedzialek</value>
   </data>
-  <data name="InvalidUserOrPassword" xml:space="preserve">
-    <value>Invalid username or password</value>
+  <data name="Nov" xml:space="preserve">
+    <value>Lis</value>
   </data>
-  <data name="LoginSubmit" xml:space="preserve">
-    <value>Submit</value>
+  <data name="November" xml:space="preserve">
+    <value>Listopad</value>
   </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="Oct" xml:space="preserve">
+    <value>Paz</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="October" xml:space="preserve">
+    <value>Pazdziernik</value>
   </data>
-  <data name="PleaseLogIn" xml:space="preserve">
-    <value>Please log in</value>
+  <data name="Sa" xml:space="preserve">
+    <value>So</value>
   </data>
-  <data name="ProjectDetails" xml:space="preserve">
-    <value>Details</value>
+  <data name="Sat" xml:space="preserve">
+    <value>Sob</value>
   </data>
-  <data name="ProjectDetailsPageTitle" xml:space="preserve">
-    <value>Details</value>
+  <data name="Saturday" xml:space="preserve">
+    <value>Niedziela</value>
   </data>
-  <data name="ProjectFinished" xml:space="preserve">
-    <value>Project Finished</value>
+  <data name="Sep" xml:space="preserve">
+    <value>Wrz</value>
   </data>
-  <data name="ProjectPageTitle" xml:space="preserve">
-    <value>Projects</value>
+  <data name="September" xml:space="preserve">
+    <value>Wrzesien</value>
   </data>
-  <data name="Save" xml:space="preserve">
-    <value>Save</value>
+  <data name="Su" xml:space="preserve">
+    <value>Nd</value>
   </data>
-  <data name="TaskBoardA_Name" xml:space="preserve">
-    <value>Phase I - Project Evaluation</value>
+  <data name="Sun" xml:space="preserve">
+    <value>Ndz</value>
   </data>
-  <data name="TaskBoardB_Name" xml:space="preserve">
-    <value>Phase II - Planning</value>
+  <data name="Sunday" xml:space="preserve">
+    <value>Niedziela</value>
   </data>
-  <data name="TaskBoardC_Name" xml:space="preserve">
-    <value>Phase III</value>
+  <data name="Th" xml:space="preserve">
+    <value>Czw</value>
   </data>
-  <data name="ToolTypePageTitle" xml:space="preserve">
-    <value>Tools</value>
+  <data name="Thu" xml:space="preserve">
+    <value>Czw</value>
   </data>
-  <data name="Username" xml:space="preserve">
-    <value>Username</value>
+  <data name="Thursday" xml:space="preserve">
+    <value>Czwartek</value>
+  </data>
+  <data name="Tu" xml:space="preserve">
+    <value>Wt</value>
+  </data>
+  <data name="Tue" xml:space="preserve">
+    <value>Wt</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Wtorek</value>
+  </data>
+  <data name="We" xml:space="preserve">
+    <value>Sr</value>
+  </data>
+  <data name="Wed" xml:space="preserve">
+    <value>Sr</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Sroda</value>
   </data>
 </root>

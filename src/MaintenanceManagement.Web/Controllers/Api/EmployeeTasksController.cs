@@ -41,11 +41,11 @@
                         });
         }
 
-        public async Task<BasePutResponse> Put(EmployeeTaskPutModel model)
+        public async Task<EmployeeTaskPutResponseModel> Put(EmployeeTaskPutModel model)
         {
             await this.CheckAssignee(model.Assignee);
 
-            await MainContext.Update<EmployeeTask, EmployeeTaskPutModel>(
+            var task = await MainContext.Update<EmployeeTask, EmployeeTaskPutModel>(
                 model,
                 (m, e) =>
                 {
@@ -59,13 +59,22 @@
                     var newStatus = EnumExtensions.FromIdNamePair<EmployeeTaskStatus>(m.Status);
                     e.Status = newStatus == null ? e.Status : newStatus.Value;
 
-                    if (newStatus != null && e.Status == EmployeeTaskStatus.Done)
+                    if (newStatus != null)
                     {
-                        e.ActualEndDate = DateTime.Now;
+                        if (e.Status == EmployeeTaskStatus.Done)
+                        {
+                            e.ActualEndDate = DateTime.Now;
+                            e.Progress = 100;
+                        }
+
+                        if (e.Status == EmployeeTaskStatus.Planned)
+                        {
+                            e.Progress = 0;
+                        }
                     }
                 });
 
-            return new BasePutResponse();
+            return new EmployeeTaskPutResponseModel { Progress = task.Progress };
         }
 
         public async Task<BasePostResponse> Post(EmployeeTaskPostModel model)

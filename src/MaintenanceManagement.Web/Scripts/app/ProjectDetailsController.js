@@ -13,9 +13,7 @@
                         doneCount == 0 && inProgressCount == 0 ? 'open' : 'inProgress';
 
                 board.done = board.inProgress = board.open = false;
-                board[state] = true;
-
-                board.isCollapsed = !board.inProgress;
+                board[state] = true;               
             };;
 
             apiClient.get('TaskBoards', { projectId: $scope.projectId }).then(function(data) {
